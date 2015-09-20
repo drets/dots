@@ -1,0 +1,8 @@
+[user]
+	name = drets
+	email = dmitryrets@gmail.com
+[core]
+	editor = ~/bin/vim
+	ignorecase = false
+[github]
+	user = drets
