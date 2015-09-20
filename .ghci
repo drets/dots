@@ -1,0 +1,2 @@
+:def hoogle \x -> return $ ":!hoogle \"" ++ x ++ "\""
+:set prompt "\ESC[34mλ> \ESC[m"

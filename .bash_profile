@@ -14,8 +14,3 @@ function compare-images() {
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
-
-export GHC_DOT_APP="/Users/wikia/Documents/DUMMY/ghc-7.10.2.app"
-if [ -d "$GHC_DOT_APP" ]; then
-  export PATH="${HOME}/.local/bin:${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin:${PATH}"
-fi
