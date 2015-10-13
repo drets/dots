@@ -18,7 +18,7 @@ export PATH="~/.cabal/bin:$PATH"
 complete -o default -o nospace -F _git g
 
 function compare-images() {
-    compare -verbose -metric AE $1 $2 null
+    compare -metric AE -fuzz %5 $1 $2 diff.png
 }
 
 if [ -f ~/.git-completion.bash ]; then
