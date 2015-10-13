@@ -56,3 +56,6 @@ set linebreak    "Wrap lines at convenient points
 set mouse=a "Enable mouse
 set spell
 set shortmess=aoOtI "Get rid of Press Enter
+autocmd CursorHold,CursorHoldI,InsertLeave * silent! wall "Auto-save
+set updatetime=1000
+set completeopt-=preview
