@@ -14,6 +14,7 @@
   s = status -s
   d = diff
   po = push origin
+  b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
 
 [github]
   user = drets
