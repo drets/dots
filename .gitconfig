@@ -6,6 +6,7 @@
   ignorecase = false
 [alias]
   l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  pl = pull
   a = add
   camend = commit --amend
   cm = commit -m

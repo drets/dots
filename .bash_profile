@@ -11,6 +11,7 @@ alias p8='ping 8.8.8.8'
 alias v='vim'
 alias e='open -a emacs'
 alias g='git'
+alias rm='echo "rm is disabled, use trash or /bin/rm instead."'
 
 export PATH="~/.cabal/bin:$PATH"
 
