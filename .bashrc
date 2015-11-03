@@ -1,6 +1,5 @@
 source ~/.git-prompt.sh
 
-export JAVA_HOME=$(/usr/libexec/java_home)
 export PS1='\w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
 export PATH="/usr/local/bin:/usr/bin:$PATH"
 export GREP_OPTIONS="--color"
@@ -20,6 +19,10 @@ complete -o default -o nospace -F _git g
 
 function compare-images() {
     compare -metric AE -fuzz %5 $1 $2 diff.png
+}
+
+function cd() {
+   builtin cd "$*" && ls
 }
 
 if [ -f ~/.git-completion.bash ]; then
