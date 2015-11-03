@@ -205,3 +205,7 @@
 ;; Magit mode
 (require 'magit)
 (global-set-key "\C-xg" 'magit-status)
+
+;; Expand-region mode
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
