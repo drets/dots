@@ -186,6 +186,15 @@
 (setq org-confirm-babel-evaluate nil)
 (setq org-src-fontify-natively t)
 
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)
+   (js . t)
+   (haskell . t)
+   (sh . t)
+   (emacs-lisp . nil)
+   ))
+
 (add-to-list 'load-path "~/lib/emacs/org-bullets")
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
