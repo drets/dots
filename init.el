@@ -192,3 +192,7 @@
 
 ;; Remember mode
 (require 'remember)
+
+;; Magit mode
+(require 'magit)
+(global-set-key "\C-xg" 'magit-status)
