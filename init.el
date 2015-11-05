@@ -199,6 +199,8 @@
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
+(deftheme org-beautify-theme "Sub-theme to beautify org mode")
+
 ;; Remember mode
 (require 'remember)
 
@@ -209,3 +211,28 @@
 ;; Expand-region mode
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
+
+;; Multiple-cursors mode
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;; Ace Jump Mode
+(add-to-list 'load-path "~/lib/emacs/ace-jump-mode")
+(autoload
+  'ace-jump-mode
+  "ace-jump-mode"
+  t)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
+(autoload
+  'ace-jump-mode-pop-mark
+  "ace-jump-mode"
+   t)
+(eval-after-load "ace-jump-mode"
+  '(ace-jump-mode-enable-mark-sync))
+(define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+
+(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
