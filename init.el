@@ -12,6 +12,10 @@
  '(frame-background-mode (\` dark)))
 (enable-theme 'solarized)
 
+;; Enable flyspell-mode for org-mode
+(defun turn-on-flyspell () (flyspell-mode 1))
+(add-hook 'org-mode-hook 'turn-on-flyspell)
+
 ;; Set line numbers
 (global-linum-mode 1)
 
@@ -25,6 +29,7 @@
 
 ;; Bind mac keys
 (setq mac-right-command-modifier 'meta)
+(setq ns-function-modifier 'hyper)
 (setq mac-option-modifier 'alt)
 (setq mac-right-option-modifier 'super)
 
@@ -67,8 +72,11 @@
 (global-set-key "\C-xk" 'next-buffer)
 (global-set-key "\C-xp" 'kill-this-buffer)
 
-;; Disable backup files
-(setq make-backup-files 'nil)
+;; Set key for terminal
+(global-set-key "\C-xt" 'ansi-term)
+
+; Disable backup
+(setq backup-inhibited t)
 
 ;; Disable startup message
 (setq inhibit-startup-message t)
@@ -108,10 +116,12 @@
 ;; y/n
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; Define close all buffers
-(defun close-all-buffers ()
-  (interactive)
-  (mapc 'kill-buffer (buffer-list)))
+;; Kills all buffers, except the current one
+(defun kill-other-buffers ()
+      "Kill all other buffers."
+      (interactive)
+      (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
+(global-set-key "\C-xO" 'kill-other-buffers)
 
 ;; Haskell mode
 (add-to-list 'load-path "~/lib/emacs/haskell-mode/")
@@ -183,6 +193,11 @@
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-iswitchb)
 
+(setq org-agenda-files (file-expand-wildcards "~/org/*.org"))
+
+(setq org-refile-use-outline-path 'file)
+(setq org-refile-targets '((org-agenda-files :level . 1)))
+
 (setq org-confirm-babel-evaluate nil)
 (setq org-src-fontify-natively t)
 
@@ -201,8 +216,15 @@
 
 (deftheme org-beautify-theme "Sub-theme to beautify org mode")
 
+(find-file "~/org/today.org")
+
 ;; Remember mode
 (require 'remember)
+
+(define-key global-map (kbd "<f9> r") 'remember)
+(define-key global-map (kbd "<f9> R") 'remember-region)
+
+(setq remember-data-file "~/org/notes.org")
 
 ;; Magit mode
 (require 'magit)
@@ -236,3 +258,22 @@
 (define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
 
 (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
+
+;; Yasnippet mode
+(add-to-list 'load-path "~/lib/emacs/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
+(define-key yas-minor-mode-map (kbd "<tab>") nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+(define-key yas-minor-mode-map (kbd "<C-return>") 'yas-expand)
+
+;; Auto complete mode
+(ac-config-default)
+
+;; Web mode
+(add-to-list 'load-path "~/lib/emacs/web-mode")
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.react.js\\'" . web-mode))
+
+;; REST client mode
+(require 'restclient)
