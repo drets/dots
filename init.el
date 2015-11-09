@@ -1,8 +1,7 @@
-
 ;; MELPA
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
+	     '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
 ;; Set theme
 (add-to-list 'custom-theme-load-path "~/lib/emacs/emacs-color-theme-solarized")
@@ -11,6 +10,9 @@
  ;; Your init file should contain only one such instance
  '(frame-background-mode (\` dark)))
 (enable-theme 'solarized)
+
+;; Auto-refresh buffers
+(global-auto-revert-mode t)
 
 ;; Enable flyspell-mode for org-mode
 (defun turn-on-flyspell () (flyspell-mode 1))
@@ -277,3 +279,6 @@
 
 ;; REST client mode
 (require 'restclient)
+
+;; Flycheck mode
+(add-hook 'after-init-hook #'global-flycheck-mode)
