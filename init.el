@@ -1,10 +1,13 @@
 ;; MELPA
 (require 'package)
 (add-to-list 'package-archives
-	     '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+     '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
+;;(add-to-list 'package-archives
+;;             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+(package-initialize)
 ;; Set theme
-(add-to-list 'custom-theme-load-path "~/lib/emacs/emacs-color-theme-solarized")
 (load-theme 'solarized t)
 (custom-set-variables
  ;; Your init file should contain only one such instance
@@ -41,7 +44,6 @@
 (setq menu-prompting nil)
 
 ;; Set path
-(package-initialize)
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
@@ -74,9 +76,6 @@
 (global-set-key "\C-xk" 'next-buffer)
 (global-set-key "\C-xp" 'kill-this-buffer)
 
-;; Set key for terminal
-(global-set-key "\C-xt" 'ansi-term)
-
 ; Disable backup
 (setq backup-inhibited t)
 
@@ -90,9 +89,8 @@
 (put 'erase-buffer 'disabled nil)
 
 ;; Langtool
-(add-to-list 'load-path "~/lib/emacs/Emacs-langtool/")
 (require 'langtool)
-(setq langtool-language-tool-jar "~/lib/emacs/Emacs-langtool/JAR/languagetool-commandline.jar")
+(setq langtool-language-tool-jar "~/lib/emacs/languagetool/languagetool-commandline.jar")
 
 (global-set-key "\C-x4w" 'langtool-check)
 (global-set-key "\C-x4W" 'langtool-check-done)
@@ -102,10 +100,6 @@
 
 ;; Tramp mode
 (setq tramp-default-method "ssh")
-
-;; Helm
-(require 'helm)
-(helm-mode 1)
 
 ;; Powerline
 (add-to-list 'load-path "~/lib/emacs/powerline")
@@ -126,16 +120,12 @@
 (global-set-key "\C-xO" 'kill-other-buffers)
 
 ;; Haskell mode
-(add-to-list 'load-path "~/lib/emacs/haskell-mode/")
-(require 'haskell-mode-autoloads)
-(add-to-list 'Info-default-directory-list "~/lib/emacs/haskell-mode/")
+(require 'haskell-mode)
 
 ;; Evil mode
-(add-to-list 'load-path "~/lib/emacs/evil")
 (require 'evil)
 (evil-mode 1)
 
-(add-to-list 'load-path "~/lib/emacs/key-chord")
 (require 'key-chord)
 (key-chord-mode 1)
 (key-chord-define-global "ii" 'evil-normal-state)
@@ -212,7 +202,6 @@
    (emacs-lisp . nil)
    ))
 
-(add-to-list 'load-path "~/lib/emacs/org-bullets")
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
@@ -244,7 +233,7 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;; Ace Jump Mode
-(add-to-list 'load-path "~/lib/emacs/ace-jump-mode")
+(require 'ace-jump-mode)
 (autoload
   'ace-jump-mode
   "ace-jump-mode"
@@ -262,7 +251,6 @@
 (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
 
 ;; Yasnippet mode
-(add-to-list 'load-path "~/lib/emacs/yasnippet")
 (require 'yasnippet)
 (yas-global-mode 1)
 (define-key yas-minor-mode-map (kbd "<tab>") nil)
@@ -273,7 +261,6 @@
 (ac-config-default)
 
 ;; Web mode
-(add-to-list 'load-path "~/lib/emacs/web-mode")
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.react.js\\'" . web-mode))
 
@@ -282,3 +269,106 @@
 
 ;; Flycheck mode
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; Ansi-term customisation
+(require 'term)
+(defun visit-ansi-term ()
+  "If the current buffer is:
+     1) a running ansi-term named *ansi-term*, rename it.
+     2) a stopped ansi-term, kill it and create a new one.
+     3) a non ansi-term, go to an already running ansi-term
+        or start a new one while killing a defunt one"
+  (interactive)
+  (let ((is-term (string= "term-mode" major-mode))
+        (is-running (term-check-proc (buffer-name)))
+        (term-cmd "/bin/bash")
+        (anon-term (get-buffer "*ansi-term*")))
+    (if is-term
+        (if is-running
+            (if (string= "*ansi-term*" (buffer-name))
+                (call-interactively 'rename-buffer)
+              (if anon-term
+                  (switch-to-buffer "*ansi-term*")
+                (ansi-term term-cmd)))
+          (kill-buffer (buffer-name))
+          (ansi-term term-cmd))
+      (if anon-term
+          (if (term-check-proc "*ansi-term*")
+              (switch-to-buffer "*ansi-term*")
+            (kill-buffer "*ansi-term*")
+            (ansi-term term-cmd))
+        (ansi-term term-cmd)))))
+(global-set-key "\C-xt" 'visit-ansi-term)
+
+;; Helm
+(require 'helm)
+(require 'helm-config)
+
+;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
+;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
+;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
+(global-set-key (kbd "C-c h") 'helm-command-prefix)
+(global-unset-key (kbd "C-x c"))
+
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
+(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+
+(when (executable-find "curl")
+  (setq helm-google-suggest-use-curl-p t))
+
+(setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
+      helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
+      helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
+      helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
+      helm-ff-file-name-history-use-recentf t)
+
+(helm-mode 1)
+
+(global-set-key (kbd "M-x") 'helm-M-x)
+
+(setq helm-M-x-fuzzy-match t) ;; optional fuzzy matching for helm-M-x
+
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+
+(global-set-key (kbd "C-x b") 'helm-mini)
+
+(setq helm-buffers-fuzzy-matching t
+      helm-recentf-fuzzy-match    t)
+
+(setq helm-semantic-fuzzy-match t
+      helm-imenu-fuzzy-match    t)
+
+(global-set-key "\C-xf" 'helm-find-files)
+
+(add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages)
+
+(setq helm-locate-fuzzy-match t)
+
+(global-set-key (kbd "C-c h o") 'helm-occur)
+
+(setq helm-apropos-fuzzy-match t)
+
+(global-set-key (kbd "C-h SPC") 'helm-all-mark-rings)
+
+(global-set-key (kbd "C-c h x") 'helm-register)
+
+(global-set-key (kbd "C-c h g") 'helm-google-suggest)
+
+(set-face-attribute 'helm-selection nil 
+                    :background "#0F7D21"
+                    :foreground "#002b36"
+		    :underline  "#0F7D21")
+
+;; Projectile
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
+
+(setq projectile-switch-project-action 'helm-projectile)
+
+;; js2-mode
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
+;; Smartparens mode
+(smartparens-global-mode 1)
