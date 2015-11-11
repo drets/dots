@@ -1,12 +1,38 @@
+(package-initialize)
+
+(require 'flycheck)
+(require 'langtool)
+(require 'powerline)
+(require 'haskell-mode)
+(require 'evil)
+(require 'key-chord)
+(require 'org-bullets)
+(require 'remember)
+(require 'magit)
+(require 'term)
+(require 'expand-region)
+(require 'multiple-cursors)
+(require 'ace-jump-mode)
+(require 'yasnippet)
+(require 'auto-complete)
+(require 'web-mode)
+(require 'restclient)
+(require 'helm)
+(require 'helm-config)
+(require 'projectile)
+(require 'helm-projectile)
+(require 'js2-mode)
+(require 'smartparens)
+(require 'golden-ratio)
+(require 'writegood-mode)
+
 ;; MELPA
-(require 'package)
 (add-to-list 'package-archives
      '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
 ;;(add-to-list 'package-archives
 ;;             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-(package-initialize)
 ;; Set theme
 (load-theme 'solarized t)
 (custom-set-variables
@@ -89,7 +115,6 @@
 (put 'erase-buffer 'disabled nil)
 
 ;; Langtool
-(require 'langtool)
 (setq langtool-language-tool-jar "~/lib/emacs/languagetool/languagetool-commandline.jar")
 
 (global-set-key "\C-x4w" 'langtool-check)
@@ -102,8 +127,6 @@
 (setq tramp-default-method "ssh")
 
 ;; Powerline
-(add-to-list 'load-path "~/lib/emacs/powerline")
-(require 'powerline)
 (powerline-default-theme)
 
 ;; Set font type and size
@@ -119,14 +142,9 @@
       (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
 (global-set-key "\C-xO" 'kill-other-buffers)
 
-;; Haskell mode
-(require 'haskell-mode)
-
 ;; Evil mode
-(require 'evil)
 (evil-mode 1)
 
-(require 'key-chord)
 (key-chord-mode 1)
 (key-chord-define-global "ii" 'evil-normal-state)
 
@@ -202,38 +220,29 @@
    (emacs-lisp . nil)
    ))
 
-(require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-
-(deftheme org-beautify-theme "Sub-theme to beautify org mode")
 
 (find-file "~/org/today.org")
 
 ;; Remember mode
-(require 'remember)
-
 (define-key global-map (kbd "<f9> r") 'remember)
 (define-key global-map (kbd "<f9> R") 'remember-region)
 
 (setq remember-data-file "~/org/notes.org")
 
 ;; Magit mode
-(require 'magit)
 (global-set-key "\C-xg" 'magit-status)
 
 ;; Expand-region mode
-(require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; Multiple-cursors mode
-(require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;; Ace Jump Mode
-(require 'ace-jump-mode)
 (autoload
   'ace-jump-mode
   "ace-jump-mode"
@@ -251,7 +260,6 @@
 (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
 
 ;; Yasnippet mode
-(require 'yasnippet)
 (yas-global-mode 1)
 (define-key yas-minor-mode-map (kbd "<tab>") nil)
 (define-key yas-minor-mode-map (kbd "TAB") nil)
@@ -261,17 +269,12 @@
 (ac-config-default)
 
 ;; Web mode
-(require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.react.js\\'" . web-mode))
-
-;; REST client mode
-(require 'restclient)
 
 ;; Flycheck mode
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; Ansi-term customisation
-(require 'term)
 (defun visit-ansi-term ()
   "If the current buffer is:
      1) a running ansi-term named *ansi-term*, rename it.
@@ -301,9 +304,6 @@
 (global-set-key "\C-xt" 'visit-ansi-term)
 
 ;; Helm
-(require 'helm)
-(require 'helm-config)
-
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
 ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
 ;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
@@ -372,3 +372,9 @@
 
 ;; Smartparens mode
 (smartparens-global-mode 1)
+
+;; Golden ratio
+(golden-ratio-mode 1)
+
+;; Writegood mode
+(global-set-key "\C-cg" 'writegood-mode)
