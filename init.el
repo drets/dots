@@ -25,6 +25,8 @@
 (require 'smartparens)
 (require 'golden-ratio)
 (require 'writegood-mode)
+(require 'google-translate)
+(require 'google-translate-smooth-ui)
 
 ;; MELPA
 (add-to-list 'package-archives
@@ -378,3 +380,8 @@
 
 ;; Writegood mode
 (global-set-key "\C-cg" 'writegood-mode)
+
+;; Google translate
+(global-set-key "\C-ct" 'google-translate-smooth-translate)
+(setq google-translate-translation-directions-alist
+      '(("en" . "uk") ("uk" . "en")))
