@@ -35,10 +35,17 @@
 ;;(add-to-list 'package-archives
 ;;             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
+;; Re-bind help
+(global-set-key "\M-?" 'help-command)
+(global-set-key "\C-h" 'delete-backward-char)
+
 ;; Set theme
 (load-theme 'solarized t)
 (custom-set-variables
- ;; Your init file should contain only one such instance
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(frame-background-mode (\` dark)))
 (enable-theme 'solarized)
 
@@ -57,7 +64,10 @@
 
 ;; Set cursor color to dark green
 (custom-set-faces
- ;; Your init file should contain only one such instance
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(cursor ((t (:background "#0F7D21" :foreground "#002b36")))))
 
 ;; Bind mac keys
@@ -115,6 +125,7 @@
 
 ;; Clear buffer
 (put 'erase-buffer 'disabled nil)
+(global-set-key "\C-xn" 'erase-buffer)
 
 ;; Langtool
 (setq langtool-language-tool-jar "~/lib/emacs/languagetool/languagetool-commandline.jar")
@@ -219,7 +230,6 @@
    (js . t)
    (haskell . t)
    (sh . t)
-   (emacs-lisp . nil)
    ))
 
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
@@ -351,7 +361,7 @@
 
 (setq helm-apropos-fuzzy-match t)
 
-(global-set-key (kbd "C-h SPC") 'helm-all-mark-rings)
+(global-set-key (kbd "C-c h SPC") 'helm-all-mark-rings)
 
 (global-set-key (kbd "C-c h x") 'helm-register)
 
@@ -384,4 +394,4 @@
 ;; Google translate
 (global-set-key "\C-ct" 'google-translate-smooth-translate)
 (setq google-translate-translation-directions-alist
-      '(("en" . "uk") ("uk" . "en")))
+      '(("en" . "ru") ("ru" . "en")))
