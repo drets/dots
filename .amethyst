@@ -1,8 +1,0 @@
-{
-  "enables-layout-hud": false,
-  "layouts": [
-      "tall",
-      "wide",
-      "fullscreen",
-  ],
-}
