@@ -154,7 +154,7 @@ values."
    ;; `right-then-bottom'. right-then-bottom tries to display the frame to the
    ;; right; if there is insufficient space it displays it at the bottom.
    ;; (default 'bottom)
-   dotspacemacs-which-key-position 'bottom
+   dotspacemacs-which-key-position 'right-then-bottom
    ;; If non nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
    ;; nil to boost the loading time. (default t)
@@ -168,7 +168,7 @@ values."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -244,6 +244,23 @@ layers configuration. You are free to put any user code."
   ;; Key chord
   (key-chord-mode 1)
   (key-chord-define-global "ii" 'evil-normal-state)
+
+  (defun my-office-code-style ()
+    (interactive)
+    (message "Office code style!")
+    (setq indent-tabs-mode t) ; use tab instead of space
+    (setq-default tab-width 4)
+    )
+
+  (defun my-personal-code-style ()
+    (interactive)
+    (message "Indentation set to two")
+    (setq indent-tabs-mode nil) ; use space instead of tab
+    )
+
+  (my-personal-code-style)
+
+  (global-company-mode)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
