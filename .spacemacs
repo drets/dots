@@ -37,6 +37,7 @@ values."
      org
      osx
      python
+     pdf
      ranger
      restclient
      search-engine
@@ -143,7 +144,7 @@ values."
    dotspacemacs-helm-no-header nil
    ;; define the position to display `helm', options are `bottom', `top',
    ;; `left', or `right'. (default 'bottom)
-   dotspacemacs-helm-position 'bottom
+   dotspacemacs-helm-position 'top
    ;; If non nil the paste micro-state is enabled. When enabled pressing `p`
    ;; several times cycle between the kill ring content. (default nil)
    dotspacemacs-enable-paste-micro-state nil
@@ -168,7 +169,7 @@ values."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup t
+   dotspacemacs-maximized-at-startup nil
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -251,14 +252,6 @@ layers configuration. You are free to put any user code."
     (setq indent-tabs-mode t) ; use tab instead of space
     (setq-default tab-width 4)
     )
-
-  (defun my-personal-code-style ()
-    (interactive)
-    (message "Indentation set to two")
-    (setq indent-tabs-mode nil) ; use space instead of tab
-    )
-
-  (my-personal-code-style)
 
   (global-company-mode)
 )
