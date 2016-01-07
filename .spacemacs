@@ -23,7 +23,6 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     (shell :variables shell-default-shell 'eshell)
      auto-completion
      better-defaults
      emacs-lisp
@@ -236,6 +235,8 @@ user code."
   (define-key global-map (kbd "<f9> R") 'remember-region)
 
   (setq remember-data-file "~/org/notes.org")
+
+  (define-key global-map "\C-xb" 'helm-buffers-list)
 )
 
 (defun dotspacemacs/user-config ()
