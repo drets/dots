@@ -27,7 +27,6 @@ values."
      better-defaults
      emacs-lisp
      emoji
-     gtags
      git
      gtags
      haskell
@@ -36,8 +35,9 @@ values."
      markdown
      org
      osx
-     python
      pdf
+     php
+     python
      ranger
      restclient
      search-engine
@@ -253,7 +253,19 @@ layers configuration. You are free to put any user code."
     (message "Office code style!")
     (setq indent-tabs-mode t) ; use tab instead of space
     (setq-default tab-width 4)
-    )
+  )
+
+  (defun my-setup-develop-environment ()
+    (interactive)
+    (let ((proj-dir (file-name-directory (buffer-file-name))))
+      (if (string-match-p "wikia/app" proj-dir)
+          (my-office-code-style))))
+
+  (add-hook 'prog-mode-hook 'my-setup-develop-environment)
+
+  ;; Disable smartparens highlighting
+  (with-eval-after-load 'smartparens
+    (show-smartparens-global-mode -1))
 
   (global-company-mode)
 )
