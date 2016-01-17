@@ -27,7 +27,10 @@ values."
      better-defaults
      emacs-lisp
      emoji
+     elixir
+     eyebrowse
      git
+     github
      gtags
      haskell
      html
@@ -43,6 +46,7 @@ values."
      search-engine
      semantic
      shell
+     speed-reading
      spell-checking
      syntax-checking
      themes-megapack
