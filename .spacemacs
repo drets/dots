@@ -34,6 +34,7 @@ values."
      gtags
      haskell
      html
+     java
      javascript
      markdown
      org
@@ -45,7 +46,7 @@ values."
      restclient
      search-engine
      semantic
-     shell
+     (shell :variables shell-default-shell 'eshell)
      speed-reading
      spell-checking
      syntax-checking
@@ -272,6 +273,9 @@ layers configuration. You are free to put any user code."
     (show-smartparens-global-mode -1))
 
   (global-company-mode)
+
+  ;; Fix org html exporting
+  (org-reload)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
