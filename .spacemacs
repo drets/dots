@@ -32,7 +32,7 @@ values."
      git
      github
      gtags
-     haskell
+     (haskell :variables haskell-enable-hindent-style "gibiansky")
      html
      java
      javascript
@@ -263,7 +263,8 @@ layers configuration. You are free to put any user code."
   (defun my-setup-develop-environment ()
     (interactive)
     (let ((proj-dir (file-name-directory (buffer-file-name))))
-      (if (string-match-p "wikia/app" proj-dir)
+      (if (or (string-match-p "wikia/app" proj-dir)
+              (string-match-p "wikia/mercury" proj-dir))
           (my-office-code-style))))
 
   (add-hook 'prog-mode-hook 'my-setup-develop-environment)
@@ -273,6 +274,8 @@ layers configuration. You are free to put any user code."
     (show-smartparens-global-mode -1))
 
   (global-company-mode)
+
+  (global-linum-mode t)
 
   ;; Fix org html exporting
   (org-reload)
