@@ -25,6 +25,7 @@ values."
      ;; ----------------------------------------------------------------
      auto-completion
      better-defaults
+     c-c++
      emacs-lisp
      emoji
      elixir
@@ -213,6 +214,30 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
+  (defun top-join-line ()
+    "Join the current line with the line beneath it"
+    (interactive)
+    (delete-indentation 1))
+
+  (defun my-office-code-style ()
+    (interactive)
+    (message "Office code style!")
+    (setq indent-tabs-mode t) ; use tab instead of space
+    (setq-default tab-width 4)
+    )
+
+  (defun my-setup-develop-environment ()
+    (interactive)
+    (let ((proj-dir (file-name-directory (buffer-file-name))))
+      (if (or (string-match-p "wikia/app" proj-dir)
+              (string-match-p "wikia/mercury" proj-dir))
+          (my-office-code-style))))
+)
+
+(defun dotspacemacs/user-config ()
+  "Configuration function for user code.
+ This function is called at the very end of Spacemacs initialization after
+layers configuration. You are free to put any user code."
   (setq-default
    ;; Miscellaneous
    ring-bell-function 'ignore
@@ -225,47 +250,34 @@ user code."
    org-refile-use-outline-path 'file
    org-refile-targets '((org-agenda-files :level . 1))
    org-confirm-babel-evaluate
+
    )
 
-   (org-babel-do-load-languages
-    'org-babel-load-languages
-    '((python . t)
-      (js . t)
-      (haskell . t)
-      (sh . t)
-      ))
+  (setq remember-data-file "~/org/notes.org")
+
+  ;; Fix org html exporting
+  (org-reload)
+
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((python . t)
+     (js . t)
+     (haskell . t)
+     (sh . t)
+     ))
 
   ;; Remember mode
   (define-key global-map (kbd "<f9> r") 'remember)
   (define-key global-map (kbd "<f9> R") 'remember-region)
 
-  (setq remember-data-file "~/org/notes.org")
-
   (define-key global-map "\C-xb" 'helm-buffers-list)
-)
-
-(defun dotspacemacs/user-config ()
-  "Configuration function for user code.
- This function is called at the very end of Spacemacs initialization after
-layers configuration. You are free to put any user code."
 
   ;; Key chord
   (key-chord-mode 1)
+
   (key-chord-define-global "ii" 'evil-normal-state)
 
-  (defun my-office-code-style ()
-    (interactive)
-    (message "Office code style!")
-    (setq indent-tabs-mode t) ; use tab instead of space
-    (setq-default tab-width 4)
-  )
-
-  (defun my-setup-develop-environment ()
-    (interactive)
-    (let ((proj-dir (file-name-directory (buffer-file-name))))
-      (if (or (string-match-p "wikia/app" proj-dir)
-              (string-match-p "wikia/mercury" proj-dir))
-          (my-office-code-style))))
+  (define-key global-map "\C-xp" 'top-join-line)
 
   (add-hook 'prog-mode-hook 'my-setup-develop-environment)
 
@@ -276,9 +288,6 @@ layers configuration. You are free to put any user code."
   (global-company-mode)
 
   (global-linum-mode t)
-
-  ;; Fix org html exporting
-  (org-reload)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
