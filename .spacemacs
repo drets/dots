@@ -288,6 +288,11 @@ layers configuration. You are free to put any user code."
   (global-company-mode)
 
   (global-linum-mode t)
+
+  (add-hook 'haskell-mode-hook
+            (lambda ()
+              (local-set-key (kbd "C-x f") 'hindent-reformat-region)
+              (haskell-doc-mode 1)))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
