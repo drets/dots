@@ -101,12 +101,7 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(monokai
-                         spacemacs-dark
-                         spacemacs-light
-                         solarized-light
-                         solarized-dark
-                         leuven
-                         zenburn)
+                         default)
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
@@ -293,6 +288,11 @@ layers configuration. You are free to put any user code."
             (lambda ()
               (local-set-key (kbd "C-x f") 'hindent-reformat-region)
               (haskell-doc-mode 1)))
+
+  ;; indentation for switch
+  (c-set-offset 'case-label '+)
+
+  (setq create-lockfiles nil)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
