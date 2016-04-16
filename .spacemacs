@@ -48,6 +48,7 @@ values."
      search-engine
      semantic
      (shell :variables shell-default-shell 'eshell)
+     (shell :variables shell-enable-smart-eshell t)
      speed-reading
      spell-checking
      syntax-checking
@@ -59,10 +60,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages
-   '(
-     key-chord
-    )
+   dotspacemacs-additional-packages '(key-chord)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -163,10 +161,10 @@ values."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup nil
+   dotspacemacs-fullscreen-at-startup t
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
-   dotspacemacs-fullscreen-use-non-native nil
+   dotspacemacs-fullscreen-use-non-native t
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
@@ -198,7 +196,7 @@ values."
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `ag', `pt', `ack' and `grep'.
    ;; (default '("ag" "pt" "ack" "grep"))
-   dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
+   dotspacemacs-search-tools '("grep")
    ;; The default package repository used if no explicit repository has been
    ;; specified with an installed package.
    ;; Not used for now. (default nil)
@@ -209,6 +207,12 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
+  )
+
+(defun dotspacemacs/user-config ()
+  "Configuration function for user code.
+ This function is called at the very end of Spacemacs initialization after
+layers configuration. You are free to put any user code."
   (defun top-join-line ()
     "Join the current line with the line beneath it"
     (interactive)
@@ -216,10 +220,8 @@ user code."
 
   (defun my-office-code-style ()
     (interactive)
-    (message "Office code style!")
     (setq indent-tabs-mode t) ; use tab instead of space
-    (setq-default tab-width 4)
-    )
+    (setq-default tab-width 4))
 
   (defun my-setup-develop-environment ()
     (interactive)
@@ -227,12 +229,7 @@ user code."
       (if (or (string-match-p "wikia/app" proj-dir)
               (string-match-p "wikia/mercury" proj-dir))
           (my-office-code-style))))
-)
 
-(defun dotspacemacs/user-config ()
-  "Configuration function for user code.
- This function is called at the very end of Spacemacs initialization after
-layers configuration. You are free to put any user code."
   (setq-default
    ;; Miscellaneous
    ring-bell-function 'ignore
@@ -244,8 +241,7 @@ layers configuration. You are free to put any user code."
    org-agenda-files (file-expand-wildcards "~/org/*.org")
    org-refile-use-outline-path 'file
    org-refile-targets '((org-agenda-files :level . 1))
-   org-confirm-babel-evaluate
-
+   org-confirm-babel-evaluate 
    )
 
   (setq remember-data-file "~/org/notes.org")
@@ -270,7 +266,7 @@ layers configuration. You are free to put any user code."
   ;; Key chord
   (key-chord-mode 1)
 
-  (key-chord-define-global "ii" 'evil-normal-state)
+  (key-chord-define-global "jk" 'evil-normal-state)
 
   (define-key global-map "\C-xp" 'top-join-line)
 
@@ -289,7 +285,7 @@ layers configuration. You are free to put any user code."
               (local-set-key (kbd "C-x f") 'hindent-reformat-region)
               (haskell-doc-mode 1)))
 
-  ;; indentation for switch
+  ;; indentation for switch in C
   (c-set-offset 'case-label '+)
 
   (setq create-lockfiles nil)
