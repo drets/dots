@@ -55,7 +55,7 @@ values."
      themes-megapack
      unimpaired
      yaml
-    )
+     )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
@@ -230,6 +230,17 @@ layers configuration. You are free to put any user code."
               (string-match-p "wikia/mercury" proj-dir))
           (my-office-code-style))))
 
+  (defun sync-wikia-app ()
+    (interactive)
+    (save-some-buffers t)
+    (let ((default-directory "/Users/wikia/wikia/app/")
+          (devbox-path "dev-dmytror:/usr/wikia/source/wiki"))
+      (call-process-shell-command
+       (format "rsync -avz --exclude-from=%s --exclude=.git %s %s" (expand-file-name ".gitignore") default-directory devbox-path)
+       nil
+       0)))
+
+
   (setq-default
    ;; Miscellaneous
    ring-bell-function 'ignore
@@ -241,8 +252,7 @@ layers configuration. You are free to put any user code."
    org-agenda-files (file-expand-wildcards "~/org/*.org")
    org-refile-use-outline-path 'file
    org-refile-targets '((org-agenda-files :level . 1))
-   org-confirm-babel-evaluate 
-   )
+   org-confirm-babel-evaluate)
 
   (setq remember-data-file "~/org/notes.org")
 
@@ -270,7 +280,13 @@ layers configuration. You are free to put any user code."
 
   (define-key global-map "\C-xp" 'top-join-line)
 
+  ;; Rsync
+  (key-chord-define-global "qp" 'sync-wikia-app)
+
   (add-hook 'prog-mode-hook 'my-setup-develop-environment)
+  (add-hook 'prog-mode-hook
+            (lambda ()
+              (which-function-mode 1)))
 
   ;; Disable smartparens highlighting
   (with-eval-after-load 'smartparens
@@ -278,18 +294,15 @@ layers configuration. You are free to put any user code."
 
   (global-company-mode)
 
-  (global-linum-mode t)
-
   (add-hook 'haskell-mode-hook
             (lambda ()
               (local-set-key (kbd "C-x f") 'hindent-reformat-region)
               (haskell-doc-mode 1)))
 
-  ;; indentation for switch in C
-  (c-set-offset 'case-label '+)
-
   (setq create-lockfiles nil)
-)
+
+  (spacemacs-centered-buffer-mode 1)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
