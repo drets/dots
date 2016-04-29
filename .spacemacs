@@ -33,7 +33,7 @@ values."
      git
      github
      gtags
-     (haskell :variables haskell-enable-hindent-style "gibiansky")
+     (haskell :variables haskell-enable-hindent-style "cramer")
      html
      java
      javascript
@@ -286,7 +286,9 @@ layers configuration. You are free to put any user code."
   (add-hook 'prog-mode-hook 'my-setup-develop-environment)
   (add-hook 'prog-mode-hook
             (lambda ()
-              (which-function-mode 1)))
+              (which-function-mode 1)
+              (local-set-key (kbd "C-x y") 'sort-lines)
+              ()))
 
   ;; Disable smartparens highlighting
   (with-eval-after-load 'smartparens
