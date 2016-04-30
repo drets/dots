@@ -83,18 +83,6 @@
 (defun dotspacemacs/user-init ())
 
 (defun dotspacemacs/user-config ()
-  (defun my-office-code-style ()
-    (interactive)
-    (setq indent-tabs-mode t) ; use tab instead of space
-    (setq-default tab-width 4))
-
-  (defun my-setup-develop-environment ()
-    (interactive)
-    (let ((proj-dir (file-name-directory (buffer-file-name))))
-      (if (or (string-match-p "wikia/app" proj-dir)
-              (string-match-p "wikia/mercury" proj-dir))
-          (my-office-code-style))))
-
   (defun sync-wikia-app ()
     (interactive)
     (save-some-buffers t)
@@ -141,7 +129,6 @@
   ;; Rsync wikia app
   (key-chord-define-global "qp" 'sync-wikia-app)
 
-  (add-hook 'prog-mode-hook 'my-setup-develop-environment)
   (add-hook 'prog-mode-hook
             (lambda ()
               (which-function-mode 1)
