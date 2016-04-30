@@ -20,7 +20,6 @@
      markdown
      org
      osx
-     pdf
      php
      python
      ranger
