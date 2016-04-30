@@ -213,11 +213,6 @@ user code."
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  (defun top-join-line ()
-    "Join the current line with the line beneath it"
-    (interactive)
-    (delete-indentation 1))
-
   (defun my-office-code-style ()
     (interactive)
     (setq indent-tabs-mode t) ; use tab instead of space
@@ -277,8 +272,6 @@ layers configuration. You are free to put any user code."
   (key-chord-mode 1)
 
   (key-chord-define-global "jk" 'evil-normal-state)
-
-  (define-key global-map "\C-xp" 'top-join-line)
 
   ;; Rsync
   (key-chord-define-global "qp" 'sync-wikia-app)
