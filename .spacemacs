@@ -304,6 +304,8 @@ layers configuration. You are free to put any user code."
   (setq create-lockfiles nil)
 
   (spacemacs-centered-buffer-mode 1)
+
+  (setq haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--test"))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
