@@ -26,8 +26,10 @@
      restclient
      search-engine
      semantic
-     (shell :variables shell-default-shell 'eshell)
-     (shell :variables shell-enable-smart-eshell t)
+     (shell :variables
+            shell-default-position 'full
+            shell-default-shell 'eshell
+            shell-enable-smart-eshell t)
      speed-reading
      spell-checking
      syntax-checking
