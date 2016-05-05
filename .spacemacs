@@ -120,10 +120,6 @@
   ;; Rsync wikia app
   (key-chord-define-global "qp" 'sync-wikia-app)
 
-  (add-hook 'prog-mode-hook
-            (lambda ()
-              ((which-function-mode 1))))
-
   ;; Disable smartparens highlighting
   (with-eval-after-load 'smartparens
     (show-smartparens-global-mode -1))
