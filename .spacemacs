@@ -22,7 +22,6 @@
      osx
      php
      python
-     ranger
      restclient
      search-engine
      semantic
@@ -46,7 +45,7 @@
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner nil
    dotspacemacs-startup-lists '(recents projects)
-   dotspacemacs-themes '(monokai default)
+   dotspacemacs-themes '(monokai default spacemacs-dark spacemacs-light)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"
                                :size 14
@@ -96,15 +95,12 @@
 
   (setq-default
    ring-bell-function 'ignore
-   ranger-override-dired t
 
    ;; Org mode
    org-agenda-files (file-expand-wildcards "~/org/*.org")
    org-refile-use-outline-path 'file
    org-refile-targets '((org-agenda-files :level . 1))
    org-confirm-babel-evaluate)
-
-  (setq remember-data-file "~/org/notes.org")
 
   ;; fix org html exporting
   (org-reload)
@@ -116,12 +112,6 @@
      (haskell . t)
      (sh . t)))
 
-  ;; Remember mode
-  (define-key global-map (kbd "<f9> r") 'remember)
-  (define-key global-map (kbd "<f9> R") 'remember-region)
-
-  (define-key global-map "\C-xb" 'helm-buffers-list)
-
   ;; Key chord
   (key-chord-mode 1)
 
@@ -132,9 +122,7 @@
 
   (add-hook 'prog-mode-hook
             (lambda ()
-              (which-function-mode 1)
-              (local-set-key (kbd "C-x y") 'sort-lines)
-              ()))
+              ((which-function-mode 1))))
 
   ;; Disable smartparens highlighting
   (with-eval-after-load 'smartparens
@@ -144,7 +132,7 @@
 
   (add-hook 'haskell-mode-hook
             (lambda ()
-              (local-set-key (kbd "C-x f") 'hindent-reformat-region)
+              (local-set-key (kbd "C-x p") 'hindent-reformat-region)
               (haskell-doc-mode 1)))
 
   (setq create-lockfiles nil)
