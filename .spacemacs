@@ -44,7 +44,7 @@
    dotspacemacs-editing-style 'vim
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner nil
-   dotspacemacs-startup-lists '(recents projects)
+   dotspacemacs-startup-lists '(bookmarks recents projects)
    dotspacemacs-themes '(monokai default spacemacs-dark spacemacs-light)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"
@@ -136,6 +136,10 @@
   (spacemacs-centered-buffer-mode 1)
 
   (setq haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--test"))
+
+  (add-hook 'js-mode-hook
+            (lambda ()
+              (setq flycheck-checker 'javascript-jshint)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
