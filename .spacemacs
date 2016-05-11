@@ -35,7 +35,9 @@
      themes-megapack
      unimpaired
      yaml)
-   dotspacemacs-additional-packages '(key-chord)
+   dotspacemacs-additional-packages
+   '(key-chord
+     evil-vimish-fold)
    dotspacemacs-excluded-packages '()
    dotspacemacs-delete-orphan-packages t))
 
@@ -45,7 +47,7 @@
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner nil
    dotspacemacs-startup-lists '(bookmarks recents projects)
-   dotspacemacs-themes '(monokai default spacemacs-dark spacemacs-light)
+   dotspacemacs-themes '(spacemacs-dark spacemacs-light monokai default)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"
                                :size 14
@@ -59,7 +61,7 @@
    dotspacemacs-command-key ":"
    dotspacemacs-remap-Y-to-y$ t
    dotspacemacs-auto-save-file-location nil
-   dotspacemacs-use-ido nil
+   dotspacemacs-use-ido t
    dotspacemacs-helm-resize nil
    dotspacemacs-helm-no-header nil
    dotspacemacs-helm-position 'top
@@ -95,6 +97,8 @@
 
   (setq-default
    ring-bell-function 'ignore
+
+   indent-tabs-mode nil
 
    ;; Org mode
    org-agenda-files (file-expand-wildcards "~/org/*.org")
@@ -140,6 +144,15 @@
   (add-hook 'js-mode-hook
             (lambda ()
               (setq flycheck-checker 'javascript-jshint)))
+
+  (add-hook 'prog-mode-hook
+            (lambda ()
+              (local-set-key (kbd "C-x g") 'helm-projectile-grep)))
+
+  (evil-vimish-fold-mode 1)
+
+  (global-set-key (kbd "s-i") 'evil-jump-forward)
+  (global-set-key (kbd "s-o") 'evil-jump-backward)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
