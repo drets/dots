@@ -38,7 +38,8 @@
    dotspacemacs-additional-packages
    '(key-chord
      evil-vimish-fold)
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages
+   '(smartparens)
    dotspacemacs-delete-orphan-packages t))
 
 (defun dotspacemacs/init ()
@@ -106,9 +107,6 @@
    org-refile-targets '((org-agenda-files :level . 1))
    org-confirm-babel-evaluate)
 
-  ;; fix org html exporting
-  (org-reload)
-
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((python . t)
@@ -123,10 +121,6 @@
 
   ;; Rsync wikia app
   (key-chord-define-global "qp" 'sync-wikia-app)
-
-  ;; Disable smartparens highlighting
-  (with-eval-after-load 'smartparens
-    (show-smartparens-global-mode -1))
 
   (global-company-mode)
 
