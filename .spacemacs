@@ -36,8 +36,7 @@
      unimpaired
      yaml)
    dotspacemacs-additional-packages
-   '(key-chord
-     evil-vimish-fold)
+   '(key-chord)
    dotspacemacs-excluded-packages
    '(smartparens)
    dotspacemacs-delete-orphan-packages t))
@@ -142,8 +141,6 @@
   (add-hook 'prog-mode-hook
             (lambda ()
               (local-set-key (kbd "C-x g") 'helm-projectile-grep)))
-
-  (evil-vimish-fold-mode 1)
 
   (global-set-key (kbd "s-i") 'evil-jump-forward)
   (global-set-key (kbd "s-o") 'evil-jump-backward)
