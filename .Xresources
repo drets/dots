@@ -1,0 +1,11 @@
+urxvt.loginShell:         true
+urxvt.saveLines:         65535
+urxvt.urgentOnBell:       true
+
+urxvt.scrollBar:         false
+urxvt.scrollTtyOutput:   false
+urxvt.scrollTtyKeypress:  true
+urxvt.secondaryScroll:    true
+urxvt.iso14755: False
+
+URxvt.font: xft:Terminus:normal:size=12

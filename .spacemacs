@@ -9,7 +9,6 @@
      emacs-lisp
      emoji
      elixir
-     eyebrowse
      git
      github
      gtags
@@ -18,8 +17,9 @@
      java
      javascript
      markdown
+     lua
+     nixos
      org
-     osx
      php
      python
      restclient
@@ -29,7 +29,6 @@
             shell-default-position 'full
             shell-default-shell 'eshell
             shell-enable-smart-eshell t)
-     speed-reading
      spell-checking
      syntax-checking
      themes-megapack
@@ -50,7 +49,7 @@
    dotspacemacs-themes '(zenburn flatui spacemacs-dark spacemacs-light monokai default)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 14
+                               :size 18
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -69,8 +68,8 @@
    dotspacemacs-which-key-delay 0.4
    dotspacemacs-which-key-position 'right-then-bottom
    dotspacemacs-loading-progress-bar t
-   dotspacemacs-fullscreen-at-startup t
-   dotspacemacs-fullscreen-use-non-native t
+   dotspacemacs-fullscreen-at-startup nil
+   dotspacemacs-fullscreen-use-non-native nil
    dotspacemacs-maximized-at-startup nil
    dotspacemacs-active-transparency 90
    dotspacemacs-inactive-transparency 90
@@ -88,7 +87,7 @@
   (defun sync-wikia-app ()
     (interactive)
     (save-some-buffers t)
-    (let ((default-directory "/Users/wikia/wikia/app/")
+    (let ((default-directory "/Users/wikia/wikia/app/") // TODO change path
           (devbox-path "dev-dmytror:/usr/wikia/source/wiki"))
       (call-process-shell-command
        (format "rsync -avz --exclude-from=%s --exclude=.git %s %s" (expand-file-name ".gitignore") default-directory devbox-path)
@@ -130,8 +129,6 @@
 
   (setq create-lockfiles nil)
 
-  (spacemacs-centered-buffer-mode 1)
-
   (setq haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--test"))
 
   (add-hook 'js-mode-hook
@@ -142,8 +139,8 @@
             (lambda ()
               (local-set-key (kbd "C-x g") 'helm-projectile-grep)))
 
-  (global-set-key (kbd "s-i") 'evil-jump-forward)
-  (global-set-key (kbd "s-o") 'evil-jump-backward)
+  (defun copy-nix ()
+    (copy-file "/etc/nixos/configuration.nix" "/home/drets/src/dots"))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

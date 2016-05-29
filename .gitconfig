@@ -1,0 +1,10 @@
+[user]
+	name = Dmytro Rets
+	email = dmitryrets@gmail.com
+	signingkey = 5F90650A
+
+[gpg]
+	program = gpg2
+
+[push]
+	gpgSign = if-asked
