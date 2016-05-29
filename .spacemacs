@@ -87,7 +87,7 @@
   (defun sync-wikia-app ()
     (interactive)
     (save-some-buffers t)
-    (let ((default-directory "/Users/wikia/wikia/app/") // TODO change path
+    (let ((default-directory "/home/drets/src/wikia/app/")
           (devbox-path "dev-dmytror:/usr/wikia/source/wiki"))
       (call-process-shell-command
        (format "rsync -avz --exclude-from=%s --exclude=.git %s %s" (expand-file-name ".gitignore") default-directory devbox-path)
@@ -140,7 +140,7 @@
               (local-set-key (kbd "C-x g") 'helm-projectile-grep)))
 
   (defun copy-nix ()
-    (copy-file "/etc/nixos/configuration.nix" "/home/drets/src/dots"))
+    (copy-file "/etc/nixos/configuration.nix" "/home/drets/src/dots" t))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

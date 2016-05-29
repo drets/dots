@@ -10,6 +10,7 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+local battery = require("battery")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -39,11 +40,13 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("/nix/store/0ffmk4584axz0vwqi4xidr3zxhm2sj5k-awesome-3.5.9/share/awesome/themes/default/theme.lua")
+beautiful.wallpaper = "/home/drets/.background/cat.jpg"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
-editor = os.getenv("EDITOR") or "nano"
+editor = os.getenv("EDITOR") or "emacs"
 editor_cmd = terminal .. " -e " .. editor
+geditor = "emacs"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -190,6 +193,8 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
+
+    right_layout:add(battery.get_widget(wibox, "BAT0"))
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
@@ -271,8 +276,15 @@ globalkeys = awful.util.table.join(
                   awful.util.getdir("cache") .. "/history_eval")
               end),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end)
+    awful.key({ modkey }, "p", function() menubar.show() end),
+
+    -- Screen saver
+    awful.key({ modkey, "Control" }, "l", function () awful.util.spawn("xscreensaver-command -lock") end)
 )
+
+--- Autostart {{{
+awful.util.spawn_with_shell("xscreensaver")
+--- }}}
 
 clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
