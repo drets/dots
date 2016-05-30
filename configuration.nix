@@ -145,6 +145,7 @@
 
   programs.kbdlight.enable = true;
 
+  environment.pathsToLink = [ "/share" ];
   environment.systemPackages = with pkgs; [
     aspell
     aspellDicts.en
@@ -162,6 +163,8 @@
     google-chrome
     haskellPackages.ghc-mod
     htop
+    kde4.gwenview
+    kde4.kde_baseapps
     keepassx
     man-pages
     nix-repl
@@ -169,9 +172,11 @@
     nodejs
     openvpn
     p7zip
-    python
     phantomjs
+    python
     rxvt_unicode
+    scrot
+    shared_mime_info
     skype
     stack
     unzip
