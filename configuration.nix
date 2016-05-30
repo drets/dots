@@ -34,8 +34,34 @@
     preLVM = true;
   }];
 
-  networking.wireless.enable = true;
-  networking.hostName = "MBP";
+  networking = {
+    hostName = "MBP";
+
+    useDHCP = false;
+    wicd.enable = true;
+    wireless.enable = false;
+  };
+
+  services.dnsmasq = {
+    enable = true;
+
+    # These are used in addition to resolv.conf
+    servers = [ "8.8.8.8" "8.8.4.4" ];
+
+    extraConfig = ''
+      listen-address=127.0.0.1
+      cache-size=1000
+
+      no-negcache
+    '';
+  };
+
+  # Put the text in /etc/resolv.conf.head
+  #
+  # That will prepend dnsmasq server to /etc/resolv.conf (dhcpcd-specific)
+  environment.etc."resolv.conf.head".text = ''
+    nameserver 127.0.0.1
+  '';
 
   i18n = {
     consoleFont = "Lat2-Terminus16";
@@ -129,6 +155,7 @@
     ghc
     gimp
     git
+    gnumake
     gnupg
     google-chrome
     haskellPackages.ghc-mod
@@ -136,9 +163,12 @@
     keepassx
     man-pages
     nix-repl
+    nodePackages.jshint
+    nodejs
     openvpn
     p7zip
     python
+    phantomjs
     rxvt_unicode
     skype
     stack

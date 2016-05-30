@@ -49,7 +49,7 @@
    dotspacemacs-themes '(zenburn flatui spacemacs-dark spacemacs-light monokai default)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 18
+                               :size 20
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)

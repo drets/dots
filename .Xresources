@@ -9,3 +9,5 @@ urxvt.secondaryScroll:    true
 urxvt.iso14755: False
 
 URxvt.font: xft:Terminus:normal:size=12
+
+Xft.dpi: 150
