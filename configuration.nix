@@ -24,7 +24,7 @@
   boot.loader.gummiboot.enable = true;
   boot.loader.gummiboot.timeout = 0;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelParams = [ "hid_apple.iso_layout=0" ];
+  boot.kernelParams = [ "hid_apple.iso_layout=0" "hid_apple.fnmode=2" ];
 
   nix.useChroot = true;
 
@@ -143,6 +143,8 @@
     '';
   };
 
+  programs.kbdlight.enable = true;
+
   environment.systemPackages = with pkgs; [
     aspell
     aspellDicts.en
@@ -178,6 +180,7 @@
     which
     whois
     xclip
+    xorg.xbacklight
     xscreensaver
     zip
   ];

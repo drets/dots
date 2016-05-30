@@ -279,7 +279,22 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "p", function() menubar.show() end),
 
     -- Screen saver
-    awful.key({ modkey, "Control" }, "l", function () awful.util.spawn("xscreensaver-command -lock") end)
+    awful.key({ }, "XF86PowerOff", function () awful.util.spawn("xscreensaver-command -lock") end),
+
+    -- Apple media keys
+    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 5")                         end),
+    awful.key({ }, "XF86MonBrightnessUp",   function () awful.util.spawn("xbacklight -inc 5")                         end),
+    awful.key({ }, "XF86AudioRaiseVolume",  function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +2%")  end),
+    awful.key({ }, "XF86AudioLowerVolume",  function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -2%")  end),
+    awful.key({ }, "XF86AudioMute",         function () awful.util.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") end),
+    awful.key({ }, "XF86KbdBrightnessDown", function () awful.util.spawn("kbdlight down 5")                           end),
+    awful.key({ }, "XF86KbdBrightnessUp",   function () awful.util.spawn("kbdlight up 5")                             end),
+    awful.key({ }, "XF86AudioPrev",         function ()
+        awful.util.spawn("dbus-send --session --type=method_call --print-reply --dest=org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Prev") end),
+    awful.key({ }, "XF86AudioNext",         function ()
+        awful.util.spawn("dbus-send --session --type=method_call --print-reply --dest=org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next") end),
+    awful.key({ }, "XF86AudioPlay",         function ()
+        awful.util.spawn("dbus-send --session --type=method_call --print-reply --dest=org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause") end)
 )
 
 --- Autostart {{{
