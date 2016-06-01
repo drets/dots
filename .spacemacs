@@ -13,7 +13,6 @@
      github
      gtags
      (haskell :variables haskell-enable-hindent-style "cramer")
-     (haskell :variables haskell-process-type 'stack-ghci)
      html
      java
      javascript

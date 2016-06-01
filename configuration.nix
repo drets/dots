@@ -165,6 +165,11 @@
     gnupg
     google-chrome
     haskellPackages.ghc-mod
+    haskellPackages.hasktags
+    haskellPackages.hlint
+    haskellPackages.hspec-discover
+    haskellPackages.structured-haskell-mode
+    haskellPackages.stylish-haskell
     htop
     kde4.gwenview
     kde4.kde_baseapps
