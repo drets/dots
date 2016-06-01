@@ -13,6 +13,7 @@
      github
      gtags
      (haskell :variables haskell-enable-hindent-style "cramer")
+     (haskell :variables haskell-process-type 'stack-ghci)
      html
      java
      javascript
@@ -37,7 +38,8 @@
    '(key-chord)
    dotspacemacs-excluded-packages
    '(smartparens)
-   dotspacemacs-delete-orphan-packages t))
+   dotspacemacs-delete-orphan-packages t)
+)
 
 (defun dotspacemacs/init ()
   (setq-default
@@ -78,11 +80,15 @@
    dotspacemacs-highlight-delimiters 'all
    dotspacemacs-persistent-server nil
    dotspacemacs-search-tools '("grep")
-   dotspacemacs-default-package-repository nil))
-
-(defun dotspacemacs/user-init ())
+   dotspacemacs-default-package-repository nil)
+)
 
 (defun dotspacemacs/user-config ()
+  (setq-default
+   ring-bell-function 'ignore
+   indent-tabs-mode nil
+   org-agenda-files (file-expand-wildcards "~/org/*.org"))
+
   (defun sync-wikia-app ()
     (interactive)
     (save-some-buffers t)
@@ -93,54 +99,27 @@
        nil
        0)))
 
-  (setq-default
-   ring-bell-function 'ignore
-
-   indent-tabs-mode nil
-
-   ;; Org mode
-   org-agenda-files (file-expand-wildcards "~/org/*.org")
-   org-refile-use-outline-path 'file
-   org-refile-targets '((org-agenda-files :level . 1))
-   org-confirm-babel-evaluate)
-
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((python . t)
-     (js . t)
-     (haskell . t)
-     (sh . t)))
-
-  ;; Key chord
   (key-chord-mode 1)
-
   (key-chord-define-global "jk" 'evil-normal-state)
-
-  ;; Rsync wikia app
   (key-chord-define-global "qp" 'sync-wikia-app)
 
   (global-company-mode)
-
-  (add-hook 'haskell-mode-hook
-            (lambda ()
-              (local-set-key (kbd "C-x p") 'hindent-reformat-region)
-              (haskell-doc-mode 1)))
-
   (setq create-lockfiles nil)
-
-  (setq haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--test" "--nix"))
 
   (add-hook 'js-mode-hook
             (lambda ()
               (setq flycheck-checker 'javascript-jshint)))
 
-  (add-hook 'prog-mode-hook
-            (lambda ()
-              (local-set-key (kbd "C-x g") 'helm-projectile-grep)))
-
   (defun copy-nix ()
     (copy-file "/etc/nixos/configuration.nix" "/home/drets/src/dots" t))
-  )
+
+  (setq company-ghc-show-info t)
+  (setq flycheck-ghc-stack-use-nix t)
+  (setq haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--test" "--nix"))
+  (setq haskell-interactive-popup-errors nil)
+  (setq haskell-process-suggest-remove-import-lines t
+        haskell-process-auto-import-loaded-modules t)
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
