@@ -298,8 +298,10 @@ globalkeys = awful.util.table.join(
 
     -- Move focus to a specific monitor
     awful.key({ modkey }, "F1",     function () awful.screen.focus(1) end),
-    awful.key({ modkey }, "F2",     function () awful.screen.focus(2) end)
+    awful.key({ modkey }, "F2",     function () awful.screen.focus(2) end),
 
+    -- Take screenshot
+    awful.key({ }, "XF86LaunchA", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'") end)
 )
 
 --- Autostart {{{
