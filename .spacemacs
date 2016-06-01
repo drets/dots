@@ -26,7 +26,6 @@
      search-engine
      semantic
      (shell :variables
-            shell-default-position 'full
             shell-default-shell 'eshell
             shell-enable-smart-eshell t)
      spell-checking
@@ -49,7 +48,7 @@
    dotspacemacs-themes '(zenburn flatui spacemacs-dark spacemacs-light monokai default)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 20
+                               :size 22
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -129,7 +128,7 @@
 
   (setq create-lockfiles nil)
 
-  (setq haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--test"))
+  (setq haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--test" "--nix"))
 
   (add-hook 'js-mode-hook
             (lambda ()
