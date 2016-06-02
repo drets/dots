@@ -187,6 +187,7 @@
     shared_mime_info
     skype
     stack
+    thunderbird
     unzip
     vlc
     wget
