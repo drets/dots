@@ -282,8 +282,8 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86PowerOff", function () awful.util.spawn("xscreensaver-command -lock") end),
 
     -- Apple media keys
-    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 5")                         end),
-    awful.key({ }, "XF86MonBrightnessUp",   function () awful.util.spawn("xbacklight -inc 5")                         end),
+    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 3")                         end),
+    awful.key({ }, "XF86MonBrightnessUp",   function () awful.util.spawn("xbacklight -inc 3")                         end),
     awful.key({ }, "XF86AudioRaiseVolume",  function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +2%")  end),
     awful.key({ }, "XF86AudioLowerVolume",  function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -2%")  end),
     awful.key({ }, "XF86AudioMute",         function () awful.util.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") end),
@@ -296,8 +296,9 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86AudioPlay",         function ()
         awful.util.spawn("dbus-send --session --type=method_call --print-reply --dest=org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause") end),
 
-    -- Take screenshot
-    awful.key({ }, "XF86LaunchA", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'") end)
+    -- Turn on/off touchpad
+    awful.key({ }, "XF86LaunchA", function () awful.util.spawn("synclient TouchpadOff=0") end),
+    awful.key({ }, "XF86LaunchB", function () awful.util.spawn("synclient TouchpadOff=1") end)
 )
 
 --- Autostart {{{
