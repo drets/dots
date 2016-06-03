@@ -296,10 +296,6 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86AudioPlay",         function ()
         awful.util.spawn("dbus-send --session --type=method_call --print-reply --dest=org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause") end),
 
-    -- Move focus to a specific monitor
-    awful.key({ modkey }, "F1",     function () awful.screen.focus(1) end),
-    awful.key({ modkey }, "F2",     function () awful.screen.focus(2) end),
-
     -- Take screenshot
     awful.key({ }, "XF86LaunchA", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'") end)
 )
