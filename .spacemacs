@@ -92,7 +92,7 @@
     (interactive)
     (save-some-buffers t)
     (let ((default-directory "/home/drets/src/wikia/app/")
-          (devbox-path "dev-dmytror:/usr/wikia/source/wiki"))
+          (devbox-path "dmytror@dev-dmytror:/usr/wikia/source/wiki"))
       (call-process-shell-command
        (format "rsync -avz --exclude-from=%s --exclude=.git %s %s" (expand-file-name ".gitignore") default-directory devbox-path)
        nil
