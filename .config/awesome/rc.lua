@@ -284,8 +284,8 @@ globalkeys = awful.util.table.join(
     -- Apple media keys
     awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 3")                         end),
     awful.key({ }, "XF86MonBrightnessUp",   function () awful.util.spawn("xbacklight -inc 3")                         end),
-    awful.key({ }, "XF86AudioRaiseVolume",  function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +2%")  end),
-    awful.key({ }, "XF86AudioLowerVolume",  function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -2%")  end),
+    awful.key({ }, "XF86AudioRaiseVolume",  function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +8%")  end),
+    awful.key({ }, "XF86AudioLowerVolume",  function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -8%")  end),
     awful.key({ }, "XF86AudioMute",         function () awful.util.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") end),
     awful.key({ }, "XF86KbdBrightnessDown", function () awful.util.spawn("kbdlight down 5")                           end),
     awful.key({ }, "XF86KbdBrightnessUp",   function () awful.util.spawn("kbdlight up 5")                             end),
