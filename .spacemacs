@@ -86,7 +86,12 @@
   (setq-default
    ring-bell-function 'ignore
    indent-tabs-mode nil
-   org-agenda-files (file-expand-wildcards "~/org/*.org"))
+   org-agenda-files (file-expand-wildcards "~/org/*.org")
+   org-refile-use-outline-path 'file
+   org-refile-targets '((org-agenda-files :level . 1))
+   org-confirm-babel-evaluate)
+
+  (org-babel-do-load-languages 'org-babel-load-languages '((python . t)))
 
   (defun sync-wikia-app ()
     (interactive)
