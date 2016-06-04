@@ -115,7 +115,7 @@
               (setq flycheck-checker 'javascript-jshint)))
 
   (defun copy-nix ()
-    (copy-file "/etc/nixos/configuration.nix" "/home/drets/src/dots" t))
+    (copy-file "/etc/nixos/configuration.nix" "/home/drets/src/dots/nixos" t))
 
   (setq company-ghc-show-info t)
   (setq flycheck-ghc-stack-use-nix t)

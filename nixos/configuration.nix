@@ -182,6 +182,7 @@
     p7zip
     phantomjs
     python
+    qbittorrent
     rxvt_unicode
     scrot
     shared_mime_info
