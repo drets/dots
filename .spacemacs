@@ -123,6 +123,24 @@
   (setq haskell-interactive-popup-errors nil)
   (setq haskell-process-suggest-remove-import-lines t
         haskell-process-auto-import-loaded-modules t)
+
+  (with-eval-after-load 'align
+    (add-to-list 'align-rules-list
+                 '(haskell-types
+                   (regexp . "\\(\\s-+\\)\\(::\\|∷\\)\\s-+")
+                   (modes quote (haskell-mode literate-haskell-mode))))
+    (add-to-list 'align-rules-list
+                 '(haskell-assignment
+                   (regexp . "\\(\\s-+\\)=\\s-+")
+                   (modes quote (haskell-mode literate-haskell-mode))))
+    (add-to-list 'align-rules-list
+                 '(haskell-arrows
+                   (regexp . "\\(\\s-+\\)\\(->\\|→\\)\\s-+")
+                   (modes quote (haskell-mode literate-haskell-mode))))
+    (add-to-list 'align-rules-list
+                 '(haskell-left-arrows
+                   (regexp . "\\(\\s-+\\)\\(<-\\|←\\)\\s-+")
+                   (modes quote (haskell-mode literate-haskell-mode)))))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
