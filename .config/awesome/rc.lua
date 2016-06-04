@@ -290,7 +290,7 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86KbdBrightnessDown", function () awful.util.spawn("kbdlight down 5")                           end),
     awful.key({ }, "XF86KbdBrightnessUp",   function () awful.util.spawn("kbdlight up 5")                             end),
     awful.key({ }, "XF86AudioPrev",         function ()
-        awful.util.spawn("dbus-send --session --type=method_call --print-reply --dest=org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Prev") end),
+        awful.util.spawn("dbus-send --session --type=method_call --print-reply --dest=org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous") end),
     awful.key({ }, "XF86AudioNext",         function ()
         awful.util.spawn("dbus-send --session --type=method_call --print-reply --dest=org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next") end),
     awful.key({ }, "XF86AudioPlay",         function ()
