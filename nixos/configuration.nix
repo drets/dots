@@ -25,6 +25,7 @@
   boot.loader.gummiboot.timeout = 0;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelParams = [ "hid_apple.iso_layout=0" "hid_apple.fnmode=2" ];
+  boot.tmpOnTmpfs = true;
 
   nix.useChroot = true;
 
@@ -148,6 +149,11 @@
 
   users.defaultUserShell = "/run/current-system/sw/bin/zsh";
 
+  environment.extraInit = ''
+    mkdir /tmp/tmp
+    rm -r ~/tmp
+    ln -s /tmp/tmp ~/tmp
+  '';
   environment.pathsToLink = [ "/share" ];
   environment.systemPackages = with pkgs; [
     aspell
