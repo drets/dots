@@ -21,13 +21,16 @@
 
   powerManagement.enable = true;
 
-  boot.loader.gummiboot.enable = true;
-  boot.loader.gummiboot.timeout = 0;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    timeout = 0;
+    efi.canTouchEfiVariables = true;
+  };
+
   boot.kernelParams = [ "hid_apple.iso_layout=0" "hid_apple.fnmode=2" ];
   boot.tmpOnTmpfs = true;
 
-  nix.useChroot = true;
+  nix.useSandbox = true;
 
   boot.initrd.luks.devices = [{
     name = "rootfs";
@@ -170,11 +173,11 @@
     gnumake
     gnupg
     google-chrome
-    haskellPackages.ghc-mod
-    haskellPackages.hasktags
+    haskell.packages.ghc7103.ghc-mod
+    haskell.packages.ghc7103.structured-haskell-mode
+    haskell.packages.ghc7103.hasktags
     haskellPackages.hlint
     haskellPackages.hspec-discover
-    haskellPackages.structured-haskell-mode
     haskellPackages.stylish-haskell
     htop
     kde4.gwenview
