@@ -152,11 +152,6 @@
 
   users.defaultUserShell = "/run/current-system/sw/bin/fish";
 
-  environment.extraInit = ''
-    mkdir /tmp/tmp
-    rm -r ~/tmp
-    ln -s /tmp/tmp ~/tmp
-  '';
   environment.pathsToLink = [ "/share" ];
   environment.systemPackages = with pkgs; [
     aspell
