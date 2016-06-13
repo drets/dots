@@ -150,7 +150,7 @@
   programs.kbdlight.enable = true;
   programs.zsh.enable = true;
 
-  users.defaultUserShell = "/run/current-system/sw/bin/zsh";
+  users.defaultUserShell = "/run/current-system/sw/bin/fish";
 
   environment.extraInit = ''
     mkdir /tmp/tmp
@@ -167,6 +167,7 @@
     emacs
     file
     firefox
+    fish
     ghc
     gimp
     git
