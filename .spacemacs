@@ -46,7 +46,7 @@
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner nil
    dotspacemacs-startup-lists '(bookmarks recents projects)
-   dotspacemacs-themes '(zenburn flatui spacemacs-dark spacemacs-light monokai default)
+   dotspacemacs-themes '(spacemacs-dark spacemacs-light zenburn flatui monokai default)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"
                                :size 22
