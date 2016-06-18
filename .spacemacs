@@ -141,6 +141,9 @@
                  '(haskell-left-arrows
                    (regexp . "\\(\\s-+\\)\\(<-\\|←\\)\\s-+")
                    (modes quote (haskell-mode literate-haskell-mode)))))
+
+  (keyboard-translate ?\C-i ?\H-i)
+  (global-set-key [?\H-i] 'evil-jump-forward)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
