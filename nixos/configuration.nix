@@ -159,6 +159,7 @@
     aspellDicts.ru
     cabal-install
     cabal2nix
+    chromedriver
     emacs
     file
     firefox
@@ -169,6 +170,7 @@
     gnumake
     gnupg
     google-chrome
+    gradle
     haskell.packages.ghc7103.ghc-mod
     haskell.packages.ghc7103.structured-haskell-mode
     haskell.packages.ghc7103.hasktags
