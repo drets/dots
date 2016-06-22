@@ -170,14 +170,14 @@
     gnumake
     gnupg
     google-chrome
-    gradle
     haskell.packages.ghc7103.ghc-mod
-    haskell.packages.ghc7103.structured-haskell-mode
     haskell.packages.ghc7103.hasktags
+    haskell.packages.ghc7103.structured-haskell-mode
     haskellPackages.hlint
     haskellPackages.hspec-discover
     haskellPackages.stylish-haskell
     htop
+    idea.idea-community
     kde4.gwenview
     kde4.kde_baseapps
     keepassx
@@ -185,6 +185,7 @@
     nix-repl
     nodePackages.jshint
     nodejs
+    openjdk
     openvpn
     p7zip
     phantomjs
