@@ -178,6 +178,7 @@
     haskellPackages.stylish-haskell
     htop
     idea.idea-community
+    jenkins-job-builder
     kde4.gwenview
     kde4.kde_baseapps
     keepassx
