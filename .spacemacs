@@ -93,19 +93,22 @@
 
   (org-babel-do-load-languages 'org-babel-load-languages '((python . t)))
 
-  (defun sync-wikia-app ()
+  (defun sync-devbox (src dest)
     (interactive)
     (save-some-buffers t)
-    (let ((default-directory "/home/drets/src/wikia/app/")
-          (devbox-path "dmytror@dev-dmytror:/usr/wikia/source/wiki"))
+    (let ((dest-path (concat "dmytror@dev-dmytror:" dest)))
       (call-process-shell-command
-       (format "rsync -avz --exclude-from=%s --exclude=.git %s %s" (expand-file-name ".gitignore") default-directory devbox-path)
+       (format "rsync -avz --exclude-from=%s --exclude=.git %s %s" (expand-file-name ".gitignore") src dest-path)
        nil
        0)))
 
   (key-chord-mode 1)
   (key-chord-define-global "jk" 'evil-normal-state)
-  (key-chord-define-global "qp" 'sync-wikia-app)
+  (global-set-key (kbd "<f8>")
+                  (lambda ()
+                    (interactive)
+                    (sync-devbox "/home/drets/src/wikia/app/" "/usr/wikia/source/wiki")
+                    (sync-devbox "/home/drets/src/wikia/mercury/" "/usr/wikia/mercury")))
 
   (global-company-mode)
   (setq create-lockfiles nil)
