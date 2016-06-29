@@ -46,7 +46,12 @@
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner nil
    dotspacemacs-startup-lists '(bookmarks recents projects)
-   dotspacemacs-themes '(molokai spacemacs-light spacemacs-dark)
+   dotspacemacs-themes
+   '(
+     spacemacs-dark
+     spacemacs-light
+     molokai
+     )
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"
                                :size 22
@@ -147,6 +152,8 @@
 
   (keyboard-translate ?\C-i ?\H-i)
   (global-set-key [?\H-i] 'evil-jump-forward)
+
+  (global-set-key (kbd "M-m x a r") 'align-regexp)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
