@@ -117,10 +117,6 @@
 
   (global-company-mode)
   (setq create-lockfiles nil)
-
-  (defun copy-nix ()
-    (copy-file "/etc/nixos/configuration.nix" "/home/drets/src/dots/nixos" t))
-
   (setq company-ghc-show-info t)
   (setq flycheck-ghc-stack-use-nix t)
   (setq haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--test" "--nix"))
