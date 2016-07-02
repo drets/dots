@@ -118,10 +118,6 @@
   (global-company-mode)
   (setq create-lockfiles nil)
 
-  (add-hook 'js-mode-hook
-            (lambda ()
-              (setq flycheck-checker 'javascript-jshint)))
-
   (defun copy-nix ()
     (copy-file "/etc/nixos/configuration.nix" "/home/drets/src/dots/nixos" t))
 

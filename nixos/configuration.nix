@@ -185,6 +185,7 @@
     man-pages
     nix-repl
     nodePackages.jshint
+    nodePackages.eslint
     nodejs
     openjdk
     openvpn
