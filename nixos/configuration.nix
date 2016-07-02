@@ -12,11 +12,12 @@
   nix.binaryCaches = [ "https://cache.nixos.org" ];
 
   hardware = {
-    opengl.driSupport32Bit = true;
+    bluetooth.enable = false;
     enableAllFirmware = true;
+    facetimehd.enable = true;
+    opengl.driSupport32Bit = true;
     pulseaudio.enable = true;
     pulseaudio.support32Bit = true;
-    bluetooth.enable = false;
   };
 
   powerManagement.enable = true;
@@ -29,6 +30,7 @@
 
   boot.kernelParams = [ "hid_apple.iso_layout=0" "hid_apple.fnmode=2" ];
   boot.tmpOnTmpfs = true;
+  boot.blacklistedKernelModules = ["bdc_pci"];
 
   nix.useSandbox = true;
 
