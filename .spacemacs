@@ -103,7 +103,7 @@
     (save-some-buffers t)
     (let ((dest-path (concat "dmytror@dev-dmytror:" dest)))
       (call-process-shell-command
-       (format "rsync -avz --exclude-from=%s --exclude=.git %s %s" (expand-file-name ".gitignore") src dest-path)
+       (format "rsync -avz --exclude-from=%s --exclude=.git %s %s" (concat src ".gitignore") src dest-path)
        nil
        0)))
 
