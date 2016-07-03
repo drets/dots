@@ -6,6 +6,7 @@
    '(auto-completion
      better-defaults
      c-c++
+     eyebrowse
      emacs-lisp
      emoji
      elixir
