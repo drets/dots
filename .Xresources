@@ -1,4 +1,4 @@
-Xft.dpi: 150
+Xft.dpi: 198
 
 urxvt.loginShell:         true
 urxvt.saveLines:         65535

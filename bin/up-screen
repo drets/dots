@@ -2,7 +2,7 @@
 
 # Place Retina internal display (eDP*) below external monitor (HDMI)
 
-SCALE=1.7
+SCALE=1.6
 
 EXT=`xrandr --current | sed 's/^\(.*\) connected.*$/\1/p;d' | grep -v ^eDP | head -n 1`
 INT=`xrandr --current | sed 's/^\(.*\) connected.*$/\1/p;d' | grep -v ^HDMI | head -n 1`

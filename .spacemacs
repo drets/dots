@@ -55,7 +55,7 @@
      )
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 22
+                               :size 26
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
