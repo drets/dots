@@ -10,7 +10,7 @@ urxvt.scrollTtyKeypress:  true
 urxvt.secondaryScroll:    true
 urxvt.iso14755: False
 
-URxvt.font: xft:Source Code Pro:normal:size=12
+URxvt.font: xft:Terminus:normal:size=12
 
 URxvt*background: #101010
 URxvt*foreground: #d0d0d0

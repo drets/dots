@@ -90,7 +90,8 @@
     enable = true;
     twoFingerScroll = true;
     vertEdgeScroll = true;
-    accelFactor = "0.001";
+    accelFactor = "0.1";
+    maxSpeed = "1.5";
     buttonsMap = [ 1 3 2 ];
     palmDetect = true;
   };
@@ -178,7 +179,6 @@
     gnumake
     gnupg
     google-chrome
-    haskell.packages.ghc7103.ghc-mod
     haskell.packages.ghc7103.hasktags
     haskell.packages.ghc7103.structured-haskell-mode
     haskellPackages.hlint
@@ -206,7 +206,9 @@
     skype
     stack
     thunderbird
+    tty-clock
     unzip
+    unclutter
     vlc
     wget
     which

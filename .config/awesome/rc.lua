@@ -303,6 +303,7 @@ globalkeys = awful.util.table.join(
 
 --- Autostart {{{
 awful.util.spawn_with_shell("xscreensaver")
+awful.util.spawn_with_shell("unclutter")
 --- }}}
 
 clientkeys = awful.util.table.join(

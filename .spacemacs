@@ -47,12 +47,7 @@
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner nil
    dotspacemacs-startup-lists '(bookmarks recents projects)
-   dotspacemacs-themes
-   '(
-     spacemacs-dark
-     spacemacs-light
-     molokai
-     )
+   dotspacemacs-themes '(spacemacs-dark spacemacs-light molokai)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"
                                :size 26
@@ -147,6 +142,8 @@
   (global-set-key [?\H-i] 'evil-jump-forward)
 
   (global-set-key (kbd "M-m x a r") 'align-regexp)
+  (global-set-key (kbd "C-s-a") 'spacemacs/evil-numbers-increase)
+  (global-set-key (kbd "C-s-x") 'spacemacs/evil-numbers-decrease)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
