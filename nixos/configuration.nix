@@ -163,6 +163,7 @@
 
   environment.pathsToLink = [ "/share" ];
   environment.systemPackages = with pkgs; [
+    ag
     aspell
     aspellDicts.en
     aspellDicts.ru

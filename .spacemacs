@@ -3,7 +3,8 @@
    dotspacemacs-distribution 'spacemacs
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
-   '(auto-completion
+   '((auto-completion :variables
+                      auto-completion-enable-sort-by-usage t)
      better-defaults
      c-c++
      eyebrowse
@@ -79,7 +80,7 @@
    dotspacemacs-smartparens-strict-mode nil
    dotspacemacs-highlight-delimiters 'all
    dotspacemacs-persistent-server nil
-   dotspacemacs-search-tools '("grep")
+   dotspacemacs-search-tools '("ag grep")
    dotspacemacs-default-package-repository nil)
 )
 
@@ -99,12 +100,15 @@
     (save-some-buffers t)
     (let ((dest-path (concat "dmytror@dev-dmytror:" dest)))
       (call-process-shell-command
-       (format "rsync -avz --exclude-from=%s --exclude=.git %s %s" (concat src ".gitignore") src dest-path)
+       (format
+          "rsync -avz --exclude-from=%s --exclude=.git %s %s"
+          (concat src ".gitignore") src dest-path)
        nil
        0)))
 
   (key-chord-mode 1)
   (key-chord-define-global "jk" 'evil-normal-state)
+
   (global-set-key (kbd "<f8>")
                   (lambda ()
                     (interactive)
@@ -140,11 +144,8 @@
 
   (keyboard-translate ?\C-i ?\H-i)
   (global-set-key [?\H-i] 'evil-jump-forward)
-
-  (global-set-key (kbd "M-m x a r") 'align-regexp)
   (global-set-key (kbd "C-s-a") 'spacemacs/evil-numbers-increase)
   (global-set-key (kbd "C-s-x") 'spacemacs/evil-numbers-decrease)
+  (global-set-key (kbd "M-m x a r") 'align-regexp)
+  (global-set-key (kbd "M-m o s") 'helm-semantic-or-imenu)
 )
-
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
