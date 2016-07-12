@@ -161,6 +161,32 @@
 
   users.defaultUserShell = "/run/current-system/sw/bin/fish";
 
+  services.mysql = {
+    enable = true;
+    package = pkgs.mysql;
+    extraOptions = "max_allowed_packet=100M";
+  };
+
+  services.httpd = {
+    enable = true;
+    enablePHP = true;
+    logPerVirtualHost = true;
+    adminAddr="drets@wikia-inc.com";
+    documentRoot = "/var/upstream/";
+    virtualHosts = [{
+      hostName = "fandom";
+      serverAliases = [ "fandom.dev" ];
+    }];
+    extraConfig = ''
+      <Directory /var/upstream/>
+        DirectoryIndex index.php
+        Allow from *
+        Options FollowSymLinks
+        AllowOverride All
+      </Directory>
+    '';
+  };
+
   environment.pathsToLink = [ "/share" ];
   environment.systemPackages = with pkgs; [
     ag

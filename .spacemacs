@@ -80,7 +80,7 @@
    dotspacemacs-smartparens-strict-mode nil
    dotspacemacs-highlight-delimiters 'all
    dotspacemacs-persistent-server nil
-   dotspacemacs-search-tools '("ag grep")
+   dotspacemacs-search-tools '("ag" "grep")
    dotspacemacs-default-package-repository nil)
 )
 
