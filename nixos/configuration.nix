@@ -131,7 +131,10 @@
     ];
   };
 
-  services.logind.extraConfig = "HandlePowerKey=ignore";
+  services.logind.extraConfig = ''
+    HandleLidSwitch=ignore
+    HandlePowerKey=ignore
+  '';
 
   services.openssh = {
     enable = true;
@@ -187,6 +190,21 @@
     '';
   };
 
+  security.sudo = {
+    enable = true;
+    wheelNeedsPassword = false;
+  };
+
+  systemd.services.disableDeviceSuspending = {
+    wantedBy = [ "default.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.bash}/bin/bash -c '${/home/drets/bin/suspend-disable-device} LID0 XHC1'";
+    };
+  };
+
+  systemd.services.disableDeviceSuspending.enable = true;
+
   environment.pathsToLink = [ "/share" ];
   environment.systemPackages = with pkgs; [
     ag
@@ -200,17 +218,18 @@
     file
     firefox
     fish
-    ghc
     gimp
     git
     gnumake
     gnupg
     google-chrome
+    haskell.packages.ghc7103.ghc
+    haskell.packages.ghc7103.ghc-mod
     haskell.packages.ghc7103.hasktags
     haskell.packages.ghc7103.structured-haskell-mode
-    haskellPackages.hlint
-    haskellPackages.hspec-discover
-    haskellPackages.stylish-haskell
+    haskell.packages.ghc7103.hlint
+    haskell.packages.ghc7103.hspec-discover
+    haskell.packages.ghc7103.stylish-haskell
     htop
     idea.idea-community
     jenkins-job-builder

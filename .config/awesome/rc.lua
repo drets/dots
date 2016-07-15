@@ -279,8 +279,11 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "p", function() menubar.show() end),
 
     -- Screen saver
-    awful.key({ }, "XF86PowerOff", function () awful.util.spawn("xscreensaver-command -lock") end),
-
+    awful.key({ }, "XF86PowerOff",
+              function ()
+                  awful.util.spawn("xscreensaver-command -lock")
+                  awful.util.spawn("systemctl suspend")
+              end),
     -- Apple media keys
     awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 3")                         end),
     awful.key({ }, "XF86MonBrightnessUp",   function () awful.util.spawn("xbacklight -inc 3")                         end),
