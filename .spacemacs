@@ -40,7 +40,7 @@
    dotspacemacs-excluded-packages
    '(smartparens)
    dotspacemacs-delete-orphan-packages t)
-)
+  )
 
 (defun dotspacemacs/init ()
   (setq-default
@@ -68,7 +68,7 @@
    dotspacemacs-helm-position 'top
    dotspacemacs-enable-paste-micro-state nil
    dotspacemacs-which-key-delay 0.4
-   dotspacemacs-which-key-position 'right-then-bottom
+   dotspacemacs-which-key-position 'bottom
    dotspacemacs-loading-progress-bar t
    dotspacemacs-fullscreen-at-startup nil
    dotspacemacs-fullscreen-use-non-native nil
@@ -82,7 +82,7 @@
    dotspacemacs-persistent-server nil
    dotspacemacs-search-tools '("ag" "grep")
    dotspacemacs-default-package-repository nil)
-)
+  )
 
 (defun dotspacemacs/user-config ()
   (setq-default
@@ -101,8 +101,8 @@
     (let ((dest-path (concat "dmytror@dev-dmytror:" dest)))
       (call-process-shell-command
        (format
-          "rsync -avz --exclude-from=%s --exclude=.git %s %s"
-          (concat src ".gitignore") src dest-path)
+        "rsync -avz --exclude-from=%s --exclude=.git %s %s"
+        (concat src ".gitignore") src dest-path)
        nil
        0)))
 
@@ -116,6 +116,7 @@
                     (sync-devbox "/home/drets/src/wikia/mercury/" "/usr/wikia/mercury")))
 
   (global-company-mode)
+
   (setq create-lockfiles nil)
   (setq company-ghc-show-info t)
   (setq flycheck-ghc-stack-use-nix t)
@@ -142,10 +143,29 @@
                    (regexp . "\\(\\s-+\\)\\(<-\\|←\\)\\s-+")
                    (modes quote (haskell-mode literate-haskell-mode)))))
 
+  (defun flip-bool-at-point ()
+    (interactive)
+    (let* ((bools '(("true" . "false")
+                    ("True" . "False")
+                    ("TRUE" . "FALSE")
+                    ("1" . "0")))
+           (true  (cdr (assoc  (current-word) bools)))
+           (false (car (rassoc (current-word) bools)))
+           (wrd (cond (true true)
+                      (false false)
+                      (t (current-word)))))
+      (save-excursion
+        (forward-word)
+        (backward-kill-word 1)
+        (insert wrd))))
+
   (keyboard-translate ?\C-i ?\H-i)
   (global-set-key [?\H-i] 'evil-jump-forward)
   (global-set-key (kbd "C-s-a") 'spacemacs/evil-numbers-increase)
   (global-set-key (kbd "C-s-x") 'spacemacs/evil-numbers-decrease)
-  (global-set-key (kbd "M-m x a r") 'align-regexp)
+  (global-set-key (kbd "C-s-b") 'flip-bool-at-point)
+  (global-set-key (kbd "M-m o r") 'align-regexp)
   (global-set-key (kbd "M-m o s") 'helm-semantic-or-imenu)
-)
+  (global-set-key (kbd "C-j") 'spacemacs/insert-line-above-no-indent)
+  (global-set-key (kbd "C-k") 'spacemacs/insert-line-below-no-indent)
+  )
