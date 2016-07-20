@@ -240,6 +240,7 @@
     nix-repl
     nodePackages.jshint
     nodejs
+    nox
     openjdk
     openvpn
     p7zip
