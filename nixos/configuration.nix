@@ -222,6 +222,7 @@
     git
     gnumake
     gnupg
+    goldendict
     google-chrome
     haskell.packages.ghc7103.ghc
     haskell.packages.ghc7103.ghc-mod
@@ -237,6 +238,7 @@
     kde4.kde_baseapps
     keepassx
     man-pages
+    mplayer
     nix-repl
     nodePackages.jshint
     nodejs
