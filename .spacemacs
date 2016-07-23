@@ -159,6 +159,8 @@
         (backward-kill-word 1)
         (insert wrd))))
 
+  (global-hl-line-mode -1)
+
   (keyboard-translate ?\C-i ?\H-i)
   (global-set-key [?\H-i] 'evil-jump-forward)
   (global-set-key (kbd "C-s-a") 'spacemacs/evil-numbers-increase)
