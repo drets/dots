@@ -10,10 +10,10 @@ urxvt.scrollTtyKeypress:  true
 urxvt.secondaryScroll:    true
 urxvt.iso14755: False
 
-URxvt.font: xft:Terminus:normal:size=12
+URxvt.font: xft:Terminus:normal:size=13
 
-URxvt*background: #101010
-URxvt*foreground: #d0d0d0
+URxvt*background: #add8e6
+URxvt*foreground: #000000
 URxvt*color0:     #101010
 URxvt*color1:     #960050
 URxvt*color2:     #66aa11

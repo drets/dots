@@ -48,7 +48,7 @@
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner nil
    dotspacemacs-startup-lists '(bookmarks recents projects)
-   dotspacemacs-themes '(spacemacs-dark spacemacs-light molokai)
+   dotspacemacs-themes '(light-blue spacemacs-dark spacemacs-light molokai)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"
                                :size 26

@@ -222,6 +222,7 @@
     git
     gnumake
     gnupg
+    global
     goldendict
     google-chrome
     haskell.packages.ghc7103.ghc
