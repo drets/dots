@@ -85,44 +85,26 @@
   )
 
 (defun dotspacemacs/user-config ()
-  (setq-default
-   ring-bell-function 'ignore
-   indent-tabs-mode nil
-   org-agenda-files (file-expand-wildcards "~/org/*.org")
-   org-refile-use-outline-path 'file
-   org-refile-targets '((org-agenda-files :level . 1))
-   org-confirm-babel-evaluate)
 
-  (org-babel-do-load-languages 'org-babel-load-languages '((python . t)))
+  ;; Set default values
 
-  (defun sync-devbox (src dest)
-    (interactive)
-    (save-some-buffers t)
-    (let ((dest-path (concat "dmytror@dev-dmytror:" dest)))
-      (call-process-shell-command
-       (format
-        "rsync -avz --exclude-from=%s --exclude=.git %s %s"
-        (concat src ".gitignore") src dest-path)
-       nil
-       0)))
+  (setq-default ring-bell-function 'ignore
+                indent-tabs-mode nil
+                org-agenda-files (file-expand-wildcards "~/org/*.org")
+                org-refile-use-outline-path 'file
+                org-refile-targets '((org-agenda-files :level . 1))
+                create-lockfiles nil)
 
-  (key-chord-mode 1)
-  (key-chord-define-global "jk" 'evil-normal-state)
-
-  (global-set-key (kbd "<f8>")
-                  (lambda ()
-                    (interactive)
-                    (sync-devbox "/home/drets/src/wikia/app/" "/usr/wikia/source/wiki")
-                    (sync-devbox "/home/drets/src/wikia/mercury/" "/usr/wikia/mercury")))
-
+  (global-hl-line-mode -1)
   (global-company-mode)
 
-  (setq create-lockfiles nil)
-  (setq company-ghc-show-info t)
-  (setq flycheck-ghc-stack-use-nix t)
-  (setq haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--test" "--nix"))
-  (setq haskell-interactive-popup-errors nil)
-  (setq haskell-process-suggest-remove-import-lines t
+  ;; Haskell
+
+  (setq company-ghc-show-info t
+        flycheck-ghc-stack-use-nix t
+        haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--test" "--nix")
+        haskell-interactive-popup-errors nil
+        haskell-process-suggest-remove-import-lines t
         haskell-process-auto-import-loaded-modules t)
 
   (with-eval-after-load 'align
@@ -143,32 +125,65 @@
                    (regexp . "\\(\\s-+\\)\\(<-\\|←\\)\\s-+")
                    (modes quote (haskell-mode literate-haskell-mode)))))
 
-  (defun flip-bool-at-point ()
-    (interactive)
-    (let* ((bools '(("true" . "false")
-                    ("True" . "False")
-                    ("TRUE" . "FALSE")
-                    ("1" . "0")))
-           (true  (cdr (assoc  (current-word) bools)))
-           (false (car (rassoc (current-word) bools)))
-           (wrd (cond (true true)
-                      (false false)
-                      (t (current-word)))))
-      (save-excursion
-        (forward-word)
-        (backward-kill-word 1)
-        (insert wrd))))
-
-  (global-hl-line-mode -1)
+  ;; Keys remapping
 
   (keyboard-translate ?\C-i ?\H-i)
   (global-set-key [?\H-i] 'evil-jump-forward)
+
   (global-set-key (kbd "C-s-a") 'spacemacs/evil-numbers-increase)
   (global-set-key (kbd "C-s-x") 'spacemacs/evil-numbers-decrease)
   (global-set-key (kbd "C-s-b") 'flip-bool-at-point)
-  (global-set-key (kbd "C-j") 'spacemacs/insert-line-above-no-indent)
-  (global-set-key (kbd "C-k") 'spacemacs/insert-line-below-no-indent)
-  (global-set-key (kbd "M-m o r") 'align-regexp)
-  (global-set-key (kbd "M-m o s") 'helm-semantic-or-imenu)
-  (global-set-key (kbd "M-m o w") 'whitespace-mode)
+
+  (global-set-key (kbd "M-m SPC")   nil)
+  (global-set-key (kbd "<tab>")     'evil-avy-goto-subword-1)
+  (global-set-key (kbd "M-m SPC j") 'spacemacs/insert-line-above-no-indent)
+  (global-set-key (kbd "M-m SPC k") 'spacemacs/insert-line-below-no-indent)
+  (global-set-key (kbd "M-m SPC i") 'imenu)
+  (global-set-key (kbd "M-m SPC r") 'align-regexp)
+  (global-set-key (kbd "M-m SPC w") 'whitespace-mode)
+
+  (global-set-key (kbd "C-a") 'mark-paragraph)
+  (global-set-key (kbd "C-k") 'evil-backward-paragraph)
+  (global-set-key (kbd "C-j") 'evil-forward-paragraph)
+
+  (add-hook 'magit-mode-hook
+            (lambda ()
+              (local-set-key (kbd "<tab>") 'magit-section-toggle)))
+
+  (global-set-key (kbd "<f8>")
+                  (lambda ()
+                    (interactive)
+                    (sync-devbox "/home/drets/src/wikia/app/" "/usr/wikia/source/wiki")
+                    (sync-devbox "/home/drets/src/wikia/mercury/" "/usr/wikia/mercury")))
+
+  (key-chord-mode 1)
+  (key-chord-define-global "jk" 'evil-normal-state)
+
   )
+
+(defun sync-devbox (src dest)
+  (interactive)
+  (save-some-buffers t)
+  (let ((dest-path (concat "dmytror@dev-dmytror:" dest)))
+    (call-process-shell-command
+     (format
+      "rsync -avz --exclude-from=%s --exclude=.git %s %s"
+      (concat src ".gitignore") src dest-path)
+     nil
+     0)))
+
+(defun flip-bool-at-point ()
+  (interactive)
+  (let* ((bools '(("true" . "false")
+                  ("True" . "False")
+                  ("TRUE" . "FALSE")
+                  ("1" . "0")))
+         (true  (cdr (assoc  (current-word) bools)))
+         (false (car (rassoc (current-word) bools)))
+         (wrd (cond (true true)
+                    (false false)
+                    (t (current-word)))))
+    (save-excursion
+      (forward-word)
+      (backward-kill-word 1)
+      (insert wrd))))
