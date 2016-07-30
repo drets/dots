@@ -130,21 +130,14 @@
   (keyboard-translate ?\C-i ?\H-i)
   (global-set-key [?\H-i] 'evil-jump-forward)
 
-  (global-set-key (kbd "C-s-a") 'spacemacs/evil-numbers-increase)
-  (global-set-key (kbd "C-s-x") 'spacemacs/evil-numbers-decrease)
-  (global-set-key (kbd "C-s-b") 'flip-bool-at-point)
+  (global-set-key (kbd "M-m n 0") 'flip-bool-at-point)
 
-  (global-set-key (kbd "M-m SPC")   nil)
-  (global-set-key (kbd "<tab>")     'evil-avy-goto-subword-1)
-  (global-set-key (kbd "M-m SPC j") 'spacemacs/insert-line-above-no-indent)
-  (global-set-key (kbd "M-m SPC k") 'spacemacs/insert-line-below-no-indent)
-  (global-set-key (kbd "M-m SPC i") 'imenu)
-  (global-set-key (kbd "M-m SPC r") 'align-regexp)
-  (global-set-key (kbd "M-m SPC w") 'whitespace-mode)
-
-  (global-set-key (kbd "C-a") 'mark-paragraph)
-  (global-set-key (kbd "C-k") 'evil-backward-paragraph)
-  (global-set-key (kbd "C-j") 'evil-forward-paragraph)
+  (global-set-key (kbd "M-m SPC")     nil)
+  (global-set-key (kbd "<tab>")       'evil-avy-goto-subword-1)
+  (global-set-key (kbd "C-k")         'evil-backward-paragraph)
+  (global-set-key (kbd "C-j")         'evil-forward-paragraph)
+  (global-set-key (kbd "M-m SPC s")   'helm-semantic-or-imenu)
+  (global-set-key (kbd "M-m SPC SPC") 'save-buffer)
 
   (add-hook 'magit-mode-hook
             (lambda ()
