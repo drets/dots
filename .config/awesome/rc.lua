@@ -41,6 +41,7 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("/run/current-system/sw/share/awesome/themes/default/theme.lua")
 beautiful.wallpaper = "/home/drets/.background/sky-blue.png"
+beautiful.awesome_icon = "/home/drets/.icons/glider.png"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
