@@ -39,7 +39,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/run/current-system/sw/share/awesome/themes/default/theme.lua")
+beautiful.init("/home/drets/src/dots/.config/awesome/themes/default/theme.lua")
 beautiful.wallpaper = "/home/drets/.background/sky-blue.png"
 
 -- This is used later as the default terminal and editor to run.
