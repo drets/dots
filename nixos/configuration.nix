@@ -232,6 +232,7 @@
     haskell.packages.ghc7103.hlint
     haskell.packages.ghc7103.hspec-discover
     haskell.packages.ghc7103.stylish-haskell
+    hexchat
     htop
     idea.idea-community
     jenkins-job-builder
