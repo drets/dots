@@ -120,14 +120,15 @@
     enableGhostscriptFonts = false;
 
     fonts = with pkgs; [
-      powerline-fonts
-      inconsolata
       corefonts
-      terminus_font
       dejavu_fonts
+      inconsolata
+      powerline-fonts
       source-code-pro
+      terminus_font
       ubuntu_font_family
       unifont
+      vistafonts
     ];
   };
 

@@ -50,8 +50,8 @@
    dotspacemacs-startup-lists '(bookmarks recents projects)
    dotspacemacs-themes '(light-blue spacemacs-dark spacemacs-light molokai)
    dotspacemacs-colorize-cursor-according-to-state t
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 26
+   dotspacemacs-default-font '("Ubuntu Mono"
+                               :size 30
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
