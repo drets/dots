@@ -255,6 +255,7 @@
     rxvt_unicode
     scrot
     shared_mime_info
+    shutter
     skype
     stack
     thunderbird
@@ -263,6 +264,7 @@
     unclutter
     vlc
     wget
+    wgetpaste
     which
     whois
     xclip
