@@ -265,13 +265,13 @@ globalkeys = awful.util.table.join(
                   awful.util.spawn("systemctl suspend")
               end),
     -- Apple media keys
-    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 3")                         end),
-    awful.key({ }, "XF86MonBrightnessUp",   function () awful.util.spawn("xbacklight -inc 3")                         end),
+    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 2")                         end),
+    awful.key({ }, "XF86MonBrightnessUp",   function () awful.util.spawn("xbacklight -inc 2")                         end),
     awful.key({ }, "XF86AudioRaiseVolume",  function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +8%")  end),
     awful.key({ }, "XF86AudioLowerVolume",  function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -8%")  end),
     awful.key({ }, "XF86AudioMute",         function () awful.util.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") end),
-    awful.key({ }, "XF86KbdBrightnessDown", function () awful.util.spawn("kbdlight down 5")                           end),
-    awful.key({ }, "XF86KbdBrightnessUp",   function () awful.util.spawn("kbdlight up 5")                             end),
+    awful.key({ }, "XF86KbdBrightnessDown", function () awful.util.spawn("kbdlight down 4")                           end),
+    awful.key({ }, "XF86KbdBrightnessUp",   function () awful.util.spawn("kbdlight up 4")                             end),
     awful.key({ }, "XF86AudioPrev",         function ()
         awful.util.spawn("dbus-send --session --type=method_call --print-reply --dest=org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous") end),
     awful.key({ }, "XF86AudioNext",         function ()
