@@ -133,7 +133,7 @@
   (global-set-key (kbd "M-m n 0") 'flip-bool-at-point)
 
   (global-set-key (kbd "M-m SPC")     'save-buffer)
-  (global-set-key (kbd "<tab>")       'evil-avy-goto-subword-1)
+  (global-set-key (kbd "<tab>")       'evil-avy-goto-word-or-subword-1)
   (global-set-key (kbd "C-k")         'evil-backward-paragraph)
   (global-set-key (kbd "C-j")         'evil-forward-paragraph)
   (global-set-key (kbd "M-m o s")   'helm-semantic-or-imenu)
