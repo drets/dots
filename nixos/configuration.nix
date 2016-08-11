@@ -227,7 +227,7 @@
     goldendict
     google-chrome
     haskell.packages.ghc7103.ghc
-    haskell.packages.ghc7103.ghc-mod
+    haskell.packages.ghc7103.intero
     haskell.packages.ghc7103.hasktags
     haskell.packages.ghc7103.structured-haskell-mode
     haskell.packages.ghc7103.hlint
@@ -250,7 +250,6 @@
     openvpn
     p7zip
     phantomjs
-    python
     qbittorrent
     rxvt_unicode
     scrot

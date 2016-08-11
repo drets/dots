@@ -4,7 +4,8 @@
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
    '((auto-completion :variables
-                      auto-completion-enable-sort-by-usage t)
+                      auto-completion-enable-sort-by-usage t
+                      auto-completion-enable-snippets-in-popup t)
      better-defaults
      c-c++
      eyebrowse
@@ -13,8 +14,9 @@
      elixir
      git
      github
-     gtags
-     (haskell :variables haskell-enable-hindent-style "cramer")
+     (haskell :variables
+              haskell-completion-backend 'intero
+              haskell-enable-hindent-style "cramer")
      html
      java
      javascript
@@ -50,8 +52,8 @@
    dotspacemacs-startup-lists '(bookmarks recents projects)
    dotspacemacs-themes '(light-blue spacemacs-dark spacemacs-light molokai)
    dotspacemacs-colorize-cursor-according-to-state t
-   dotspacemacs-default-font '("Consolas"
-                               :size 32
+   dotspacemacs-default-font '("DejaVu Sans Mono"
+                               :size 31
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -96,16 +98,11 @@
                 create-lockfiles nil)
 
   (global-hl-line-mode -1)
-  (global-company-mode)
+  (global-auto-complete-mode t)
 
   ;; Haskell
 
-  (setq company-ghc-show-info t
-        flycheck-ghc-stack-use-nix t
-        haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--test" "--nix")
-        haskell-interactive-popup-errors nil
-        haskell-process-suggest-remove-import-lines t
-        haskell-process-auto-import-loaded-modules t)
+  (setq flycheck-ghc-stack-use-nix t)
 
   (with-eval-after-load 'align
     (add-to-list 'align-rules-list
@@ -179,3 +176,19 @@
       (forward-word)
       (backward-kill-word 1)
       (insert wrd))))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(safe-local-variable-values
+   (quote
+    ((eval intero-targets "arachne:spec arachne:mqtt-gateway")
+     (elixir-enable-compilation-checking . t)
+     (elixir-enable-compilation-checking)))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
