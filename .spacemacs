@@ -52,7 +52,7 @@
    dotspacemacs-startup-lists '(bookmarks recents projects)
    dotspacemacs-themes '(light-blue spacemacs-dark spacemacs-light molokai)
    dotspacemacs-colorize-cursor-according-to-state t
-   dotspacemacs-default-font '("PT Mono"
+   dotspacemacs-default-font '("Consolas"
                                :size 30
                                :weight normal
                                :width normal
@@ -95,7 +95,10 @@
                 org-agenda-files (file-expand-wildcards "~/org/*.org")
                 org-refile-use-outline-path 'file
                 org-refile-targets '((org-agenda-files :level . 1))
-                create-lockfiles nil)
+                create-lockfiles nil
+                org-confirm-babel-evaluate)
+
+  (org-babel-do-load-languages 'org-babel-load-languages '((python . t)))
 
   (global-hl-line-mode -1)
   (global-auto-complete-mode t)

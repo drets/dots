@@ -251,6 +251,7 @@
     openvpn
     p7zip
     phantomjs
+    python
     qbittorrent
     rxvt_unicode
     scrot
