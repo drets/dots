@@ -10,7 +10,7 @@ urxvt.scrollTtyKeypress:  true
 urxvt.secondaryScroll:    true
 urxvt.iso14755:          false
 
-URxvt.font: xft:DejaVu Sans Mono:normal:size=10
+URxvt.font: xft:PT Mono:normal:size=10
 
 URxvt*background: #add8e6
 URxvt*foreground: #000000

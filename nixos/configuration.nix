@@ -123,6 +123,7 @@
       corefonts
       dejavu_fonts
       inconsolata
+      google-fonts
       powerline-fonts
       source-code-pro
       terminus_font
