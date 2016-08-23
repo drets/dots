@@ -50,7 +50,7 @@
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner nil
    dotspacemacs-startup-lists '(bookmarks recents projects)
-   dotspacemacs-themes '(light-blue spacemacs-dark spacemacs-light molokai)
+   dotspacemacs-themes '(sanityinc-solarized-dark sanityinc-solarized-light)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Consolas"
                                :size 30
@@ -98,7 +98,7 @@
                 create-lockfiles nil
                 org-confirm-babel-evaluate)
 
-  (org-babel-do-load-languages 'org-babel-load-languages '((python . t)))
+  (org-babel-do-load-languages 'org-babel-load-languages '((python . t) (haskell . t)))
 
   (global-hl-line-mode -1)
   (global-auto-complete-mode t)
@@ -128,6 +128,8 @@
                    (regexp . "\\(\\s-+\\)\\(<-\\|←\\)\\s-+")
                    (modes quote (haskell-mode literate-haskell-mode)))))
 
+  (add-hook 'haskell-mode-hook 'pretty-lambdas-haskell)
+
   ;; Keys remapping
 
   (keyboard-translate ?\C-i ?\H-i)
@@ -155,6 +157,13 @@
   (key-chord-define-global "jk" 'evil-normal-state)
 
   )
+
+(defun pretty-lambdas-haskell ()
+  (font-lock-add-keywords
+   nil `((,(concat "(?\\(" (regexp-quote "\\") "\\)")
+          (0 (progn (compose-region (match-beginning 1) (match-end 1)
+                                    ,(make-char 'greek-iso8859-7 107))
+                    nil))))))
 
 (defun sync-devbox (src dest)
   (interactive)
