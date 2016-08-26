@@ -222,17 +222,17 @@
     fish
     gimp
     git
+    global
     gnumake
     gnupg
-    global
     goldendict
     google-chrome
     haskell.packages.ghc7103.ghc
-    haskell.packages.ghc7103.intero
     haskell.packages.ghc7103.hasktags
-    haskell.packages.ghc7103.structured-haskell-mode
     haskell.packages.ghc7103.hlint
     haskell.packages.ghc7103.hspec-discover
+    haskell.packages.ghc7103.intero
+    haskell.packages.ghc7103.structured-haskell-mode
     haskell.packages.ghc7103.stylish-haskell
     hexchat
     htop
@@ -240,6 +240,8 @@
     jenkins-job-builder
     kde4.gwenview
     kde4.kde_baseapps
+    kde4.kwin_styles
+    kde4.oxygen_icons
     keepassx
     man-pages
     mplayer
@@ -261,8 +263,8 @@
     stack
     thunderbird
     tty-clock
-    unzip
     unclutter
+    unzip
     vlc
     wget
     wgetpaste
