@@ -49,7 +49,7 @@
    dotspacemacs-editing-style 'vim
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner nil
-   dotspacemacs-startup-lists '(bookmarks recents projects)
+   dotspacemacs-startup-lists '(bookmarks recents projects)тему
    dotspacemacs-themes '(sanityinc-solarized-dark sanityinc-solarized-light)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Consolas"

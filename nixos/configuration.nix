@@ -207,6 +207,11 @@
 
   systemd.services.disableDeviceSuspending.enable = true;
 
+  environment.shellInit = ''
+    export GTK_PATH=$GTK_PATH:${pkgs.oxygen_gtk}/lib/gtk-2.0
+    export GTK2_RC_FILES=$GTK2_RC_FILES:${pkgs.oxygen_gtk}/share/themes/oxygen-gtk/gtk-2.0/gtkrc
+  '';
+
   environment.pathsToLink = [ "/share" ];
   environment.systemPackages = with pkgs; [
     ag
@@ -216,6 +221,7 @@
     cabal-install
     cabal2nix
     chromedriver
+    deadbeef
     emacs
     file
     firefox
@@ -223,6 +229,7 @@
     gimp
     git
     global
+    gnome3.adwaita-icon-theme
     gnumake
     gnupg
     goldendict
@@ -251,6 +258,8 @@
     nox
     openjdk
     openvpn
+    oxygen-gtk2
+    oxygen-gtk3
     p7zip
     phantomjs
     python
