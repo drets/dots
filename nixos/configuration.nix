@@ -75,11 +75,7 @@
     nameserver 127.0.0.1
   '';
 
-  i18n = {
-    consoleFont = "Lat2-Terminus16";
-    consoleKeyMap = "us";
-    defaultLocale = "en_US.UTF-8";
-  };
+  i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" ];
 
   time.timeZone = "Europe/Amsterdam";
 
@@ -100,7 +96,7 @@
     enable = true;
     luaModules = [ pkgs.luaPackages.luafilesystem ];
   };
-  services.xserver.xkbOptions = "grp:lctrl_toggle,ctrl:nocaps";
+  services.xserver.xkbOptions = "grp:lctrl_toggle,ctrl:nocaps,compose:ralt";
   services.redshift = {
     enable = true;
     latitude = "52.39";
@@ -206,8 +202,6 @@
   };
 
   systemd.services.disableDeviceSuspending.enable = true;
-
-  i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" ];
 
   environment.shellInit = ''
     export GTK_PATH=$GTK_PATH:${pkgs.oxygen_gtk}/lib/gtk-2.0
