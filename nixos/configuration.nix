@@ -207,6 +207,8 @@
 
   systemd.services.disableDeviceSuspending.enable = true;
 
+  i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" ];
+
   environment.shellInit = ''
     export GTK_PATH=$GTK_PATH:${pkgs.oxygen_gtk}/lib/gtk-2.0
     export GTK2_RC_FILES=$GTK2_RC_FILES:${pkgs.oxygen_gtk}/share/themes/oxygen-gtk/gtk-2.0/gtkrc
@@ -241,6 +243,8 @@
     haskell.packages.ghc7103.intero
     haskell.packages.ghc7103.structured-haskell-mode
     haskell.packages.ghc7103.stylish-haskell
+    haskellPackages.hakyll
+    haskellPackages.pandoc
     hexchat
     htop
     idea.idea-community
