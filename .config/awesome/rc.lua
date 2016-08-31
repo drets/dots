@@ -273,12 +273,9 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86AudioMute",         function () awful.util.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") end),
     awful.key({ }, "XF86KbdBrightnessDown", function () awful.util.spawn("kbdlight down 4")                           end),
     awful.key({ }, "XF86KbdBrightnessUp",   function () awful.util.spawn("kbdlight up 4")                             end),
-    awful.key({ }, "XF86AudioPrev",         function ()
-        awful.util.spawn("dbus-send --session --type=method_call --print-reply --dest=org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous") end),
-    awful.key({ }, "XF86AudioNext",         function ()
-        awful.util.spawn("dbus-send --session --type=method_call --print-reply --dest=org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next") end),
-    awful.key({ }, "XF86AudioPlay",         function ()
-        awful.util.spawn("dbus-send --session --type=method_call --print-reply --dest=org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause") end),
+    awful.key({ }, "XF86AudioPrev",         function () awful.util.spawn("deadbeef --prev")                           end),
+    awful.key({ }, "XF86AudioNext",         function () awful.util.spawn("deadbeef --next")                           end),
+    awful.key({ }, "XF86AudioPlay",         function () awful.util.spawn("deadbeef --play-pause")                     end),
 
     -- Turn on/off touchpad
     awful.key({ }, "XF86LaunchA", function () awful.util.spawn("synclient TouchpadOff=0") end),
