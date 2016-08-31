@@ -222,6 +222,7 @@
     file
     firefox
     fish
+    gcc
     gimp
     git
     global
