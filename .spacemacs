@@ -49,7 +49,8 @@
    dotspacemacs-editing-style 'vim
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner nil
-   dotspacemacs-startup-lists '(bookmarks recents projects)
+   dotspacemacs-startup-lists '(recents projects)
+   dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-themes '(sanityinc-solarized-dark sanityinc-solarized-light)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Consolas"
@@ -61,8 +62,10 @@
    dotspacemacs-emacs-leader-key "M-m"
    dotspacemacs-major-mode-leader-key ","
    dotspacemacs-major-mode-emacs-leader-key "C-M-m"
+   dotspacemacs-distinguish-gui-tab t
    dotspacemacs-command-key ":"
    dotspacemacs-remap-Y-to-y$ t
+   dotspacemacs-default-layout-name "Default"
    dotspacemacs-auto-save-file-location nil
    dotspacemacs-use-ido t
    dotspacemacs-helm-resize nil
@@ -84,19 +87,21 @@
    dotspacemacs-persistent-server nil
    dotspacemacs-search-tools '("ag" "grep")
    dotspacemacs-default-package-repository nil)
+   dotspacemacs-whitespace-cleanup nil
   )
 
 (defun dotspacemacs/user-config ()
 
   ;; Set default values
 
-  (setq-default ring-bell-function 'ignore
-                indent-tabs-mode nil
-                org-agenda-files (file-expand-wildcards "~/org/*.org")
-                org-refile-use-outline-path 'file
-                org-refile-targets '((org-agenda-files :level . 1))
-                create-lockfiles nil
-                org-confirm-babel-evaluate)
+  (setq-default
+   ring-bell-function 'ignore
+   indent-tabs-mode nil
+   org-agenda-files (file-expand-wildcards "~/org/*.org")
+   org-refile-use-outline-path 'file
+   org-refile-targets '((org-agenda-files :level . 1))
+   create-lockfiles nil
+   org-confirm-babel-evaluate)
 
   (org-babel-do-load-languages 'org-babel-load-languages '((python . t) (haskell . t)))
 
@@ -132,16 +137,10 @@
 
   ;; Keys remapping
 
-  (keyboard-translate ?\C-i ?\H-i)
-  (global-set-key [?\H-i] 'evil-jump-forward)
-
   (global-set-key (kbd "M-m n 0") 'flip-bool-at-point)
-
-  (global-set-key (kbd "M-m SPC")     'save-buffer)
-  (global-set-key (kbd "<tab>")       'evil-avy-goto-word-or-subword-1)
-  (global-set-key (kbd "C-k")         'evil-backward-paragraph)
-  (global-set-key (kbd "C-j")         'evil-forward-paragraph)
-  (global-set-key (kbd "M-m o s")   'helm-semantic-or-imenu)
+  (global-set-key (kbd "M-m SPC") 'save-buffer)
+  (global-set-key (kbd "<tab>")   'evil-avy-goto-word-or-subword-1)
+  (global-set-key (kbd "M-m o s") 'helm-semantic-or-imenu)
 
   (add-hook 'magit-mode-hook
             (lambda ()
