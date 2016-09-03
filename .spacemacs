@@ -15,8 +15,7 @@
      git
      github
      (haskell :variables
-              haskell-completion-backend 'intero
-              haskell-enable-hindent-style "cramer")
+              haskell-completion-backend 'intero)
      html
      java
      javascript
