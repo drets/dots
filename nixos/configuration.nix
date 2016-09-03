@@ -261,6 +261,7 @@
     oxygen-gtk3
     p7zip
     phantomjs
+    plantuml
     python
     qbittorrent
     rxvt_unicode
