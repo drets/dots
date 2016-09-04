@@ -8,7 +8,6 @@
                       auto-completion-enable-snippets-in-popup t)
      better-defaults
      c-c++
-     eyebrowse
      emacs-lisp
      emoji
      elixir
@@ -109,6 +108,13 @@
 
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "google-chrome-stable")
+
+  ;; Dired
+
+  (add-hook 'dired-mode-hook (lambda () (dired-hide-details-mode 1)))
+  (setq dired-recursive-copies 'top
+        dired-recursive-copies 'top
+        dired-dwim-target t)
 
   ;; Haskell
 
