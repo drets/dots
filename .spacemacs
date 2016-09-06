@@ -116,6 +116,11 @@
         dired-recursive-copies 'top
         dired-dwim-target t)
 
+  ;; Tramp
+
+  (setq tramp-default-method "ssh"
+        tramp-chunksize 2000)
+
   ;; Haskell
 
   (setq flycheck-ghc-stack-use-nix t)

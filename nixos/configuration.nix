@@ -265,6 +265,7 @@
     python
     qbittorrent
     rxvt_unicode
+    rsync
     scrot
     shared_mime_info
     shutter
