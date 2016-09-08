@@ -38,7 +38,7 @@
    dotspacemacs-additional-packages
    '(key-chord)
    dotspacemacs-excluded-packages
-   '(smartparens)
+   '(smartparens anaconda-mode)
    dotspacemacs-delete-orphan-packages t)
   )
 
@@ -147,14 +147,11 @@
 
   ;; Keys remapping
 
-  (global-set-key (kbd "M-m n 0") 'flip-bool-at-point)
   (global-set-key (kbd "M-m SPC") 'save-buffer)
-  (global-set-key (kbd "<tab>")   'evil-avy-goto-word-or-subword-1)
-  (global-set-key (kbd "M-m o s") 'helm-semantic-or-imenu)
 
-  (add-hook 'magit-mode-hook
-            (lambda ()
-              (local-set-key (kbd "<tab>") 'magit-section-toggle)))
+  (global-set-key (kbd "C-s-a") 'evil-numbers/inc-at-pt)
+  (global-set-key (kbd "C-s-x") 'evil-numbers/dec-at-pt)
+  (global-set-key (kbd "C-s-b") 'flip-bool-at-point)
 
   (global-set-key (kbd "<f8>")
                   (lambda ()
@@ -164,6 +161,7 @@
 
   (key-chord-mode 1)
   (key-chord-define-global "jk" 'evil-normal-state)
+  (key-chord-define-global "df" 'evil-avy-goto-subword-1)
 
   )
 

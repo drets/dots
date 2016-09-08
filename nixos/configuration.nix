@@ -262,7 +262,8 @@
     p7zip
     phantomjs
     plantuml
-    python
+    python3
+    python3Packages.matplotlib
     qbittorrent
     rxvt_unicode
     rsync
