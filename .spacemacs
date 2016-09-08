@@ -149,9 +149,9 @@
 
   (global-set-key (kbd "M-m SPC") 'save-buffer)
 
-  (global-set-key (kbd "C-s-a") 'evil-numbers/inc-at-pt)
-  (global-set-key (kbd "C-s-x") 'evil-numbers/dec-at-pt)
-  (global-set-key (kbd "C-s-b") 'flip-bool-at-point)
+  (global-set-key (kbd "s-a") 'evil-numbers/inc-at-pt)
+  (global-set-key (kbd "s-x") 'evil-numbers/dec-at-pt)
+  (global-set-key (kbd "s-b") 'flip-bool-at-point)
 
   (global-set-key (kbd "<f8>")
                   (lambda ()
