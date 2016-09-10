@@ -284,6 +284,7 @@
     xclip
     xorg.xbacklight
     xscreensaver
+    zathura
     zip
   ];
 }
