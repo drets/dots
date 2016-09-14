@@ -103,10 +103,11 @@
     longitude = "16.96";
   };
 
+  users.extraGroups.plugdev = { };
   users.extraUsers.drets = {
     isNormalUser = true;
     uid = 1000;
-    extraGroups = [ "users" "wheel" "dialout" "networkmanager" ];
+    extraGroups = [ "plugdev" "dialout" "users" "wheel" "dialout" "networkmanager" ];
     initialPassword = "foobar";
   };
 
@@ -159,8 +160,9 @@
 
   programs.kbdlight.enable = true;
   programs.zsh.enable = true;
+  programs.fish.enable = true;
 
-  users.defaultUserShell = "/run/current-system/sw/bin/fish";
+  users.defaultUserShell = pkgs.fish;
 
   services.mysql = {
     enable = true;
@@ -262,6 +264,7 @@
     p7zip
     phantomjs
     plantuml
+    python
     python3
     python3Packages.matplotlib
     qbittorrent
