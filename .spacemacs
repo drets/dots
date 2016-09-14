@@ -27,9 +27,7 @@
      restclient
      search-engine
      semantic
-     (shell :variables
-            shell-default-shell 'eshell
-            shell-enable-smart-eshell t)
+     (shell :variables shell-default-term-shell "/run/current-system/sw/bin/fish")
      spell-checking
      syntax-checking
      themes-megapack
