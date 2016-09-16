@@ -81,7 +81,7 @@
 
   services.tlp.enable = true;
   services.xserver.enable = true;
-  services.xserver.layout = "us(altgr-intl),ru";
+  services.xserver.layout = "us(mac),ru";
   services.xserver.synaptics = {
     enable = true;
     twoFingerScroll = true;
@@ -96,7 +96,7 @@
     enable = true;
     luaModules = [ pkgs.luaPackages.luafilesystem ];
   };
-  services.xserver.xkbOptions = "grp:lctrl_toggle,ctrl:nocaps,altgr:ralt";
+  services.xserver.xkbOptions = "grp:lctrl_toggle,ctrl:nocaps";
   services.redshift = {
     enable = true;
     latitude = "52.39";
