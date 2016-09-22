@@ -6,7 +6,7 @@
       ./hardware-configuration.nix
     ];
 
-  system.stateVersion = "16.09";
+  system.stateVersion = "17.03";
 
   nixpkgs.config.allowUnfree = true;
   nix.binaryCaches = [ "https://cache.nixos.org" ];
@@ -30,8 +30,8 @@
 
   boot.loader = {
     systemd-boot.enable = true;
-    timeout = 0;
     efi.canTouchEfiVariables = true;
+    timeout = 0;
   };
 
   boot.kernelParams = [ "hid_apple.iso_layout=0" "hid_apple.fnmode=2" ];
@@ -273,7 +273,7 @@
     scrot
     shared_mime_info
     shutter
-    skype
+    #skype
     stack
     thunderbird
     tty-clock

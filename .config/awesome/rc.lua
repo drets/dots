@@ -10,6 +10,7 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+local utils = require("utils")
 local battery = require("battery")
 
 -- {{{ Error handling
@@ -253,11 +254,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "p", function() menubar.show() end),
 
     -- Screen saver
-    awful.key({ }, "XF86PowerOff",
-              function ()
-                  awful.util.spawn("xscreensaver-command -lock")
-                  awful.util.spawn("systemctl suspend")
-              end),
+    awful.key({ }, "XF86LaunchA",           function () awful.util.spawn("xscreensaver-command -lock")                end),
+    awful.key({ }, "XF86LaunchB",           function () awful.util.spawn("systemctl suspend")                         end),
     -- Apple media keys
     awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 2")                         end),
     awful.key({ }, "XF86MonBrightnessUp",   function () awful.util.spawn("xbacklight -inc 2")                         end),
@@ -268,16 +266,18 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86KbdBrightnessUp",   function () awful.util.spawn("kbdlight up 4")                             end),
     awful.key({ }, "XF86AudioPrev",         function () awful.util.spawn("deadbeef --prev")                           end),
     awful.key({ }, "XF86AudioNext",         function () awful.util.spawn("deadbeef --next")                           end),
-    awful.key({ }, "XF86AudioPlay",         function () awful.util.spawn("deadbeef --play-pause")                     end),
-
-    -- Turn on/off touchpad
-    awful.key({ }, "XF86LaunchA", function () awful.util.spawn("synclient TouchpadOff=0") end),
-    awful.key({ }, "XF86LaunchB", function () awful.util.spawn("synclient TouchpadOff=1") end)
+    awful.key({ }, "XF86AudioPlay",         function () awful.util.spawn("deadbeef --play-pause")                     end)
 )
 
 --- Autostart {{{
-awful.util.spawn_with_shell("xscreensaver")
-awful.util.spawn_with_shell("unclutter")
+utils.run_once("wicd-client", "wicd-client -t")
+utils.run_once("xscreensaver")
+utils.run_once("unclutter")
+utils.run_once("goldendict")
+utils.run_once("shutter")
+utils.run_once("emacs")
+utils.run_once("google-chrome-stable")
+utils.run_once("deadbeef")
 --- }}}
 
 clientkeys = awful.util.table.join(
@@ -365,12 +365,6 @@ awful.rules.rules = {
                      raise = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
-    { rule = { class = "MPlayer" },
-      properties = { floating = true } },
-    { rule = { class = "pinentry" },
-      properties = { floating = true } },
-    { rule = { class = "gimp" },
-      properties = { floating = true } },
     { rule = { class = "Skype" },
       properties = { size_hints_honor = false } },
 }
