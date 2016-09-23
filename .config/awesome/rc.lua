@@ -204,9 +204,9 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
-    awful.key({ modkey,           }, "s",      awful.tag.history.restore),
+    awful.key({ modkey,           }, "j",      awful.tag.history.restore),
 
-    awful.key({ modkey,           }, "j",
+    awful.key({ modkey,           }, "s",
         function ()
             awful.client.focus.byidx( 1)
             if client.focus then client.focus:raise() end
