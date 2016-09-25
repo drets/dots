@@ -9,7 +9,6 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
-local menubar = require("menubar")
 local utils = require("utils")
 local battery = require("battery")
 
@@ -40,7 +39,6 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
--- beautiful.init("/run/current-system/sw/share/awesome/themes/default/theme.lua")
 beautiful.init("/home/drets/src/dots/.config/awesome/themes/default/theme.lua")
 beautiful.wallpaper = "/home/drets/.background/sky-blue.png"
 
@@ -60,18 +58,18 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
 {
-    awful.layout.suit.floating,
+--    awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
+--    awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
+--    awful.layout.suit.fair,
+--    awful.layout.suit.fair.horizontal,
+--    awful.layout.suit.spiral,
+--    awful.layout.suit.spiral.dwindle,
+--    awful.layout.suit.max,
     awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier
+--    awful.layout.suit.magnifier
 }
 -- }}}
 
@@ -90,10 +88,6 @@ for s = 1, screen.count() do
     -- Each screen has its own tag table.
     tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
 end
--- }}}
-
--- Menubar configuration
-menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
 
 -- {{{ Wibox
@@ -200,7 +194,7 @@ root.buttons(awful.util.table.join(
 ))
 -- }}}
 
--- {{{ Key bindings
+-- {{{ Key bindings TODO Revisit keys
 globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
@@ -220,9 +214,9 @@ globalkeys = awful.util.table.join(
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end),
-    awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end),
-    awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end),
-    awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
+    awful.key({ modkey, "Control" }, "b", function () awful.screen.focus_relative( 1) end),
+    awful.key({ modkey, "Control" }, "v", function () awful.screen.focus_relative(-1) end),
+    awful.key({ modkey,           }, "y", awful.client.urgent.jumpto),
     awful.key({ modkey,           }, "Tab",
         function ()
             awful.client.focus.history.previous()
@@ -250,9 +244,6 @@ globalkeys = awful.util.table.join(
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
-    -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end),
-
     -- Screen saver
     awful.key({ }, "XF86LaunchA",           function () awful.util.spawn("xscreensaver-command -lock")                end),
     awful.key({ }, "XF86LaunchB",           function () awful.util.spawn("systemctl suspend")                         end),
@@ -266,11 +257,16 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86KbdBrightnessUp",   function () awful.util.spawn("kbdlight up 4")                             end),
     awful.key({ }, "XF86AudioPrev",         function () awful.util.spawn("deadbeef --prev")                           end),
     awful.key({ }, "XF86AudioNext",         function () awful.util.spawn("deadbeef --next")                           end),
-    awful.key({ }, "XF86AudioPlay",         function () awful.util.spawn("deadbeef --play-pause")                     end)
+    awful.key({ }, "XF86AudioPlay",         function () awful.util.spawn("deadbeef --play-pause")                     end),
+
+    -- Program hotkeys
+    awful.key({ modkey }, "a", function () awful.util.spawn("emacsclient -c") end),
+    awful.key({ modkey }, "g", function () awful.util.spawn("google-chrome-stable") end)
 )
 
 --- Autostart {{{
 utils.run_once("wicd-client", "wicd-client -t")
+-- Set “my” custom keyboard layout. Toggle layouts by left Control.
 utils.run_once("setxkbmap -layout \"my(en),my(ru)\" -option \"\" -option \"grp:lctrl_toggle\" -print | xkbcomp -I\"$HOME/.config/xkb\" - $DISPLAY")
 utils.run_once("xscreensaver")
 utils.run_once("unclutter")
@@ -292,20 +288,22 @@ clientkeys = awful.util.table.join(
             -- minimized, since minimized clients can't have the focus.
             c.minimized = true
         end),
-    awful.key({ modkey,           }, "m",
+    awful.key({ modkey,           }, "q",
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
             c.maximized_vertical   = not c.maximized_vertical
         end)
 )
 
--- Bind all key numbers to tags.
+-- Bind tags.
 -- Be careful: we use keycodes to make it works on any keyboard layout.
--- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, 9 do
+local tags = "siobklm,."
+for i = 1, #tags do
+    local t = "BackSpace"
+    if i ~= 4 then t = tags:sub(i,i) end
     globalkeys = awful.util.table.join(globalkeys,
         -- View tag only.
-        awful.key({ modkey }, "#" .. i + 9,
+        awful.key({ modkey }, t,
                   function ()
                         local screen = mouse.screen
                         local tag = awful.tag.gettags(screen)[i]
@@ -314,7 +312,7 @@ for i = 1, 9 do
                         end
                   end),
         -- Toggle tag.
-        awful.key({ modkey, "Control" }, "#" .. i + 9,
+        awful.key({ modkey, "Control" }, t,
                   function ()
                       local screen = mouse.screen
                       local tag = awful.tag.gettags(screen)[i]
@@ -323,7 +321,7 @@ for i = 1, 9 do
                       end
                   end),
         -- Move client to tag.
-        awful.key({ modkey, "Shift" }, "#" .. i + 9,
+        awful.key({ modkey, "Shift" }, t,
                   function ()
                       if client.focus then
                           local tag = awful.tag.gettags(client.focus.screen)[i]
@@ -333,7 +331,7 @@ for i = 1, 9 do
                      end
                   end),
         -- Toggle tag.
-        awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
+        awful.key({ modkey, "Control", "Shift" }, t,
                   function ()
                       if client.focus then
                           local tag = awful.tag.gettags(client.focus.screen)[i]
