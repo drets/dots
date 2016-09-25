@@ -271,13 +271,12 @@ globalkeys = awful.util.table.join(
 
 --- Autostart {{{
 utils.run_once("wicd-client", "wicd-client -t")
+utils.run_once("setxkbmap -layout \"my(en),my(ru)\" -option \"\" -option \"grp:lctrl_toggle\" -print | xkbcomp -I\"$HOME/.config/xkb\" - $DISPLAY")
 utils.run_once("xscreensaver")
 utils.run_once("unclutter")
 utils.run_once("goldendict")
 utils.run_once("shutter")
-utils.run_once("emacs")
-utils.run_once("google-chrome-stable")
-utils.run_once("deadbeef")
+utils.run_once("emacs --daemon")
 --- }}}
 
 clientkeys = awful.util.table.join(

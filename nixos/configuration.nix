@@ -81,7 +81,6 @@
 
   services.tlp.enable = true;
   services.xserver.enable = true;
-  services.xserver.layout = "us(mac),ru";
   services.xserver.synaptics = {
     enable = true;
     twoFingerScroll = true;
@@ -96,7 +95,6 @@
     enable = true;
     luaModules = [ pkgs.luaPackages.luafilesystem ];
   };
-  services.xserver.xkbOptions = "grp:lctrl_toggle,ctrl:nocaps";
   services.redshift = {
     enable = true;
     latitude = "52.39";
@@ -160,9 +158,8 @@
 
   programs.kbdlight.enable = true;
   programs.zsh.enable = true;
-  programs.fish.enable = true;
 
-  users.defaultUserShell = pkgs.fish;
+  users.defaultUserShell = pkgs.zsh;
 
   services.mysql = {
     enable = true;
