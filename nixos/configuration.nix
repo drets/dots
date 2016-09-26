@@ -272,6 +272,7 @@
     shutter
     #skype
     stack
+    tightvnc
     thunderbird
     tty-clock
     unclutter
@@ -283,8 +284,10 @@
     whois
     xclip
     xorg.xbacklight
+    xorg.xkbcomp
     xscreensaver
     zathura
+    zeal
     zip
   ];
 }
