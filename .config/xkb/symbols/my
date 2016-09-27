@@ -77,7 +77,7 @@ xkb_symbols "en" {
 
 default partial alphanumeric_keys modifier_keys
 xkb_symbols "ru" {
-    name[Group1]= "Russian (Dmytro)";
+    name[Group1]= "Russian (drets)";
 
     key	<TLDE> {	[     Cyrillic_io,     Cyrillic_IO	]	};
     key	<AD01> {	[ Cyrillic_shorti, Cyrillic_SHORTI	]	};
