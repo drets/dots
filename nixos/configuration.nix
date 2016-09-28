@@ -220,7 +220,6 @@
     emacs
     file
     firefox
-    fish
     gcc
     gimp
     git
@@ -270,7 +269,7 @@
     scrot
     shared_mime_info
     shutter
-    #skype
+    skype
     stack
     tightvnc
     thunderbird
