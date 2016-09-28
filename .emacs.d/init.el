@@ -26,7 +26,7 @@
 (yas-global-mode 1)
 
 ;; Load js-mode.
-(require 'js)
+(require 'javascript)
 
 ;; Get rid of annoying “yes or no” questions.
 (defalias 'yes-or-no-p 'y-or-n-p)
