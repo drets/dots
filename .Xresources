@@ -1,14 +1,14 @@
 Xft.dpi: 220
 
-urxvt.loginShell:         true
-urxvt.saveLines:         65535
-urxvt.urgentOnBell:       true
+URxvt.loginShell:         true
+URxvt.saveLines:         65535
+URxvt.urgentOnBell:       true
 
-urxvt.scrollBar:         false
-urxvt.scrollTtyOutput:   false
-urxvt.scrollTtyKeypress:  true
-urxvt.secondaryScroll:    true
-urxvt.iso14755:          false
+URxvt.scrollBar:         false
+URxvt.scrollTtyOutput:   false
+URxvt.scrollTtyKeypress:  true
+URxvt.secondaryScroll:    true
+URxvt.iso14755:          false
 
 URxvt.font: xft:DejaVu Sans Mono:normal:size=10
 
