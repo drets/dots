@@ -271,7 +271,7 @@ utils.run_once("setxkbmap -layout \"my(en),my(ru)\" -option \"\" -option \"grp:l
 utils.run_once("xscreensaver")
 utils.run_once("unclutter")
 utils.run_once("goldendict")
-utils.run_once("shutter")
+utils.run_once("shutter --min_at_startup")
 utils.run_once("emacs --daemon")
 --- }}}
 
