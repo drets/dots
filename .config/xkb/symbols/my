@@ -24,7 +24,7 @@ xkb_symbols "en" {
     key <AD05> {[ t, T ]};
     key <AD06> {[ y, Y ]};
     # key <AD07> {[ s, S, adiaeresis, Adiaeresis ]};
-    key <AD07> {[ s, S, space, space ]};
+    key <AD07> {[ s, S, Return, Return ]};
     key <AD08> {[ i, I, Up, Up ]};
     key <AD09> {[ o, O, odiaeresis, Odiaeresis ]};
     key <AD10> {[ p, P, j, J ]};
@@ -86,7 +86,7 @@ xkb_symbols "ru" {
     key	<AD04> {	[     Cyrillic_ka,     Cyrillic_KA	]	};
     key	<AD05> {	[     Cyrillic_ie,     Cyrillic_IE	]	};
     key	<AD06> {	[     Cyrillic_en,     Cyrillic_EN	]	};
-    key	<AD07> {	[    Cyrillic_ghe,    Cyrillic_GHE	]	};
+    key	<AD07> {[ Cyrillic_ghe, Cyrillic_GHE, Return, Return ]};
     key	<AD08> {[ Cyrillic_sha, Cyrillic_SHA, Up, Up ]};
     key	<AD09> {	[  Cyrillic_shcha,  Cyrillic_SHCHA	]	};
     key	<AD10> {[ Cyrillic_ze, Cyrillic_ZE, Cyrillic_zhe, Cyrillic_ZHE ]};
