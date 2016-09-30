@@ -12,9 +12,8 @@ URxvt.iso14755:          false
 
 URxvt.font: xft:DejaVu Sans Mono:normal:size=10
 
-URxvt*termName: rxvt
-URxvt*background: #add8e6
-URxvt*foreground: #000000
+URxvt*background: #101010
+URxvt*foreground: #d0d0d0
 URxvt*color0:     #101010
 URxvt*color1:     #960050
 URxvt*color2:     #66aa11
