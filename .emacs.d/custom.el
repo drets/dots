@@ -3,8 +3,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ag-arguments (quote ("--smart-case")))
- '(ag-highlight-search t)
  '(backup-by-copying t)
  '(backup-directory-alist (quote (("." . "~/.saves"))))
  '(column-number-mode t)
@@ -52,16 +50,21 @@
  '(kill-whole-line t)
  '(magit-push-always-verify nil)
  '(magit-use-overlays nil)
- '(markdown-hr-strings
-   (quote
-    ("-----------------------------------------------------------------------------" "* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *" "---------------------------------------" "* * * * * * * * * * * * * * * * * * * *" "---------" "* * * * *")))
  '(menu-bar-mode nil)
  '(my/kill-as-delete t)
  '(neo-smart-open t)
+ '(org-agenda-files "~/.agenda_files")
+ '(org-babel-load-languages (quote ((python . t))))
+ '(org-confirm-babel-evaluate nil)
+ '(package-selected-packages
+   (quote
+    (org-pomodoro yasnippet solarized-theme noflet neotree multiple-cursors magit haskell-mode flycheck fiplr findr expand-region ace-jump-mode)))
  '(scroll-bar-mode nil)
  '(split-width-threshold 100)
  '(text-scale-mode-step 1.1)
  '(tool-bar-mode nil)
+ '(tramp-chunksize 2000)
+ '(tramp-default-method "ssh")
  '(undo-limit 8000000)
  '(undo-strong-limit 12000000)
  '(use-dialog-box nil)
@@ -74,7 +77,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 102 :width normal))))
- '(ag-match-face ((t (:foreground "red" :weight bold))))
  '(font-lock-comment-face ((t (:inherit highlight))))
  '(font-lock-doc-face ((t (:foreground "#6c71c4" :slant normal))))
  '(variable-pitch ((t (:height 1.225 :family "Sans")))))
