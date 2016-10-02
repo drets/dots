@@ -26,6 +26,7 @@
      (files
       (".#*" "*~" "*.so" "*.jpg" "*.png" "*.gif" "*.pdf" "*.gz" "*.zip")))))
  '(fiplr-root-markers (quote (".git" ".svn" ".hg" ".bzr" "stack.yaml")))
+ '(flx-ido-mode t)
  '(haskell-indentation-show-indentations nil)
  '(haskell-indentation-starter-offset 2)
  '(haskell-interactive-mode-eval-pretty t)
@@ -43,6 +44,8 @@
  '(haskell-process-suggest-remove-import-lines nil)
  '(haskell-process-type (quote auto))
  '(haskell-tags-on-save t)
+ '(ido-mode (quote both) nil (ido))
+ '(ido-vertical-mode t)
  '(indent-tabs-mode nil)
  '(indicate-empty-lines t)
  '(initial-buffer-choice (quote remember-notes))
@@ -58,7 +61,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (org-pomodoro yasnippet solarized-theme noflet neotree multiple-cursors magit haskell-mode flycheck fiplr findr expand-region ace-jump-mode)))
+    (ido-vertical-mode flx-ido org-pomodoro yasnippet solarized-theme noflet neotree multiple-cursors magit haskell-mode flycheck fiplr findr expand-region ace-jump-mode)))
  '(savehist-mode t)
  '(scroll-bar-mode nil)
  '(split-width-threshold 100)
