@@ -44,6 +44,7 @@
  '(haskell-process-suggest-remove-import-lines nil)
  '(haskell-process-type (quote auto))
  '(haskell-tags-on-save t)
+ '(ido-everywhere t)
  '(ido-mode (quote both) nil (ido))
  '(ido-vertical-mode t)
  '(indent-tabs-mode nil)
