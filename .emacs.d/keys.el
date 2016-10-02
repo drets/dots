@@ -137,7 +137,6 @@
 
 ;; Auto-completion
 (define-key my-keys-minor-mode-map (kbd "C-<tab>") 'dabbrev-expand)
-(define-key minibuffer-local-map (kbd "C-<tab>") 'dabbrev-expand)
 
 ;; Wikia
 (define-key my-keys-minor-mode-map (kbd "<f8>")
