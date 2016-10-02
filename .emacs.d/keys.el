@@ -138,6 +138,9 @@
 ;; Auto-completion
 (define-key my-keys-minor-mode-map (kbd "C-<tab>") 'dabbrev-expand)
 
+;; Ido in M-x
+(define-key my-keys-minor-mode-map (kbd "M-x") 'smex)
+
 ;; Wikia
 (define-key my-keys-minor-mode-map (kbd "<f8>")
    (lambda ()
