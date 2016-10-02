@@ -46,7 +46,6 @@
  '(haskell-tags-on-save t)
  '(ido-everywhere t)
  '(ido-mode (quote both) nil (ido))
- '(ido-vertical-mode t)
  '(indent-tabs-mode nil)
  '(indicate-empty-lines t)
  '(initial-buffer-choice (quote remember-notes))
@@ -62,7 +61,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (smex ido-vertical-mode flx-ido org-pomodoro yasnippet solarized-theme noflet neotree multiple-cursors magit haskell-mode flycheck fiplr findr expand-region ace-jump-mode)))
+    (smex flx-ido org-pomodoro yasnippet solarized-theme noflet neotree multiple-cursors magit haskell-mode flycheck fiplr findr expand-region ace-jump-mode)))
  '(savehist-mode t)
  '(scroll-bar-mode nil)
  '(smex-flex-matching nil)
