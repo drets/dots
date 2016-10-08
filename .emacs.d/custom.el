@@ -27,6 +27,7 @@
       (".#*" "*~" "*.so" "*.jpg" "*.png" "*.gif" "*.pdf" "*.gz" "*.zip")))))
  '(fiplr-root-markers (quote (".git" ".svn" ".hg" ".bzr" "stack.yaml")))
  '(flx-ido-mode t)
+ '(global-undo-tree-mode t)
  '(haskell-indentation-show-indentations nil)
  '(haskell-indentation-starter-offset 2)
  '(haskell-interactive-mode-eval-pretty t)
@@ -61,7 +62,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (zygospore smex flx-ido org-pomodoro yasnippet solarized-theme noflet neotree multiple-cursors magit haskell-mode flycheck fiplr findr expand-region ace-jump-mode)))
+    (undo-tree zygospore smex flx-ido org-pomodoro yasnippet solarized-theme noflet neotree multiple-cursors magit haskell-mode flycheck fiplr findr expand-region ace-jump-mode)))
  '(savehist-mode t)
  '(scroll-bar-mode nil)
  '(smex-flex-matching nil)
@@ -73,8 +74,10 @@
  '(tramp-default-method "ssh")
  '(undo-limit 8000000)
  '(undo-strong-limit 12000000)
+ '(undo-tree-visualizer-diff t)
  '(use-dialog-box nil)
  '(word-wrap t)
+ '(yas-global-mode t)
  '(yas-indent-line (quote fixed))
  '(yas-snippet-dirs (quote ("~/.emacs.d/snippets")) nil (yasnippet)))
 (custom-set-faces

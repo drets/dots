@@ -23,7 +23,6 @@
 
 ;; Load Yasnippet.
 (require 'yasnippet)
-(yas-global-mode 1)
 
 ;; Load js-mode.
 (require 'javascript)
