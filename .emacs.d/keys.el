@@ -151,7 +151,7 @@
         "dmytror@dev-dmytror:/usr/wikia/mercury")))
 
 ;; Reversible version of delete-other-windows
-(define-key my-keys-minor-mode-map (kbd "M-s DEL") 'zygospore-toggle-delete-other-windows)
+(define-key my-keys-minor-mode-map (kbd "M-8") 'zygospore-toggle-delete-other-windows)
 
 ;; End of key definitions.
 
