@@ -141,6 +141,9 @@
 ;; Ido in M-x
 (define-key my-keys-minor-mode-map (kbd "M-x") 'smex)
 
+;; Visualize undo tree
+(define-key my-keys-minor-mode-map (kbd "M-4") 'undo-tree-visualize)
+
 ;; Wikia
 (define-key my-keys-minor-mode-map (kbd "<f8>")
    (lambda ()
