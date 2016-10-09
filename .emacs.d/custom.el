@@ -17,7 +17,6 @@
  '(dired-recursive-copies (quote top))
  '(dired-recursive-deletes (quote top))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
- '(electric-indent-mode nil)
  '(fill-column 77)
  '(fiplr-ignored-globs
    (quote
