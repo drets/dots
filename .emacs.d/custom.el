@@ -3,6 +3,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ag-highlight-search t)
  '(backup-by-copying t)
  '(backup-directory-alist (quote (("." . "~/.saves"))))
  '(column-number-mode t)
@@ -61,7 +62,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (undo-tree zygospore smex flx-ido org-pomodoro yasnippet solarized-theme noflet neotree multiple-cursors magit haskell-mode flycheck fiplr findr expand-region ace-jump-mode)))
+    (ag undo-tree zygospore smex flx-ido org-pomodoro yasnippet solarized-theme noflet neotree multiple-cursors magit haskell-mode flycheck fiplr findr expand-region ace-jump-mode)))
  '(savehist-mode t)
  '(scroll-bar-mode nil)
  '(smex-flex-matching nil)
