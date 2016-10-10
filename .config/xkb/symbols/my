@@ -120,12 +120,12 @@ xkb_symbols "ru" {
 
 };
 
-// The D key chooses the third shift level.
+// The D key (while pressed) chooses the third shift level.
 partial modifier_keys
 xkb_symbols "d_level3" {
   key <AC03> {
     type[Group1]="ONE_LEVEL",
-    symbols[Group1] = [ ISO_Level3_Latch ]
+    symbols[Group1] = [ ISO_Level3_Shift ]
   };
   include "level3(modifier_mapping)"
 };
