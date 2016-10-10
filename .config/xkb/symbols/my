@@ -11,8 +11,8 @@ xkb_symbols "en" {
     key <AE06> {[ 6, ae, ae, ae ]};
     key <AE07> {[ 7, asciicircum, lessthanequal ]};
     key <AE08> {[ 8, ampersand, greaterthanequal, infinity ]};
-    key <AE09> {[ 9, bracketleft, parenleft, braceleft ]};
-    key <AE10> {[ 0, bracketright, parenright, braceright ]};
+    key <AE09> {[ 9, bracketleft, parenleft ]};
+    key <AE10> {[ 0, bracketright, parenright ]};
 # U2212: real minus
     key <AE11> {[ minus, underscore, U2212 ]};
     key <AE12> {[ equal, plus, notequal, plusminus ]};
@@ -21,8 +21,8 @@ xkb_symbols "en" {
     key <AD02> {[ w, W ]};
     key <AD03> {[ a, A ]};
     key <AD04> {[ r, R, enfilledcircbullet ]};
-    key <AD05> {[ t, T ]};
-    key <AD06> {[ y, Y ]};
+    key <AD05> {[ t, T, braceleft ]};
+    key <AD06> {[ y, Y, braceright ]};
     # key <AD07> {[ s, S, adiaeresis, Adiaeresis ]};
     key <AD07> {[ s, S, Return, Return ]};
     key <AD08> {[ i, I, Up, Up ]};
