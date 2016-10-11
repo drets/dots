@@ -62,12 +62,13 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (ag undo-tree zygospore smex flx-ido org-pomodoro yasnippet solarized-theme noflet neotree multiple-cursors magit haskell-mode flycheck fiplr findr expand-region ace-jump-mode)))
+    (swoop ag undo-tree zygospore smex flx-ido org-pomodoro yasnippet solarized-theme noflet neotree multiple-cursors magit haskell-mode flycheck fiplr findr expand-region ace-jump-mode)))
  '(savehist-mode t)
  '(scroll-bar-mode nil)
  '(smex-flex-matching nil)
  '(smex-history-length 0)
  '(split-width-threshold 100)
+ '(swoop-font-size-change: nil)
  '(text-scale-mode-step 1.1)
  '(tool-bar-mode nil)
  '(tramp-chunksize 2000)

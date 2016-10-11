@@ -10,6 +10,7 @@
 (require 'ace-jump-mode)
 (require 'fiplr)
 (require 'neotree)
+(require 'swoop)
 
 ;; Movement and navigation
 
@@ -84,6 +85,10 @@
 (define-key my-keys-minor-mode-map (kbd "M-s f") 'findr-query-replace)
 
 (define-key my-keys-minor-mode-map (kbd "M-s M-o") 'my/occur-region)
+
+(define-key my-keys-minor-mode-map (kbd "M-s s") 'swoop-pcre-regexp)
+(define-key swoop-map (kbd "C-/") 'swoop-action-goto-line-next)
+(define-key swoop-map (kbd "M-/") 'swoop-action-goto-line-prev)
 
 ;; Files
 
