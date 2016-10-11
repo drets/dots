@@ -46,6 +46,9 @@
 (define-key my-keys-minor-mode-map (kbd "C-,") 'mc/mark-next-like-this)
 
 (define-key my-keys-minor-mode-map (kbd "C-n") 'er/expand-region)
+(define-key my-keys-minor-mode-map (kbd "M-s =") 'indent-region)
+
+(define-key my-keys-minor-mode-map (kbd "M-s l") 'sort-lines)
 
 ;; Editing
 
@@ -83,8 +86,6 @@
 (define-key my-keys-minor-mode-map (kbd "M-s r") 'rgrep)
 (define-key my-keys-minor-mode-map (kbd "M-s a") 'ag-project)
 (define-key my-keys-minor-mode-map (kbd "M-s f") 'findr-query-replace)
-
-(define-key my-keys-minor-mode-map (kbd "M-s M-o") 'my/occur-region)
 
 (define-key my-keys-minor-mode-map (kbd "M-s s") 'swoop-pcre-regexp)
 (define-key swoop-map (kbd "C-/") 'swoop-action-goto-line-next)

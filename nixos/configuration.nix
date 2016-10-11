@@ -58,7 +58,7 @@
     enable = true;
 
     # These are used in addition to resolv.conf
-    servers = [ "8.8.8.8" "8.8.4.4" ];
+    servers = [ "10.14.30.130" "8.8.8.8" "8.8.4.4" ];
 
     extraConfig = ''
       listen-address=127.0.0.1
