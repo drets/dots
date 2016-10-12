@@ -26,7 +26,6 @@
      (files
       (".#*" "*~" "*.so" "*.jpg" "*.png" "*.gif" "*.pdf" "*.gz" "*.zip")))))
  '(fiplr-root-markers (quote (".git" ".svn" ".hg" ".bzr" "stack.yaml")))
- '(flx-ido-mode t)
  '(global-undo-tree-mode t)
  '(haskell-indentation-show-indentations nil)
  '(haskell-indentation-starter-offset 2)
@@ -45,11 +44,11 @@
  '(haskell-process-suggest-remove-import-lines nil)
  '(haskell-process-type (quote auto))
  '(haskell-tags-on-save t)
- '(ido-everywhere t)
- '(ido-mode (quote both) nil (ido))
  '(indent-tabs-mode nil)
  '(indicate-empty-lines t)
  '(initial-buffer-choice (quote remember-notes))
+ '(ivy-mode t)
+ '(ivy-use-virtual-buffers t)
  '(kept-new-versions 6)
  '(kill-whole-line t)
  '(magit-push-always-verify nil)
@@ -62,7 +61,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (php-mode swoop ag undo-tree zygospore smex flx-ido org-pomodoro yasnippet solarized-theme noflet neotree multiple-cursors magit haskell-mode flycheck fiplr findr expand-region ace-jump-mode)))
+    (smex counsel swiper php-mode ag undo-tree zygospore org-pomodoro yasnippet solarized-theme noflet neotree multiple-cursors magit haskell-mode flycheck findr expand-region ace-jump-mode)))
  '(savehist-mode t)
  '(scroll-bar-mode nil)
  '(smex-flex-matching nil)

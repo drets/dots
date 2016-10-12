@@ -79,6 +79,7 @@
 
   time.timeZone = "Europe/Amsterdam";
 
+  services.locate.enable = true;
   services.tlp.enable = true;
   services.xserver.enable = true;
   services.xserver.synaptics = {

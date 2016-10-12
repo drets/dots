@@ -10,7 +10,8 @@
 (require 'ace-jump-mode)
 (require 'fiplr)
 (require 'neotree)
-(require 'swoop)
+(require 'swiper)
+(require 'counsel)
 
 ;; Movement and navigation
 
@@ -86,17 +87,15 @@
 (define-key my-keys-minor-mode-map (kbd "M-s r") 'rgrep)
 (define-key my-keys-minor-mode-map (kbd "M-s a") 'ag-project)
 (define-key my-keys-minor-mode-map (kbd "M-s f") 'findr-query-replace)
-
-(define-key my-keys-minor-mode-map (kbd "M-s s") 'swoop-pcre-regexp)
-(define-key swoop-map (kbd "C-/") 'swoop-action-goto-line-next)
-(define-key swoop-map (kbd "M-/") 'swoop-action-goto-line-prev)
+(define-key my-keys-minor-mode-map (kbd "M-s s") 'swiper)
+(define-key my-keys-minor-mode-map (kbd "M-s M-s") 'swiper-all)
 
 ;; Files
 
 (define-key my-keys-minor-mode-map (kbd "C-f") (kbd "C-x C-s")) ; generic
 
 (define-key my-keys-minor-mode-map (kbd "C-o") 'find-file)
-(define-key my-keys-minor-mode-map (kbd "C-p") 'fiplr-find-file)
+(define-key my-keys-minor-mode-map (kbd "C-p") 'counsel-git)
 
 (define-key my-keys-minor-mode-map (kbd "M-r") 'revert-buffer)
 
@@ -140,18 +139,20 @@
 
 ;; Snippets
 
-(define-key my-keys-minor-mode-map (kbd "M-s M-s") 'yas-new-snippet)
+(define-key my-keys-minor-mode-map (kbd "M-s y") 'yas-new-snippet)
 
 ;; Auto-completion
+
 (define-key my-keys-minor-mode-map (kbd "C-<tab>") 'dabbrev-expand)
 
-;; Ido in M-x
-(define-key my-keys-minor-mode-map (kbd "M-x") 'smex)
+(define-key my-keys-minor-mode-map (kbd "M-x") 'counsel-M-x)
 
 ;; Visualize undo tree
+
 (define-key my-keys-minor-mode-map (kbd "M-4") 'undo-tree-visualize)
 
 ;; Wikia
+
 (define-key my-keys-minor-mode-map (kbd "<f8>")
    (lambda ()
      (interactive)
@@ -161,6 +162,7 @@
         "dmytror@dev-dmytror:/usr/wikia/mercury")))
 
 ;; Reversible version of delete-other-windows
+
 (define-key my-keys-minor-mode-map (kbd "M-8") 'zygospore-toggle-delete-other-windows)
 
 ;; End of key definitions.
