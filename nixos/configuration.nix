@@ -222,6 +222,7 @@
     firefox
     gcc
     gimp
+    gist
     git
     global
     gnome3.adwaita-icon-theme
