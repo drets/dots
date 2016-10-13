@@ -19,13 +19,6 @@
  '(dired-recursive-deletes (quote top))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(fill-column 77)
- '(fiplr-ignored-globs
-   (quote
-    ((directories
-      (".git" ".svn" ".hg" ".bzr" ".cabal-sandbox" ".stack-work" "dist"))
-     (files
-      (".#*" "*~" "*.so" "*.jpg" "*.png" "*.gif" "*.pdf" "*.gz" "*.zip")))))
- '(fiplr-root-markers (quote (".git" ".svn" ".hg" ".bzr" "stack.yaml")))
  '(global-undo-tree-mode t)
  '(haskell-indentation-show-indentations nil)
  '(haskell-indentation-starter-offset 2)
@@ -61,7 +54,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (smex counsel swiper php-mode ag undo-tree zygospore org-pomodoro yasnippet solarized-theme noflet neotree multiple-cursors magit haskell-mode flycheck findr expand-region ace-jump-mode)))
+    (flx smex counsel swiper php-mode ag undo-tree zygospore org-pomodoro yasnippet solarized-theme noflet neotree multiple-cursors magit haskell-mode flycheck findr expand-region ace-jump-mode)))
  '(savehist-mode t)
  '(scroll-bar-mode nil)
  '(smex-flex-matching nil)

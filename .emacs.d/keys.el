@@ -8,7 +8,6 @@
 (require 'findr)
 (require 'utils)
 (require 'ace-jump-mode)
-(require 'fiplr)
 (require 'neotree)
 (require 'swiper)
 (require 'counsel)
@@ -87,7 +86,8 @@
 (define-key my-keys-minor-mode-map (kbd "M-s r") 'rgrep)
 (define-key my-keys-minor-mode-map (kbd "M-s a") 'ag-project)
 (define-key my-keys-minor-mode-map (kbd "M-s f") 'findr-query-replace)
-(define-key my-keys-minor-mode-map (kbd "M-s s") 'swiper)
+
+(define-key my-keys-minor-mode-map (kbd "M-s s") 'my/swiper)
 (define-key my-keys-minor-mode-map (kbd "M-s M-s") 'swiper-all)
 
 ;; Files
@@ -153,13 +153,7 @@
 
 ;; Wikia
 
-(define-key my-keys-minor-mode-map (kbd "<f8>")
-   (lambda ()
-     (interactive)
-     (my/sync "/home/drets/src/wikia/app/"
-        "dmytror@dev-dmytror:/usr/wikia/source/wiki")
-     (my/sync "/home/drets/src/wikia/mercury/"
-        "dmytror@dev-dmytror:/usr/wikia/mercury")))
+(define-key my-keys-minor-mode-map (kbd "<f8>") 'my/wikia-sync)
 
 ;; Reversible version of delete-other-windows
 

@@ -130,6 +130,17 @@ Repeated invocations toggle between the two most recently open buffers."
   (save-some-buffers t)
   (call-process-shell-command
    (format "rsync -avz --exclude-from=%s --exclude=.git %s %s"
-    (concat from ".gitignore") from to) nil 0))
+           (concat from ".gitignore") from to) nil 0))
+
+(defun my/wikia-sync ()
+  (interactive)
+  (my/sync "/home/drets/src/wikia/app/"
+           "dmytror@dev-dmytror:/usr/wikia/source/wiki")
+  (my/sync "/home/drets/src/wikia/mercury/"
+           "dmytror@dev-dmytror:/usr/wikia/mercury"))
+
+(defun my/swiper ()
+  (interactive)
+  (swiper (thing-at-point 'word)))
 
 (provide 'utils)
