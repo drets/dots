@@ -49,8 +49,6 @@
 
 ;; Load ivy.
 (require 'ivy)
-(setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
-(setq ivy-initial-inputs-alist nil)
 
 ;; Load “customize”d variables.
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))

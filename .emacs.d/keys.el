@@ -80,15 +80,13 @@
 
 ;; Search and replacement
 
-(define-key my-keys-minor-mode-map (kbd "C-s") 'isearch-forward-regexp)
+(define-key my-keys-minor-mode-map (kbd "C-s") 'my/swiper)
 (define-key my-keys-minor-mode-map (kbd "C-r") 'query-replace-regexp)
 
-(define-key my-keys-minor-mode-map (kbd "M-s r") 'rgrep)
+(define-key my-keys-minor-mode-map (kbd "M-s s") 'swiper-all)
+(define-key my-keys-minor-mode-map (kbd "M-s g") 'rgrep)
 (define-key my-keys-minor-mode-map (kbd "M-s a") 'ag-project)
-(define-key my-keys-minor-mode-map (kbd "M-s f") 'findr-query-replace)
-
-(define-key my-keys-minor-mode-map (kbd "M-s s") 'my/swiper)
-(define-key my-keys-minor-mode-map (kbd "M-s M-s") 'swiper-all)
+(define-key my-keys-minor-mode-map (kbd "M-s r") 'findr-query-replace)
 
 ;; Files
 
