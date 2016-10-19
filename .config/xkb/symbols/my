@@ -23,10 +23,9 @@ xkb_symbols "en" {
     key <AD04> {[ r, R, enfilledcircbullet ]};
     key <AD05> {[ t, T, braceleft ]};
     key <AD06> {[ y, Y, braceright ]};
-    # key <AD07> {[ s, S, adiaeresis, Adiaeresis ]};
     key <AD07> {[ s, S, Return, Return ]};
     key <AD08> {[ i, I, Up, Up ]};
-    key <AD09> {[ o, O, odiaeresis, Odiaeresis ]};
+    key <AD09> {[ o, O, Pointer_Button1, Pointer_Button1 ]};
     key <AD10> {[ p, P, j, J ]};
     key <AD11> {[ u, U, semicolon, leftsinglequotemark ]};
     key <AD12> {[ asterisk, ae, ae, rightsinglequotemark ]};
@@ -37,13 +36,11 @@ xkb_symbols "en" {
 
     key <CAPS> {[ Tab, Tab, Tab, Tab ]};
     key <AC01> {[ f, F ]};
-#     key <AC02> {[ s, S ]};
-#     key <AC03> {[ d, D ]};
 # U21D2: right double arrow
     key <AC04> {[ e, E, rightarrow, U21D2 ]};
 # U21D0: left double arrow
     key <AC05> {[ g, G, leftarrow, U21D0 ]};
-    key <AC06> {[ h, H, aring, Aring ]};
+    key <AC06> {[ h, H, Pointer_EnableKeys, Pointer_EnableKeys ]};
     key <AC07> {[ BackSpace, BackSpace, Left, Left]};
     key <AC08> {[ k, K, Down, Down ]};
     key <AC09> {[ l, L, Right, Right ]};
