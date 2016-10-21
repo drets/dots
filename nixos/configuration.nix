@@ -34,7 +34,7 @@
     timeout = 0;
   };
 
-  boot.kernelParams = [ "hid_apple.iso_layout=0" "hid_apple.fnmode=2" ];
+  boot.kernelParams = [ "hid_apple.fnmode=2" ];
   boot.tmpOnTmpfs = true;
   boot.blacklistedKernelModules = ["bdc_pci"];
 
