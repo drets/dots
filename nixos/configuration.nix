@@ -34,7 +34,7 @@
     timeout = 0;
   };
 
-  boot.kernelParams = [ "hid_apple.fnmode=2" ];
+  boot.kernelParams = [ "hid_apple.iso_layout=0" "hid_apple.fnmode=2" ];
   boot.tmpOnTmpfs = true;
   boot.blacklistedKernelModules = ["bdc_pci"];
 
@@ -238,8 +238,6 @@
     haskell.packages.ghc7103.intero
     haskell.packages.ghc7103.structured-haskell-mode
     haskell.packages.ghc7103.stylish-haskell
-    haskellPackages.hakyll
-    haskellPackages.pandoc
     hexchat
     htop
     idea.idea-community

@@ -8,3 +8,6 @@
 
 [push]
 	gpgSign = if-asked
+[core]
+	editor = "emacsclient -c"
+
