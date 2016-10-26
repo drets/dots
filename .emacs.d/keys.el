@@ -46,7 +46,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-,") 'mc/mark-next-like-this)
 
 (define-key my-keys-minor-mode-map (kbd "C-n") 'er/expand-region)
-(define-key my-keys-minor-mode-map (kbd "M-s =") 'indent-region)
+(define-key my-keys-minor-mode-map (kbd "M-s f") 'indent-region)
 
 (define-key my-keys-minor-mode-map (kbd "M-s l") 'sort-lines)
 
@@ -156,6 +156,9 @@
 ;; Reversible version of delete-other-windows
 
 (define-key my-keys-minor-mode-map (kbd "M-8") 'zygospore-toggle-delete-other-windows)
+
+;; Paste copied item
+(define-key my-keys-minor-mode-map (kbd "M-s p") 'counsel-yank-pop)
 
 ;; End of key definitions.
 
