@@ -5,11 +5,10 @@
 (require 'multiple-cursors)
 (require 'expand-region)
 (require 'magit)
-(require 'findr)
+(require 'move-text)
 (require 'utils)
 (require 'ace-jump-mode)
 (require 'neotree)
-(require 'swiper)
 (require 'counsel)
 
 ;; Movement and navigation
@@ -37,6 +36,8 @@
 
 (define-key my-keys-minor-mode-map (kbd "M-9") 'backward-sexp)
 (define-key my-keys-minor-mode-map (kbd "M-0") 'forward-sexp)
+
+(move-text-default-bindings)
 
 ;; Regions
 
@@ -80,13 +81,12 @@
 
 ;; Search and replacement
 
-(define-key my-keys-minor-mode-map (kbd "C-s") 'my/swiper)
+(define-key my-keys-minor-mode-map (kbd "C-s") 'isearch-forward-regexp)
 (define-key my-keys-minor-mode-map (kbd "C-r") 'query-replace-regexp)
 
-(define-key my-keys-minor-mode-map (kbd "M-s s") 'swiper-all)
+(define-key my-keys-minor-mode-map (kbd "M-s s") 'my/swiper)
 (define-key my-keys-minor-mode-map (kbd "M-s g") 'rgrep)
-(define-key my-keys-minor-mode-map (kbd "M-s a") 'ag-project)
-(define-key my-keys-minor-mode-map (kbd "M-s r") 'findr-query-replace)
+(define-key my-keys-minor-mode-map (kbd "M-s a") 'counsel-git-grep)
 
 ;; Files
 

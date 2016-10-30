@@ -56,7 +56,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (markdown-mode flx smex counsel swiper php-mode ag undo-tree zygospore org-pomodoro yasnippet solarized-theme noflet neotree multiple-cursors magit haskell-mode flycheck findr expand-region ace-jump-mode)))
+    (counsel move-text markdown-mode flx smex php-mode undo-tree zygospore org-pomodoro yasnippet solarized-theme noflet neotree multiple-cursors magit haskell-mode flycheck expand-region ace-jump-mode)))
  '(savehist-mode t)
  '(scroll-bar-mode nil)
  '(smex-flex-matching nil)
