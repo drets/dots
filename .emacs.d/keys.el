@@ -86,8 +86,8 @@
 (define-key my-keys-minor-mode-map (kbd "C-r") 'query-replace-regexp)
 
 (define-key my-keys-minor-mode-map (kbd "M-s s") 'swiper)
-(define-key my-keys-minor-mode-map (kbd "M-s g") 'rgrep)
-(define-key my-keys-minor-mode-map (kbd "M-s a") 'counsel-git-grep)
+(define-key my-keys-minor-mode-map (kbd "M-s r") 'rgrep)
+(define-key my-keys-minor-mode-map (kbd "M-s p") 'counsel-git-grep)
 
 ;; Files
 
@@ -138,7 +138,7 @@
 
 ;; Snippets
 
-(define-key my-keys-minor-mode-map (kbd "M-s y") 'yas-new-snippet)
+(define-key my-keys-minor-mode-map (kbd "M-s n") 'yas-new-snippet)
 
 ;; Auto-completion
 
@@ -159,7 +159,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-8") 'zygospore-toggle-delete-other-windows)
 
 ;; Paste copied item
-(define-key my-keys-minor-mode-map (kbd "M-s p") 'counsel-yank-pop)
+(define-key my-keys-minor-mode-map (kbd "M-s y") 'counsel-yank-pop)
 
 ;; End of key definitions.
 
