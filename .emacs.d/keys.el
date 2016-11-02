@@ -66,6 +66,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-'") 'my/duplicate)
 
 (define-key my-keys-minor-mode-map (kbd "M-d") 'just-one-space)
+(define-key my-keys-minor-mode-map (kbd "M-s /") 'my/toggle-comment)
 
 ;; Macros
 
@@ -84,7 +85,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-s") 'isearch-forward-regexp)
 (define-key my-keys-minor-mode-map (kbd "C-r") 'query-replace-regexp)
 
-(define-key my-keys-minor-mode-map (kbd "M-s s") 'my/swiper)
+(define-key my-keys-minor-mode-map (kbd "M-s s") 'swiper)
 (define-key my-keys-minor-mode-map (kbd "M-s g") 'rgrep)
 (define-key my-keys-minor-mode-map (kbd "M-s a") 'counsel-git-grep)
 

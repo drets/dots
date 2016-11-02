@@ -139,8 +139,14 @@ Repeated invocations toggle between the two most recently open buffers."
   (my/sync "/home/drets/src/wikia/mercury/"
            "dmytror@dev-dmytror:/usr/wikia/mercury"))
 
-(defun my/swiper ()
-  (interactive)
-  (swiper (thing-at-point 'word)))
+(defun my/toggle-comment ()
+    "Comments or uncomments the region or the current line if there's no active region."
+    (interactive)
+    (let (beg end)
+        (if (region-active-p)
+            (setq beg (region-beginning) end (region-end))
+            (setq beg (line-beginning-position) end (line-end-position)))
+        (comment-or-uncomment-region beg end)
+        (next-line)))
 
 (provide 'utils)
