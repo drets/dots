@@ -47,9 +47,6 @@
                    (y-or-n-p (format "Create directory %s does not exist. Create it?" dir)))
           (make-directory dir t))))))
 
-;; Load ivy.
-(require 'ivy)
-
 ;; Load “customize”d variables.
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)

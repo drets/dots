@@ -2,14 +2,14 @@
 
 ;; Required libraries
 
-(require 'multiple-cursors)
+(require 'ace-jump-mode)
 (require 'expand-region)
+(require 'fiplr)
 (require 'magit)
 (require 'move-text)
-(require 'utils)
-(require 'ace-jump-mode)
+(require 'multiple-cursors)
 (require 'neotree)
-(require 'counsel)
+(require 'utils)
 
 ;; Movement and navigation
 
@@ -47,8 +47,8 @@
 (define-key my-keys-minor-mode-map (kbd "C-,") 'mc/mark-next-like-this)
 
 (define-key my-keys-minor-mode-map (kbd "C-n") 'er/expand-region)
-(define-key my-keys-minor-mode-map (kbd "M-s f") 'indent-region)
 
+(define-key my-keys-minor-mode-map (kbd "M-s f") 'indent-region)
 (define-key my-keys-minor-mode-map (kbd "M-s l") 'sort-lines)
 
 ;; Editing
@@ -85,16 +85,17 @@
 (define-key my-keys-minor-mode-map (kbd "C-s") 'isearch-forward-regexp)
 (define-key my-keys-minor-mode-map (kbd "C-r") 'query-replace-regexp)
 
-(define-key my-keys-minor-mode-map (kbd "M-s s") 'swiper)
 (define-key my-keys-minor-mode-map (kbd "M-s r") 'rgrep)
-(define-key my-keys-minor-mode-map (kbd "M-s p") 'counsel-git-grep)
+(define-key my-keys-minor-mode-map (kbd "M-s q") 'findr-query-replace)
+
+(define-key my-keys-minor-mode-map (kbd "M-s M-o") 'my/occur-region)
 
 ;; Files
 
 (define-key my-keys-minor-mode-map (kbd "C-f") (kbd "C-x C-s")) ; generic
 
 (define-key my-keys-minor-mode-map (kbd "C-o") 'find-file)
-(define-key my-keys-minor-mode-map (kbd "C-p") 'counsel-git)
+(define-key my-keys-minor-mode-map (kbd "C-p") 'fiplr-find-file)
 
 (define-key my-keys-minor-mode-map (kbd "M-r") 'revert-buffer)
 
@@ -144,22 +145,19 @@
 
 (define-key my-keys-minor-mode-map (kbd "C-<tab>") 'dabbrev-expand)
 
-(define-key my-keys-minor-mode-map (kbd "M-x") 'counsel-M-x)
+(define-key my-keys-minor-mode-map (kbd "M-x") 'smex)
 
 ;; Visualize undo tree
 
 (define-key my-keys-minor-mode-map (kbd "M-4") 'undo-tree-visualize)
 
-;; Wikia
-
-(define-key my-keys-minor-mode-map (kbd "<f8>") 'my/wikia-sync)
-
 ;; Reversible version of delete-other-windows
 
 (define-key my-keys-minor-mode-map (kbd "M-8") 'zygospore-toggle-delete-other-windows)
 
-;; Paste copied item
-(define-key my-keys-minor-mode-map (kbd "M-s y") 'counsel-yank-pop)
+;; Wikia
+
+(define-key my-keys-minor-mode-map (kbd "<f8>") 'my/wikia-sync)
 
 ;; End of key definitions.
 

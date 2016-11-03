@@ -227,10 +227,12 @@
     git
     global
     gnome3.adwaita-icon-theme
+    gnome3.gconf
     gnumake
     gnupg
     goldendict
     google-chrome
+    hamster-time-tracker
     haskell.packages.ghc7103.ghc
     haskell.packages.ghc7103.hasktags
     haskell.packages.ghc7103.hlint
