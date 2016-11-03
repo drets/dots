@@ -274,7 +274,6 @@
     skype
     stack
     tightvnc
-    thunderbird
     tty-clock
     unclutter
     unzip
