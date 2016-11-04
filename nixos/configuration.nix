@@ -255,6 +255,7 @@
     nodePackages.jshint
     nodejs
     nox
+    liferea
     openjdk
     openvpn
     oxygen-gtk2
