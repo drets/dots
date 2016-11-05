@@ -67,6 +67,7 @@
  '(package-selected-packages
    (quote
     (findr flx-ido fiplr move-text markdown-mode flx smex php-mode undo-tree zygospore org-pomodoro yasnippet solarized-theme noflet neotree multiple-cursors magit haskell-mode flycheck expand-region ace-jump-mode)))
+ '(python-shell-interpreter "python3")
  '(savehist-mode t)
  '(scroll-bar-mode nil)
  '(smex-flex-matching nil)
