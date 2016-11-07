@@ -3,7 +3,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ag-highlight-search t)
  '(backup-by-copying t)
  '(backup-directory-alist (quote (("." . "~/.saves"))))
  '(browse-url-browser-display nil)
@@ -53,7 +52,7 @@
  '(ido-use-faces nil)
  '(indent-tabs-mode nil)
  '(indicate-empty-lines t)
- '(initial-buffer-choice (quote remember-notes))
+ '(initial-buffer-choice "~/org/today.org")
  '(kept-new-versions 6)
  '(kill-whole-line t)
  '(magit-push-always-verify nil)
@@ -61,7 +60,7 @@
  '(menu-bar-mode nil)
  '(my/kill-as-delete t)
  '(neo-smart-open t)
- '(org-agenda-files "~/.agenda_files")
+ '(org-agenda-files (quote ("~/org/birthday.org" "~/org/today.org")))
  '(org-babel-load-languages (quote ((python . t))))
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
