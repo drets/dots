@@ -273,6 +273,7 @@
     shared_mime_info
     shutter
     skype
+    slack
     stack
     tightvnc
     tty-clock
