@@ -276,6 +276,7 @@
     slack
     stack
     tightvnc
+    tdesktop
     tty-clock
     unclutter
     unzip
