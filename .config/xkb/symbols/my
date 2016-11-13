@@ -47,6 +47,7 @@ xkb_symbols "en" {
     key <AC10> {[ d, D, colon ]};
     key <AC11> {[ apostrophe, quotedbl, endash, emdash ]};
 
+    key <LSGT> {[ Pointer_EnableKeys, Pointer_EnableKeys ]};
     key <AB01> {[ z, Z ]};
     key <AB02> {[ x, X, multiply ]};
     key <AB03> {[ c, C, bar ]};
@@ -65,7 +66,7 @@ xkb_symbols "en" {
     key <UP>   {[ Up, Up, uparrow ]};
     key <DOWN> {[ Down, Down, downarrow ]};
 
-    key <SPCE> {[ space, space, Pointer_Button1, Pointer_EnableKeys ]};
+    key <SPCE> {[ space, space, Pointer_Button1, Pointer_Button3 ]};
 
     include "my(d_level3)"
     include "my(tab_alt)"
