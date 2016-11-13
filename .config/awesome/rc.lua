@@ -260,7 +260,6 @@ globalkeys = awful.util.table.join(
     -- Program hotkeys
     awful.key({ modkey }, "a", function () awful.util.spawn("emacsclient -c") end),
     awful.key({ modkey }, "g", function () awful.util.spawn("google-chrome-stable") end),
-    awful.key({ modkey }, "h", function () awful.util.spawn("hamster") end),
     awful.key({ modkey }, "6", function () awful.util.spawn("shutter -f") end),
     awful.key({ modkey }, "7", function () awful.util.spawn("shutter -s") end)
 )
