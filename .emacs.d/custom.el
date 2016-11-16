@@ -23,7 +23,7 @@
  '(fiplr-ignored-globs
    (quote
     ((directories
-      (".git" ".svn" ".hg" ".bzr" ".cabal-sandbox" ".stack-work" "dist"))
+      (".git" ".svn" ".hg" ".bzr" ".cabal-sandbox" ".stack-work" "dist" "node_modules"))
      (files
       (".#*" "*~" "*.so" "*.jpg" "*.png" "*.gif" "*.pdf" "*.gz" "*.zip")))))
  '(fiplr-root-markers (quote (".git" ".svn" ".hg" ".bzr" "stack.yaml")))
