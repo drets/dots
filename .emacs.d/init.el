@@ -37,6 +37,10 @@
 ;; Hide details in dired mode.
 (add-hook 'dired-mode-hook (lambda () (dired-hide-details-mode 1)))
 
+;; Code folding.
+(require 'origami)
+(global-origami-mode)
+
 ;; Prompt for directory creation automatically when saving a file.
 ;; (When creating a file in an unexistent directory.)
 (add-hook 'before-save-hook

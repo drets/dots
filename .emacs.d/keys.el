@@ -8,6 +8,7 @@
 (require 'magit)
 (require 'move-text)
 (require 'multiple-cursors)
+(require 'origami)
 (require 'neotree)
 (require 'utils)
 
@@ -49,7 +50,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-n") 'er/expand-region)
 
 (define-key my-keys-minor-mode-map (kbd "M-s f") 'indent-region)
-(define-key my-keys-minor-mode-map (kbd "M-s l") 'sort-lines)
+(define-key my-keys-minor-mode-map (kbd "M-s s") 'sort-lines)
 
 ;; Editing
 
@@ -154,6 +155,10 @@
 ;; Reversible version of delete-other-windows
 
 (define-key my-keys-minor-mode-map (kbd "M-8") 'zygospore-toggle-delete-other-windows)
+
+;; Code folding
+(define-key origami-mode-map (kbd "å") 'origami-recursively-toggle-node); ;; d+h
+(define-key origami-mode-map (kbd "Å") 'origami-toggle-all-nodes);        ;; shift+d+h 
 
 ;; Wikia
 
