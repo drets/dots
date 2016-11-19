@@ -273,7 +273,6 @@ utils.run_once("unclutter")
 utils.run_once("goldendict")
 utils.run_once("shutter --min_at_startup")
 utils.run_once("emacs --daemon")
-utils.run_once("liferea -w hidden")
 --- }}}
 
 clientkeys = awful.util.table.join(
