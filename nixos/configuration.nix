@@ -194,6 +194,7 @@
   };
 
   systemd.services.disableDeviceSuspending = {
+    enable = true;
     wantedBy = [ "default.target" ];
     serviceConfig = {
       Type = "oneshot";
@@ -201,7 +202,15 @@
     };
   };
 
-  systemd.services.disableDeviceSuspending.enable = true;
+  systemd.services.healthySleep = {
+    script = "poweroff";
+  };
+
+  systemd.timers.healthySleep = {
+    partOf = [ "healthySleep.service" ];
+    wantedBy = [ "timers.target" ];
+    timerConfig.OnCalendar = "*-*-* 00:06:59";
+  };
 
   environment.shellInit = ''
     export GTK_PATH=$GTK_PATH:${pkgs.oxygen_gtk}/lib/gtk-2.0
