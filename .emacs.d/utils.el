@@ -149,4 +149,9 @@ Repeated invocations toggle between the two most recently open buffers."
         (comment-or-uncomment-region beg end)
         (next-line)))
 
+(defun my/ztree-view ()
+  "Show directory structure as a tree."
+  (interactive)
+  (ztree-dir default-directory))
+
 (provide 'utils)

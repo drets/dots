@@ -9,8 +9,8 @@
 (require 'move-text)
 (require 'multiple-cursors)
 (require 'origami)
-(require 'neotree)
 (require 'utils)
+(require 'ztree)
 
 ;; Movement and navigation
 
@@ -102,7 +102,7 @@
 
 (define-key my-keys-minor-mode-map (kbd "C-x C-r") 'my/rename-current-buffer-file)
 
-(define-key my-keys-minor-mode-map (kbd "C-4") 'neotree-toggle)
+(define-key my-keys-minor-mode-map (kbd "C-4") 'my/ztree-view)
 
 ;; Windows and buffers
 
