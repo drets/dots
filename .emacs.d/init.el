@@ -46,6 +46,10 @@
 (setq ztree-dir-filter-list nil)
 (setq ztree-draw-unicode-lines t)
 
+;; Multiply search results buffers
+(require 'grep-a-lot)
+(grep-a-lot-setup-keys)
+
 ;; Prompt for directory creation automatically when saving a file.
 ;; (When creating a file in an unexistent directory.)
 (add-hook 'before-save-hook

@@ -64,7 +64,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (ztree origami findr flx-ido fiplr move-text markdown-mode flx smex php-mode undo-tree zygospore org-pomodoro yasnippet solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region ace-jump-mode)))
+    (grep-a-lot ztree origami findr flx-ido fiplr move-text markdown-mode flx smex php-mode undo-tree zygospore org-pomodoro yasnippet solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region ace-jump-mode)))
  '(python-shell-interpreter "python3")
  '(savehist-mode t)
  '(scroll-bar-mode nil)
