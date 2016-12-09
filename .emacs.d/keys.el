@@ -3,6 +3,7 @@
 ;; Required libraries
 
 (require 'ace-jump-mode)
+(require 'dired-subtree)
 (require 'expand-region)
 (require 'fiplr)
 (require 'magit)
@@ -10,7 +11,6 @@
 (require 'multiple-cursors)
 (require 'origami)
 (require 'utils)
-(require 'ztree)
 
 ;; Movement and navigation
 
@@ -102,7 +102,7 @@
 
 (define-key my-keys-minor-mode-map (kbd "C-x C-r") 'my/rename-current-buffer-file)
 
-(define-key my-keys-minor-mode-map (kbd "C-4") 'my/ztree-view)
+(define-key my-keys-minor-mode-map (kbd "C-4") 'dired-jump)
 
 ;; Windows and buffers
 
@@ -157,8 +157,12 @@
 (define-key my-keys-minor-mode-map (kbd "M-8") 'zygospore-toggle-delete-other-windows)
 
 ;; Code folding
-(define-key origami-mode-map (kbd "å") 'origami-recursively-toggle-node); ;; d+h
-(define-key origami-mode-map (kbd "Å") 'origami-toggle-all-nodes);        ;; shift+d+h 
+(define-key origami-mode-map (kbd "å") 'origami-recursively-toggle-node) ;; d+h
+(define-key origami-mode-map (kbd "Å") 'origami-toggle-all-nodes)        ;; shift+d+h 
+
+;; Dired
+(define-key dired-mode-map "i" 'dired-subtree-toggle)
+(define-key dired-mode-map "}" 'dired-omit-mode) ;; d+y
 
 ;; Wikia
 

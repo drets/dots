@@ -34,21 +34,22 @@
 (setq ace-jump-mode-move-keys
   (string-to-list "eklioswadfxcrvn,hm./"))
 
-;; Hide details in dired mode.
-(add-hook 'dired-mode-hook (lambda () (dired-hide-details-mode 1)))
-
 ;; Code folding.
 (require 'origami)
 (global-origami-mode)
 
-;; Directories tree
-(require 'ztree)
-(setq ztree-dir-filter-list nil)
-(setq ztree-draw-unicode-lines t)
-
 ;; Multiply search results buffers
 (require 'grep-a-lot)
 (grep-a-lot-setup-keys)
+
+;; Dired
+(require 'dired-subtree)
+(require 'dired-x)
+(setq dired-omit-files "^\\...+$")
+(add-hook 'dired-mode-hook
+  (lambda ()
+    (dired-hide-details-mode 1)
+    (dired-omit-mode)))
 
 ;; Prompt for directory creation automatically when saving a file.
 ;; (When creating a file in an unexistent directory.)
