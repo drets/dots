@@ -79,7 +79,12 @@
 
   time.timeZone = "Europe/Kiev";
 
-  services.locate.enable = true;
+  services.locate = {
+    enable = true;
+    interval = "daily";
+    extraFlags = ["--localpaths='/home/drets'"];
+  };
+
   services.tlp.enable = true;
   services.xserver.enable = true;
   services.xserver.synaptics = {

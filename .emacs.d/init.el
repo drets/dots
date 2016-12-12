@@ -30,19 +30,16 @@
 ;; Get rid of annoying “yes or no” questions.
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; Specify which keys count as “nice” keys for ace-jump.
-(setq ace-jump-mode-move-keys
-  (string-to-list "eklioswadfxcrvn,hm./"))
-
 ;; Code folding.
 (require 'origami)
 (global-origami-mode)
 
-;; Multiply search results buffers
-(require 'grep-a-lot)
-(grep-a-lot-setup-keys)
+;; Ivy.
+(require 'ivy)
+(setq ivy-initial-inputs-alist nil)
+(setq ivy-re-builders-alist '((t   . ivy--regex-ignore-order)))
 
-;; Dired
+;; Dired.
 (require 'dired-subtree)
 (require 'dired-x)
 (setq dired-omit-files "^\\...+$")

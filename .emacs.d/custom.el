@@ -20,15 +20,6 @@
  '(dired-recursive-deletes (quote top))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(fill-column 77)
- '(fiplr-ignored-globs
-   (quote
-    ((directories
-      (".git" ".svn" ".hg" ".bzr" ".cabal-sandbox" ".stack-work" "dist" "node_modules"))
-     (files
-      (".#*" "*~" "*.so" "*.jpg" "*.png" "*.gif" "*.pdf" "*.gz" "*.zip")))))
- '(fiplr-root-markers (quote (".git" ".svn" ".hg" ".bzr" "stack.yaml")))
- '(flx-ido-mode t)
- '(global-undo-tree-mode t)
  '(haskell-indentation-show-indentations nil)
  '(haskell-indentation-starter-offset 2)
  '(haskell-interactive-mode-eval-pretty t)
@@ -46,13 +37,11 @@
  '(haskell-process-suggest-remove-import-lines nil)
  '(haskell-process-type (quote auto))
  '(haskell-tags-on-save t)
- '(ido-enable-flex-matching t)
- '(ido-everywhere t)
- '(ido-mode (quote both) nil (ido))
- '(ido-use-faces nil)
  '(indent-tabs-mode nil)
  '(indicate-empty-lines t)
  '(initial-buffer-choice (quote remember-notes))
+ '(ivy-mode t)
+ '(ivy-use-virtual-buffers t)
  '(kept-new-versions 6)
  '(kill-whole-line t)
  '(magit-push-always-verify nil)
@@ -64,7 +53,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (dired-subtree grep-a-lot origami findr flx-ido fiplr move-text markdown-mode flx smex php-mode undo-tree zygospore org-pomodoro yasnippet solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region ace-jump-mode)))
+    (avy wgrep counsel ivy-hydra dired-subtree origami move-text markdown-mode flx smex php-mode zygospore org-pomodoro yasnippet solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
  '(python-shell-interpreter "python3")
  '(savehist-mode t)
  '(scroll-bar-mode nil)
@@ -75,9 +64,6 @@
  '(tool-bar-mode nil)
  '(tramp-chunksize 2000)
  '(tramp-default-method "ssh")
- '(undo-limit 8000000)
- '(undo-strong-limit 12000000)
- '(undo-tree-visualizer-diff t)
  '(use-dialog-box nil)
  '(word-wrap t)
  '(yas-global-mode t)
