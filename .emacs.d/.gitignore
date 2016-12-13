@@ -1,11 +1,14 @@
 *~
 *#
 notes
+recentf
+smex-items
 history
 session.*
 tramp
 auto-save-list/
 elpa/
+eshell/
 .mc-lists.el
 *.dat
 .cache
