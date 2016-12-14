@@ -2,7 +2,6 @@
 
 ;; Required libraries
 
-(require 'ace-jump-mode)
 (require 'counsel)
 (require 'dired-subtree)
 (require 'expand-region)
