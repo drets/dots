@@ -48,6 +48,9 @@
     (dired-hide-details-mode 1)
     (dired-omit-mode)))
 
+;; Wrap region mode.
+(wrap-region-global-mode t)
+
 ;; Prompt for directory creation automatically when saving a file.
 ;; (When creating a file in an unexistent directory.)
 (add-hook 'before-save-hook

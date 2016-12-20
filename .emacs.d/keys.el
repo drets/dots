@@ -134,6 +134,10 @@
 
 (define-key my-keys-minor-mode-map (kbd "<f8>") #'my/wikia-sync)
 
+;; Paste word to minibuffer
+
+(define-key ivy-minibuffer-map (kbd "C-w") #'ivy-yank-word)
+
 ;; End of key definitions.
 
 (define-minor-mode my-keys-minor-mode
