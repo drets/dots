@@ -231,13 +231,9 @@
     goldendict
     google-chrome
     hamster-time-tracker
-    haskell.packages.ghc7103.ghc
-    haskell.packages.ghc7103.hasktags
-    haskell.packages.ghc7103.hlint
-    haskell.packages.ghc7103.hspec-discover
-    haskell.packages.ghc7103.intero
-    haskell.packages.ghc7103.structured-haskell-mode
-    haskell.packages.ghc7103.stylish-haskell
+    haskellPackages.ghc
+    haskellPackages.hasktags
+    haskellPackages.hlint
     hexchat
     htop
     idea.idea-community
