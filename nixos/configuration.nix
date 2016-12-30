@@ -208,6 +208,7 @@
   environment.pathsToLink = [ "/share" ];
   environment.systemPackages = with pkgs; [
     ag
+    anki
     aspell
     aspellDicts.en
     aspellDicts.ru
@@ -249,7 +250,6 @@
     nodePackages.jshint
     nodejs
     nox
-    liferea
     openjdk
     openvpn
     oxygen-gtk2
