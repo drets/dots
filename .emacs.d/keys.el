@@ -34,11 +34,11 @@
 
 ;; Regions
 
-(define-key my-keys-minor-mode-map (kbd "C-,") #'mc/mark-next-like-this)
-(define-key my-keys-minor-mode-map (kbd "C-a") #'mark-paragraph)
-(define-key my-keys-minor-mode-map (kbd "C-n") #'er/expand-region)
-(define-key my-keys-minor-mode-map (kbd "M-=") #'indent-region)
-(define-key my-keys-minor-mode-map (kbd "M-a") #'mark-whole-buffer)
+(define-key my-keys-minor-mode-map (kbd "C-,")   #'mc/mark-next-like-this)
+(define-key my-keys-minor-mode-map (kbd "C-a")   #'mark-paragraph)
+(define-key my-keys-minor-mode-map (kbd "C-n")   #'er/expand-region)
+(define-key my-keys-minor-mode-map (kbd "M-s i") #'indent-region)
+(define-key my-keys-minor-mode-map (kbd "M-a")   #'mark-whole-buffer)
 
 ;; Editing
 
@@ -48,7 +48,8 @@
 (define-key my-keys-minor-mode-map (kbd "C-S-<backspace>") #'backward-kill-sexp)
 (define-key my-keys-minor-mode-map (kbd "C-d")             #'kill-line)
 (define-key my-keys-minor-mode-map (kbd "M-c")             #'kill-whole-line)
-(define-key my-keys-minor-mode-map (kbd "M-d")             #'just-one-space)
+(define-key my-keys-minor-mode-map (kbd "M-s 1")           #'just-one-space)
+(define-key my-keys-minor-mode-map (kbd "M-d")             #'delete-indentation)
 (define-key my-keys-minor-mode-map (kbd "M-s /")           #'my/toggle-comment)
 (define-key my-keys-minor-mode-map (kbd "M-s a")           #'align-regexp)
 (define-key my-keys-minor-mode-map (kbd "M-s s")           #'sort-lines)
@@ -85,7 +86,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-c k") #'my/switch-to-previous-buffer)
 (define-key my-keys-minor-mode-map (kbd "C-e")   #'my/switch-to-next-window)
 (define-key my-keys-minor-mode-map (kbd "C-t")   #'ivy-switch-buffer)
-(define-key my-keys-minor-mode-map (kbd "C-w")   #'delete-window)
+(define-key my-keys-minor-mode-map (kbd "C-w")   #'zygospore-toggle-delete-other-windows)
 (define-key my-keys-minor-mode-map (kbd "M-e")   #'split-window-right)
 (define-key my-keys-minor-mode-map (kbd "M-t")   #'ibuffer)
 (define-key my-keys-minor-mode-map (kbd "M-w")   #'kill-buffer)
@@ -115,10 +116,6 @@
 
 (define-key my-keys-minor-mode-map (kbd "C-<tab>") #'dabbrev-expand)
 (define-key my-keys-minor-mode-map (kbd "M-x")     #'counsel-M-x)
-
-;; Enhanced delete-other-windows
-
-(define-key my-keys-minor-mode-map (kbd "M-8") #'zygospore-toggle-delete-other-windows)
 
 ;; Code folding
 
