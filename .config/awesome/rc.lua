@@ -39,7 +39,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(awful.util.get_themes_dir() .. "default/theme.lua")
-beautiful.wallpaper = "/home/drets/.background/sky-blue.png"
+beautiful.wallpaper = "/home/drets/.background/life.jpg"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
