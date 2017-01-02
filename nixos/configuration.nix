@@ -11,11 +11,12 @@
   nixpkgs.config.allowUnfree = true;
   nix.binaryCaches = [ "https://cache.nixos.org" ];
 
-  nix.nixPath = [
-    "/nix/var/nix/profiles/per-user/root/channels/nixos"
-    "nixos-config=/home/drets/src/dots/nixos/configuration.nix"
-    "/nix/var/nix/profiles/per-user/root/channels"
-  ];
+  nix.nixPath =
+    let dotfiles = "/home/drets/src/dots";
+    in [
+      "nixos-config=${dotfiles}/nixos/configuration.nix"
+      "${dotfiles}/channels"
+    ];
 
   hardware = {
     bluetooth.enable = false;
