@@ -83,8 +83,6 @@
   services.locate = {
     enable = true;
     localuser = "drets";
-    interval = "daily";
-    extraFlags = ["--localpaths='/home/drets'"];
   };
 
   services.tlp.enable = true;
