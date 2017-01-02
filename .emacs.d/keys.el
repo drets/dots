@@ -129,7 +129,7 @@
 
 ;; Wikia
 
-(define-key my-keys-minor-mode-map (kbd "<f8>") #'my/wikia-sync)
+(define-key my-keys-minor-mode-map (kbd "M-s p") #'my/wikia-sync)
 
 ;; Paste word to minibuffer
 

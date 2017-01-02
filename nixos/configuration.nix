@@ -58,7 +58,7 @@
     enable = true;
 
     # These are used in addition to resolv.conf
-    servers = [ "8.8.8.8" "8.8.4.4" ];
+    servers = [ "10.14.30.130" "8.8.8.8" "8.8.4.4" ];
 
     extraConfig = ''
       listen-address=127.0.0.1
@@ -143,6 +143,24 @@
   services.openssh = {
     enable = true;
     passwordAuthentication = false;
+  };
+
+  services.openvpn.servers = {
+    wikia.config = ''
+      client
+      dev tun
+      proto tcp
+      remote 91.102.115.105 1194
+      resolv-retry infinite
+      nobind
+      persist-key
+      persist-tun
+      ca /home/drets/.vpn/ca.crt
+      cert /home/drets/.vpn/dmytro.rets@wikia-inc.com.crt
+      key /home/drets/.vpn/dmytro.rets@wikia-inc.com.key
+      comp-lzo
+      verb 3
+    '';
   };
 
   programs.kbdlight.enable = true;
