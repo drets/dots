@@ -28,7 +28,7 @@
 (require #'javascript)
 
 ;; Adjust shell mode
-(require #'shell)
+(require #'myshell)
 
 ;; Get rid of annoying “yes or no” questions.
 (defalias #'yes-or-no-p #'y-or-n-p)
