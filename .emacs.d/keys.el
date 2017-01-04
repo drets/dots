@@ -52,7 +52,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-d")             #'delete-indentation)
 (define-key my-keys-minor-mode-map (kbd "M-s /")           #'my/toggle-comment)
 (define-key my-keys-minor-mode-map (kbd "M-s a")           #'align-regexp)
-(define-key my-keys-minor-mode-map (kbd "M-s =")           #'sort-lines)
+(define-key my-keys-minor-mode-map (kbd "M-=")             #'sort-lines)
 
 ;; Macros
 
