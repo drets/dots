@@ -52,7 +52,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-d")             #'delete-indentation)
 (define-key my-keys-minor-mode-map (kbd "M-s /")           #'my/toggle-comment)
 (define-key my-keys-minor-mode-map (kbd "M-s a")           #'align-regexp)
-(define-key my-keys-minor-mode-map (kbd "M-s s")           #'sort-lines)
+(define-key my-keys-minor-mode-map (kbd "M-s =")           #'sort-lines)
 
 ;; Macros
 
@@ -70,7 +70,8 @@
 (define-key my-keys-minor-mode-map (kbd "C-s")   #'swiper)
 (define-key my-keys-minor-mode-map (kbd "C-y")   #'counsel-yank-pop)
 (define-key my-keys-minor-mode-map (kbd "M-p")   #'counsel-git-grep)
-(define-key my-keys-minor-mode-map (kbd "M-s r") #'query-replace-regexp)
+(define-key my-keys-minor-mode-map (kbd "M-s q") #'query-replace-regexp)
+(define-key my-keys-minor-mode-map (kbd "M-s f") #'find-file-at-point)
 
 ;; Files
 
@@ -90,6 +91,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-e")   #'split-window-right)
 (define-key my-keys-minor-mode-map (kbd "M-t")   #'ibuffer)
 (define-key my-keys-minor-mode-map (kbd "M-w")   #'kill-buffer)
+(define-key my-keys-minor-mode-map (kbd "M-s r") #'rename-buffer)
 
 ;; Display
 
@@ -121,6 +123,9 @@
 
 (define-key origami-mode-map (kbd "å") #'origami-recursively-toggle-node) ;; d + h
 (define-key origami-mode-map (kbd "Å") #'origami-toggle-all-nodes)        ;; shift + d + h 
+
+;; Shell
+(define-key my-keys-minor-mode-map (kbd "M-s s") #'shell)
 
 ;; Dired
 
