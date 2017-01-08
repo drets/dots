@@ -1,6 +1,10 @@
 ;; Shell adjustments.
 (require #'shell)
 
+(defun turn-on-comint-history (history-file)
+    (setq comint-input-ring-file-name history-file)
+    (comint-read-input-ring 'silent))
+
 (exec-path-from-shell-initialize)
 (exec-path-from-shell-copy-env "HISTFILE")
 

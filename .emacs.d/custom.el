@@ -8,6 +8,7 @@
  '(browse-url-browser-display nil)
  '(browse-url-browser-function (quote browse-url-chrome))
  '(column-number-mode t)
+ '(comint-input-ring-size 10000)
  '(cua-mode t nil (cua-base))
  '(custom-enabled-themes (quote (solarized-dark)))
  '(custom-safe-themes
