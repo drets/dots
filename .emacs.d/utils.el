@@ -107,13 +107,6 @@ Repeated invocations toggle between the two most recently open buffers."
    (format "rsync -avz --exclude-from=%s --exclude=.git %s %s"
            (concat from ".gitignore") from to) nil 0))
 
-(defun my/wikia-sync ()
-  (interactive)
-  (my/sync "/home/drets/src/wikia/app/"
-           "dmytror@dev-dmytror:/usr/wikia/source/wiki")
-  (my/sync "/home/drets/src/wikia/mercury/"
-           "dmytror@dev-dmytror:/usr/wikia/mercury"))
-
 (defun my/toggle-comment ()
     "Comments or uncomments the region or the current line if there's no active region."
     (interactive)

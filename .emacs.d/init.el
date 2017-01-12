@@ -3,11 +3,48 @@
 ;; be conflicts between my files and files of various libraries.
 (add-to-list #'load-path user-emacs-directory t)
 
+(setq package-list
+      '(
+        avy
+        counsel
+        dired-subtree
+        exec-path-from-shell
+        flx
+        flycheck
+        expand-region
+        haskell-mode
+        ivy-hydra
+        lua-mode
+        magit
+        markdown-mode
+        move-text
+        multiple-cursors
+        nix-mode
+        noflet
+        org-pomodoro
+        origami
+        restclient
+        smex
+        solarized-theme
+        wgrep
+        wrap-region
+        yasnippet
+        zygospore
+        )
+      )
+
 ;; Initialise package system.
 (require #'package)
 (add-to-list #'package-archives
   '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
+
+;; Install packages if needed.
+(unless package-archive-contents
+  (package-refresh-contents))
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
 
 ;; Prevent the Magit upgrade warning from showing every time.
 (setq magit-last-seen-setup-instructions "1.4.0")

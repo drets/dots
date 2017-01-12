@@ -132,10 +132,6 @@
 (define-key dired-mode-map "i" #'dired-subtree-toggle)
 (define-key dired-mode-map "H" #'dired-omit-mode)
 
-;; Wikia
-
-(define-key my-keys-minor-mode-map (kbd "M-s p") #'my/wikia-sync)
-
 ;; Paste word to minibuffer
 
 (define-key ivy-minibuffer-map (kbd "C-w") #'ivy-yank-word)

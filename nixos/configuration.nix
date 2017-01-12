@@ -6,7 +6,7 @@
       ./hardware-configuration.nix
     ];
 
-  system.stateVersion = "17.03";
+  system.stateVersion = "16.09";
 
   nixpkgs.config.allowUnfree = true;
   nix.binaryCaches = [ "https://cache.nixos.org" ];
@@ -36,14 +36,13 @@
   };
 
   boot.kernelParams = [ "hid_apple.iso_layout=0" "hid_apple.fnmode=2" ];
-  boot.tmpOnTmpfs = true;
   boot.blacklistedKernelModules = ["bdc_pci"];
 
   nix.useSandbox = true;
 
   boot.initrd.luks.devices = [{
     name = "rootfs";
-    device = "/dev/sda5";
+    device = "/dev/sda3";
     preLVM = true;
   }];
 
@@ -59,7 +58,7 @@
     enable = true;
 
     # These are used in addition to resolv.conf
-    servers = [ "10.14.30.130" "8.8.8.8" "8.8.4.4" ];
+    servers = [ "8.8.8.8" "8.8.4.4" ];
 
     extraConfig = ''
       listen-address=127.0.0.1
@@ -78,7 +77,7 @@
 
   i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" ];
 
-  time.timeZone = "Europe/Kiev";
+  time.timeZone = "Europe/Amsterdam";
 
   services.locate = {
     enable = true;
@@ -144,54 +143,10 @@
     passwordAuthentication = false;
   };
 
-  services.openvpn.servers = {
-    wikia.config = ''
-      client
-      dev tun
-      proto tcp
-      remote 91.102.115.105 1194
-      resolv-retry infinite
-      nobind
-      persist-key
-      persist-tun
-      ca /home/drets/.vpn/ca.crt
-      cert /home/drets/.vpn/dmytro.rets@wikia-inc.com.crt
-      key /home/drets/.vpn/dmytro.rets@wikia-inc.com.key
-      comp-lzo
-      verb 3
-    '';
-  };
-
   programs.kbdlight.enable = true;
   programs.zsh.enable = true;
 
   users.defaultUserShell = pkgs.zsh;
-
-  services.mysql = {
-    enable = true;
-    package = pkgs.mysql;
-    extraOptions = "max_allowed_packet=100M";
-  };
-
-  services.httpd = {
-    enable = true;
-    enablePHP = true;
-    logPerVirtualHost = true;
-    adminAddr="drets@wikia-inc.com";
-    documentRoot = "/var/upstream/";
-    virtualHosts = [{
-      hostName = "fandom";
-      serverAliases = [ "fandom.dev" ];
-    }];
-    extraConfig = ''
-      <Directory /var/upstream/>
-        DirectoryIndex index.php
-        Allow from *
-        Options FollowSymLinks
-        AllowOverride All
-      </Directory>
-    '';
-  };
 
   security.sudo = {
     enable = true;
@@ -230,7 +185,6 @@
     aspellDicts.en
     aspellDicts.ru
     cabal-install
-    cabal2nix
     chromedriver
     deadbeef
     diffutils
@@ -254,8 +208,6 @@
     haskellPackages.hlint
     hexchat
     htop
-    idea.idea-community
-    jenkins-job-builder
     kde4.gwenview
     kde4.kde_baseapps
     kde4.kwin_styles
@@ -301,7 +253,6 @@
     xorg.xkbcomp
     xscreensaver
     zathura
-    zeal
     zip
   ];
 }
