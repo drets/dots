@@ -91,6 +91,12 @@
 ;; Wrap region mode.
 (wrap-region-global-mode t)
 
+;; Org pomodoro.
+(require #'org-pomodoro)
+(setq org-pomodoro-length 50)
+(setq org-pomodoro-short-break-length 10)
+(setq org-pomodoro-short-break-length 45)
+
 ;; Prompt for directory creation automatically when saving a file
 ;; and delete trailing whitespaces
 (add-hook #'before-save-hook

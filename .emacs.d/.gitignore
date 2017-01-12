@@ -8,6 +8,7 @@ session.*
 tramp
 auto-save-list/
 elpa/
+org/
 .mc-lists.el
 *.dat
 .cache

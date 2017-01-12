@@ -10,6 +10,8 @@
 (require 'move-text)
 (require 'multiple-cursors)
 (require 'origami)
+(require 'org)
+(require 'org-pomodoro)
 (require 'swiper)
 (require 'utils)
 
@@ -135,6 +137,10 @@
 ;; Paste word to minibuffer
 
 (define-key ivy-minibuffer-map (kbd "C-w") #'ivy-yank-word)
+
+;; Org
+(define-key my-keys-minor-mode-map (kbd "M-s o") #'org-agenda)
+(define-key my-keys-minor-mode-map (kbd "M-s p") #'org-pomodoro)
 
 ;; End of key definitions.
 
