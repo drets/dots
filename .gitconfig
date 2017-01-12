@@ -1,7 +1,7 @@
 [user]
-	name = Dmytro Rets
+	name = Dmitry Rets
 	email = dmitryrets@gmail.com
-	signingkey = 5F90650A
+	signingkey = AAEDE1BAD3F45394
 
 [gpg]
 	program = gpg2
