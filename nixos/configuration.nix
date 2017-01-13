@@ -213,6 +213,7 @@
     kde4.kwin_styles
     kde4.oxygen_icons
     keepassx
+    libreoffice
     man-pages
     mplayer
     nix-repl
