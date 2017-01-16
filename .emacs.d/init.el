@@ -95,12 +95,13 @@
 ;; and delete trailing whitespaces
 (add-hook #'before-save-hook
   (lambda ()
-    (when buffer-file-name
-      (let ((dir (file-name-directory buffer-file-name)))
-        (when (and (not (file-exists-p dir))
-                   (y-or-n-p (format "Create directory %s does not exist. Create it?" dir)))
-          (make-directory dir t)))))
-  (delete-trailing-whitespace))
+     (lambda ()
+       (when buffer-file-name
+         (let ((dir (file-name-directory buffer-file-name)))
+           (when (and (not (file-exists-p dir))
+                      (y-or-n-p (format "Create directory %s does not exist. Create it?" dir)))
+             (make-directory dir t)))))
+      (delete-trailing-whitespace)))
 
 ;; Load “customize”d variables.
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
