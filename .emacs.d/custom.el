@@ -49,9 +49,7 @@
  '(magit-use-overlays nil)
  '(menu-bar-mode nil)
  '(my/kill-as-delete t)
- '(org-agenda-files
-   (quote
-    ("~/.emacs.d/org/birthday.org" "~/.emacs.d/org/today.org")))
+ '(org-agenda-files (quote ("~/org/birthday.org" "~/org/today.org")))
  '(org-babel-load-languages (quote ((python . t) (js . t))))
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
