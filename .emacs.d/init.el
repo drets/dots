@@ -7,7 +7,6 @@
       '(
         avy
         counsel
-        dired-subtree
         exec-path-from-shell
         flx
         flycheck
@@ -28,7 +27,6 @@
         solarized-theme
         wgrep
         wrap-region
-        yasnippet
         zygospore
         )
       )
@@ -58,9 +56,6 @@
 ;; Enable kill-as-delete.
 (require #'kill-as-delete)
 
-;; Load Yasnippet.
-(require #'yasnippet)
-
 ;; Load js-mode.
 (require #'javascript)
 
@@ -80,7 +75,6 @@
 (setq ivy-re-builders-alist '((t   . ivy--regex-ignore-order)))
 
 ;; Dired.
-(require #'dired-subtree)
 (require #'dired-x)
 (setq dired-omit-files "^\\...+$")
 (add-hook #'dired-mode-hook

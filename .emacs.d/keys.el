@@ -3,7 +3,6 @@
 ;; Required libraries
 
 (require 'counsel)
-(require 'dired-subtree)
 (require 'expand-region)
 (require 'ivy)
 (require 'magit)
@@ -115,10 +114,6 @@
 (define-key haskell-mode-map (kbd "C-c C-p") #'haskell-process-restart)
 (define-key haskell-mode-map (kbd "C-y")     #'haskell-mode-jump-to-def-or-tag)
 
-;; Snippets
-
-(define-key my-keys-minor-mode-map (kbd "M-s n") #'yas-new-snippet)
-
 ;; Auto-completion
 
 (define-key my-keys-minor-mode-map (kbd "C-<tab>") #'dabbrev-expand)
@@ -135,7 +130,6 @@
 
 ;; Dired
 
-(define-key dired-mode-map "i" #'dired-subtree-toggle)
 (define-key dired-mode-map "H" #'dired-omit-mode)
 
 ;; Paste word to minibuffer

@@ -123,7 +123,6 @@
       corefonts
       dejavu_fonts
       inconsolata
-      google-fonts
       powerline-fonts
       source-code-pro
       terminus_font
@@ -193,7 +192,6 @@
     firefox
     gcc
     gimp
-    gist
     git
     global
     gnome3.adwaita-icon-theme
@@ -202,7 +200,6 @@
     gnupg
     goldendict
     google-chrome
-    hamster-time-tracker
     haskellPackages.ghc
     haskellPackages.hasktags
     haskellPackages.hlint
@@ -226,7 +223,6 @@
     oxygen-gtk3
     p7zip
     phantomjs
-    plantuml
     python
     python3
     python3Packages.matplotlib
@@ -241,12 +237,10 @@
     stack
     tightvnc
     tdesktop
-    tty-clock
     unclutter
     unzip
     vlc
     wget
-    wgetpaste
     which
     whois
     xclip

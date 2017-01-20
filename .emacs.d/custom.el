@@ -54,7 +54,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (exec-path-from-shell nix-mode lua-mode restclient wrap-region avy wgrep counsel ivy-hydra dired-subtree origami move-text markdown-mode flx smex zygospore org-pomodoro yasnippet solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
+    (exec-path-from-shell nix-mode lua-mode restclient wrap-region avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex zygospore org-pomodoro solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
  '(python-shell-interpreter "python3")
  '(savehist-mode t)
  '(scroll-bar-mode nil)
@@ -66,10 +66,7 @@
  '(tramp-chunksize 2000)
  '(tramp-default-method "ssh")
  '(use-dialog-box nil)
- '(word-wrap t)
- '(yas-global-mode t)
- '(yas-indent-line (quote fixed))
- '(yas-snippet-dirs (quote ("~/.emacs.d/snippets"))))
+ '(word-wrap t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
