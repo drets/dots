@@ -76,6 +76,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-p")   #'counsel-git-grep)
 (define-key my-keys-minor-mode-map (kbd "M-s q") #'query-replace-regexp)
 (define-key my-keys-minor-mode-map (kbd "M-s f") #'find-file-at-point)
+(define-key my-keys-minor-mode-map (kbd "M-s g") #'my/google)
 
 ;; Files
 
