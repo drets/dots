@@ -127,6 +127,7 @@
 ;; Shell
 
 (define-key my-keys-minor-mode-map (kbd "M-s s") #'shell)
+(define-key comint-mode-map (kbd "M-r") #'counsel-shell-history)
 
 ;; Dired
 
@@ -138,8 +139,11 @@
 
 ;; Org
 
-(define-key my-keys-minor-mode-map (kbd "M-s o") #'org-agenda)
-(define-key my-keys-minor-mode-map (kbd "M-s p") #'org-pomodoro)
+(define-key my-keys-minor-mode-map (kbd "C-c a") #'org-agenda)
+(define-key my-keys-minor-mode-map (kbd "C-c b") #'org-iswitchb)
+(define-key my-keys-minor-mode-map (kbd "C-c c") #'org-capture)
+(define-key my-keys-minor-mode-map (kbd "C-c p") #'org-pomodoro)
+(define-key my-keys-minor-mode-map (kbd "C-c l") #'org-store-link)
 
 ;; End of key definitions.
 

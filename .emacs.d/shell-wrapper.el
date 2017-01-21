@@ -18,4 +18,4 @@
             (--each (buffer-list)
               (with-current-buffer it (comint-write-input-ring)))))
 
-(provide 'myshell)
+(provide 'shell-wrapper)

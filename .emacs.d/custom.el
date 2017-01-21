@@ -49,12 +49,14 @@
  '(magit-use-overlays nil)
  '(menu-bar-mode nil)
  '(my/kill-as-delete t)
- '(org-agenda-files (quote ("~/org/birthday.org" "~/org/today.org")))
- '(org-babel-load-languages (quote ((python . t) (js . t))))
+ '(org-agenda-files (quote ("~/org")))
+ '(org-babel-load-languages (quote ((python . t) (js . t) (sh . t))))
  '(org-confirm-babel-evaluate nil)
+ '(org-default-notes-file "~/org/tasks.org")
+ '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (exec-path-from-shell nix-mode lua-mode restclient wrap-region avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex zygospore org-pomodoro solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
+    (exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex zygospore org-pomodoro solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
  '(python-shell-interpreter "python3")
  '(savehist-mode t)
  '(scroll-bar-mode nil)
@@ -65,8 +67,7 @@
  '(tool-bar-mode nil)
  '(tramp-chunksize 2000)
  '(tramp-default-method "ssh")
- '(use-dialog-box nil)
- '(word-wrap t))
+ '(use-dialog-box nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

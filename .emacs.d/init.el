@@ -26,7 +26,6 @@
         smex
         solarized-theme
         wgrep
-        wrap-region
         zygospore
         )
       )
@@ -60,7 +59,7 @@
 (require #'javascript)
 
 ;; Adjust shell mode
-(require #'myshell)
+(require #'shell-wrapper)
 
 ;; Get rid of annoying “yes or no” questions.
 (defalias #'yes-or-no-p #'y-or-n-p)
@@ -82,8 +81,8 @@
     (dired-hide-details-mode 1)
     (dired-omit-mode)))
 
-;; Wrap region mode.
-(wrap-region-global-mode t)
+;; Adjust org mode.
+(require #'org-wrapper)
 
 ;; Prompt for directory creation automatically when saving a file
 ;; and delete trailing whitespaces
