@@ -162,7 +162,7 @@
   };
 
   systemd.services.healthySleep = {
-    script = "poweroff";
+    script = "shutdown -P";
   };
 
   systemd.timers.healthySleep = {
