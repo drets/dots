@@ -82,6 +82,7 @@
   services.locate = {
     enable = true;
     localuser = "drets";
+    interval = "*-*-* 14:00:00";
   };
 
   services.tlp.enable = true;
