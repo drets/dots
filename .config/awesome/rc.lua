@@ -292,9 +292,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
-    -- Screen saver
-    awful.key({ }, "XF86LaunchA",           function () awful.util.spawn("xscreensaver-command -lock")                end),
-    awful.key({ }, "XF86LaunchB",           function () awful.util.spawn("systemctl suspend")                         end),
+    -- Touchpad
+    awful.key({ }, "XF86LaunchA", function () awful.util.spawn("synclient TouchpadOff=0") end),
+    awful.key({ }, "XF86LaunchB", function () awful.util.spawn("synclient TouchpadOff=1") end),
 
     -- Apple media keys
     awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 2")                         end),
@@ -341,6 +341,7 @@ utils.run_once("unclutter")
 utils.run_once("goldendict")
 utils.run_once("shutter --min_at_startup")
 utils.run_once("emacs --daemon")
+utils.run_once("dropbox start")
 --- }}}
 
 clientkeys = awful.util.table.join(

@@ -187,6 +187,7 @@
     chromedriver
     deadbeef
     diffutils
+    dropbox
     emacs
     file
     firefox
