@@ -308,6 +308,23 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86AudioNext",         function () awful.util.spawn("deadbeef --next")                           end),
     awful.key({ }, "XF86AudioPlay",         function () awful.util.spawn("deadbeef --play-pause")                     end),
 
+    -- Unfocus all windows and turn the screen off
+    awful.key({ modkey, "Mod1" }, "l", function ()
+            local saved = client.focus
+            client.focus = nil
+
+            mousegrabber.run(function (p)
+                    client.focus = saved
+                    return false
+            end, 'rtl_logo')
+
+            gears.timer.start_new(
+                1, function ()
+                    awful.spawn("xset dpms force off")
+                    return false
+            end)
+    end),
+
     -- Program hotkeys
     awful.key({ modkey }, "a", function () awful.util.spawn("emacsclient -c")       end),
     awful.key({ modkey }, "g", function () awful.util.spawn("google-chrome-stable") end),
@@ -530,4 +547,47 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+-- Track focus {{{
+local cjson = require("cjson")
+
+local log_file = assert(io.open("log.txt", "ab"))
+awesome.connect_signal("exit", function () log_file:close() end)
+
+function log_entry(activity, c)
+    log_file:write(cjson.encode{
+        time = os.date("%FT%T%z"),
+        activity = activity,
+        class = c.class,
+        instance = c.instance,
+        role = c.role,
+        title = c.name,
+    })
+    log_file:write("\n")
+    log_file:flush()
+end
+
+client.connect_signal(
+    "focus",
+    function (c, startup)
+        log_entry('focus', c)
+    end)
+client.connect_signal(
+    "unfocus",
+    function (c, startup)
+        log_entry('unfocus', c)
+    end)
+
+client.connect_signal(
+    "property::name",
+    function (c, startup)
+        -- c.name == window title
+        -- c.class == application ?
+        -- c.instance == run command? (but it's "Mail" for thunderbird
+        -- c.role == (nil, browser, ConversationsWindow, etc.)
+        if client.focus == c then
+            log_entry('title', c)
+        end
+    end)
+
 -- }}}

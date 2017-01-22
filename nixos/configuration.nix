@@ -98,7 +98,7 @@
 
   services.xserver.windowManager.awesome = {
     enable = true;
-    luaModules = [ pkgs.luaPackages.luafilesystem ];
+    luaModules = [ pkgs.luaPackages.luafilesystem pkgs.luaPackages.cjson ];
   };
   services.redshift = {
     enable = true;
