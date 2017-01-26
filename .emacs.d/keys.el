@@ -52,7 +52,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-d")             #'kill-line)
 (define-key my-keys-minor-mode-map (kbd "M-c")             #'kill-whole-line)
 (define-key my-keys-minor-mode-map (kbd "M-s 1")           #'just-one-space)
-(define-key my-keys-minor-mode-map (kbd "M-d")             #'delete-indentation)
+(define-key my-keys-minor-mode-map (kbd "M-d")             #'my/top-join-line)
 (define-key my-keys-minor-mode-map (kbd "M-s /")           #'my/toggle-comment)
 (define-key my-keys-minor-mode-map (kbd "M-s a")           #'align-regexp)
 (define-key my-keys-minor-mode-map (kbd "M-=")             #'sort-lines)
