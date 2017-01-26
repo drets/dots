@@ -20,7 +20,7 @@
  '(dired-recursive-copies (quote top))
  '(dired-recursive-deletes (quote top))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
- '(electric-indent-mode nil)
+ '(electric-indent-mode t)
  '(fill-column 77)
  '(haskell-indentation-show-indentations nil)
  '(haskell-indentation-starter-offset 2)
@@ -58,7 +58,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex zygospore org-pomodoro solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
+    (company wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex zygospore org-pomodoro solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
  '(python-shell-interpreter "python3")
  '(savehist-mode t)
  '(scroll-bar-mode nil)
@@ -69,8 +69,7 @@
  '(tool-bar-mode nil)
  '(tramp-chunksize 2000)
  '(tramp-default-method "ssh")
- '(use-dialog-box nil)
- '(word-wrap t))
+ '(use-dialog-box nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

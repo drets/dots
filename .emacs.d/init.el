@@ -7,6 +7,7 @@
       '(
         avy
         counsel
+        company
         exec-path-from-shell
         flx
         flycheck
@@ -25,6 +26,7 @@
         restclient
         smex
         solarized-theme
+        wrap-region
         wgrep
         zygospore
         )
@@ -81,11 +83,17 @@
 (setq dired-omit-files "^\\...+$")
 (add-hook #'dired-mode-hook
   (lambda ()
-    (dired-hide-details-mode 1)
+    (dired-hide-details-mode)
     (dired-omit-mode)))
 
 ;; Adjust org mode.
 (require #'org-wrapper)
+
+;; Enable autocompletion
+(global-company-mode)
+
+;; Wrap mode
+(wrap-region-global-mode)
 
 ;; Prompt for directory creation automatically when saving a file
 ;; and delete trailing whitespaces
