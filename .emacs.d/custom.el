@@ -21,6 +21,7 @@
  '(dired-recursive-deletes (quote top))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(electric-indent-mode t)
+ '(electric-pair-mode t)
  '(fill-column 77)
  '(haskell-indentation-show-indentations nil)
  '(haskell-indentation-starter-offset 2)
