@@ -133,3 +133,8 @@ Repeated invocations toggle between the two most recently open buffers."
   "Join the current line with the line beneath it."
   (interactive)
   (delete-indentation 1))
+
+(defun my/create-shell ()
+    "Create a shell with a default directory name."
+    (interactive)
+    (shell (concat "*shell* " default-directory)))
