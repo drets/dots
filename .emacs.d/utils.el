@@ -137,4 +137,4 @@ Repeated invocations toggle between the two most recently open buffers."
 (defun my/create-shell ()
     "Create a shell with a default directory name."
     (interactive)
-    (shell (concat "*shell* " default-directory)))
+    (shell (concat "*shell* " (expand-file-name default-directory))))
