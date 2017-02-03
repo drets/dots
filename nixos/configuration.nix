@@ -167,6 +167,9 @@
     script = "shutdown -P";
   };
 
+  services.postgresql.enable = true;
+  services.postgresql.authentication = "local all all ident";
+
   systemd.timers.healthySleep = {
     partOf = [ "healthySleep.service" ];
     wantedBy = [ "timers.target" ];
