@@ -40,6 +40,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-,")   #'mc/mark-next-like-this)
 (define-key my-keys-minor-mode-map (kbd "C-a")   #'mark-paragraph)
 (define-key my-keys-minor-mode-map (kbd "C-n")   #'er/expand-region)
+(define-key my-keys-minor-mode-map (kbd "C-S-n") #'my/collapse-region)
 (define-key my-keys-minor-mode-map (kbd "M-s i") #'indent-region)
 (define-key my-keys-minor-mode-map (kbd "M-a")   #'mark-whole-buffer)
 
