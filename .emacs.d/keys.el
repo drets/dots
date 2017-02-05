@@ -32,6 +32,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-o")   #'avy-goto-word-or-subword-1)
 (define-key my-keys-minor-mode-map (kbd "M-y")   #'counsel-imenu)
 (define-key my-keys-minor-mode-map (kbd "M-s b") #'browse-url-at-point)
+(define-key my-keys-minor-mode-map (kbd "M-g")   #'goto-line)
 
 (move-text-default-bindings)
 
