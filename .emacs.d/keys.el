@@ -3,6 +3,7 @@
 ;; Required libraries
 
 (require 'counsel)
+(require 'counsel-dash)
 (require 'expand-region)
 (require 'ivy)
 (require 'magit)
@@ -78,6 +79,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-s q") #'query-replace-regexp)
 (define-key my-keys-minor-mode-map (kbd "M-s f") #'find-file-at-point)
 (define-key my-keys-minor-mode-map (kbd "M-s g") #'my/google)
+(define-key my-keys-minor-mode-map (kbd "M-s o") #'counsel-dash)
 
 ;; Files
 
