@@ -99,7 +99,8 @@
 ;; Offline docs (sqlite3 dependency)
 (require 'counsel-dash)
 (setq counsel-dash-common-docsets
-      '("CSS" "Emacs Lisp" "Flask" "HTML" "JavaScript" "Less" "Python 3" "React" "Sass" "jQuery" "MomentJS"))
+      '("CSS" "Emacs Lisp" "Flask" "HTML" "JavaScript" "Less" "Python 3"
+        "React" "Sass" "jQuery" "MomentJS" "Bash" "Sinon" "PostgreSQL" "Haskell"))
 
 ;; Prompt for directory creation automatically when saving a file
 ;; and delete trailing whitespaces
