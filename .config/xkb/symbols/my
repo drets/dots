@@ -36,10 +36,8 @@ xkb_symbols "en" {
 
     key <CAPS> {[ Tab, Tab, Tab, Tab ]};
     key <AC01> {[ f, F ]};
-# U21D2: right double arrow
-    key <AC04> {[ e, E, rightarrow, U21D2 ]};
-# U21D0: left double arrow
-    key <AC05> {[ g, G, leftarrow, U21D0 ]};
+    key <AC04> {[ e, E, Pointer_Button1, Pointer_EnableKeys ]};
+    key <AC05> {[ g, G, Pointer_Button2, Pointer_EnableKeys ]};
     key <AC06> {[ h, H, aring, Aring ]};
     key <AC07> {[ BackSpace, BackSpace, Left, Left]};
     key <AC08> {[ k, K, Down, Down ]};
@@ -47,6 +45,9 @@ xkb_symbols "en" {
     key <AC10> {[ d, D, colon ]};
     key <AC11> {[ apostrophe, quotedbl, endash, emdash ]};
 
+# U21D2: right double arrow
+# U21D0: left double arrow
+    key <LSGT> {[ rightarrow, leftarrow, U21D2, U21D0 ]};
     key <AB01> {[ z, Z ]};
     key <AB02> {[ x, X, multiply ]};
     key <AB03> {[ c, C, bar ]};
@@ -65,7 +66,7 @@ xkb_symbols "en" {
     key <UP>   {[ Up, Up, uparrow ]};
     key <DOWN> {[ Down, Down, downarrow ]};
 
-    key <SPCE> {[ space, space, Pointer_Button1, Pointer_EnableKeys ]};
+    key <SPCE> {[ space, space ]};
 
     include "my(d_level3)"
     include "my(tab_alt)"
