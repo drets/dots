@@ -1,2 +1,3 @@
 alias g='git'
-export PATH="/home/drets/.local/bin:$PATH"
+export PATH="$PATH:/home/drets/.local/bin"
+export ANDROID_HOME=${HOME}/Android/Sdk
