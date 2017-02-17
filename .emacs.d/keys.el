@@ -100,6 +100,8 @@
 (define-key my-keys-minor-mode-map (kbd "M-t")   #'ibuffer)
 (define-key my-keys-minor-mode-map (kbd "M-w")   #'kill-buffer)
 (define-key my-keys-minor-mode-map (kbd "M-s r") #'rename-buffer)
+(define-key my-keys-minor-mode-map (kbd "ö")     #'winner-undo) ; d + o
+(define-key my-keys-minor-mode-map (kbd "C-ö")   #'winner-redo) ; s + d + o
 
 ;; Display
 
@@ -125,8 +127,8 @@
 
 ;; Code folding
 
-(define-key origami-mode-map (kbd "å") #'origami-recursively-toggle-node) ;; d + h
-(define-key origami-mode-map (kbd "Å") #'origami-toggle-all-nodes)        ;; shift + d + h
+(define-key origami-mode-map (kbd "å") #'origami-recursively-toggle-node) ; d + h
+(define-key origami-mode-map (kbd "Å") #'origami-toggle-all-nodes)        ; shift + d + h
 
 ;; Shell
 

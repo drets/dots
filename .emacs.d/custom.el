@@ -70,7 +70,8 @@
  '(tool-bar-mode nil)
  '(tramp-chunksize 2000)
  '(tramp-default-method "ssh")
- '(use-dialog-box nil))
+ '(use-dialog-box nil)
+ '(winner-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
