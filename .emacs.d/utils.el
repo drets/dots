@@ -137,7 +137,7 @@ Repeated invocations toggle between the two most recently open buffers."
 (defun my/create-shell ()
   "Create a shell with a default directory name."
   (interactive)
-  (shell (concat "*shell* " (expand-file-name default-directory))))
+  (shell (concat "shell " (expand-file-name default-directory))))
 
 (defun my/collapse-region ()
   "Collapse selected region."
