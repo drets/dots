@@ -86,7 +86,6 @@
     extraFlags = ["--localpaths='/home/drets'"];
   };
 
-  services.tlp.enable = true;
   services.xserver.enable = true;
   services.xserver.synaptics = {
     enable = true;
