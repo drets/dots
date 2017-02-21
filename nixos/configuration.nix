@@ -82,7 +82,7 @@
   services.locate = {
     enable = true;
     localuser = "drets";
-    interval = "daily";
+    interval = "*-*-* 17:00:00";
     extraFlags = ["--localpaths='/home/drets'"];
   };
 

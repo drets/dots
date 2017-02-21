@@ -30,7 +30,6 @@
         wrap-region
         whitespace-cleanup-mode
         wgrep
-        zygospore
         )
       )
 

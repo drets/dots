@@ -60,7 +60,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (whitespace-cleanup-mode company-tern tern counsel-dash company wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex zygospore org-pomodoro solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
+    (whitespace-cleanup-mode company-tern tern counsel-dash company wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex org-pomodoro solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
  '(python-shell-interpreter "python3")
  '(savehist-mode t)
  '(scroll-bar-mode nil)

@@ -58,7 +58,10 @@
 (define-key my-keys-minor-mode-map (kbd "M-d")             #'my/top-join-line)
 (define-key my-keys-minor-mode-map (kbd "M-s /")           #'my/toggle-comment)
 (define-key my-keys-minor-mode-map (kbd "M-s a")           #'align-regexp)
-(define-key my-keys-minor-mode-map (kbd "M-=")             #'sort-lines)
+(define-key my-keys-minor-mode-map (kbd "M-s o")           #'sort-lines)
+(define-key my-keys-minor-mode-map (kbd "M-=")             #'my/increment-integer-at-point)
+(define-key my-keys-minor-mode-map (kbd "M--")             #'my/decrement-integer-at-point)
+
 
 ;; Macros
 
@@ -69,7 +72,6 @@
 ;; Information
 
 (define-key my-keys-minor-mode-map (kbd "M-s c") #'count-words)
-(define-key my-keys-minor-mode-map (kbd "M-s d") #'describe-char)
 
 ;; Search and replacement
 
@@ -79,7 +81,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-s q") #'query-replace-regexp)
 (define-key my-keys-minor-mode-map (kbd "M-s f") #'find-file-at-point)
 (define-key my-keys-minor-mode-map (kbd "M-s g") #'my/google)
-(define-key my-keys-minor-mode-map (kbd "M-s o") #'counsel-dash)
+(define-key my-keys-minor-mode-map (kbd "M-s d") #'counsel-dash)
 
 ;; Files
 
@@ -95,7 +97,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-c k") #'my/switch-to-previous-buffer)
 (define-key my-keys-minor-mode-map (kbd "C-e")   #'my/switch-to-next-window)
 (define-key my-keys-minor-mode-map (kbd "C-t")   #'ivy-switch-buffer)
-(define-key my-keys-minor-mode-map (kbd "C-w")   #'zygospore-toggle-delete-other-windows)
+(define-key my-keys-minor-mode-map (kbd "C-w")   #'delete-window)
 (define-key my-keys-minor-mode-map (kbd "M-e")   #'split-window-right)
 (define-key my-keys-minor-mode-map (kbd "M-t")   #'ibuffer)
 (define-key my-keys-minor-mode-map (kbd "M-w")   #'kill-buffer)
