@@ -12,4 +12,6 @@
          "~/org/journal.org")
          "** %^{Description}\n%?")))
 
+(require 'org-drill)
+
 (provide 'org-wrapper)
