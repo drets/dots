@@ -54,6 +54,8 @@
     wireless.enable = false;
   };
 
+  services.redis.enable = true;
+
   services.dnsmasq = {
     enable = true;
 
