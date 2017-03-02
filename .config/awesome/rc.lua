@@ -308,22 +308,8 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86AudioNext",         function () awful.util.spawn("deadbeef --next")                           end),
     awful.key({ }, "XF86AudioPlay",         function () awful.util.spawn("deadbeef --play-pause")                     end),
 
-    -- Unfocus all windows and turn the screen off
-    awful.key({ modkey, "Mod1" }, "l", function ()
-            local saved = client.focus
-            client.focus = nil
-
-            mousegrabber.run(function (p)
-                    client.focus = saved
-                    return false
-            end, 'rtl_logo')
-
-            gears.timer.start_new(
-                1, function ()
-                    awful.spawn("xset dpms force off")
-                    return false
-            end)
-    end),
+    -- Blank the screen
+    awful.key({ modkey, "Mod1" }, "l", function () awful.util.spawn("xscreensaver-command --activate") end),
 
     -- Program hotkeys
     awful.key({ modkey }, "a", function () awful.util.spawn("emacsclient -c")       end),
@@ -342,6 +328,8 @@ utils.run_once("goldendict")
 utils.run_once("shutter --min_at_startup")
 utils.run_once("emacs --daemon")
 utils.run_once("dropbox start")
+utils.run_once("suspend-disable-device LID0 XHC1")
+utils.run_once("unfocus")
 --- }}}
 
 clientkeys = awful.util.table.join(
@@ -590,5 +578,16 @@ client.connect_signal(
             log_entry('title', c)
         end
     end)
+
+saved = nil
+
+function unfocus()
+   saved = client.focus
+   client.focus = nil
+end
+
+function focus()
+   client.focus = saved
+end
 
 -- }}}

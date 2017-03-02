@@ -1,0 +1,12 @@
+#!/bin/sh
+
+process() {
+while read input; do
+  case "$input" in
+    BLANK*|LOCK*) awesome-client 'unfocus()' ;;
+    UNBLANK*) awesome-client 'focus()' ;;
+  esac
+done
+}
+
+xscreensaver-command -watch | process

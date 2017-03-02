@@ -1,3 +1,5 @@
+#!/bin/sh
+
 for device in "$@"
 do
     if cat /proc/acpi/wakeup | grep -qE $device'.*enabled'

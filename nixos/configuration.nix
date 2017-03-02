@@ -155,15 +155,6 @@
     wheelNeedsPassword = false;
   };
 
-  systemd.services.disableDeviceSuspending = {
-    enable = true;
-    wantedBy = [ "default.target" ];
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = "${pkgs.bash}/bin/bash -c '${/home/drets/bin/suspend-disable-device} LID0 XHC1'";
-    };
-  };
-
   systemd.services.healthySleep = {
     script = "shutdown -P";
   };
