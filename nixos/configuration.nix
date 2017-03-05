@@ -85,7 +85,6 @@
     enable = true;
     localuser = "drets";
     interval = "*-*-* 17:00:00";
-    extraFlags = ["--localpaths='/home/drets'"];
   };
 
   services.xserver.enable = true;
@@ -168,11 +167,6 @@
     timerConfig.OnCalendar = "*-*-* 00:06:59";
   };
 
-  environment.shellInit = ''
-    export GTK_PATH=$GTK_PATH:${pkgs.oxygen_gtk}/lib/gtk-2.0
-    export GTK2_RC_FILES=$GTK2_RC_FILES:${pkgs.oxygen_gtk}/share/themes/oxygen-gtk/gtk-2.0/gtkrc
-  '';
-
   environment.pathsToLink = [ "/share" ];
   environment.systemPackages = with pkgs; [
     ag
@@ -203,10 +197,7 @@
     haskellPackages.hlint
     hexchat
     htop
-    kde4.gwenview
     kde4.kde_baseapps
-    kde4.kwin_styles
-    kde4.oxygen_icons
     keepassx
     libreoffice
     man-pages
@@ -217,8 +208,6 @@
     nox
     openjdk
     openvpn
-    oxygen-gtk2
-    oxygen-gtk3
     p7zip
     phantomjs
     python

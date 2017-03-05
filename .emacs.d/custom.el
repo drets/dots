@@ -6,7 +6,8 @@
  '(backup-by-copying t)
  '(backup-directory-alist (quote (("." . "~/.saves"))))
  '(browse-url-browser-display nil)
- '(browse-url-browser-function (quote browse-url-chrome))
+ '(browse-url-browser-function (quote browse-url-generic))
+ '(browse-url-generic-program "vivaldi")
  '(column-number-mode t)
  '(comint-input-ring-size 10000)
  '(cua-mode t nil (cua-base))
@@ -60,7 +61,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (edit-server nim-mode elm-mode org-plus-contrib whitespace-cleanup-mode company-tern tern counsel-dash company wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex org-pomodoro solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
+    (clojure-mode edit-server nim-mode elm-mode org-plus-contrib whitespace-cleanup-mode company-tern tern counsel-dash company wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex org-pomodoro solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
  '(python-shell-interpreter "python3")
  '(savehist-mode t)
  '(scroll-bar-mode nil)

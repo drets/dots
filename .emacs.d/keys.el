@@ -87,8 +87,8 @@
 
 (define-key my-keys-minor-mode-map (kbd "C-4")   #'dired-jump)
 (define-key my-keys-minor-mode-map (kbd "C-f")   (kbd "C-x C-s")) ; generic
-(define-key my-keys-minor-mode-map (kbd "M-p")   #'counsel-find-file)
-(define-key my-keys-minor-mode-map (kbd "C-p")   #'counsel-git)
+(define-key my-keys-minor-mode-map (kbd "C-p")   #'counsel-find-file)
+(define-key my-keys-minor-mode-map (kbd "M-p")   #'counsel-git)
 (define-key my-keys-minor-mode-map (kbd "C-r")   #'counsel-recentf)
 (define-key my-keys-minor-mode-map (kbd "M-s l") #'counsel-locate)
 
