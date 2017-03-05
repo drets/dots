@@ -238,6 +238,7 @@
     unclutter
     unzip
     vlc
+    vivaldi
     wget
     which
     whois
