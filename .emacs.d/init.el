@@ -99,6 +99,9 @@
 ;; Wrap mode
 (wrap-region-global-mode)
 
+;; Edit in browser from emacs
+(edit-server-start)
+
 ;; Offline docs (sqlite3 dependency)
 (require 'counsel-dash)
 (setq counsel-dash-common-docsets
