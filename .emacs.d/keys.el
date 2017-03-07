@@ -5,13 +5,14 @@
 (require 'counsel)
 (require 'counsel-dash)
 (require 'expand-region)
+(require 'fiplr)
 (require 'ivy)
 (require 'magit)
 (require 'move-text)
 (require 'multiple-cursors)
-(require 'origami)
 (require 'org)
 (require 'org-pomodoro)
+(require 'origami)
 (require 'swiper)
 (require 'utils)
 
@@ -30,7 +31,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-9")   #'backward-sexp)
 (define-key my-keys-minor-mode-map (kbd "M-b")   #'my/pop-mark)
 (define-key my-keys-minor-mode-map (kbd "M-l")   #'recenter-top-bottom)
-(define-key my-keys-minor-mode-map (kbd "C-o")   #'avy-goto-word-or-subword-1)
+(define-key my-keys-minor-mode-map (kbd "<tab>") #'avy-goto-word-or-subword-1)
 (define-key my-keys-minor-mode-map (kbd "M-y")   #'counsel-imenu)
 (define-key my-keys-minor-mode-map (kbd "M-s b") #'browse-url-at-point)
 (define-key my-keys-minor-mode-map (kbd "M-g")   #'goto-line)
@@ -75,9 +76,10 @@
 
 ;; Search and replacement
 
-(define-key my-keys-minor-mode-map (kbd "C-s")   #'swiper)
+(define-key my-keys-minor-mode-map (kbd "C-s")   #'isearch-forward-regexp)
+(define-key my-keys-minor-mode-map (kbd "M-o")   #'swiper)
 (define-key my-keys-minor-mode-map (kbd "C-y")   #'counsel-yank-pop)
-(define-key my-keys-minor-mode-map (kbd "M-o")   #'counsel-git-grep)
+(define-key my-keys-minor-mode-map (kbd "M-p")   #'counsel-git-grep)
 (define-key my-keys-minor-mode-map (kbd "M-s q") #'query-replace-regexp)
 (define-key my-keys-minor-mode-map (kbd "M-s f") #'find-file-at-point)
 (define-key my-keys-minor-mode-map (kbd "M-s g") #'my/google)
@@ -87,10 +89,11 @@
 
 (define-key my-keys-minor-mode-map (kbd "C-4")   #'dired-jump)
 (define-key my-keys-minor-mode-map (kbd "C-f")   (kbd "C-x C-s")) ; generic
-(define-key my-keys-minor-mode-map (kbd "C-p")   #'counsel-find-file)
-(define-key my-keys-minor-mode-map (kbd "M-p")   #'counsel-git)
-(define-key my-keys-minor-mode-map (kbd "C-r")   #'counsel-recentf)
+(define-key my-keys-minor-mode-map (kbd "C-o")   #'counsel-find-file)
+(define-key my-keys-minor-mode-map (kbd "C-p")   #'fiplr-find-file)
+(define-key my-keys-minor-mode-map (kbd "C-r")   #'rgrep)
 (define-key my-keys-minor-mode-map (kbd "M-s l") #'counsel-locate)
+(define-key my-keys-minor-mode-map (kbd "M-s p") #'counsel-git)
 
 ;; Windows and buffers
 

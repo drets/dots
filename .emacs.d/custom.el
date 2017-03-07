@@ -24,6 +24,13 @@
  '(electric-indent-mode t)
  '(electric-pair-mode t)
  '(fill-column 77)
+ '(fiplr-ignored-globs
+  (quote
+   ((directories
+     (".git" ".svn" ".hg" ".bzr" ".cabal-sandbox" ".stack-work" "dist"))
+    (files
+     (".#*" "*~" "*.so" "*.jpg" "*.png" "*.gif" "*.pdf" "*.gz" "*.zip")))))
+ '(fiplr-root-markers (quote (".git" ".svn" ".hg" ".bzr" "stack.yaml")))
  '(global-whitespace-cleanup-mode t)
  '(haskell-indentation-show-indentations nil)
  '(haskell-indentation-starter-offset 2)
@@ -61,7 +68,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (clojure-mode edit-server nim-mode elm-mode org-plus-contrib whitespace-cleanup-mode company-tern tern counsel-dash company wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex org-pomodoro solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
+    (fiplr clojure-mode edit-server nim-mode elm-mode org-plus-contrib whitespace-cleanup-mode company-tern tern counsel-dash company wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex org-pomodoro solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
  '(python-shell-interpreter "python3")
  '(savehist-mode t)
  '(scroll-bar-mode nil)

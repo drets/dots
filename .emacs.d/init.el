@@ -6,13 +6,17 @@
 (setq package-list
       '(
         avy
+        clojure-mode
+        company
         counsel
         counsel-dash
-        company
+        edit-server
+        elm-mode
         exec-path-from-shell
+        expand-region
+        fiplr
         flx
         flycheck
-        expand-region
         haskell-mode
         ivy-hydra
         lua-mode
@@ -20,17 +24,18 @@
         markdown-mode
         move-text
         multiple-cursors
+        nim-mode
         nix-mode
         noflet
-        org-pomodoro
         org-plus-contrib
+        org-pomodoro
         origami
         restclient
         smex
         solarized-theme
-        wrap-region
-        whitespace-cleanup-mode
         wgrep
+        whitespace-cleanup-mode
+        wrap-region
         )
       )
 
