@@ -10,7 +10,7 @@ D=`xrandr | sed 's/^'"${EXT}"' [^0-9]* [0-9]\+x\([0-9]\+\).*$/\1/p;d'`
 A=`xrandr | sed 's/^'"${INT}"' [^0-9]* \([0-9]\+\)x.*$/\1/p;d'`
 B=`xrandr | sed 's/^'"${INT}"' [^0-9]* [0-9]\+x\([0-9]\+\).*$/\1/p;d'`
 
-x=$(( 1.0*$A/$C ))
-y=$(( 1.0*$B/$D ))
+x=$(echo $A/$C | bc -l | awk '{printf "%f", $0}')
+y=$(echo $B/$D | bc -l | awk '{printf "%f", $0}')
 
 xrandr --output "${EXT}" --scale ${x}x${y}
