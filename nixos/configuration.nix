@@ -145,9 +145,8 @@
   };
 
   programs.kbdlight.enable = true;
-  programs.zsh.enable = true;
 
-  users.defaultUserShell = pkgs.zsh;
+  users.defaultUserShell = pkgs.bash;
 
   security.sudo = {
     enable = true;
