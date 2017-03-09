@@ -123,6 +123,7 @@
 (define-key haskell-mode-map (kbd "C-c C-o") #'haskell-session-change-target)
 (define-key haskell-mode-map (kbd "C-c C-p") #'haskell-process-restart)
 (define-key haskell-mode-map (kbd "C-y")     #'haskell-mode-jump-to-def-or-tag)
+(define-key haskell-mode-map (kbd "C-c v a") #'haskell-cabal-add-dependency)
 
 ;; Completion
 
