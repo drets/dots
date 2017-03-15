@@ -9,43 +9,50 @@
   system.stateVersion = "16.09";
 
   nixpkgs.config.allowUnfree = true;
-  nix.binaryCaches = [ "https://cache.nixos.org" "https://nixcache.reflex-frp.org" ];
-  nix.binaryCachePublicKeys = [ "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI=" ];
 
-  nix.nixPath =
-    let dotfiles = "/home/drets/src/dots";
-    in [
-      "nixos-config=${dotfiles}/nixos/configuration.nix"
-      "${dotfiles}/channels"
-    ];
+  nix = {
+    binaryCachePublicKeys = [ "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI=" ];
+    binaryCaches = [ "https://cache.nixos.org" "https://nixcache.reflex-frp.org" ];
+
+    nixPath =
+      let dotfiles = "/home/drets/src/dots";
+      in [
+        "nixos-config=${dotfiles}/nixos/configuration.nix"
+        "${dotfiles}/channels"
+      ];
+
+    useSandbox = true;
+  };
 
   hardware = {
     bluetooth.enable = false;
     enableAllFirmware = true;
     facetimehd.enable = true;
     opengl.driSupport32Bit = true;
-    pulseaudio.enable = true;
-    pulseaudio.support32Bit = true;
+    pulseaudio = {
+      enable = true;
+      support32Bit = true;
+    };
   };
 
   powerManagement.enable = true;
 
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-    timeout = 0;
+  boot = {
+    blacklistedKernelModules = ["bdc_pci"];
+    kernelParams = [ "hid_apple.iso_layout=0" "hid_apple.fnmode=2" ];
+
+    initrd.luks.devices = [{
+      name = "rootfs";
+      device = "/dev/sda3";
+      preLVM = true;
+    }];
+
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+      timeout = 0;
+    };
   };
-
-  boot.kernelParams = [ "hid_apple.iso_layout=0" "hid_apple.fnmode=2" ];
-  boot.blacklistedKernelModules = ["bdc_pci"];
-
-  nix.useSandbox = true;
-
-  boot.initrd.luks.devices = [{
-    name = "rootfs";
-    device = "/dev/sda3";
-    preLVM = true;
-  }];
 
   networking = {
     hostName = "MBP";
@@ -54,45 +61,69 @@
     wireless.enable = false;
   };
 
-  services.redis.enable = true;
+  services = {
+    redis.enable = true;
+
+    locate = {
+      enable = true;
+      localuser = "drets";
+      interval = "*-*-* 17:00:00";
+    };
+
+    xserver = {
+      enable = true;
+      synaptics = {
+        enable = true;
+        twoFingerScroll = true;
+        vertEdgeScroll = true;
+        accelFactor = "0.1";
+        maxSpeed = "1.5";
+        buttonsMap = [ 1 3 2 ];
+        palmDetect = true;
+      };
+      windowManager.awesome = {
+        enable = true;
+        luaModules = [ pkgs.luaPackages.luafilesystem pkgs.luaPackages.cjson ];
+      };
+    };
+
+    redshift = {
+      enable = true;
+      latitude = "49.55";
+      longitude = "25.59";
+    };
+
+    logind.extraConfig = ''
+      HandleLidSwitch=ignore
+      HandlePowerKey=ignore
+    '';
+
+    openssh = {
+      enable = true;
+      passwordAuthentication = false;
+    };
+
+    postgresql = {
+      authentication = "local all all ident";
+      enable = true;
+    };
+  };
 
   i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" ];
 
   time.timeZone = "Europe/Kiev";
 
-  services.locate = {
-    enable = true;
-    localuser = "drets";
-    interval = "*-*-* 17:00:00";
-  };
+  users = {
+    extraGroups.plugdev = { };
 
-  services.xserver.enable = true;
-  services.xserver.synaptics = {
-    enable = true;
-    twoFingerScroll = true;
-    vertEdgeScroll = true;
-    accelFactor = "0.1";
-    maxSpeed = "1.5";
-    buttonsMap = [ 1 3 2 ];
-    palmDetect = true;
-  };
+    extraUsers.drets = {
+      isNormalUser = true;
+      uid = 1000;
+      extraGroups = [ "plugdev" "dialout" "users" "wheel" "dialout" "networkmanager" ];
+      initialPassword = "foobar";
+    };
 
-  services.xserver.windowManager.awesome = {
-    enable = true;
-    luaModules = [ pkgs.luaPackages.luafilesystem pkgs.luaPackages.cjson ];
-  };
-  services.redshift = {
-    enable = true;
-    latitude = "52.39";
-    longitude = "16.96";
-  };
-
-  users.extraGroups.plugdev = { };
-  users.extraUsers.drets = {
-    isNormalUser = true;
-    uid = 1000;
-    extraGroups = [ "plugdev" "dialout" "users" "wheel" "dialout" "networkmanager" ];
-    initialPassword = "foobar";
+    defaultUserShell = pkgs.bash;
   };
 
   fonts = {
@@ -113,107 +144,96 @@
     ];
   };
 
-  services.logind.extraConfig = ''
-    HandleLidSwitch=ignore
-    HandlePowerKey=ignore
-  '';
-
-  services.openssh = {
-    enable = true;
-    passwordAuthentication = false;
-  };
-
   programs.kbdlight.enable = true;
-
-  users.defaultUserShell = pkgs.bash;
 
   security.sudo = {
     enable = true;
     wheelNeedsPassword = false;
   };
 
-  systemd.services.healthySleep = {
-    script = "shutdown -P";
+  systemd = {
+    services.healthySleep = {
+      script = "shutdown -P";
+    };
+
+    timers.healthySleep = {
+      partOf = [ "healthySleep.service" ];
+      wantedBy = [ "timers.target" ];
+      timerConfig.OnCalendar = "*-*-* 00:06:59";
+    };
   };
 
-  services.postgresql.enable = true;
-  services.postgresql.authentication = "local all all ident";
-
-  systemd.timers.healthySleep = {
-    partOf = [ "healthySleep.service" ];
-    wantedBy = [ "timers.target" ];
-    timerConfig.OnCalendar = "*-*-* 00:06:59";
+  environment = {
+    pathsToLink = [ "/share" ];
+    systemPackages = with pkgs; [
+      ag
+      anki
+      aspell
+      aspellDicts.en
+      aspellDicts.ru
+      cabal-install
+      chromedriver
+      deadbeef
+      diffutils
+      dropbox
+      emacs
+      file
+      firefox
+      gcc
+      gimp
+      git
+      global
+      gnome3.adwaita-icon-theme
+      gnome3.gconf
+      gnumake
+      gnupg
+      goldendict
+      google-chrome
+      haskellPackages.ghc
+      haskellPackages.hasktags
+      haskellPackages.hlint
+      hexchat
+      htop
+      kde4.kde_baseapps
+      keepassx
+      libreoffice
+      man-pages
+      mplayer
+      nix-repl
+      nodePackages.jshint
+      nodejs
+      nox
+      openjdk
+      openvpn
+      p7zip
+      phantomjs
+      python
+      python3
+      python3Packages.matplotlib
+      qbittorrent
+      rxvt_unicode
+      rsync
+      scrot
+      shared_mime_info
+      shutter
+      skype
+      slack
+      stack
+      tightvnc
+      tdesktop
+      unclutter
+      unzip
+      vlc
+      vivaldi
+      wget
+      which
+      whois
+      xclip
+      xorg.xbacklight
+      xorg.xkbcomp
+      xscreensaver
+      zathura
+      zip
+    ];
   };
-
-  environment.pathsToLink = [ "/share" ];
-  environment.systemPackages = with pkgs; [
-    ag
-    anki
-    aspell
-    aspellDicts.en
-    aspellDicts.ru
-    cabal-install
-    chromedriver
-    deadbeef
-    diffutils
-    dropbox
-    emacs
-    file
-    firefox
-    gcc
-    gimp
-    git
-    global
-    gnome3.adwaita-icon-theme
-    gnome3.gconf
-    gnumake
-    gnupg
-    goldendict
-    google-chrome
-    haskellPackages.ghc
-    haskellPackages.hasktags
-    haskellPackages.hlint
-    hexchat
-    htop
-    kde4.kde_baseapps
-    keepassx
-    libreoffice
-    man-pages
-    mplayer
-    nix-repl
-    nodePackages.jshint
-    nodejs
-    nox
-    openjdk
-    openvpn
-    p7zip
-    phantomjs
-    python
-    python3
-    python3Packages.matplotlib
-    qbittorrent
-    rxvt_unicode
-    rsync
-    scrot
-    shared_mime_info
-    shutter
-    skype
-    slack
-    stack
-    tightvnc
-    tdesktop
-    unclutter
-    unzip
-    vlc
-    vivaldi
-    wget
-    which
-    whois
-    xclip
-    xorg.xbacklight
-    xorg.xkbcomp
-    xscreensaver
-    zathura
-    zip
-  ];
 }
