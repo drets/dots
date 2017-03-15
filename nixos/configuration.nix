@@ -9,7 +9,8 @@
   system.stateVersion = "16.09";
 
   nixpkgs.config.allowUnfree = true;
-  nix.binaryCaches = [ "https://cache.nixos.org" ];
+  nix.binaryCaches = [ "https://cache.nixos.org" "https://nixcache.reflex-frp.org" ];
+  nix.binaryCachePublicKeys = [ "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI=" ];
 
   nix.nixPath =
     let dotfiles = "/home/drets/src/dots";
@@ -48,7 +49,6 @@
 
   networking = {
     hostName = "MBP";
-
     useDHCP = false;
     wicd.enable = true;
     wireless.enable = false;
@@ -56,30 +56,9 @@
 
   services.redis.enable = true;
 
-  services.dnsmasq = {
-    enable = true;
-
-    # These are used in addition to resolv.conf
-    servers = [ "8.8.8.8" "8.8.4.4" ];
-
-    extraConfig = ''
-      listen-address=127.0.0.1
-      cache-size=1000
-
-      no-negcache
-    '';
-  };
-
-  # Put the text in /etc/resolv.conf.head
-  #
-  # That will prepend dnsmasq server to /etc/resolv.conf (dhcpcd-specific)
-  environment.etc."resolv.conf.head".text = ''
-    nameserver 127.0.0.1
-  '';
-
   i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" ];
 
-  time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "Europe/Kiev";
 
   services.locate = {
     enable = true;
