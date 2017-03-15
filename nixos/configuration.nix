@@ -1,5 +1,14 @@
 { config, pkgs, ... }:
 
+let
+  nixpkgs-bootstrap = import <nixpkgs> { };
+  nixpkgs-16_09 = import (nixpkgs-bootstrap.fetchFromGitHub {
+    owner = "NixOS";
+    repo = "nixpkgs-channels";
+    rev = "b833b10f81bee30c634802afbe06d9d0630c2709";
+    sha256 = "01sdf85fb99vmfk2xnjm7ii7ac0vf112ywhkmi1v5dln1x2cxps7";
+  }) { };
+in
 {
   imports =
     [
@@ -164,6 +173,10 @@
   };
 
   environment = {
+    shellInit = ''
+      export GTK_PATH=$GTK_PATH:${nixpkgs-16_09.oxygen_gtk}/lib/gtk-2.0
+      export GTK2_RC_FILES=$GTK2_RC_FILES:${nixpkgs-16_09.oxygen_gtk}/share/themes/oxygen-gtk/gtk-2.0/gtkrc
+    '';
     pathsToLink = [ "/share" ];
     systemPackages = with pkgs; [
       ag
@@ -234,6 +247,9 @@
       xscreensaver
       zathura
       zip
-    ];
+    ] ++ (with nixpkgs-16_09; [
+      oxygen-gtk2
+      oxygen-gtk3
+    ]);
   };
 }
