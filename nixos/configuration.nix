@@ -71,6 +71,20 @@ in
   };
 
   services = {
+    dnsmasq = {
+      enable = true;
+
+      # These are used in addition to resolv.conf
+      servers = [ "8.8.8.8" "8.8.4.4" ];
+
+      extraConfig = ''
+        listen-address=127.0.0.1
+        cache-size=5000
+
+        no-negcache
+      '';
+    };
+
     redis.enable = true;
 
     locate = {
@@ -173,6 +187,13 @@ in
   };
 
   environment = {
+    # Put the text in /etc/resolv.conf.head
+    #
+    # That will prepend dnsmasq server to /etc/resolv.conf (dhcpcd-specific)
+    etc."resolv.conf.head".text = ''
+      nameserver 127.0.0.1
+    '';
+
     shellInit = ''
       export GTK_PATH=$GTK_PATH:${nixpkgs-16_09.oxygen_gtk}/lib/gtk-2.0
       export GTK2_RC_FILES=$GTK2_RC_FILES:${nixpkgs-16_09.oxygen_gtk}/share/themes/oxygen-gtk/gtk-2.0/gtkrc
