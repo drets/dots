@@ -127,7 +127,7 @@
 
 ;; Completion
 
-(define-key my-keys-minor-mode-map (kbd "C-<tab>") #'company-dabbrev)
+(define-key my-keys-minor-mode-map (kbd "C-<tab>") #'dabbrev-expand)
 (define-key my-keys-minor-mode-map (kbd "M-x")     #'counsel-M-x)
 
 ;; Code folding
