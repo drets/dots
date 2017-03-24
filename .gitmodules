@@ -1,3 +1,6 @@
 [submodule "channels/nixpkgs"]
 	path = channels/nixpkgs
 	url = https://github.com/NixOS/nixpkgs
+[submodule ".config/awesome/pomodoro"]
+	path = .config/awesome/pomodoro
+	url = git@github.com:drets/awesome-pomodoro.git

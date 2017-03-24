@@ -10,6 +10,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local utils = require("utils")
 local battery = require("battery")
+local pomodoro = require("../pomodoro/init")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -192,6 +193,7 @@ awful.screen.connect_for_each_screen(function(s)
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
+            pomodoro.widget,
             mybattery,
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
@@ -292,9 +294,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
-    -- Touchpad
-    awful.key({ }, "XF86LaunchA", function () awful.util.spawn("synclient TouchpadOff=0") end),
-    awful.key({ }, "XF86LaunchB", function () awful.util.spawn("synclient TouchpadOff=1") end),
+    -- Pomodoro
+    awful.key({ "Control" }, "F3", function() pomodoro:stop() end),
+    awful.key({ "Control" }, "F4", function() pomodoro:start() end),
 
     -- Apple media keys
     awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 2")                         end),
@@ -590,5 +592,35 @@ end
 function focus()
    client.focus = saved
 end
+
+-- }}}
+
+-- Pomodoro {{{
+
+pomodoro.on_work_pomodoro_finish_callbacks = {
+    function()
+      -- turn off screen
+      awful.spawn("xset dpms force off")
+      -- use “xinput --list” to see the list of devices
+      -- disable keyboard
+      awful.spawn("xinput set-int-prop 10 \"Device Enabled\" 8 0")
+      -- disable mouse
+      awful.spawn("xinput set-int-prop 11 \"Device Enabled\" 8 0")
+      pomodoro.start()
+    end
+}
+
+pomodoro.on_pause_pomodoro_finish_callbacks = {
+   function()
+      -- turn on screen
+      awful.spawn("xset dpms force on")
+      -- enable keyboard
+      awful.spawn("xinput set-int-prop 10 \"Device Enabled\" 8 1")
+      -- enable mouse
+      awful.spawn("xinput set-int-prop 11 \"Device Enabled\" 8 1")
+    end
+}
+
+pomodoro.init()
 
 -- }}}
