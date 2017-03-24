@@ -11,7 +11,6 @@
 (require 'move-text)
 (require 'multiple-cursors)
 (require 'org)
-(require 'org-pomodoro)
 (require 'origami)
 (require 'swiper)
 (require 'utils)
@@ -153,7 +152,6 @@
 (define-key my-keys-minor-mode-map (kbd "C-c a") #'org-agenda)
 (define-key my-keys-minor-mode-map (kbd "C-c b") #'org-iswitchb)
 (define-key my-keys-minor-mode-map (kbd "C-c c") #'org-capture)
-(define-key my-keys-minor-mode-map (kbd "C-c p") #'org-pomodoro)
 (define-key my-keys-minor-mode-map (kbd "C-c l") #'org-store-link)
 
 ;; End of key definitions.

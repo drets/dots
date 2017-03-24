@@ -28,7 +28,6 @@
         nix-mode
         noflet
         org-plus-contrib
-        org-pomodoro
         origami
         restclient
         smex
