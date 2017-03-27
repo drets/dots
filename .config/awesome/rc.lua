@@ -294,6 +294,10 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
+    -- Touchpad
+    awful.key({ }, "XF86LaunchA", function () awful.util.spawn("synclient TouchpadOff=0") end),
+    awful.key({ }, "XF86LaunchB", function () awful.util.spawn("synclient TouchpadOff=1") end),
+
     -- Pomodoro
     awful.key({ "Control" }, "F3", function() pomodoro:stop() end),
     awful.key({ "Control" }, "F4", function() my_pomodoro_start() end),
