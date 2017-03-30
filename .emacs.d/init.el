@@ -6,12 +6,9 @@
 (setq package-list
       '(
         avy
-        clojure-mode
-        company
         counsel
         counsel-dash
         edit-server
-        elm-mode
         exec-path-from-shell
         expand-region
         fiplr
@@ -24,7 +21,6 @@
         markdown-mode
         move-text
         multiple-cursors
-        nim-mode
         nix-mode
         noflet
         org-plus-contrib
@@ -96,9 +92,6 @@
 
 ;; Adjust org mode.
 (require #'org-wrapper)
-
-;; Enable autocompletion
-(global-company-mode)
 
 ;; Wrap mode
 (wrap-region-global-mode)

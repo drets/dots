@@ -1,6 +1,5 @@
 ;; Javascript mode settings.
 (require 'js)
-(require 'company-tern)
 
 (defun use-eslint-from-node-modules ()
   (let* ((root (locate-dominating-file
@@ -17,7 +16,5 @@
           (lambda()
             (tern-mode)
             (flycheck-mode)))
-
-(add-to-list 'company-backends 'company-tern)
 
 (provide 'javascript)
