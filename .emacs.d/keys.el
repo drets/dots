@@ -17,23 +17,23 @@
 
 ;; Movement and navigation
 
-(define-key my-keys-minor-mode-map (kbd "C-/")   #'next-error)
-(define-key my-keys-minor-mode-map (kbd "C-0")   #'move-end-of-line)
-(define-key my-keys-minor-mode-map (kbd "C-1")   #'beginning-of-buffer)
-(define-key my-keys-minor-mode-map (kbd "C-2")   #'end-of-buffer)
-(define-key my-keys-minor-mode-map (kbd "C-9")   #'my/move-beginning-of-line)
-(define-key my-keys-minor-mode-map (kbd "C-b")   #'my/push-mark)
-(define-key my-keys-minor-mode-map (kbd "C-k")   #'my/scroll-down-some)
-(define-key my-keys-minor-mode-map (kbd "C-l")   #'my/scroll-up-some)
-(define-key my-keys-minor-mode-map (kbd "M-/")   #'previous-error)
-(define-key my-keys-minor-mode-map (kbd "M-0")   #'forward-sexp)
-(define-key my-keys-minor-mode-map (kbd "M-9")   #'backward-sexp)
-(define-key my-keys-minor-mode-map (kbd "M-b")   #'my/pop-mark)
-(define-key my-keys-minor-mode-map (kbd "M-l")   #'recenter-top-bottom)
-(define-key my-keys-minor-mode-map (kbd "<tab>") #'avy-goto-word-or-subword-1)
-(define-key my-keys-minor-mode-map (kbd "M-s y") #'counsel-imenu)
-(define-key my-keys-minor-mode-map (kbd "M-s b") #'browse-url-at-point)
-(define-key my-keys-minor-mode-map (kbd "M-g")   #'goto-line)
+(define-key my-keys-minor-mode-map (kbd "C-/")     #'next-error)
+(define-key my-keys-minor-mode-map (kbd "C-0")     #'move-end-of-line)
+(define-key my-keys-minor-mode-map (kbd "C-1")     #'beginning-of-buffer)
+(define-key my-keys-minor-mode-map (kbd "C-2")     #'end-of-buffer)
+(define-key my-keys-minor-mode-map (kbd "C-9")     #'my/move-beginning-of-line)
+(define-key my-keys-minor-mode-map (kbd "C-b")     #'my/push-mark)
+(define-key my-keys-minor-mode-map (kbd "C-k")     #'my/scroll-down-some)
+(define-key my-keys-minor-mode-map (kbd "C-l")     #'my/scroll-up-some)
+(define-key my-keys-minor-mode-map (kbd "M-/")     #'previous-error)
+(define-key my-keys-minor-mode-map (kbd "M-0")     #'forward-sexp)
+(define-key my-keys-minor-mode-map (kbd "M-9")     #'backward-sexp)
+(define-key my-keys-minor-mode-map (kbd "M-b")     #'my/pop-mark)
+(define-key my-keys-minor-mode-map (kbd "M-l")     #'recenter-top-bottom)
+(define-key my-keys-minor-mode-map (kbd "C-<tab>") #'avy-goto-word-or-subword-1)
+(define-key my-keys-minor-mode-map (kbd "M-s y")   #'counsel-imenu)
+(define-key my-keys-minor-mode-map (kbd "M-s b")   #'browse-url-at-point)
+(define-key my-keys-minor-mode-map (kbd "M-g")     #'goto-line)
 
 (move-text-default-bindings)
 
@@ -126,8 +126,8 @@
 
 ;; Completion
 
-(define-key my-keys-minor-mode-map (kbd "C-<tab>") #'dabbrev-expand)
-(define-key my-keys-minor-mode-map (kbd "M-x")     #'counsel-M-x)
+(define-key my-keys-minor-mode-map (kbd "<tab>") #'dabbrev-expand)
+(define-key my-keys-minor-mode-map (kbd "M-x")   #'counsel-M-x)
 
 ;; Code folding
 
