@@ -337,6 +337,10 @@ utils.run_once("emacs --daemon")
 utils.run_once("dropbox start")
 utils.run_once("suspend-disable-device LID0 XHC1")
 utils.run_once("unfocus")
+-- enable sticky keys; do not disable stickiness by pressing two keys simultaneously; enable mouse keys; do not expire sticky and mousekeys features
+utils.run_once("xkbset sticky -twokey")
+utils.run_once("xkbset mousekeys")
+utils.run_once("xkbset exp 1 =sticky =mousekeys")
 --- }}}
 
 clientkeys = awful.util.table.join(
