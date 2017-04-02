@@ -14,7 +14,6 @@
 (add-hook 'flycheck-mode-hook #'use-eslint-from-node-modules)
 (add-hook 'js-mode-hook
           (lambda()
-            (tern-mode)
             (flycheck-mode)))
 
 (provide 'javascript)
