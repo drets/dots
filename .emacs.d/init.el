@@ -105,6 +105,11 @@
       '("CSS" "Emacs Lisp" "Flask" "HTML" "JavaScript" "Less" "Python 3"
         "React" "Sass" "jQuery" "MomentJS" "Bash" "Sinon" "PostgreSQL" "Haskell"))
 
+;; TeX
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq TeX-save-query nil)
+
 ;; Prompt for directory creation automatically when saving a file
 (add-hook #'before-save-hook
   (lambda ()
