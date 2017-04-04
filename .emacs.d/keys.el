@@ -61,7 +61,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-s o")           #'sort-lines)
 (define-key my-keys-minor-mode-map (kbd "M-=")             #'my/increment-integer-at-point)
 (define-key my-keys-minor-mode-map (kbd "M--")             #'my/decrement-integer-at-point)
-
+(define-key my-keys-minor-mode-map (kbd "C-t")             #'my/flip-bool-at-point)
 
 ;; Macros
 

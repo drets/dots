@@ -204,3 +204,20 @@ With numeric prefix arg INC, increment the integer by INC amount."
 With numeric prefix arg DEC, decrement the integer by DEC amount."
   (interactive "p")
   (my/increment-integer-at-point (- (or dec 1))))
+
+(defun my/flip-bool-at-point ()
+  (interactive)
+  (let* ((bools '(("true" . "false")
+                  ("True" . "False")
+                  ("TRUE" . "FALSE")
+                  ("1" . "0")
+                  ("T" . "F")))
+         (true  (cdr (assoc  (current-word) bools)))
+         (false (car (rassoc (current-word) bools)))
+         (wrd (cond (true true)
+                    (false false)
+                    (t (current-word)))))
+    (save-excursion
+      (forward-word)
+      (backward-kill-word 1)
+      (insert wrd))))
