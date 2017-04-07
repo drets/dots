@@ -93,6 +93,9 @@
 ;; Adjust org mode.
 (require #'org-wrapper)
 
+;; TeX
+(require #'tex-wrapper)
+
 ;; Wrap mode
 (wrap-region-global-mode)
 
@@ -104,11 +107,6 @@
 (setq counsel-dash-common-docsets
       '("CSS" "Emacs Lisp" "Flask" "HTML" "JavaScript" "Less" "Python 3"
         "React" "Sass" "jQuery" "MomentJS" "Bash" "Sinon" "PostgreSQL" "Haskell"))
-
-;; TeX
-(setq TeX-auto-save t)
-(setq TeX-parse-self t)
-(setq TeX-save-query nil)
 
 ;; Prompt for directory creation automatically when saving a file
 (add-hook #'before-save-hook
