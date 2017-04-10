@@ -1,4 +1,4 @@
-alias g='git'a
+alias g='git'
 alias ns='nix-shell'
 
 export HISTSIZE=100000
