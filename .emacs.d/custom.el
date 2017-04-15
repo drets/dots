@@ -8,6 +8,7 @@
  '(browse-url-browser-display nil)
  '(browse-url-browser-function (quote browse-url-generic))
  '(browse-url-generic-program "vivaldi")
+ '(centered-window-mode t)
  '(column-number-mode t)
  '(comint-input-ring-size 10000)
  '(cua-mode t nil (cua-base))
@@ -69,7 +70,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (auctex fiplr edit-server org-plus-contrib whitespace-cleanup-mode counsel-dash wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
+    (centered-window-mode auctex fiplr edit-server org-plus-contrib whitespace-cleanup-mode counsel-dash wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
  '(python-shell-interpreter "python3")
  '(savehist-mode t)
  '(scroll-bar-mode nil)
