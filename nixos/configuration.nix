@@ -134,7 +134,7 @@ in
 
   i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" ];
 
-  time.timeZone = "Europe/Kiev";
+  time.timeZone = "Europe/Amsterdam";
 
   users = {
     extraGroups.plugdev = { };
@@ -213,6 +213,7 @@ in
       emacs
       file
       firefox
+      jq
       gcc
       gimp
       git
@@ -221,6 +222,7 @@ in
       gnome3.gconf
       gnumake
       gnupg
+      gnuplot
       goldendict
       google-chrome
       haskellPackages.ghc
@@ -239,6 +241,7 @@ in
       nox
       openjdk
       openvpn
+      patchelf
       p7zip
       phantomjs
       python
@@ -254,6 +257,7 @@ in
       slack
       stack
       tightvnc
+      texlive.combined.scheme-full
       tdesktop
       unclutter
       unzip
@@ -265,6 +269,7 @@ in
       xclip
       xorg.xbacklight
       xorg.xkbcomp
+      xorg.xwininfo
       xscreensaver
       zathura
       zip
