@@ -70,7 +70,7 @@
       '("CSS" "Emacs Lisp" "Flask" "HTML" "JavaScript" "Less" "Python 3"
         "React" "Sass" "jQuery" "MomentJS" "Bash" "Sinon" "PostgreSQL" "Haskell"))
 
-;; Specify which keys count as “nice” keys for ace-jump.
+;; Specify which keys count as “nice” keys for avy.
 (setq avy-keys
       (string-to-list "eklioswadfxcrvn,hm./"))
 
