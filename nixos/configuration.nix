@@ -182,7 +182,7 @@ in
     timers.healthySleep = {
       partOf = [ "healthySleep.service" ];
       wantedBy = [ "timers.target" ];
-      timerConfig.OnCalendar = "*-*-* 00:06:59";
+      timerConfig.OnCalendar = "*-*-* 23:30:00";
     };
   };
 

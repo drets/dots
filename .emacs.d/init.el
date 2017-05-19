@@ -3,37 +3,6 @@
 ;; be conflicts between my files and files of various libraries.
 (add-to-list #'load-path user-emacs-directory t)
 
-(setq package-list
-      '(
-        avy
-        counsel
-        counsel-dash
-        edit-server
-        exec-path-from-shell
-        expand-region
-        fiplr
-        flx
-        flycheck
-        haskell-mode
-        ivy-hydra
-        lua-mode
-        magit
-        markdown-mode
-        move-text
-        multiple-cursors
-        nix-mode
-        noflet
-        org-plus-contrib
-        origami
-        restclient
-        smex
-        solarized-theme
-        wgrep
-        whitespace-cleanup-mode
-        wrap-region
-        )
-      )
-
 ;; Initialise package system.
 (require #'package)
 (add-to-list #'package-archives
@@ -41,13 +10,6 @@
 (add-to-list #'package-archives
              '("org" . "http://orgmode.org/elpa/") t)
 (package-initialize)
-
-;; Install packages if needed.
-(unless package-archive-contents
-  (package-refresh-contents))
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
 
 ;; Prevent the Magit upgrade warning from showing every time.
 (setq magit-last-seen-setup-instructions "1.4.0")
@@ -108,6 +70,10 @@
       '("CSS" "Emacs Lisp" "Flask" "HTML" "JavaScript" "Less" "Python 3"
         "React" "Sass" "jQuery" "MomentJS" "Bash" "Sinon" "PostgreSQL" "Haskell"))
 
+;; Specify which keys count as “nice” keys for ace-jump.
+(setq avy-keys
+      (string-to-list "eklioswadfxcrvn,hm./"))
+
 ;; Prompt for directory creation automatically when saving a file
 (add-hook #'before-save-hook
   (lambda ()
@@ -117,6 +83,10 @@
            (when (and (not (file-exists-p dir))
                       (y-or-n-p (format "Create directory %s does not exist. Create it?" dir)))
              (make-directory dir t)))))))
+
+;; Agda
+(load-file (let ((coding-system-for-read 'utf-8))
+                (shell-command-to-string "agda-mode locate")))
 
 ;; Load “customize”d variables.
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))

@@ -299,8 +299,8 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86LaunchB", function () awful.util.spawn("synclient TouchpadOff=1") end),
 
     -- Pomodoro
-    awful.key({ "Control" }, "F3", function() pomodoro:stop() end),
-    awful.key({ "Control" }, "F4", function() my_pomodoro_start() end),
+    awful.key({ "Control", "Shift" }, "F4", function() pomodoro:stop() end),
+    awful.key({ "Control" }, "F4", function() pomodoro:start() end),
 
     -- Apple media keys
     awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 2")                         end),
@@ -606,36 +606,13 @@ end
 -- Pomodoro {{{
 
 local pomodoro_file = assert(io.open("pomodoro.txt", "ab"))
-local pomodoro_name
 
 awesome.connect_signal("exit", function () pomodoro_file:close() end)
 
-function log_pomodoro(name)
-    pomodoro_file:write(cjson.encode{
-        time = os.date("%FT%T%z"),
-        name = name,
-    })
+function log_pomodoro()
+    pomodoro_file:write(cjson.encode{ time = os.date("%FT%T%z") })
     pomodoro_file:write("\n")
     pomodoro_file:flush()
-end
-
-function set_name()
-  pomodoro_name = "pomodoro"
-
-  awful.prompt.run {
-      prompt       = '<b>Pomodoro name: </b>',
-      text         = '',
-      textbox      = mouse.screen.mypromptbox.widget,
-      exe_callback = function(input)
-          if not input or #input == 0 then return end
-          pomodoro_name = input
-      end
-  }
-end
-
-function my_pomodoro_start()
-  set_name()
-  pomodoro:start()
 end
 
 pomodoro.on_work_pomodoro_finish_callbacks = {
@@ -648,7 +625,7 @@ pomodoro.on_work_pomodoro_finish_callbacks = {
       -- disable mouse
       awful.spawn("xinput set-int-prop 11 \"Device Enabled\" 8 0")
       -- save to pomodoro.txt
-      log_pomodoro(pomodoro_name)
+      log_pomodoro()
       pomodoro.start()
     end
 }
