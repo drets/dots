@@ -10,4 +10,4 @@
          "* TODO %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n\n%U")
         ("j" "Journal" entry (file+datetree "~/org/journal.org") "** %?")))
 
-(provide 'org)
+(provide 'org-wrap)

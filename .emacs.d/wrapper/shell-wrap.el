@@ -21,4 +21,4 @@
             (--each (buffer-list)
               (with-current-buffer it (comint-write-input-ring)))))
 
-(provide 'shell)
+(provide 'shell-wrap)

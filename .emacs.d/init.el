@@ -19,11 +19,11 @@
 
 ;; Load wrappers.
 (add-to-list #'load-path (concat user-emacs-directory "wrapper/") t)
-(require #'haskell)
-(require #'javascript)
-(require #'shell)
-(require #'tex)
-(require #'org)
+(require #'haskell-wrap)
+(require #'javascript-wrap)
+(require #'shell-wrap)
+(require #'tex-wrap)
+(require #'org-wrap)
 
 ;; Load custom keybindings.
 (require #'keys)

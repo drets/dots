@@ -16,4 +16,4 @@
           (lambda()
             (flycheck-mode)))
 
-(provide 'javascript)
+(provide 'javascript-wrap)
