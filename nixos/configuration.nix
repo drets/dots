@@ -271,7 +271,6 @@ in
       xorg.xkbcomp
       xorg.xwininfo
       xscreensaver
-      zathura
       zip
     ] ++ (with nixpkgs-16_09; [
       oxygen-gtk2

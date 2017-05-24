@@ -1,4 +1,7 @@
 ;; Shell adjustments.
+;;
+;;   * [C-i] autocomplete
+
 (require #'shell)
 
 (defun turn-on-comint-history (history-file)
@@ -18,4 +21,4 @@
             (--each (buffer-list)
               (with-current-buffer it (comint-write-input-ring)))))
 
-(provide 'shell-wrapper)
+(provide 'shell)

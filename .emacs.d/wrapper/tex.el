@@ -10,4 +10,4 @@
 	     (setq TeX-save-query nil)
              (define-key LaTeX-mode-map (kbd "C-c C-l") #'latex-compile)))
 
-(provide 'tex-wrapper)
+(provide 'tex)

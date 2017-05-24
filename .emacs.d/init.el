@@ -14,23 +14,22 @@
 ;; Prevent the Magit upgrade warning from showing every time.
 (setq magit-last-seen-setup-instructions "1.4.0")
 
-;; The file name and the major mode as window name
+;; The file name and the major mode as window name.
 (setq-default frame-title-format '("%f [%m]"))
 
-;; Load haskell-mode.
+;; Load wrappers.
+(add-to-list #'load-path (concat user-emacs-directory "wrapper/") t)
 (require #'haskell)
+(require #'javascript)
+(require #'shell)
+(require #'tex)
+(require #'org)
 
 ;; Load custom keybindings.
 (require #'keys)
 
 ;; Enable kill-as-delete.
 (require #'kill-as-delete)
-
-;; Load js-mode.
-(require #'javascript)
-
-;; Adjust shell mode
-(require #'shell-wrapper)
 
 ;; Get rid of annoying “yes or no” questions.
 (defalias #'yes-or-no-p #'y-or-n-p)
@@ -52,29 +51,17 @@
     (dired-hide-details-mode)
     (dired-omit-mode)))
 
-;; Adjust org mode.
-(require #'org-wrapper)
-
-;; TeX
-(require #'tex-wrapper)
-
-;; Wrap mode
+;; Wrap string mode.
 (wrap-region-global-mode)
 
-;; Edit in browser from emacs
+;; Edit in browser from emacs.
 (edit-server-start)
-
-;; Offline docs (sqlite3 dependency)
-(require 'counsel-dash)
-(setq counsel-dash-common-docsets
-      '("CSS" "Emacs Lisp" "Flask" "HTML" "JavaScript" "Less" "Python 3"
-        "React" "Sass" "jQuery" "MomentJS" "Bash" "Sinon" "PostgreSQL" "Haskell"))
 
 ;; Specify which keys count as “nice” keys for avy.
 (setq avy-keys
       (string-to-list "eklioswadfxcrvn,hm./"))
 
-;; Prompt for directory creation automatically when saving a file
+;; Prompt for directory creation automatically when saving a file.
 (add-hook #'before-save-hook
   (lambda ()
      (lambda ()
@@ -84,7 +71,7 @@
                       (y-or-n-p (format "Create directory %s does not exist. Create it?" dir)))
              (make-directory dir t)))))))
 
-;; Agda
+;; Agda.
 (load-file (let ((coding-system-for-read 'utf-8))
                 (shell-command-to-string "agda-mode locate")))
 
