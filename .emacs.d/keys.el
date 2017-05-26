@@ -70,7 +70,7 @@
 
 ;; Information
 
-(define-key my-keys-minor-mode-map (kbd "M-s c") #'count-words)
+(define-key my-keys-minor-mode-map (kbd "M-s d") #'count-words)
 
 ;; Search and replacement
 
@@ -103,6 +103,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-w")   #'kill-buffer)
 (define-key my-keys-minor-mode-map (kbd "ö")     #'winner-undo) ; d + o
 (define-key my-keys-minor-mode-map (kbd "C-ö")   #'winner-redo) ; s + d + o
+(define-key my-keys-minor-mode-map (kbd "M-s c") #'clone-indirect-buffer)
 
 ;; Display
 
