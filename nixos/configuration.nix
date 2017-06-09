@@ -68,6 +68,11 @@ in
     useDHCP = false;
     wicd.enable = true;
     wireless.enable = false;
+    firewall = {
+      allowedTCPPorts = [
+        5000
+      ];
+    };
   };
 
   services = {
@@ -237,7 +242,6 @@ in
       mplayer
       nix-repl
       nodePackages.jshint
-      nodejs
       nox
       openjdk
       openvpn

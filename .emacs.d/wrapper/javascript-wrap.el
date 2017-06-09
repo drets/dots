@@ -1,5 +1,6 @@
 ;; Javascript mode settings.
 (require 'js)
+(require 'web-mode)
 
 (defun use-eslint-from-node-modules ()
   (let* ((root (locate-dominating-file
@@ -15,5 +16,7 @@
 (add-hook 'js-mode-hook
           (lambda()
             (flycheck-mode)))
+
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 
 (provide 'javascript-wrap)
