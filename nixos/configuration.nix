@@ -76,6 +76,8 @@ in
   };
 
   services = {
+    udev.packages = [ pkgs.android-udev-rules ];
+
     dnsmasq = {
       enable = true;
 
