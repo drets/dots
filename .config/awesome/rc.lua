@@ -641,6 +641,9 @@ pomodoro.on_pause_pomodoro_finish_callbacks = {
     end
 }
 
+pomodoro.work_duration = 52 * 60
+pomodoro.short_pause_duration = 8 * 60
+
 pomodoro.init()
 
 -- }}}

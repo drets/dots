@@ -19,4 +19,12 @@
 
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 
+(add-hook 'css-mode-hook
+      (lambda()
+        (setq css-indent-offset 2)))
+
+(add-hook 'web-mode-hook
+          (lambda()
+            (setq web-mode-markup-indent-offset 2)))
+
 (provide 'javascript-wrap)

@@ -60,7 +60,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-s o")           #'sort-lines)
 (define-key my-keys-minor-mode-map (kbd "M-=")             #'my/increment-integer-at-point)
 (define-key my-keys-minor-mode-map (kbd "M--")             #'my/decrement-integer-at-point)
-(define-key my-keys-minor-mode-map (kbd "C-t")             #'my/flip-bool-at-point)
+(define-key my-keys-minor-mode-map (kbd "M-t")             #'my/flip-bool-at-point)
 
 ;; Macros
 
@@ -101,8 +101,8 @@
 (define-key my-keys-minor-mode-map (kbd "M-e")   #'split-window-right)
 (define-key my-keys-minor-mode-map (kbd "M-r")   #'ibuffer)
 (define-key my-keys-minor-mode-map (kbd "M-w")   #'kill-buffer)
-(define-key my-keys-minor-mode-map (kbd "ö")     #'winner-undo) ; d + o
-(define-key my-keys-minor-mode-map (kbd "C-ö")   #'winner-redo) ; s + d + o
+(define-key my-keys-minor-mode-map (kbd "C-t")   #'winner-undo)
+(define-key my-keys-minor-mode-map (kbd "C-M-t") #'winner-redo)
 (define-key my-keys-minor-mode-map (kbd "M-s c") #'clone-indirect-buffer)
 
 ;; Display
@@ -130,8 +130,8 @@
 
 ;; Code folding
 
-(define-key origami-mode-map (kbd "å") #'origami-recursively-toggle-node) ; d + h
-(define-key origami-mode-map (kbd "Å") #'origami-toggle-all-nodes)        ; shift + d + h
+(define-key origami-mode-map (kbd "M-s ö") #'origami-recursively-toggle-node)
+(define-key origami-mode-map (kbd "M-s Ö") #'origami-toggle-all-nodes)
 
 ;; Shell
 

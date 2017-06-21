@@ -19,7 +19,7 @@ xkb_symbols "en" {
 
     key <AD01> {[ q, Q, degree ]};
     key <AD02> {[ w, W ]};
-    key <AD03> {[ a, A ]};
+    key <AD03> {[ a, A, U00e4, U00c4 ]};
     key <AD04> {[ r, R, enfilledcircbullet ]};
     key <AD05> {[ t, T, braceleft ]};
     key <AD06> {[ y, Y, braceright ]};
@@ -27,8 +27,8 @@ xkb_symbols "en" {
     key <AD08> {[ i, I, Up, Up ]};
     key <AD09> {[ o, O, odiaeresis, Odiaeresis ]};
     key <AD10> {[ p, P, j, J ]};
-    key <AD11> {[ u, U, semicolon, leftsinglequotemark ]};
-    key <AD12> {[ asterisk, ae, ae, rightsinglequotemark ]};
+    key <AD11> {[ u, U, U00fc, U00dc ]};
+    key <AD12> {[ asterisk, ae, leftsinglequotemark, rightsinglequotemark ]};
 
     key <AC02> { [ Control_L ] };
     key <RWIN> { [ Control_R ] };
@@ -38,7 +38,7 @@ xkb_symbols "en" {
     key <AC01> {[ f, F ]};
     key <AC04> {[ e, E, Pointer_Button1 ]};
     key <AC05> {[ g, G, Pointer_Button3 ]};
-    key <AC06> {[ h, H, aring, Aring ]};
+    key <AC06> {[ h, H, semicolon ]};
     key <AC07> {[ BackSpace, BackSpace, Left, Left]};
     key <AC08> {[ k, K, Down, Down ]};
     key <AC09> {[ l, L, Right, Right ]};
@@ -52,7 +52,7 @@ xkb_symbols "en" {
     key <AB02> {[ x, X, multiply ]};
     key <AB03> {[ c, C, bar ]};
     key <AB04> {[ v, V, backslash ]};
-    key <AB05> {[ b, B ]};
+    key <AB05> {[ b, B, U00df ]};
     key <AB06> {[ n, N, less ]};
     key <AB07> {[ m, M, greater ]};
     key <AB08> {[ comma, leftdoublequotemark, exclam, guillemotleft ]};
