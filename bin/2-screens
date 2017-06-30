@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# place 2 external screens above
+#  ____  ____
+# | EX1|| EX2|
+# |____||____|
+#    | INT|
+#    |____|
+#
+# assumes that external screens have the same size
+#
+
+SCALE=1.7
+
+INT="eDP1"
+EX1=`xrandr --current | sed 's/^\(.*\) connected.*$/\1/p;d' | grep ^DP1 | head -n 1`
+EX2=`xrandr --current | sed 's/^\(.*\) connected.*$/\1/p;d' | grep ^DP2 | head -n 1`
+
+ext_w=`xrandr | sed 's/^'"${EX1}"' [^0-9]* \([0-9]\+\)x.*$/\1/p;d'`
+ext_h=`xrandr | sed 's/^'"${EX1}"' [^0-9]* [0-9]\+x\([0-9]\+\).*$/\1/p;d'`
+int_w=`xrandr | sed 's/^'"${INT}"' [^0-9]* \([0-9]\+\)x.*$/\1/p;d'`
+
+off_w=`echo $(( $int_w/2 ))  | sed 's/^-//'`
+
+x=$(echo $SCALE*$off_w | bc -l | awk '{printf "%f", $0}')
+z=$(echo $SCALE*$ext_w | bc -l | awk '{printf "%f", $0}')
+y=$(echo $SCALE*$ext_h | bc -l | awk '{printf "%f", $0}')
+
+# internal
+xrandr --output "${INT}" --pos ${x%.*}x${y%.*} --auto
+# external left − DP1
+xrandr --output "${EX1}" --pos 0x0 --scale ${SCALE}x${SCALE} --auto
+# external right − DP2
+xrandr --output "${EX2}" --pos ${z%.*}x0 --scale ${SCALE}x${SCALE} --auto

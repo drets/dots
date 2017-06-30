@@ -60,6 +60,7 @@
  '(kill-whole-line t)
  '(magit-dispatch-arguments nil)
  '(magit-push-always-verify nil)
+ '(magit-submodule-arguments nil)
  '(magit-use-overlays nil)
  '(menu-bar-mode nil)
  '(my/kill-as-delete t)

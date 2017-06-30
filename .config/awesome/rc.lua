@@ -605,6 +605,14 @@ end
 
 -- Pomodoro {{{
 
+function pomodoro_start()
+   pomodoro:start()
+end
+
+function pomodoro_pause()
+   pomodoro:pause()
+end
+
 local pomodoro_file = assert(io.open("pomodoro.txt", "ab"))
 
 awesome.connect_signal("exit", function () pomodoro_file:close() end)
@@ -638,6 +646,12 @@ pomodoro.on_pause_pomodoro_finish_callbacks = {
       awful.spawn("xinput set-int-prop 10 \"Device Enabled\" 8 1")
       -- enable mouse
       awful.spawn("xinput set-int-prop 11 \"Device Enabled\" 8 1")
+
+      -- play sound
+      awful.spawn("mplayer /home/drets/.config/awesome/vibration.mp3")
+
+      -- autostart
+      pomodoro.start()
     end
 }
 
@@ -645,5 +659,6 @@ pomodoro.work_duration = 52 * 60
 pomodoro.short_pause_duration = 8 * 60
 
 pomodoro.init()
+pomodoro_start()
 
 -- }}}
