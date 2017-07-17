@@ -3,8 +3,8 @@
 process() {
     while read input; do
         case "$input" in
-            BLANK*|LOCK*) awesome-client 'pomodoro_pause() unfocus()' ;;
-            UNBLANK*) awesome-client 'pomodoro_start() focus()' ;;
+            BLANK*|LOCK*) awesome-client 'unfocus()' ;;
+            UNBLANK*) awesome-client 'focus()' ;;
         esac
     done
 }

@@ -8,9 +8,11 @@
     [ <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "vboxdrv" "vboxnetadp" "vboxnetflt"];
   boot.kernelModules = [ "kvm-intel" "wl" ];
-  boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
+  boot.extraModulePackages = [
+    config.boot.kernelPackages.broadcom_sta
+  ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/c232d4a9-bedf-4594-914e-f07a07ca8642";

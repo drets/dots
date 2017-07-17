@@ -77,7 +77,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-s")   #'isearch-forward-regexp)
 (define-key my-keys-minor-mode-map (kbd "M-s p") #'swiper)
 (define-key my-keys-minor-mode-map (kbd "C-y")   #'counsel-yank-pop)
-(define-key my-keys-minor-mode-map (kbd "M-o")   #'counsel-git-grep)
+(define-key my-keys-minor-mode-map (kbd "M-o")   #'counsel-find-file)
 (define-key my-keys-minor-mode-map (kbd "M-s q") #'query-replace-regexp)
 (define-key my-keys-minor-mode-map (kbd "M-s f") #'find-file-at-point)
 (define-key my-keys-minor-mode-map (kbd "M-s g") #'my/google)
@@ -86,11 +86,11 @@
 
 (define-key my-keys-minor-mode-map (kbd "C-4")   #'dired-jump)
 (define-key my-keys-minor-mode-map (kbd "C-f")   (kbd "C-x C-s")) ; generic
-(define-key my-keys-minor-mode-map (kbd "C-o")   #'counsel-find-file)
-(define-key my-keys-minor-mode-map (kbd "C-p")   #'fiplr-find-file)
+(define-key my-keys-minor-mode-map (kbd "C-o")   #'counsel-git-grep)
+(define-key my-keys-minor-mode-map (kbd "C-p")   #'counsel-git)
 (define-key my-keys-minor-mode-map (kbd "M-s r") #'rgrep)
 (define-key my-keys-minor-mode-map (kbd "M-s l") #'counsel-locate)
-(define-key my-keys-minor-mode-map (kbd "M-p")   #'counsel-git)
+(define-key my-keys-minor-mode-map (kbd "M-p")   #'fiplr-find-file)
 
 ;; Windows and buffers
 

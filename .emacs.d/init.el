@@ -71,19 +71,7 @@
                       (y-or-n-p (format "Create directory %s does not exist. Create it?" dir)))
              (make-directory dir t)))))))
 
-;; Agda.
-(load-file (let ((coding-system-for-read 'utf-8))
-                (shell-command-to-string "agda-mode locate")))
-
-;; Purescript
-(require 'psc-ide)
-
-(add-hook 'purescript-mode-hook
-  (lambda ()
-    (psc-ide-mode)
-    (company-mode)
-    (flycheck-mode)
-    (turn-on-purescript-indentation)))
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;; Load “customize”d variables.
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))

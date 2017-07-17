@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# place 2 external screens above
+#  _________
+# |    EX1  |
+# |_________|
+#    | INT|
+#    |____|
+#
+# assumes that external screens have the same size
+#
+
+SCALE=1.7
+
+INT="eDP1"
+EXT=`xrandr --current | sed 's/^\(.*\) connected.*$/\1/p;d' | grep ^DP1 | head -n 1`
+
+ext_w=`xrandr | sed 's/^'"${EXT}"' [^0-9]* \([0-9]\+\)x.*$/\1/p;d'`
+ext_h=`xrandr | sed 's/^'"${EXT}"' [^0-9]* [0-9]\+x\([0-9]\+\).*$/\1/p;d'`
+int_w=`xrandr | sed 's/^'"${INT}"' [^0-9]* \([0-9]\+\)x.*$/\1/p;d'`
+
+off_w=`echo $(( ($int_w - $ext_w)/2 ))  | sed 's/^-//'`
+
+x=$(echo $SCALE*$off_w | bc -l | awk '{printf "%f", $0}')
+z=$(echo $SCALE*$ext_w | bc -l | awk '{printf "%f", $0}')
+y=$(echo $SCALE*$ext_h | bc -l | awk '{printf "%f", $0}')
+
+xrandr --output "${INT}" --pos ${x%.*}x${y%.*} --auto
+xrandr --output "${EXT}" --pos 0x0 --scale ${SCALE}x${SCALE} --auto

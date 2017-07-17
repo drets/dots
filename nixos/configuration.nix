@@ -48,7 +48,7 @@ in
 
   boot = {
     blacklistedKernelModules = ["bdc_pci"];
-    kernelParams = [ "hid_apple.iso_layout=0" "hid_apple.fnmode=2" ];
+    kernelParams = [ "hid_apple.iso_layout=0" "hid_apple.fnmode=2" "systemd.legacy_systemd_cgroup_controller=yes" ];
 
     initrd.luks.devices = [{
       name = "rootfs";
@@ -193,6 +193,8 @@ in
     };
   };
 
+  virtualisation.virtualbox.host.enable = true;
+
   environment = {
     # Put the text in /etc/resolv.conf.head
     #
@@ -212,18 +214,21 @@ in
       aspell
       aspellDicts.en
       aspellDicts.ru
-      cabal-install
+      bc
+      # cabal-install
       chromedriver
       deadbeef
       diffutils
       dropbox
       emacs
+      epdfview
       file
       firefox
       jq
       gcc
       gimp
       git
+      graphicsmagick
       global
       gnome3.adwaita-icon-theme
       gnome3.gconf
@@ -232,9 +237,9 @@ in
       gnuplot
       goldendict
       google-chrome
-      haskellPackages.ghc
-      haskellPackages.hasktags
-      haskellPackages.hlint
+      # haskellPackages.ghc
+      # haskellPackages.hasktags
+      # haskellPackages.hlint
       hexchat
       htop
       kde4.kde_baseapps
@@ -245,14 +250,11 @@ in
       nix-repl
       nodePackages.jshint
       nox
-      openjdk
       openvpn
       patchelf
       p7zip
-      phantomjs
       python
       python3
-      python3Packages.matplotlib
       qbittorrent
       rxvt_unicode
       rsync
@@ -268,7 +270,6 @@ in
       unclutter
       unzip
       vlc
-      vivaldi
       wget
       which
       whois
@@ -276,6 +277,7 @@ in
       xorg.xbacklight
       xorg.xkbcomp
       xorg.xwininfo
+      xkbset
       xscreensaver
       zip
     ] ++ (with nixpkgs-16_09; [

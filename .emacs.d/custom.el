@@ -7,7 +7,7 @@
  '(backup-directory-alist (quote (("." . "~/.saves"))))
  '(browse-url-browser-display nil)
  '(browse-url-browser-function (quote browse-url-generic))
- '(browse-url-generic-program "vivaldi")
+ '(browse-url-generic-program "google-chrome-stable")
  '(centered-window-mode t)
  '(column-number-mode t)
  '(comint-input-ring-size 10000)
@@ -71,7 +71,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (psc-ide purescript-mode web-mode centered-window-mode auctex fiplr edit-server org-plus-contrib whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
+    (web-mode centered-window-mode auctex fiplr edit-server org-plus-contrib whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
  '(preview-scale-function 2.5)
  '(python-shell-interpreter "python3")
  '(savehist-mode t)

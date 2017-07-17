@@ -10,4 +10,9 @@
          "* TODO %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n\n%U")
         ("j" "Journal" entry (file+datetree "~/org/journal.org") "** %?")))
 
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((js . t)
+   (haskell . t)))
+
 (provide 'org-wrap)
