@@ -1,6 +1,5 @@
 ;; Shell adjustments.
 (require #'org)
-(require 'org-drill)
 
 (setq org-capture-templates
       '(("a" "Appointment" entry (file+headline "~/org/tasks.org" "Calendar")

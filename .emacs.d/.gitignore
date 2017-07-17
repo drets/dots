@@ -11,3 +11,4 @@ elpa/
 .mc-lists.el
 *.dat
 .cache
+*.eld

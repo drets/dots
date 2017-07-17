@@ -71,7 +71,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (web-mode centered-window-mode auctex fiplr edit-server org-plus-contrib whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
+    (company counsel-projectile web-mode centered-window-mode auctex fiplr edit-server org-plus-contrib whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
  '(preview-scale-function 2.5)
  '(python-shell-interpreter "python3")
  '(savehist-mode t)
@@ -93,5 +93,5 @@
  '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 102 :width normal))))
  '(font-lock-comment-face ((t (:inherit highlight))))
  '(font-lock-doc-face ((t (:foreground "#6c71c4" :slant normal))))
- '(fringe ((t (:background "unspecified-bg"))))
+ '(fringe ((t (:background "#002b36"))))
  '(variable-pitch ((t (:height 1.225 :family "Sans")))))

@@ -71,7 +71,12 @@
                       (y-or-n-p (format "Create directory %s does not exist. Create it?" dir)))
              (make-directory dir t)))))))
 
+;; Autocomplete
 (add-hook 'after-init-hook 'global-company-mode)
+
+;; Switch between projects quicker
+(projectile-mode)
+(counsel-projectile-on)
 
 ;; Load “customize”d variables.
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))

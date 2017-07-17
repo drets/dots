@@ -3,6 +3,7 @@
 ;; Required libraries
 
 (require 'counsel)
+(require 'counsel-projectile)
 (require 'expand-region)
 (require 'fiplr)
 (require 'ivy)
@@ -75,7 +76,8 @@
 ;; Search and replacement
 
 (define-key my-keys-minor-mode-map (kbd "C-s")   #'isearch-forward-regexp)
-(define-key my-keys-minor-mode-map (kbd "M-s p") #'swiper)
+(define-key my-keys-minor-mode-map (kbd "M-s w") #'swiper)
+(define-key my-keys-minor-mode-map (kbd "M-s p") #'counsel-projectile-switch-project)
 (define-key my-keys-minor-mode-map (kbd "C-y")   #'counsel-yank-pop)
 (define-key my-keys-minor-mode-map (kbd "M-o")   #'counsel-find-file)
 (define-key my-keys-minor-mode-map (kbd "M-s q") #'query-replace-regexp)
