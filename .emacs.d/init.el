@@ -74,6 +74,15 @@
 ;; Autocomplete
 (add-hook 'after-init-hook 'global-company-mode)
 
+;; Purescript
+(require #'psc-ide)
+
+(add-hook 'purescript-mode-hook
+  (lambda ()
+    (psc-ide-mode)
+    (company-mode)
+    (flycheck-mode)))
+
 ;; Switch between projects quicker
 (projectile-mode)
 (counsel-projectile-on)
