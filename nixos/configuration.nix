@@ -250,6 +250,7 @@ in
       nix-repl
       nodePackages.jshint
       nox
+      openjdk
       openvpn
       patchelf
       p7zip
