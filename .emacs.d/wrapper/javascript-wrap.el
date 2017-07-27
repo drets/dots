@@ -12,10 +12,15 @@
     (when (and eslint (file-executable-p eslint))
       (setq-local flycheck-javascript-eslint-executable eslint))))
 
+(defun hilite-todos ()
+  (highlight-lines-matching-regexp "// TODO(drets):?" 'hi-green-b)
+)
+
 (add-hook 'flycheck-mode-hook #'use-eslint-from-node-modules)
 (add-hook 'js-mode-hook
           (lambda()
-            (flycheck-mode)))
+            (flycheck-mode)
+            (hilite-todos)))
 
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 
