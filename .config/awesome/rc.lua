@@ -338,6 +338,7 @@ utils.run_once("suspend-disable-device LID0 XHC1")
 utils.run_once("unfocus")
 utils.run_once("xkbset sticky -twokey -latchlock")
 utils.run_once("xkbset mousekeys")
+utils.run_once("conky -q")
 utils.run_once("xkbset exp 1 =sticky =mousekeys =sticky =twokey =latchlock")
 
 --- }}}
