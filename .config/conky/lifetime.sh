@@ -1,3 +1,3 @@
 # Lifetime ~ 75 years.
 seconds=$(( $(date --date="640925" +%s) - $(date +%s) ))
-eval "echo $(date -ud "@$seconds" +'$((%s/3600/24)) days %H hours %M minutes %S seconds')"
+eval "echo $(date -ud "@$seconds" +'$((%s/31556952)) years $((%s/86460%365)) days')"
