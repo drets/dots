@@ -213,7 +213,9 @@ in
       anki
       aspell
       aspellDicts.en
+      aspellDicts.uk
       aspellDicts.ru
+      aspellDicts.de
       bc
       # cabal-install
       chromedriver

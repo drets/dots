@@ -81,7 +81,8 @@
   (lambda ()
     (psc-ide-mode)
     (company-mode)
-    (flycheck-mode)))
+    (flycheck-mode)
+    (turn-on-purescript-indentation)))
 
 ;; Switch between projects quicker
 (projectile-mode)

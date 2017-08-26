@@ -62,6 +62,8 @@
 (define-key my-keys-minor-mode-map (kbd "M-=")             #'my/increment-integer-at-point)
 (define-key my-keys-minor-mode-map (kbd "M--")             #'my/decrement-integer-at-point)
 (define-key my-keys-minor-mode-map (kbd "M-t")             #'my/flip-bool-at-point)
+(define-key my-keys-minor-mode-map (kbd "M-s k")           #'avy-copy-line)
+(define-key my-keys-minor-mode-map (kbd "M-s DEL")         #'avy-copy-region)
 
 ;; Macros
 
@@ -101,6 +103,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-r")   #'ivy-switch-buffer)
 (define-key my-keys-minor-mode-map (kbd "C-w")   #'delete-window)
 (define-key my-keys-minor-mode-map (kbd "M-e")   #'split-window-right)
+(define-key my-keys-minor-mode-map (kbd "C-M-e") #'split-window-below)
 (define-key my-keys-minor-mode-map (kbd "M-r")   #'ibuffer)
 (define-key my-keys-minor-mode-map (kbd "M-w")   #'kill-buffer)
 (define-key my-keys-minor-mode-map (kbd "C-t")   #'winner-undo)
@@ -141,7 +144,6 @@
 (define-key comint-mode-map        (kbd "M-y")   #'counsel-shell-history)
 
 ;; Dired
-
 (define-key dired-mode-map "H" #'dired-omit-mode)
 
 ;; Paste word to minibuffer

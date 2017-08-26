@@ -23,6 +23,7 @@
             (hilite-todos)))
 
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.http\\'" . restclient-mode))
 
 (add-hook 'css-mode-hook
       (lambda()

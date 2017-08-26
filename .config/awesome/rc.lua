@@ -327,7 +327,7 @@ globalkeys = awful.util.table.join(
 --- Autostart {{{
 utils.run_once("wicd-client", "wicd-client -t")
 -- Set “my” custom keyboard layout. Toggle layouts by left Control.
-utils.run_once("setxkbmap -layout \"my(en),my(ru)\" -option \"\" -option \"grp:lctrl_toggle\" -print | xkbcomp -I\"$HOME/.config/xkb\" - $DISPLAY")
+utils.run_once("setxkbmap -layout \"my(en),my(ua)\" -option \"\" -option \"grp:lctrl_toggle\" -print | xkbcomp -I\"$HOME/.config/xkb\" - $DISPLAY")
 utils.run_once("xscreensaver")
 utils.run_once("unclutter")
 utils.run_once("goldendict")
