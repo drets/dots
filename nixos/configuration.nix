@@ -239,9 +239,9 @@ in
       gnuplot
       goldendict
       google-chrome
-      # haskellPackages.ghc
-      # haskellPackages.hasktags
-      # haskellPackages.hlint
+      haskellPackages.ghc
+      haskellPackages.hasktags
+      haskellPackages.hlint
       hexchat
       htop
       kde4.kde_baseapps
