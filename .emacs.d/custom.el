@@ -13,7 +13,7 @@
  '(column-number-mode t)
  '(comint-input-ring-size 10000)
  '(cua-mode t nil (cua-base))
- '(cursor-type (quote (bar . 3)))
+ '(cursor-type (quote (bar . 5)))
  '(custom-enabled-themes (quote (solarized-dark)))
  '(custom-safe-themes
    (quote

@@ -163,6 +163,7 @@ in
 
     fonts = with pkgs; [
       corefonts
+      fira-code-symbols
       dejavu_fonts
       inconsolata
       powerline-fonts
