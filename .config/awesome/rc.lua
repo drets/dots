@@ -303,10 +303,10 @@ globalkeys = awful.util.table.join(
     awful.key({ "Control" }, "F4", function() pomodoro:start() end),
 
     -- Apple media keys
-    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 2")                         end),
-    awful.key({ }, "XF86MonBrightnessUp",   function () awful.util.spawn("xbacklight -inc 2")                         end),
-    awful.key({ }, "XF86AudioRaiseVolume",  function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +8%")  end),
-    awful.key({ }, "XF86AudioLowerVolume",  function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -8%")  end),
+    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 10")                         end),
+    awful.key({ }, "XF86MonBrightnessUp",   function () awful.util.spawn("xbacklight -inc 10")                         end),
+    awful.key({ }, "XF86AudioRaiseVolume",  function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +10%")  end),
+    awful.key({ }, "XF86AudioLowerVolume",  function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -10%")  end),
     awful.key({ }, "XF86AudioMute",         function () awful.util.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") end),
     awful.key({ }, "XF86KbdBrightnessDown", function () awful.util.spawn("kbdlight down 4")                           end),
     awful.key({ }, "XF86KbdBrightnessUp",   function () awful.util.spawn("kbdlight up 4")                             end),
@@ -651,9 +651,6 @@ pomodoro.on_pause_pomodoro_finish_callbacks = {
       awful.spawn("mplayer /home/drets/.config/awesome/vibration.mp3")
     end
 }
-
-pomodoro.work_duration = 52 * 60
-pomodoro.short_pause_duration = 8 * 60
 
 pomodoro.init()
 

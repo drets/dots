@@ -35,6 +35,7 @@
      (files
       (".#*" "*~" "*.so" "*.jpg" "*.png" "*.gif" "*.pdf" "*.gz" "*.zip")))))
  '(fiplr-root-markers (quote (".git" ".svn" ".hg" ".bzr" "stack.yaml")))
+ '(flycheck-javascript-flow-args nil)
  '(global-whitespace-cleanup-mode t)
  '(haskell-indentation-show-indentations nil)
  '(haskell-indentation-starter-offset 2)
@@ -73,8 +74,9 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (purescript-mode psc-ide company counsel-projectile web-mode centered-window-mode auctex fiplr edit-server org-plus-contrib whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
+    (phi-search yasnippet-snippets yasnippet flycheck-flow flow-minor-mode purescript-mode psc-ide company counsel-projectile web-mode centered-window-mode auctex fiplr edit-server org-plus-contrib whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
  '(preview-scale-function 2.5)
+ '(psc-ide-add-import-on-completion t)
  '(python-shell-interpreter "python3")
  '(savehist-mode t)
  '(scroll-bar-mode nil)
@@ -86,7 +88,8 @@
  '(tramp-chunksize 2000)
  '(tramp-default-method "ssh")
  '(use-dialog-box nil)
- '(winner-mode t))
+ '(winner-mode t)
+ '(yas-indent-line (quote fixed)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

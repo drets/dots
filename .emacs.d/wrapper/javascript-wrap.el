@@ -1,6 +1,10 @@
 ;; Javascript mode settings.
-(require 'js)
 (require 'web-mode)
+(require 'flycheck-flow)
+
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.http\\'" . restclient-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 
 (defun use-eslint-from-node-modules ()
   (let* ((root (locate-dominating-file
@@ -12,25 +16,23 @@
     (when (and eslint (file-executable-p eslint))
       (setq-local flycheck-javascript-eslint-executable eslint))))
 
-(defun hilite-todos ()
-  (highlight-lines-matching-regexp "// TODO(drets):?" 'hi-green-b)
-)
-
 (add-hook 'flycheck-mode-hook #'use-eslint-from-node-modules)
-(add-hook 'js-mode-hook
-          (lambda()
-            (flycheck-mode)
-            (hilite-todos)))
-
-(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.http\\'" . restclient-mode))
 
 (add-hook 'css-mode-hook
-      (lambda()
-        (setq css-indent-offset 2)))
+          (lambda()
+            (setq css-indent-offset 2)))
 
 (add-hook 'web-mode-hook
           (lambda()
-            (setq web-mode-markup-indent-offset 2)))
+            (flow-minor-enable-automatically)
+            (flycheck-mode)
+            (setq web-mode-markup-indent-offset 2
+                  web-mode-markup-indent-offset 2
+                  web-mode-code-indent-offset 2
+                  web-mode-attr-indent-offset 2)))
+
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+(flycheck-add-mode 'javascript-flow 'web-mode)
+(flycheck-add-next-checker 'javascript-eslint 'javascript-flow)
 
 (provide 'javascript-wrap)

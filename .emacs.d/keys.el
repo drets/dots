@@ -12,8 +12,10 @@
 (require 'multiple-cursors)
 (require 'org)
 (require 'origami)
+(require 'phi-search)
 (require 'swiper)
 (require 'utils)
+(require 'yasnippet)
 
 ;; Movement and navigation
 
@@ -30,8 +32,9 @@
 (define-key my-keys-minor-mode-map (kbd "M-9")     #'backward-sexp)
 (define-key my-keys-minor-mode-map (kbd "M-b")     #'my/pop-mark)
 (define-key my-keys-minor-mode-map (kbd "M-l")     #'recenter-top-bottom)
-(define-key my-keys-minor-mode-map (kbd "<tab>")   #'avy-goto-word-or-subword-1)
-(define-key my-keys-minor-mode-map (kbd "M-s y")   #'counsel-imenu)
+(define-key my-keys-minor-mode-map (kbd "M-i")     #'avy-goto-word-or-subword-1)
+(define-key my-keys-minor-mode-map (kbd "C-i")     #'my/goto-char-or-expand)
+(define-key my-keys-minor-mode-map (kbd "M-s y")   #'yas-new-snippet)
 (define-key my-keys-minor-mode-map (kbd "M-s b")   #'browse-url-at-point)
 (define-key my-keys-minor-mode-map (kbd "M-g")     #'goto-line)
 
@@ -40,11 +43,12 @@
 ;; Regions
 
 (define-key my-keys-minor-mode-map (kbd "C-,")   #'mc/mark-next-like-this)
-(define-key my-keys-minor-mode-map (kbd "C-a")   #'mark-paragraph)
+(define-key my-keys-minor-mode-map (kbd "M-a")   #'mark-paragraph)
+(define-key my-keys-minor-mode-map (kbd "C-a")   #'my/select-current-line)
 (define-key my-keys-minor-mode-map (kbd "C-n")   #'er/expand-region)
+(define-key my-keys-minor-mode-map (kbd "M-n")   #'er/mark-inside-pairs)
 (define-key my-keys-minor-mode-map (kbd "C-S-n") #'my/collapse-region)
 (define-key my-keys-minor-mode-map (kbd "M-s i") #'indent-region)
-(define-key my-keys-minor-mode-map (kbd "M-a")   #'mark-whole-buffer)
 
 ;; Editing
 
@@ -62,14 +66,14 @@
 (define-key my-keys-minor-mode-map (kbd "M-=")             #'my/increment-integer-at-point)
 (define-key my-keys-minor-mode-map (kbd "M--")             #'my/decrement-integer-at-point)
 (define-key my-keys-minor-mode-map (kbd "M-t")             #'my/flip-bool-at-point)
-(define-key my-keys-minor-mode-map (kbd "M-s k")           #'avy-copy-line)
-(define-key my-keys-minor-mode-map (kbd "M-s DEL")         #'avy-copy-region)
 
 ;; Macros
 
 (define-key my-keys-minor-mode-map (kbd "C-(") #'kmacro-start-macro)
 (define-key my-keys-minor-mode-map (kbd "C-)") #'kmacro-end-macro)
 (define-key my-keys-minor-mode-map (kbd "C-.") #'kmacro-end-and-call-macro)
+(define-key my-keys-minor-mode-map (kbd "M-s C-c") #'cua-copy-region)
+(define-key my-keys-minor-mode-map (kbd "M-s C-x") #'cua-cut-region)
 
 ;; Information
 
@@ -77,7 +81,7 @@
 
 ;; Search and replacement
 
-(define-key my-keys-minor-mode-map (kbd "C-s")   #'isearch-forward-regexp)
+(define-key my-keys-minor-mode-map (kbd "C-s")   #'phi-search)
 (define-key my-keys-minor-mode-map (kbd "M-s w") #'swiper)
 (define-key my-keys-minor-mode-map (kbd "M-s p") #'counsel-projectile-switch-project)
 (define-key my-keys-minor-mode-map (kbd "C-y")   #'counsel-yank-pop)
@@ -119,14 +123,14 @@
 
 ;; Magit
 
-(define-key my-keys-minor-mode-map (kbd "C-8") #'magit-status)
+(define-key my-keys-minor-mode-map (kbd "M-8") #'magit-status)
+(define-key my-keys-minor-mode-map (kbd "M-4") #'magit-section-toggle)
 
 ;; Haskell
 
 (define-key haskell-mode-map (kbd "C-c C-o") #'haskell-session-change-target)
 (define-key haskell-mode-map (kbd "C-c C-p") #'haskell-process-restart)
 (define-key haskell-mode-map (kbd "C-y")     #'haskell-mode-jump-to-def-or-tag)
-(define-key haskell-mode-map (kbd "C-c v a") #'haskell-cabal-add-dependency)
 
 ;; Completion
 
@@ -156,6 +160,18 @@
 (define-key my-keys-minor-mode-map (kbd "C-c b") #'org-iswitchb)
 (define-key my-keys-minor-mode-map (kbd "C-c c") #'org-capture)
 (define-key my-keys-minor-mode-map (kbd "C-c l") #'org-store-link)
+
+;; Calc
+(define-key my-keys-minor-mode-map (kbd "M-s =") 'quick-calc)
+
+;; GetSafe
+
+(defun my/sync-getsafe ()
+  (interactive)
+  (my/sync "/home/drets/src/getsafe/react-native-app/"
+           "drets@10.0.11.89:/Users/drets/getsafe/react-native-app"))
+
+(define-key my-keys-minor-mode-map (kbd "M-s n") #'my/sync-getsafe)
 
 ;; End of key definitions.
 

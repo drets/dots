@@ -221,3 +221,16 @@ With numeric prefix arg DEC, decrement the integer by DEC amount."
       (forward-word)
       (backward-kill-word 1)
       (insert wrd))))
+
+(defun my/select-current-line ()
+  "Select the current line"
+  (interactive)
+  (move-beginning-of-line 1)
+  (push-mark nil nil t)
+  (forward-line 1))
+
+(defun my/goto-char-or-expand ()
+  "Expand a snippet; if there's no expandable snippet, run avy."
+  (interactive)
+  (unless (yas-expand)
+    (call-interactively 'avy-goto-char-in-line)))

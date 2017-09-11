@@ -28,6 +28,10 @@
 ;; Load custom keybindings.
 (require #'keys)
 
+;; Load Yasnippet.
+(require 'yasnippet)
+(yas-global-mode 1)
+
 ;; Enable kill-as-delete.
 (require #'kill-as-delete)
 
@@ -89,11 +93,8 @@
 (counsel-projectile-on)
 
 ;;; Fira code
-;; This works when using emacs --daemon + emacsclient
 (add-hook 'after-make-frame-functions (lambda (frame) (set-fontset-font t '(#Xe100 . #Xe16f) "Fira Code Symbol")))
-;; This works when using emacs without server/client
 (set-fontset-font t '(#Xe100 . #Xe16f) "Fira Code Symbol")
-;; I haven't found one statement that makes both of the above situations work, so I use both for now
 
 (defconst fira-code-font-lock-keywords-alist
   (mapcar (lambda (regex-char-pair)
