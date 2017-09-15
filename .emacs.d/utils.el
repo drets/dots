@@ -234,3 +234,10 @@ With numeric prefix arg DEC, decrement the integer by DEC amount."
   (interactive)
   (unless (yas-expand)
     (call-interactively 'avy-goto-char-in-line)))
+
+(defun my/rgrep ()
+  "rgrep without ivy"
+  (interactive)
+  (let ((completing-read-function 'completing-read-default)
+        (completion-in-region-function 'completion--in-region))
+    (call-interactively 'rgrep)))
