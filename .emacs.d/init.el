@@ -222,6 +222,9 @@
 (add-hook 'prog-mode-hook
           #'add-fira-code-symbol-keywords)
 
+(require 'powerline)
+(powerline-nano-theme)
+
 ;; Load “customize”d variables.
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
