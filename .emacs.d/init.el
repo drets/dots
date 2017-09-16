@@ -222,6 +222,7 @@
 (add-hook 'prog-mode-hook
           #'add-fira-code-symbol-keywords)
 
+;; Better powerline
 (require 'powerline)
 (powerline-nano-theme)
 
