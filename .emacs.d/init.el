@@ -75,9 +75,6 @@
                       (y-or-n-p (format "Create directory %s does not exist. Create it?" dir)))
              (make-directory dir t)))))))
 
-;; Autocomplete
-(add-hook 'after-init-hook 'global-company-mode)
-
 ;; Purescript
 (require #'psc-ide)
 

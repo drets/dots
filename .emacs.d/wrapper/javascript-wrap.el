@@ -25,6 +25,7 @@
 (add-hook 'web-mode-hook
           (lambda()
             (flow-minor-enable-automatically)
+            (company-mode)
             (flycheck-mode)
             (setq web-mode-markup-indent-offset 2
                   web-mode-markup-indent-offset 2

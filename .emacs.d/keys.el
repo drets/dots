@@ -173,6 +173,9 @@
 
 (define-key my-keys-minor-mode-map (kbd "M-s n") #'my/sync-getsafe)
 
+;; Pamparam
+(global-set-key (kbd "C-c m") 'hydra-pamparam/body)
+
 ;; End of key definitions.
 
 (define-minor-mode my-keys-minor-mode

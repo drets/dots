@@ -75,7 +75,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (powerline phi-search yasnippet flycheck-flow flow-minor-mode purescript-mode psc-ide company counsel-projectile web-mode centered-window-mode auctex fiplr edit-server org-plus-contrib whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
+    (pamparam powerline phi-search yasnippet flycheck-flow flow-minor-mode purescript-mode psc-ide company counsel-projectile web-mode centered-window-mode auctex fiplr edit-server org-plus-contrib whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
  '(preview-scale-function 2.5)
  '(psc-ide-add-import-on-completion t)
  '(python-shell-interpreter "python3")
