@@ -11,7 +11,6 @@
 (require 'move-text)
 (require 'multiple-cursors)
 (require 'org)
-(require 'origami)
 (require 'phi-search)
 (require 'swiper)
 (require 'utils)
@@ -136,11 +135,6 @@
 
 (define-key my-keys-minor-mode-map (kbd "C-<tab>") #'dabbrev-expand)
 (define-key my-keys-minor-mode-map (kbd "M-x")     #'counsel-M-x)
-
-;; Code folding
-
-(define-key origami-mode-map (kbd "M-s ö") #'origami-recursively-toggle-node)
-(define-key origami-mode-map (kbd "M-s Ö") #'origami-toggle-all-nodes)
 
 ;; Shell
 

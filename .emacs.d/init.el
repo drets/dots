@@ -38,10 +38,6 @@
 ;; Get rid of annoying “yes or no” questions.
 (defalias #'yes-or-no-p #'y-or-n-p)
 
-;; Code folding.
-(require #'origami)
-(global-origami-mode)
-
 ;; Ivy.
 (require #'ivy)
 (setq ivy-initial-inputs-alist nil)
