@@ -88,7 +88,7 @@ point reaches the beginning or end of the buffer, stop there."
 (defun my/switch-theme ()
   "Switch between light and dark themes."
   (interactive)
-  (let ((is-light (find 'monochrome-bright custom-enabled-themes)))
+  (let ((is-light (member 'monochrome-bright custom-enabled-themes)))
     (dolist (theme custom-enabled-themes)
       (disable-theme theme))
     (load-theme (if is-light 'monochrome 'monochrome-bright))))

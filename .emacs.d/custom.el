@@ -9,9 +9,9 @@
  '(browse-url-browser-display nil)
  '(browse-url-browser-function (quote browse-url-generic))
  '(browse-url-generic-program "google-chrome-stable")
- '(centered-window-mode t)
  '(column-number-mode t)
  '(comint-input-ring-size 10000)
+ '(company-dabbrev-downcase nil)
  '(cua-mode t nil (cua-base))
  '(cursor-type (quote (bar . 5)))
  '(custom-enabled-themes (quote (monochrome)))
@@ -76,7 +76,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (monochrome-theme eink-theme htmlize pamparam powerline phi-search yasnippet flycheck-flow flow-minor-mode purescript-mode psc-ide company counsel-projectile web-mode centered-window-mode auctex fiplr edit-server org-plus-contrib whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra move-text markdown-mode flx smex noflet multiple-cursors magit haskell-mode flycheck expand-region)))
+    (monochrome-theme eink-theme htmlize pamparam powerline phi-search yasnippet flycheck-flow flow-minor-mode purescript-mode psc-ide company counsel-projectile web-mode auctex fiplr edit-server org-plus-contrib whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra move-text markdown-mode flx smex noflet multiple-cursors magit haskell-mode flycheck expand-region)))
  '(preview-scale-function 2.5)
  '(psc-ide-add-import-on-completion t)
  '(python-shell-interpreter "python3")
@@ -84,7 +84,7 @@
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(smex-flex-matching nil)
- '(split-width-threshold 100)
+ '(split-width-threshold 200)
  '(swoop-font-size-change: nil)
  '(text-scale-mode-step 1.1)
  '(tool-bar-mode nil)

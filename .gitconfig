@@ -11,3 +11,5 @@
 [core]
 	editor = "emacsclient -c"
 
+[magit]
+	hideCampaign = true
