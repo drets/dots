@@ -11,6 +11,7 @@
  '(browse-url-generic-program "google-chrome-stable")
  '(column-number-mode t)
  '(comint-input-ring-size 10000)
+ '(comint-scroll-show-maximum-output nil)
  '(company-dabbrev-downcase nil)
  '(cua-mode t nil (cua-base))
  '(cursor-type (quote (bar . 5)))
