@@ -99,7 +99,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Iosevka" :foundry "unknown" :slant normal :weight normal :height 100 :width normal))))
- '(font-lock-comment-face ((t (:inherit highlight))))
+ '(font-lock-comment-face ((t (:foreground "dark gray" :slant italic))))
  '(font-lock-doc-face ((t (:foreground "#6c71c4" :slant normal))))
  '(fringe ((t (:background "unspecified-bg"))))
  '(variable-pitch ((t (:height 1.225 :family "Sans")))))
