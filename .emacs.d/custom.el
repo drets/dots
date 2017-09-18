@@ -14,14 +14,15 @@
  '(comint-input-ring-size 10000)
  '(cua-mode t nil (cua-base))
  '(cursor-type (quote (bar . 5)))
- '(custom-enabled-themes (quote (solarized-dark)))
+ '(custom-enabled-themes (quote (monochrome)))
  '(custom-safe-themes
    (quote
-    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+    ("39dd7106e6387e0c45dfce8ed44351078f6acd29a345d8b22e7b8e54ac25bac4" "cab317d0125d7aab145bc7ee03a1e16804d5abdfa2aa8738198ac30dc5f7b569" "31992d4488dba5b28ddb0c16914bf5726dc41588c2b1c1a2fd16516ea92c1d8e" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(dabbrev-case-fold-search nil)
  '(delete-old-versions t)
  '(dired-auto-revert-buffer t)
  '(dired-dwim-target t)
+ '(dired-listing-switches "-al --group-directories-first")
  '(dired-recursive-copies (quote top))
  '(dired-recursive-deletes (quote top))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
@@ -75,12 +76,13 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (htmlize pamparam powerline phi-search yasnippet flycheck-flow flow-minor-mode purescript-mode psc-ide company counsel-projectile web-mode centered-window-mode auctex fiplr edit-server org-plus-contrib whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex solarized-theme noflet multiple-cursors magit haskell-mode flycheck expand-region)))
+    (monochrome-theme eink-theme htmlize pamparam powerline phi-search yasnippet flycheck-flow flow-minor-mode purescript-mode psc-ide company counsel-projectile web-mode centered-window-mode auctex fiplr edit-server org-plus-contrib whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra origami move-text markdown-mode flx smex noflet multiple-cursors magit haskell-mode flycheck expand-region)))
  '(preview-scale-function 2.5)
  '(psc-ide-add-import-on-completion t)
  '(python-shell-interpreter "python3")
  '(savehist-mode t)
  '(scroll-bar-mode nil)
+ '(show-paren-mode t)
  '(smex-flex-matching nil)
  '(split-width-threshold 100)
  '(swoop-font-size-change: nil)
@@ -96,7 +98,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 102 :width normal))))
+ '(default ((t (:family "Iosevka" :foundry "unknown" :slant normal :weight normal :height 100 :width normal))))
  '(font-lock-comment-face ((t (:inherit highlight))))
  '(font-lock-doc-face ((t (:foreground "#6c71c4" :slant normal))))
  '(fringe ((t (:background "unspecified-bg"))))

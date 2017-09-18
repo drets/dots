@@ -88,10 +88,10 @@ point reaches the beginning or end of the buffer, stop there."
 (defun my/switch-theme ()
   "Switch between light and dark themes."
   (interactive)
-  (let ((is-light (find 'solarized-light custom-enabled-themes)))
+  (let ((is-light (find 'monochrome-bright custom-enabled-themes)))
     (dolist (theme custom-enabled-themes)
       (disable-theme theme))
-    (load-theme (if is-light 'solarized-dark 'solarized-light))))
+    (load-theme (if is-light 'monochrome 'monochrome-bright))))
 
 (defun my/switch-to-previous-buffer ()
   "Switch to previously open buffer.
