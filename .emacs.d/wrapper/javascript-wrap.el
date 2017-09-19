@@ -32,6 +32,8 @@
                   web-mode-code-indent-offset 2
                   web-mode-attr-indent-offset 2)))
 
+(setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'")))
+
 (flycheck-add-mode 'javascript-eslint 'web-mode)
 (flycheck-add-mode 'javascript-flow 'web-mode)
 (flycheck-add-next-checker 'javascript-eslint 'javascript-flow)
