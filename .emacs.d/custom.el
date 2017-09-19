@@ -85,7 +85,7 @@
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(smex-flex-matching nil)
- '(split-width-threshold 200)
+ '(split-width-threshold 180)
  '(swoop-font-size-change: nil)
  '(text-scale-mode-step 1.1)
  '(tool-bar-mode nil)
