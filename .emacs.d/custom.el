@@ -83,7 +83,6 @@
  '(python-shell-interpreter "python3")
  '(savehist-mode t)
  '(scroll-bar-mode nil)
- '(show-paren-mode t)
  '(smex-flex-matching nil)
  '(split-width-threshold 180)
  '(swoop-font-size-change: nil)
