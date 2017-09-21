@@ -48,7 +48,7 @@ in
 
   boot = {
     blacklistedKernelModules = ["bdc_pci"];
-    kernelParams = [ "hid_apple.iso_layout=0" "hid_apple.fnmode=2" "systemd.legacy_systemd_cgroup_controller=yes" ];
+    kernelParams = [ "hid_apple.iso_layout=0" "systemd.legacy_systemd_cgroup_controller=yes" ];
 
     initrd.luks.devices = [{
       name = "rootfs";
