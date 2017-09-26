@@ -218,6 +218,9 @@
 (require 'powerline)
 (powerline-nano-theme)
 
+;; Center window
+(centered-window-mode)
+
 ;; Load “customize”d variables.
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
