@@ -22,6 +22,25 @@
           (lambda()
             (setq css-indent-offset 2)))
 
+(defun eslint-fix-file ()
+  (interactive)
+  (let* ((root (locate-dominating-file
+                (or (buffer-file-name) default-directory)
+                "node_modules"))
+         (eslint (and root
+                      (expand-file-name "node_modules/eslint/bin/eslint.js"
+                                        root))))
+    (when (and eslint (file-executable-p eslint))
+      (shell-command (concat eslint " --fix " (buffer-file-name))))))
+
+(defun eslint-fix-file-and-revert ()
+  (interactive)
+  (eslint-fix-file)
+  (revert-buffer t t))
+
+ (eval-after-load 'web-mode
+                    '(define-key  web-mode-map (kbd "M-s e") #'eslint-fix-file-and-revert))
+
 (add-hook 'web-mode-hook
           (lambda()
             (flow-minor-enable-automatically)
@@ -34,8 +53,8 @@
 
 (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'")))
 
-(flycheck-add-mode 'javascript-eslint 'web-mode)
 (flycheck-add-mode 'javascript-flow 'web-mode)
-(flycheck-add-next-checker 'javascript-eslint 'javascript-flow)
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+(flycheck-add-next-checker 'javascript-flow 'javascript-eslint)
 
 (provide 'javascript-wrap)
