@@ -77,7 +77,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (centered-window-mode company-coq monochrome-theme eink-theme htmlize pamparam powerline phi-search yasnippet flycheck-flow flow-minor-mode purescript-mode psc-ide company counsel-projectile web-mode auctex fiplr edit-server org-plus-contrib whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra move-text markdown-mode flx smex noflet multiple-cursors magit haskell-mode flycheck expand-region)))
+    (centered-window-mode company-coq monochrome-theme eink-theme htmlize pamparam phi-search yasnippet flycheck-flow flow-minor-mode purescript-mode psc-ide company counsel-projectile web-mode auctex fiplr edit-server org-plus-contrib whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra move-text markdown-mode flx smex noflet multiple-cursors magit haskell-mode flycheck expand-region)))
  '(preview-scale-function 2.5)
  '(psc-ide-add-import-on-completion t)
  '(python-shell-interpreter "python3")
@@ -99,7 +99,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Iosevka" :foundry "unknown" :slant normal :weight normal :height 100 :width normal))))
+ '(coq-cheat-face ((t (:background "gray40"))))
  '(font-lock-comment-face ((t (:foreground "dark gray" :slant italic))))
  '(font-lock-doc-face ((t (:foreground "#6c71c4" :slant normal))))
- '(fringe ((t (:background "unspecified-bg"))))
+ '(fringe ((t (:background "black"))))
+ '(proof-locked-face ((t nil)))
  '(variable-pitch ((t (:height 1.225 :family "Sans")))))

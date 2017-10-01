@@ -112,6 +112,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-w")   #'kill-buffer)
 (define-key my-keys-minor-mode-map (kbd "C-t")   #'winner-undo)
 (define-key my-keys-minor-mode-map (kbd "C-M-t") #'winner-redo)
+(define-key my-keys-minor-mode-map (kbd "M-s m") #'centered-window-mode)
 (define-key my-keys-minor-mode-map (kbd "M-s c") #'clone-indirect-buffer)
 
 ;; Display

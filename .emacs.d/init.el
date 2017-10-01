@@ -214,12 +214,18 @@
 
 (add-hook 'prog-mode-hook #'add-fira-code-symbol-keywords)
 
-;; Better powerline
-(require 'powerline)
-(powerline-nano-theme)
+;; Coq
+(setq overlay-arrow-string "")
 
-;; Center window
-(centered-window-mode)
+(eval-after-load "proof-script" '(progn
+ (define-key proof-mode-map (kbd "M-s e")
+                            'coq-SearchAbout)
+ (define-key proof-mode-map (kbd "M-s k")
+                            'pg-insert-last-output-as-comment)
+ (define-key proof-mode-map (kbd "M-s DEL")
+                            'proof-goto-point)
+ ))
+
 
 ;; Load “customize”d variables.
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
