@@ -225,6 +225,7 @@ in
       diffutils
       dropbox
       emacs
+      emacsPackages.proofgeneral
       epdfview
       file
       firefox

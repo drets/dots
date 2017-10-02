@@ -217,12 +217,19 @@
 ;; Coq
 (setq overlay-arrow-string "")
 
+(setq proofgeneral (shell-command-to-string "printf \"$(dirname $(dirname $(readlink $(which proofgeneral))))/share/emacs/site-lisp/ProofGeneral/generic/proof-site\""))
+(load proofgeneral)
+
 (eval-after-load "proof-script" '(progn
- (define-key proof-mode-map (kbd "M-s e")
+ (define-key proof-mode-map (kbd "C-x DEL")
                             'coq-SearchAbout)
- (define-key proof-mode-map (kbd "M-s k")
-                            'pg-insert-last-output-as-comment)
- (define-key proof-mode-map (kbd "M-s DEL")
+ (define-key proof-mode-map (kbd "C-x k")
+                            'coq-SearchRewrite)
+ (define-key proof-mode-map (kbd "C-x l")
+                            'coq-SearchIsos)
+ (define-key proof-mode-map (kbd "C-x h")
+                            'coq-SearchConstant)
+ (define-key proof-mode-map (kbd "M-s e")
                             'proof-goto-point)
  ))
 
