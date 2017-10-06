@@ -296,11 +296,11 @@ globalkeys = awful.util.table.join(
 
     -- Touchpad
     awful.key({ }, "XF86LaunchA", function () awful.util.spawn("synclient TouchpadOff=0") end),
-    awful.key({ }, "XF86LaunchB", function () awful.util.spawn("synclient TouchpadOff=1") end),
+    awful.key({ }, "F3", function () awful.util.spawn("synclient TouchpadOff=1") end),
 
     -- Pomodoro
-    awful.key({ "Control" }, "F4", function() pomodoro:stop() end),
-    awful.key({ }, "F4", function() pomodoro:start() end),
+    awful.key({ }, "F4", function() pomodoro:stop() end),
+    awful.key({ }, "XF86LaunchB", function() pomodoro:start() end),
 
     -- Apple media keys
     awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 10")                         end),
