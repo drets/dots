@@ -217,6 +217,13 @@
 ;; Coq
 (setq overlay-arrow-string "")
 
+(add-hook 'coq-mode-hook
+          (lambda ()
+            (add-fira-code-symbol-keywords)
+            (company-coq-mode)))
+(add-hook 'coq-goals-mode-hook #'add-fira-code-symbol-keywords)
+(add-hook 'coq-response-mode-hook #'add-fira-code-symbol-keywords)
+
 (setq proofgeneral (shell-command-to-string "printf \"$(dirname $(dirname $(readlink $(which proofgeneral))))/share/emacs/site-lisp/ProofGeneral/generic/proof-site\""))
 (load proofgeneral)
 
@@ -229,7 +236,7 @@
                             'coq-SearchIsos)
  (define-key proof-mode-map (kbd "C-x h")
                             'coq-SearchConstant)
- (define-key proof-mode-map (kbd "M-s e")
+ (define-key proof-mode-map (kbd "ß")
                             'proof-goto-point)
  ))
 
