@@ -2,4 +2,4 @@
 # name: console.log
 # key: c.l
 # --
-console.warn($1)
+console.log($1)
