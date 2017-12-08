@@ -242,9 +242,9 @@ in
       gnuplot
       goldendict
       google-chrome
-      haskellPackages.ghc
-      haskellPackages.hasktags
-      haskellPackages.hlint
+      # haskellPackages.ghc
+      # haskellPackages.hasktags
+      # haskellPackages.hlint
       hexchat
       htop
       kde4.kde_baseapps
@@ -253,9 +253,8 @@ in
       man-pages
       mplayer
       nix-repl
-      nodePackages.jshint
       nox
-      openjdk
+      # openjdk
       openvpn
       patchelf
       p7zip
@@ -270,7 +269,7 @@ in
       slack
       stack
       tightvnc
-      texlive.combined.scheme-full
+      # texlive.combined.scheme-full
       tdesktop
       unclutter
       unzip
