@@ -216,11 +216,13 @@
 
 ;; Coq
 (setq overlay-arrow-string "")
+(setq company-coq-disabled-features '(code-folding))
 
 (add-hook 'coq-mode-hook
           (lambda ()
             (add-fira-code-symbol-keywords)
             (company-coq-mode)))
+
 (add-hook 'coq-goals-mode-hook #'add-fira-code-symbol-keywords)
 (add-hook 'coq-response-mode-hook #'add-fira-code-symbol-keywords)
 
