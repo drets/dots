@@ -230,14 +230,6 @@
 (load proofgeneral)
 
 (eval-after-load "proof-script" '(progn
- (define-key proof-mode-map (kbd "C-x DEL")
-                            'coq-SearchAbout)
- (define-key proof-mode-map (kbd "C-x k")
-                            'coq-SearchRewrite)
- (define-key proof-mode-map (kbd "C-x l")
-                            'coq-SearchIsos)
- (define-key proof-mode-map (kbd "C-x h")
-                            'coq-SearchConstant)
  (define-key proof-mode-map (kbd "ß")
                             'proof-goto-point)
  ))

@@ -2,9 +2,10 @@
 (require 'web-mode)
 (require 'flycheck-flow)
 
+(add-to-list 'auto-mode-alist '("\\.json\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.http\\'" . restclient-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.http\\'" . restclient-mode))
 
 (defun use-eslint-from-node-modules ()
   (let* ((root (locate-dominating-file
