@@ -1,0 +1,43 @@
+default partial alphanumeric_keys modifier_keys
+
+xkb_symbols "my" {
+    name[Group1]= "Ukrainian (drets)";
+
+    key	<TLDE> {	[     Ukrainian_yi,     Ukrainian_YI	]	};
+    key	<AD01> {	[ Cyrillic_shorti, Cyrillic_SHORTI	]	};
+    key	<AD02> {	[    Cyrillic_tse,    Cyrillic_TSE	]	};
+    key	<AD03> {	[      Cyrillic_u,	Cyrillic_U	]	};
+    key	<AD04> {	[     Cyrillic_ka,     Cyrillic_KA	]	};
+    key	<AD05> {	[     Cyrillic_ie,     Cyrillic_IE	]	};
+    key	<AD06> {	[     Cyrillic_en,     Cyrillic_EN	]	};
+    key	<AD07> {[ Cyrillic_ghe, Cyrillic_GHE, Ukrainian_ghe_with_upturn, Ukrainian_GHE_WITH_UPTURN ]};
+    key	<AD08> {[ Cyrillic_sha, Cyrillic_SHA, Up, Up ]};
+    key	<AD09> {	[  Cyrillic_shcha,  Cyrillic_SHCHA	]	};
+    key	<AD10> {[ Cyrillic_ze, Cyrillic_ZE, Cyrillic_zhe, Cyrillic_ZHE ]};
+    key	<AD11> {	[     Cyrillic_ha,     Cyrillic_HA	]	};
+    key	<AD12> {[ Ukrainian_i, Ukrainian_I ]};
+
+    key	<CAPS> {	[     Cyrillic_ef,     Cyrillic_EF	]	};
+    key	<AC01> {	[     Cyrillic_a,     Cyrillic_A	]	};
+    key	<AC04> {[ Cyrillic_o, Cyrillic_O, Pointer_Button1 ]};
+    key	<AC05> {[ Cyrillic_pe, Cyrillic_PE, Pointer_Button3 ]       };
+    key	<AC06> {	[     Cyrillic_er,     Cyrillic_ER	]};
+    key <AC07> {[ BackSpace, BackSpace, Left, Left ]};
+    key	<AC08> {[ Cyrillic_el, Cyrillic_EL, Down, Down ]};
+    key <AC09> {[ Cyrillic_de, Cyrillic_DE, Right, Right ]};
+    key	<AC10> {[ Cyrillic_ve, Cyrillic_VE, colon ]};
+    key	<AC11> {	[ Ukrainian_ie, Ukrainian_IE, apostrophe ]	};
+    key	<AB01> {	[     Cyrillic_ya,     Cyrillic_YA	]	};
+    key	<AB02> {	[    Cyrillic_che,    Cyrillic_CHE	]	};
+    key	<AB03> {	[     Cyrillic_es,     Cyrillic_ES	]	};
+    key	<AB04> {	[     Cyrillic_em,     Cyrillic_EM	]	};
+    key	<AB05> {	[      Cyrillic_i,	Cyrillic_I	]	};
+    key	<AB06> {	[     Cyrillic_te,     Cyrillic_TE	]	};
+    key	<AB07> {	[Cyrillic_softsign,Cyrillic_SOFTSIGN	]	};
+    key	<AB08> {[ Cyrillic_be, Cyrillic_BE, exclam, leftdoublequotemark ]};
+    key	<AB09> {[ Cyrillic_yu, Cyrillic_YU, question, rightdoublequotemark ]};
+    key <AB10> {[ comma, slash, period, backslash ]};
+
+    key <BKSL> {[ Cyrillic_hardsign, Cyrillic_HARDSIGN ]};
+
+};

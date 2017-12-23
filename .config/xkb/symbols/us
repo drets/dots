@@ -1,0 +1,90 @@
+default partial alphanumeric_keys modifier_keys
+
+xkb_symbols "my" {
+    name[Group1]= "English (drets)";
+
+    key <TLDE> {[ grave, asciitilde, approxeq ]};
+    key <AE01> {[ 1, ae, onesuperior ]};
+    key <AE02> {[ 2, at, twosuperior ]};
+    key <AE03> {[ 3, numbersign, threesuperior ]};
+    key <AE04> {[ 4, EuroSign, sterling ]};
+    key <AE05> {[ 5, percent ]};
+    key <AE06> {[ 6, ae, ae, ae ]};
+    key <AE07> {[ 7, asciicircum, lessthanequal ]};
+    key <AE08> {[ 8, ampersand, greaterthanequal, infinity ]};
+    key <AE09> {[ 9, bracketleft, parenleft ]};
+    key <AE10> {[ 0, bracketright, parenright ]};
+# U2212: real minus
+    key <AE11> {[ minus, underscore, U2212 ]};
+    key <AE12> {[ equal, plus, notequal, plusminus ]};
+
+    key <AD01> {[ q, Q, degree ]};
+    key <AD02> {[ w, W ]};
+    key <AD03> {[ a, A, U00e4, U00c4 ]};
+    key <AD04> {[ r, R, enfilledcircbullet ]};
+    key <AD05> {[ t, T, braceleft ]};
+    key <AD06> {[ y, Y, braceright ]};
+    key <AD07> {[ s, S, Return, Return ]};
+    key <AD08> {[ i, I, Up, Up ]};
+    key <AD09> {[ o, O, odiaeresis, Odiaeresis ]};
+    key <AD10> {[ p, P, j, J ]};
+    key <AD11> {[ u, U, U00fc, U00dc ]};
+    key <AD12> {[ asterisk, ae, leftsinglequotemark, rightsinglequotemark ]};
+
+    key <AC02> { [ Control_L ] };
+    key <RWIN> { [ Control_R ] };
+    modifier_map Control { <AC02>, <RWIN>, <LCTL> };
+
+    key <CAPS> {[ Tab, Tab, Tab, Tab ]};
+    key <AC01> {[ f, F ]};
+    key <AC04> {[ e, E, Pointer_Button1 ]};
+    key <AC05> {[ g, G, Pointer_Button3 ]};
+    key <AC06> {[ h, H, semicolon ]};
+    key <AC07> {[ BackSpace, BackSpace, Left, Left]};
+    key <AC08> {[ k, K, Down, Down ]};
+    key <AC09> {[ l, L, Right, Right ]};
+    key <AC10> {[ d, D, colon ]};
+    key <AC11> {[ apostrophe, quotedbl, endash, emdash ]};
+
+# U21D2: right double arrow
+# U21D0: left double arrow
+    key <LSGT> {[ rightarrow, leftarrow, U21D2, U21D0 ]};
+    key <AB01> {[ z, Z ]};
+    key <AB02> {[ x, X, multiply ]};
+    key <AB03> {[ c, C, bar ]};
+    key <AB04> {[ v, V, backslash ]};
+    key <AB05> {[ b, B, U00df ]};
+    key <AB06> {[ n, N, less ]};
+    key <AB07> {[ m, M, greater ]};
+    key <AB08> {[ comma, leftdoublequotemark, exclam, guillemotleft ]};
+    key <AB09> {[ period, rightdoublequotemark, question, guillemotright ]};
+    key <AB10> {[ slash, ae, dollar ]};
+
+    key <BKSL> {[ dead_greek, ae, ae, ae ]};
+
+    key <LEFT> {[ Left, Left ]};
+    key <RGHT> {[ Right, Right ]};
+    key <UP>   {[ Up, Up, uparrow ]};
+    key <DOWN> {[ Down, Down, downarrow ]};
+
+    key <SPCE> {[ space, space ]};
+
+    include "us(d_level3)"
+    include "us(tab_alt)"
+};
+
+// The D key (while pressed) chooses the third shift level.
+partial modifier_keys
+xkb_symbols "d_level3" {
+  key <AC03> {
+    type[Group1]="ONE_LEVEL",
+    symbols[Group1] = [ ISO_Level3_Shift ]
+  };
+  include "level3(modifier_mapping)"
+};
+
+// The Tab key acts as the left Alt key.
+partial modifier_keys
+xkb_symbols "tab_alt" {
+    key <TAB>	{ [ Alt_L ] };
+};

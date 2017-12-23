@@ -194,9 +194,9 @@ awful.screen.connect_for_each_screen(function(s)
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
-            mybattery,
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
+            mybattery,
             wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
@@ -327,13 +327,12 @@ globalkeys = awful.util.table.join(
 --- Autostart {{{
 utils.run_once("wicd-client", "wicd-client -t")
 -- Set “my” custom keyboard layout. Toggle layouts by left Control.
-utils.run_once("setxkbmap -layout \"my(en),my(ua)\" -option \"\" -option \"grp:lctrl_toggle\" -print | xkbcomp -I\"$HOME/.config/xkb\" - $DISPLAY")
+utils.run_once("setxkbmap -layout \"us(my),ua(my),ru(my)\" -option \"\" -option \"grp:lctrl_toggle\" -print | xkbcomp -I\"$HOME/.config/xkb\" - $DISPLAY")
 utils.run_once("xscreensaver")
 utils.run_once("unclutter")
 utils.run_once("goldendict")
 utils.run_once("shutter --min_at_startup")
 utils.run_once("emacs --daemon")
-utils.run_once("dropbox start")
 utils.run_once("suspend-disable-device LID0 XHC1")
 utils.run_once("unfocus")
 utils.run_once("xkbset sticky -twokey -latchlock")
