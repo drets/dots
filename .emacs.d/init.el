@@ -215,6 +215,9 @@
 (add-hook 'prog-mode-hook #'add-fira-code-symbol-keywords)
 
 ;; Coq
+(setq proof-three-window-mode-policy 'hybrid)
+(setq proof-script-fly-past-comments t)
+(setq proof-splash-seen t)
 (setq overlay-arrow-string "")
 (setq company-coq-disabled-features '(code-folding))
 
@@ -230,10 +233,27 @@
 (load proofgeneral)
 
 (eval-after-load "proof-script" '(progn
+ (define-key proof-mode-map (kbd "ö")
+                            'proof-assert-next-command-interactive)
+ (define-key proof-mode-map (kbd "M-ö")
+                            'proof-undo-last-successful-command)
  (define-key proof-mode-map (kbd "ß")
                             'proof-goto-point)
+ (define-key proof-mode-map (kbd "<tab>")
+                            'expand-abbrev)
  ))
 
+(define-abbrev-table 'coq-mode-abbrev-table '())
+(define-abbrev coq-mode-abbrev-table "re" "reflexivity. ")
+(define-abbrev coq-mode-abbrev-table "id" "induction ")
+(define-abbrev coq-mode-abbrev-table "in" "inversion ")
+(define-abbrev coq-mode-abbrev-table "it" "intros ")
+(define-abbrev coq-mode-abbrev-table "si" "simpl. ")
+(define-abbrev coq-mode-abbrev-table "su" "subst. ")
+(define-abbrev coq-mode-abbrev-table "un" "unfold ")
+(define-abbrev coq-mode-abbrev-table "ap" "apply ")
+(advice-add 'proof-assert-next-command-interactive
+            :before #'expand-abbrev)
 
 ;; Load “customize”d variables.
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
