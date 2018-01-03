@@ -233,7 +233,7 @@ With numeric prefix arg DEC, decrement the integer by DEC amount."
   "Expand a snippet; if there's no expandable snippet, run avy."
   (interactive)
   (unless (yas-expand)
-    (call-interactively 'avy-goto-char-in-line)))
+    (call-interactively 'avy-goto-word-or-subword-1)))
 
 (defun my/rgrep ()
   "rgrep without ivy"

@@ -31,7 +31,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-9")     #'backward-sexp)
 (define-key my-keys-minor-mode-map (kbd "M-b")     #'my/pop-mark)
 (define-key my-keys-minor-mode-map (kbd "M-l")     #'recenter-top-bottom)
-(define-key my-keys-minor-mode-map (kbd "M-i")     #'avy-goto-word-or-subword-1)
+(define-key my-keys-minor-mode-map (kbd "M-i")     #'avy-goto-char-in-line)
 (define-key my-keys-minor-mode-map (kbd "C-i")     #'my/goto-char-or-expand)
 (define-key my-keys-minor-mode-map (kbd "M-s y")   #'yas-new-snippet)
 (define-key my-keys-minor-mode-map (kbd "M-s b")   #'browse-url-at-point)
