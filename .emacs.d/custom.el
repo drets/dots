@@ -5,7 +5,6 @@
  ;; If there is more than one, they won't work right.
  '(backup-by-copying t)
  '(backup-directory-alist (quote (("." . "~/.saves"))))
- '(blink-cursor-mode t)
  '(browse-url-browser-display nil)
  '(browse-url-browser-function (quote browse-url-generic))
  '(browse-url-generic-program "google-chrome-stable")
@@ -14,7 +13,6 @@
  '(comint-scroll-show-maximum-output nil)
  '(company-dabbrev-downcase nil)
  '(cua-mode t nil (cua-base))
- '(cursor-type (quote (bar . 5)))
  '(custom-enabled-themes (quote (monochrome)))
  '(custom-safe-themes
    (quote
@@ -28,7 +26,6 @@
  '(dired-recursive-deletes (quote top))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(electric-indent-mode t)
- '(electric-pair-mode t)
  '(fill-column 77)
  '(fiplr-ignored-globs
    (quote

@@ -247,6 +247,7 @@
 (define-abbrev coq-mode-abbrev-table "r" "rewrite ")
 (define-abbrev coq-mode-abbrev-table "i" "inversion ")
 (define-abbrev coq-mode-abbrev-table "s" "subst")
+(define-abbrev coq-mode-abbrev-table "f" "Search ")
 (define-abbrev coq-mode-abbrev-table "u" "unfold ")
 (define-abbrev coq-mode-abbrev-table "a" "apply ")
 (define-abbrev coq-mode-abbrev-table "c" "clear ")
