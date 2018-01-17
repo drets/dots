@@ -263,6 +263,7 @@ in
       qbittorrent
       rxvt_unicode
       rsync
+      plasma-workspace
       scrot
       shared_mime_info
       shutter

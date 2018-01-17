@@ -320,7 +320,6 @@ globalkeys = awful.util.table.join(
     -- Program hotkeys
     awful.key({ modkey }, "a", function () awful.util.spawn("emacsclient -c")       end),
     awful.key({ modkey }, "g", function () awful.util.spawn("google-chrome-stable") end),
-    awful.key({ modkey }, "6", function () awful.util.spawn("shutter -f")           end),
     awful.key({ modkey }, "7", function () awful.util.spawn("shutter -s")           end)
 )
 
@@ -333,6 +332,7 @@ utils.run_once("unclutter")
 utils.run_once("goldendict")
 utils.run_once("shutter --min_at_startup")
 utils.run_once("emacs --daemon")
+utils.run_once("klipper")
 utils.run_once("suspend-disable-device LID0 XHC1")
 utils.run_once("unfocus")
 utils.run_once("xkbset sticky -twokey -latchlock")
