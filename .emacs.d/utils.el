@@ -241,3 +241,17 @@ With numeric prefix arg DEC, decrement the integer by DEC amount."
   (let ((completing-read-function 'completing-read-default)
         (completion-in-region-function 'completion--in-region))
     (call-interactively 'rgrep)))
+
+(defun my/kill-the-word ()
+  "kill word under the cursor"
+  (interactive)
+  (let ((c (preceding-char)))
+    (if (or (= ?w (char-syntax c)) (= (current-column) 0) (= c ?\s))
+        (progn (er/mark-word) (call-interactively 'kill-word))
+        (delete-char -1))))
+
+(defun my/smart-new-line ()
+  "add new line and move cursor"
+   (interactive)
+   (end-of-line)
+   (newline-and-indent))

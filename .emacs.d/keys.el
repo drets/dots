@@ -55,9 +55,9 @@
 (define-key my-keys-minor-mode-map (kbd "C-'")             #'my/duplicate)
 (define-key my-keys-minor-mode-map (kbd "C-<")             #'my/indent-left)
 (define-key my-keys-minor-mode-map (kbd "C->")             #'my/indent-right)
+(define-key my-keys-minor-mode-map (kbd "C-<backspace>")   #'my/kill-the-word)
 (define-key my-keys-minor-mode-map (kbd "C-S-<backspace>") #'backward-kill-sexp)
 (define-key my-keys-minor-mode-map (kbd "C-d")             #'kill-line)
-(define-key my-keys-minor-mode-map (kbd "M-c")             #'kill-whole-line)
 (define-key my-keys-minor-mode-map (kbd "M-s 1")           #'just-one-space)
 (define-key my-keys-minor-mode-map (kbd "M-d")             #'my/top-join-line)
 (define-key my-keys-minor-mode-map (kbd "M-s /")           #'my/toggle-comment)
@@ -66,6 +66,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-=")             #'my/increment-integer-at-point)
 (define-key my-keys-minor-mode-map (kbd "M--")             #'my/decrement-integer-at-point)
 (define-key my-keys-minor-mode-map (kbd "M-t")             #'my/flip-bool-at-point)
+(define-key my-keys-minor-mode-map (kbd "C-y")             #'my/smart-new-line)
 
 ;; Macros
 
@@ -84,7 +85,6 @@
 (define-key my-keys-minor-mode-map (kbd "C-s")   #'phi-search)
 (define-key my-keys-minor-mode-map (kbd "M-s w") #'swiper)
 (define-key my-keys-minor-mode-map (kbd "M-s p") #'counsel-projectile-switch-project)
-(define-key my-keys-minor-mode-map (kbd "C-y")   #'counsel-yank-pop)
 (define-key my-keys-minor-mode-map (kbd "M-o")   #'counsel-find-file)
 (define-key my-keys-minor-mode-map (kbd "M-s q") #'query-replace-regexp)
 (define-key my-keys-minor-mode-map (kbd "M-s f") #'find-file-at-point)
@@ -98,7 +98,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-p")   #'counsel-git)
 (define-key my-keys-minor-mode-map (kbd "M-s r") #'my/rgrep)
 (define-key my-keys-minor-mode-map (kbd "M-s l") #'counsel-locate)
-(define-key my-keys-minor-mode-map (kbd "M-p")   #'fiplr-find-file)
+(define-key my-keys-minor-mode-map (kbd "M-p")   #'counsel-yank-pop)
 
 ;; Windows and buffers
 
