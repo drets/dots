@@ -320,7 +320,7 @@ globalkeys = awful.util.table.join(
     -- Program hotkeys
     awful.key({ modkey }, "a", function () awful.util.spawn("emacsclient -c")       end),
     awful.key({ modkey }, "g", function () awful.util.spawn("google-chrome-stable") end),
-    awful.key({ modkey }, "7", function () awful.util.spawn("shutter -s")           end)
+    awful.key({ modkey }, "7", function () awful.util.spawn("escrotum -C -s ~/screenshots/%Y-%m-%d-%H%M%S_$wx$h.png") end)
 )
 
 --- Autostart {{{

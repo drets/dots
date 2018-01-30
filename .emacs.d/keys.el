@@ -41,21 +41,22 @@
 
 ;; Regions
 
-(define-key my-keys-minor-mode-map (kbd "C-,")   #'mc/mark-next-like-this)
-(define-key my-keys-minor-mode-map (kbd "M-a")   #'mark-paragraph)
-(define-key my-keys-minor-mode-map (kbd "C-a")   #'my/select-current-line)
-(define-key my-keys-minor-mode-map (kbd "C-n")   #'er/expand-region)
-(define-key my-keys-minor-mode-map (kbd "M-n")   #'er/mark-inside-pairs)
-(define-key my-keys-minor-mode-map (kbd "C-M-n") #'er/mark-inside-quotes)
-(define-key my-keys-minor-mode-map (kbd "C-S-n") #'my/collapse-region)
-(define-key my-keys-minor-mode-map (kbd "M-s i") #'indent-region)
+(define-key my-keys-minor-mode-map (kbd "C-,")     #'mc/mark-next-like-this)
+(define-key my-keys-minor-mode-map (kbd "M-s C-,") #'mc/cycle-forward)
+(define-key my-keys-minor-mode-map (kbd "M-a")     #'mark-paragraph)
+(define-key my-keys-minor-mode-map (kbd "C-a")     #'my/select-current-line)
+(define-key my-keys-minor-mode-map (kbd "C-n")     #'er/expand-region)
+(define-key my-keys-minor-mode-map (kbd "M-n")     #'er/mark-inside-pairs)
+(define-key my-keys-minor-mode-map (kbd "C-M-n")   #'er/mark-inside-quotes)
+(define-key my-keys-minor-mode-map (kbd "C-S-n")   #'my/collapse-region)
+(define-key my-keys-minor-mode-map (kbd "M-s i")   #'indent-region)
 
 ;; Editing
 
 (define-key my-keys-minor-mode-map (kbd "C-'")             #'my/duplicate)
 (define-key my-keys-minor-mode-map (kbd "C-<")             #'my/indent-left)
 (define-key my-keys-minor-mode-map (kbd "C->")             #'my/indent-right)
-(define-key my-keys-minor-mode-map (kbd "C-<backspace>")   #'my/kill-the-word)
+(define-key my-keys-minor-mode-map (kbd "M-<backspace>")   #'my/kill-the-word)
 (define-key my-keys-minor-mode-map (kbd "C-S-<backspace>") #'backward-kill-sexp)
 (define-key my-keys-minor-mode-map (kbd "C-d")             #'kill-line)
 (define-key my-keys-minor-mode-map (kbd "M-s 1")           #'just-one-space)
