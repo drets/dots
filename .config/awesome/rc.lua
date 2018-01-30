@@ -331,7 +331,6 @@ utils.run_once("setxkbmap -layout \"us(my),ua(my),ru(my)\" -option \"\" -option 
 utils.run_once("xscreensaver")
 utils.run_once("unclutter")
 utils.run_once("goldendict")
-utils.run_once("shutter --min_at_startup")
 utils.run_once("emacs --daemon")
 utils.run_once("klipper")
 utils.run_once("suspend-disable-device LID0 XHC1")
