@@ -247,7 +247,6 @@ in
       # haskellPackages.hlint
       hexchat
       htop
-      kde4.kde_baseapps
       keepassx
       libreoffice
       man-pages
@@ -288,6 +287,7 @@ in
     ] ++ (with nixpkgs-16_09; [
       oxygen-gtk2
       oxygen-gtk3
+      kde4.kde_baseapps
     ]);
   };
 }
