@@ -34,13 +34,14 @@ in
   };
 
   hardware = {
-    bluetooth.enable = false;
+    bluetooth.enable = true;
     enableAllFirmware = true;
     facetimehd.enable = true;
     opengl.driSupport32Bit = true;
     pulseaudio = {
       enable = true;
       support32Bit = true;
+      package = pkgs.pulseaudioFull;
     };
   };
 
@@ -77,6 +78,38 @@ in
 
   services = {
     udev.packages = [ pkgs.android-udev-rules ];
+
+    elasticsearch = {
+      enable = true;
+      cluster_name = "drets";
+      extraConf = ''
+        node.name: "MBP"
+      '';
+    };
+
+    kibana = {
+      enable = true;
+    };
+
+    logstash = {
+      enable = true;
+      inputConfig = ''
+        file {
+          path => "/home/drets/log.txt.processed"
+          sincedb_path => "/home/drets/.log.txt.sincedb"
+          codec => "json"
+          start_position => "beginning"
+          tags => [ "awesomewm" ]
+          type => "awesomewm"
+        }
+      '';
+      outputConfig = ''
+        elasticsearch {
+          index => "quantified-self"
+          document_type => "awesomewm"
+        }
+      '';
+    };
 
     dnsmasq = {
       enable = true;

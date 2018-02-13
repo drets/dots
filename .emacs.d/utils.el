@@ -245,13 +245,24 @@ With numeric prefix arg DEC, decrement the integer by DEC amount."
 (defun my/kill-the-word ()
   "kill word under the cursor"
   (interactive)
-  (let ((c (preceding-char)))
-    (if (or (= ?w (char-syntax c)) (= (current-column) 0) (= c ?\s))
-        (progn (er/mark-word) (call-interactively 'kill-word))
-        (delete-char -1))))
+  (progn (er/mark-symbol-with-prefix) (call-interactively 'delete-region)))
 
 (defun my/smart-new-line ()
-  "add new line and move cursor"
-   (interactive)
-   (end-of-line)
-   (newline-and-indent))
+  (interactive)
+  (end-of-line)
+  (if (current-line-empty-p)
+      (indent-for-tab-command)
+    (if (next-line-empty-p)
+        (progn (next-line) (indent-for-tab-command))
+      (newline-and-indent))))
+
+(defun next-line-empty-p ()
+  (save-excursion
+    (beginning-of-line)
+    (next-line)
+    (looking-at "[[:space:]]*$")))
+
+(defun current-line-empty-p ()
+  (save-excursion
+    (beginning-of-line)
+    (looking-at "[[:space:]]*$")))
