@@ -243,9 +243,11 @@ With numeric prefix arg DEC, decrement the integer by DEC amount."
     (call-interactively 'rgrep)))
 
 (defun my/kill-the-word ()
-  "kill word under the cursor"
+  "custom killing under the cursor"
   (interactive)
-  (progn (er/mark-symbol-with-prefix) (call-interactively 'delete-region)))
+  (cond ((current-char-new-line-p) nil)
+        ((current-char-empty-p) (delete-char 1))
+        (t (progn (er/mark-symbol) (call-interactively 'delete-region)))))
 
 (defun my/smart-new-line ()
   (interactive)
@@ -260,14 +262,22 @@ With numeric prefix arg DEC, decrement the integer by DEC amount."
   (save-excursion
     (beginning-of-line)
     (next-line)
-    (looking-at "[[:space:]]*$")))
+    (looking-at-p "[[:space:]]*$")))
 
 (defun current-line-empty-p ()
   (save-excursion
     (beginning-of-line)
-    (looking-at "[[:space:]]*$")))
+    (looking-at-p "[[:space:]]*$")))
 
-(defun dired-open-in-chrome ()
+(defun current-char-empty-p ()
+  (save-excursion
+    (looking-at-p "[[:space:]]")))
+
+(defun current-char-new-line-p ()
+  (save-excursion
+    (looking-at-p "\n")))
+
+(defun my/dired-open-in-chrome ()
   (interactive)
   (call-process-shell-command
    (format "google-chrome-stable %s" (dired-filename-at-point))
