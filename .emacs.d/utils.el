@@ -242,12 +242,13 @@ With numeric prefix arg DEC, decrement the integer by DEC amount."
         (completion-in-region-function 'completion--in-region))
     (call-interactively 'rgrep)))
 
-(defun my/kill-the-word ()
-  "custom killing under the cursor"
+(defun my/delete-word-at-point ()
+  "Delete word at point."
   (interactive)
-  (cond ((current-char-new-line-p) nil)
-        ((current-char-empty-p) (delete-char 1))
-        (t (progn (er/mark-symbol) (call-interactively 'delete-region)))))
+  (let* ((p (point))
+         (beg (+ p   (skip-syntax-backward "w_")))
+         (end (+ beg (skip-syntax-forward  "w_"))))
+    (delete-region beg end)))
 
 (defun my/smart-new-line ()
   (interactive)
@@ -272,10 +273,6 @@ With numeric prefix arg DEC, decrement the integer by DEC amount."
 (defun current-char-empty-p ()
   (save-excursion
     (looking-at-p "[[:space:]]")))
-
-(defun current-char-new-line-p ()
-  (save-excursion
-    (looking-at-p "\n")))
 
 (defun my/dired-open-in-chrome ()
   (interactive)
