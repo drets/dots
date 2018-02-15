@@ -105,7 +105,8 @@ Repeated invocations toggle between the two most recently open buffers."
   (save-some-buffers t)
   (call-process-shell-command
    (format "rsync -avz --exclude-from=%s --exclude=.git %s %s"
-           (concat from ".gitignore") from to) nil 0))
+           (concat from ".gitignore") from to)
+   nil 0))
 
 (defun my/toggle-comment ()
     "Comments or uncomments the region or the current line if there's no active region."
@@ -117,7 +118,6 @@ Repeated invocations toggle between the two most recently open buffers."
         (comment-or-uncomment-region beg end)
         (next-line)))
 
-(provide 'utils)
 
 (defun my/google ()
   "Google the selected region if any, display a query prompt otherwise."
@@ -266,3 +266,11 @@ With numeric prefix arg DEC, decrement the integer by DEC amount."
   (save-excursion
     (beginning-of-line)
     (looking-at "[[:space:]]*$")))
+
+(defun dired-open-in-chrome ()
+  (interactive)
+  (call-process-shell-command
+   (format "google-chrome-stable %s" (dired-filename-at-point))
+   nil 0))
+
+(provide 'utils)

@@ -146,6 +146,7 @@
 
 ;; Dired
 (define-key dired-mode-map "H" #'dired-omit-mode)
+(define-key dired-mode-map "O" #'dired-open-in-chrome)
 
 ;; Paste word to minibuffer
 
