@@ -66,8 +66,8 @@ in
 
   networking = {
     hostName = "MBP";
-    useDHCP = false;
-    wicd.enable = true;
+    networkmanager.enable = true;
+    # disable wpa_supplicant
     wireless.enable = false;
     firewall = {
       allowedTCPPorts = [
@@ -231,13 +231,6 @@ in
   virtualisation.virtualbox.host.enable = true;
 
   environment = {
-    # Put the text in /etc/resolv.conf.head
-    #
-    # That will prepend dnsmasq server to /etc/resolv.conf (dhcpcd-specific)
-    etc."resolv.conf.head".text = ''
-      nameserver 127.0.0.1
-    '';
-
     shellInit = ''
       export GTK_PATH=$GTK_PATH:${nixpkgs-16_09.oxygen_gtk}/lib/gtk-2.0
       export GTK2_RC_FILES=$GTK2_RC_FILES:${nixpkgs-16_09.oxygen_gtk}/share/themes/oxygen-gtk/gtk-2.0/gtkrc
@@ -285,6 +278,7 @@ in
       libreoffice
       man-pages
       mplayer
+      networkmanagerapplet
       nix-repl
       nox
       # openjdk

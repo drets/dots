@@ -325,10 +325,10 @@ globalkeys = awful.util.table.join(
 )
 
 --- Autostart {{{
-utils.run_once("wicd-client", "wicd-client -t")
 -- Set “my” custom keyboard layout. Toggle layouts by left Control.
 utils.run_once("setxkbmap -layout \"us(my),ua(my),ru(my)\" -option \"\" -option \"grp:lctrl_toggle\" -print | xkbcomp -I\"$HOME/.config/xkb\" - $DISPLAY")
 utils.run_once("xscreensaver")
+utils.run_once("nm-applet")
 utils.run_once("unclutter")
 utils.run_once("goldendict")
 utils.run_once("emacs --daemon")
@@ -337,8 +337,8 @@ utils.run_once("suspend-disable-device LID0 XHC1")
 utils.run_once("unfocus")
 utils.run_once("xkbset sticky -twokey -latchlock")
 utils.run_once("xkbset mousekeys")
-utils.run_once("conky -q")
 utils.run_once("xkbset exp 1 =sticky =mousekeys =sticky =twokey =latchlock")
+utils.run_once("conky -q")
 
 --- }}}
 
