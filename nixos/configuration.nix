@@ -186,7 +186,7 @@ in
       initialPassword = "foobar";
     };
 
-    defaultUserShell = pkgs.bash;
+    defaultUserShell = pkgs.fish;
   };
 
   fonts = {
@@ -210,6 +210,7 @@ in
   };
 
   programs.kbdlight.enable = true;
+  programs.fish.enable = true;
 
   security.sudo = {
     enable = true;

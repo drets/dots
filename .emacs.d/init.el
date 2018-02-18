@@ -9,7 +9,18 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list #'package-archives
              '("org" . "http://orgmode.org/elpa/") t)
+
+;; Load “customize”d variables.
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load custom-file))
+(put #'upcase-region #'disabled nil)
+
+;; Autoinstall packages.
 (package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+(package-install-selected-packages)
 
 ;; Prevent the Magit upgrade warning from showing every time.
 (setq magit-last-seen-setup-instructions "1.4.0")
@@ -81,7 +92,7 @@
     (flycheck-mode)
     (turn-on-purescript-indentation)))
 
-;; Switch between projects quicker
+;; Switch between projects quicker using projectile
 (projectile-mode)
 (counsel-projectile-mode)
 
@@ -229,7 +240,7 @@
 (add-hook 'coq-goals-mode-hook #'add-fira-code-symbol-keywords)
 (add-hook 'coq-response-mode-hook #'add-fira-code-symbol-keywords)
 
-(setq proofgeneral (shell-command-to-string "printf \"$(dirname $(dirname $(readlink $(which proofgeneral))))/share/emacs/site-lisp/ProofGeneral/generic/proof-site\""))
+(setq proofgeneral (shell-command-to-string "printf (dirname (dirname (readlink (which proofgeneral))))/share/emacs/site-lisp/ProofGeneral/generic/proof-site"))
 (load proofgeneral)
 
 (eval-after-load "proof-script" '(progn
@@ -253,9 +264,3 @@
 (define-abbrev coq-mode-abbrev-table "c" "clear ")
 (advice-add 'proof-assert-next-command-interactive
             :before #'expand-abbrev)
-
-;; Load “customize”d variables.
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(when (file-exists-p custom-file)
-  (load custom-file))
-(put #'upcase-region #'disabled nil)

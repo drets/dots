@@ -1,6 +1,6 @@
 ;; Shell adjustments.
 ;;
-;;   * [C-i] autocomplete
+;;   * [C-M-i] autocomplete
 
 (require #'shell)
 
