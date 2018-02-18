@@ -17,4 +17,17 @@
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
+(setq haskell-process-args-ghci
+      '("-ferror-spans" "-fshow-loaded-modules"))
+
+(setq haskell-process-args-cabal-repl
+      '("--ghc-options=-ferror-spans -fshow-loaded-modules"))
+
+(setq haskell-process-args-stack-ghci
+      '("--ghci-options=-ferror-spans -fshow-loaded-modules"
+        "--no-build" "--no-load"))
+
+(setq haskell-process-args-cabal-new-repl
+      '("--ghc-options=-ferror-spans -fshow-loaded-modules"))
+
 (provide 'haskell-wrap)

@@ -89,7 +89,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-o")   #'counsel-find-file)
 (define-key my-keys-minor-mode-map (kbd "M-s q") #'query-replace-regexp)
 (define-key my-keys-minor-mode-map (kbd "M-s f") #'find-file-at-point)
-(define-key my-keys-minor-mode-map (kbd "M-s g") #'my/google)
+(define-key my-keys-minor-mode-map (kbd "M-s g") #'my/haskell-goothub)
 
 ;; Files
 

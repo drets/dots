@@ -83,7 +83,7 @@
 
 ;; Switch between projects quicker
 (projectile-mode)
-(counsel-projectile-on)
+(counsel-projectile-mode)
 
 ;;; Fira code
 (add-hook 'after-make-frame-functions (lambda (frame) (set-fontset-font t '(#Xe100 . #Xe16f) "Fira Code Symbol")))

@@ -118,16 +118,15 @@ Repeated invocations toggle between the two most recently open buffers."
         (comment-or-uncomment-region beg end)
         (next-line)))
 
-
-(defun my/google ()
-  "Google the selected region if any, display a query prompt otherwise."
+(defun my/haskell-goothub ()
+  "Look the selected region if any, display a query prompt otherwise."
   (interactive)
   (browse-url
    (concat
-    "http://www.google.com/search?ie=utf-8&oe=utf-8&q="
+    "https://github.com/search?l=Haskell&type=Code&q="
     (url-hexify-string (if mark-active
          (buffer-substring (region-beginning) (region-end))
-       (read-string "Google: "))))))
+       (read-string "Goothub: "))))))
 
 (defun my/top-join-line ()
   "Join the current line with the line beneath it."
