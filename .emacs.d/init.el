@@ -10,12 +10,6 @@
 (add-to-list #'package-archives
              '("org" . "http://orgmode.org/elpa/") t)
 
-;; Load “customize”d variables.
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(when (file-exists-p custom-file)
-  (load custom-file))
-(put #'upcase-region #'disabled nil)
-
 ;; Autoinstall packages.
 (package-initialize)
 (unless package-archive-contents
@@ -264,3 +258,9 @@
 (define-abbrev coq-mode-abbrev-table "c" "clear ")
 (advice-add 'proof-assert-next-command-interactive
             :before #'expand-abbrev)
+
+;; Load “customize”d variables.
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load custom-file))
+(put #'upcase-region #'disabled nil)

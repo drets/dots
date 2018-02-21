@@ -15,6 +15,7 @@
 (require 'swiper)
 (require 'utils)
 (require 'yasnippet)
+(require 'string-inflection)
 
 ;; Movement and navigation
 
@@ -68,6 +69,9 @@
 (define-key my-keys-minor-mode-map (kbd "M--")             #'my/decrement-integer-at-point)
 (define-key my-keys-minor-mode-map (kbd "M-t")             #'my/flip-bool-at-point)
 (define-key my-keys-minor-mode-map (kbd "C-y")             #'my/smart-new-line)
+(define-key my-keys-minor-mode-map (kbd "C-y")             #'my/smart-new-line)
+(define-key my-keys-minor-mode-map (kbd "M-s x")           #'overwrite-mode)
+(define-key my-keys-minor-mode-map (kbd "°")               #'string-inflection-all-cycle)
 
 ;; Macros
 
@@ -115,6 +119,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-M-t") #'winner-redo)
 (define-key my-keys-minor-mode-map (kbd "M-s m") #'centered-window-mode)
 (define-key my-keys-minor-mode-map (kbd "M-s c") #'clone-indirect-buffer)
+
 
 ;; Display
 
