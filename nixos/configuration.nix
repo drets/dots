@@ -186,7 +186,7 @@ in
       initialPassword = "foobar";
     };
 
-    defaultUserShell = pkgs.fish;
+    defaultUserShell = pkgs.bash;
   };
 
   fonts = {

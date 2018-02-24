@@ -234,7 +234,8 @@
 (add-hook 'coq-goals-mode-hook #'add-fira-code-symbol-keywords)
 (add-hook 'coq-response-mode-hook #'add-fira-code-symbol-keywords)
 
-(setq proofgeneral (shell-command-to-string "printf (dirname (dirname (readlink (which proofgeneral))))/share/emacs/site-lisp/ProofGeneral/generic/proof-site"))
+
+(setq proofgeneral (shell-command-to-string "printf \"$(dirname $(dirname $(readlink $(which proofgeneral))))/share/emacs/site-lisp/ProofGeneral/generic/proof-site\""))
 (load proofgeneral)
 
 (eval-after-load "proof-script" '(progn

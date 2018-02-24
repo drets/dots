@@ -16,6 +16,9 @@
 
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(autoload 'ghc-init "ghc" nil t)
+(autoload 'ghc-debug "ghc" nil t)
+(add-hook 'haskell-mode-hook 'ghc-init)
 
 (setq haskell-process-args-ghci
       '("-ferror-spans" "-fshow-loaded-modules"))

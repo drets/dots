@@ -69,7 +69,6 @@
 (define-key my-keys-minor-mode-map (kbd "M--")             #'my/decrement-integer-at-point)
 (define-key my-keys-minor-mode-map (kbd "M-t")             #'my/flip-bool-at-point)
 (define-key my-keys-minor-mode-map (kbd "C-y")             #'my/smart-new-line)
-(define-key my-keys-minor-mode-map (kbd "C-y")             #'my/smart-new-line)
 (define-key my-keys-minor-mode-map (kbd "M-s x")           #'overwrite-mode)
 (define-key my-keys-minor-mode-map (kbd "°")               #'string-inflection-all-cycle)
 
@@ -93,7 +92,6 @@
 (define-key my-keys-minor-mode-map (kbd "M-o")   #'counsel-find-file)
 (define-key my-keys-minor-mode-map (kbd "M-s q") #'query-replace-regexp)
 (define-key my-keys-minor-mode-map (kbd "M-s f") #'find-file-at-point)
-(define-key my-keys-minor-mode-map (kbd "M-s g") #'my/haskell-goothub)
 
 ;; Files
 
@@ -137,7 +135,8 @@
 
 (define-key haskell-mode-map (kbd "C-c C-o") #'haskell-session-change-target)
 (define-key haskell-mode-map (kbd "C-c C-p") #'haskell-process-restart)
-(define-key haskell-mode-map (kbd "C-y")     #'haskell-mode-jump-to-def-or-tag)
+(define-key haskell-mode-map (kbd "C-c C-m") #'ghc-insert-module)
+(define-key haskell-mode-map (kbd "C-c C-g") #'my/haskell-goothub)
 
 ;; Completion
 
