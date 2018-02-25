@@ -74,7 +74,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (ghc string-inflection centered-window-mode company-coq monochrome-theme htmlize pamparam phi-search yasnippet flycheck-flow flow-minor-mode purescript-mode psc-ide company counsel-projectile web-mode auctex fiplr edit-server org-plus-contrib whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel ivy-hydra move-text markdown-mode flx smex noflet multiple-cursors magit haskell-mode flycheck expand-region)))
+    (undo-tree ghc string-inflection centered-window-mode company-coq monochrome-theme htmlize phi-search yasnippet flycheck-flow flow-minor-mode company counsel-projectile web-mode auctex fiplr org-plus-contrib whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel move-text markdown-mode flx smex noflet multiple-cursors magit haskell-mode flycheck expand-region)))
  '(preview-scale-function 2.5)
  '(psc-ide-add-import-on-completion t)
  '(python-shell-interpreter "python3")

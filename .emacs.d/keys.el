@@ -138,6 +138,14 @@
 (define-key haskell-mode-map (kbd "C-c C-m") #'ghc-insert-module)
 (define-key haskell-mode-map (kbd "C-c C-g") #'my/haskell-goothub)
 
+;; Coq
+
+(eval-after-load "proof-script" '(progn
+  (define-key proof-mode-map (kbd "ö")   #'proof-assert-next-command-interactive)
+  (define-key proof-mode-map (kbd "M-ö") #'proof-undo-last-successful-command)
+  (define-key proof-mode-map (kbd "ß")   #'proof-goto-point)
+  (define-key proof-mode-map (kbd "ü")   #'expand-abbrev)))
+
 ;; Completion
 
 (define-key my-keys-minor-mode-map (kbd "C-<tab>") #'dabbrev-expand)
@@ -174,9 +182,6 @@
            "drets@10.0.11.89:/Users/drets/getsafe/react-native-app"))
 
 (define-key my-keys-minor-mode-map (kbd "M-s n") #'my/sync-getsafe)
-
-;; Pamparam
-(global-set-key (kbd "C-c m") 'hydra-pamparam/body)
 
 ;; End of key definitions.
 

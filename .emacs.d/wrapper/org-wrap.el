@@ -22,7 +22,6 @@
 
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((js . t)
-   (haskell . t)))
+ '((haskell . t)))
 
 (provide 'org-wrap)
