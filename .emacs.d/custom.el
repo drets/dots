@@ -26,6 +26,9 @@
  '(dired-recursive-deletes (quote top))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(electric-indent-mode t)
+ '(elfeed-feeds
+   (quote
+    ("https://www.reddit.com/r/haskell/top.rss?t=week" "https://www.reddit.com/r/LessWrong/top.rss?t=week" "https://www.reddit.com/r/InteractiveThmProving/top.rss?t=week" "https://www.reddit.com/r/Coq/top.rss?t=week")))
  '(fill-column 77)
  '(fiplr-ignored-globs
    (quote
@@ -74,7 +77,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (undo-tree ghc string-inflection centered-window-mode company-coq monochrome-theme htmlize phi-search yasnippet flycheck-flow flow-minor-mode company counsel-projectile web-mode auctex fiplr org-plus-contrib whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel move-text markdown-mode flx smex noflet multiple-cursors magit haskell-mode flycheck expand-region)))
+    (elfeed undo-tree ghc string-inflection centered-window-mode company-coq monochrome-theme htmlize phi-search yasnippet flycheck-flow flow-minor-mode company counsel-projectile web-mode auctex fiplr org-plus-contrib whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel move-text markdown-mode flx smex noflet multiple-cursors magit haskell-mode flycheck expand-region)))
  '(preview-scale-function 2.5)
  '(psc-ide-add-import-on-completion t)
  '(python-shell-interpreter "python3")

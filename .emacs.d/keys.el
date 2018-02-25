@@ -174,6 +174,9 @@
 ;; Calc
 (define-key my-keys-minor-mode-map (kbd "M-s =") 'quick-calc)
 
+;; Fun
+(define-key my-keys-minor-mode-map (kbd "C-x w") 'elfeed)
+
 ;; GetSafe
 
 (defun my/sync-getsafe ()
