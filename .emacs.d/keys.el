@@ -136,7 +136,7 @@
 (define-key haskell-mode-map (kbd "C-c C-o") #'haskell-session-change-target)
 (define-key haskell-mode-map (kbd "C-c C-p") #'haskell-process-restart)
 (define-key haskell-mode-map (kbd "C-c C-m") #'ghc-insert-module)
-(define-key haskell-mode-map (kbd "C-c C-g") #'my/haskell-goothub)
+(define-key haskell-mode-map (kbd "M-s g")   #'my/haskell-goothub)
 
 ;; Coq
 
