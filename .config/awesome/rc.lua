@@ -315,7 +315,7 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86AudioPlay",         function () awful.util.spawn("deadbeef --play-pause")                     end),
 
     -- Blank the screen
-    awful.key({ modkey, "Mod1" }, "l", function () awful.util.spawn("xscreensaver-command --activate") end),
+    awful.key({ modkey, "Mod1" }, "l", function () awful.util.spawn("xscreensaver-command --lock") end),
 
     -- Program hotkeys
     awful.key({ modkey }, "a", function () awful.util.spawn("emacsclient -c")       end),
