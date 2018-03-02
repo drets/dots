@@ -47,8 +47,8 @@
 (define-key my-keys-minor-mode-map (kbd "M-a")     #'mark-paragraph)
 (define-key my-keys-minor-mode-map (kbd "C-a")     #'my/select-current-line)
 (define-key my-keys-minor-mode-map (kbd "C-n")     #'er/expand-region)
-(define-key my-keys-minor-mode-map (kbd "M-n")     #'er/mark-inside-quotes)
-(define-key my-keys-minor-mode-map (kbd "C-M-n")   #'er/mark-inside-pairs)
+(define-key my-keys-minor-mode-map (kbd "C-M-n")   #'er/mark-inside-quotes)
+(define-key my-keys-minor-mode-map (kbd "M-n")     #'er/mark-inside-pairs)
 (define-key my-keys-minor-mode-map (kbd "C-S-n")   #'my/collapse-region)
 (define-key my-keys-minor-mode-map (kbd "M-s i")   #'indent-region)
 
