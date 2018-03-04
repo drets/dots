@@ -154,6 +154,7 @@
 ;; Shell
 
 (define-key my-keys-minor-mode-map (kbd "M-s s") #'my/create-shell)
+(define-key my-keys-minor-mode-map (kbd "M-s S") #'my/create-shell-with-name)
 (define-key comint-mode-map        (kbd "M-y")   #'counsel-shell-history)
 
 ;; Dired

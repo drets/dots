@@ -134,7 +134,10 @@ Repeated invocations toggle between the two most recently open buffers."
   (delete-indentation 1))
 
 (defun my/create-shell ()
-  "Create a shell with a default directory name."
+  (interactive)
+  (shell (concat "*Shell " (buffer-name))))
+
+(defun my/create-shell-with-name ()
   (interactive)
   (shell (concat "*Shell " (read-string "Shell: ") "*")))
 
