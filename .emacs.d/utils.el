@@ -135,7 +135,7 @@ Repeated invocations toggle between the two most recently open buffers."
 
 (defun my/create-shell ()
   (interactive)
-  (shell (concat "*Shell " (buffer-name))))
+  (shell (concat "*Shell " (buffer-name) "*")))
 
 (defun my/create-shell-with-name ()
   (interactive)
