@@ -20,7 +20,7 @@
 (setq magit-last-seen-setup-instructions "1.4.0")
 
 ;; The file name and the major mode as window name.
-(setq-default frame-title-format '("%f [%m]"))
+(setq-default frame-title-format '("%b"))
 
 ;; Load wrappers.
 (add-to-list #'load-path (concat user-emacs-directory "wrapper/") t)
