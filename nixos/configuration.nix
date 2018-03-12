@@ -246,8 +246,6 @@ in
       aspellDicts.ru
       aspellDicts.de
       bc
-      # cabal-install
-      chromedriver
       deadbeef
       diffutils
       dropbox
@@ -255,7 +253,6 @@ in
       emacsPackages.proofgeneral
       epdfview
       file
-      firefox
       jq
       gcc
       gimp
@@ -269,20 +266,13 @@ in
       gnuplot
       goldendict
       google-chrome
-      # haskellPackages.ghc
-      # haskellPackages.hasktags
-      # haskellPackages.hlint
       hexchat
       htop
-      dolphin
       keepassx
       libreoffice
       man-pages
       mplayer
       networkmanagerapplet
-      nix-repl
-      nox
-      # openjdk
       openvpn
       patchelf
       p7zip
