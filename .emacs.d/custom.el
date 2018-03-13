@@ -3,6 +3,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector ["white" "#303030" "#b3b3b3" "#606060"])
  '(backup-by-copying t)
  '(backup-directory-alist (quote (("." . "~/.saves"))))
  '(browse-url-browser-display nil)
@@ -16,7 +17,7 @@
  '(custom-enabled-themes (quote (monochrome)))
  '(custom-safe-themes
    (quote
-    ("39dd7106e6387e0c45dfce8ed44351078f6acd29a345d8b22e7b8e54ac25bac4" "cab317d0125d7aab145bc7ee03a1e16804d5abdfa2aa8738198ac30dc5f7b569" "31992d4488dba5b28ddb0c16914bf5726dc41588c2b1c1a2fd16516ea92c1d8e" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+    ("edd7f7399da71596e6b15465d79bd770579d6f3170e5ffb1e1c97fae04b71185" "d306cc44632e662b61a483ccb92c49a8aedfbdefa528ef933f09a33258fed45e" "39dd7106e6387e0c45dfce8ed44351078f6acd29a345d8b22e7b8e54ac25bac4" "cab317d0125d7aab145bc7ee03a1e16804d5abdfa2aa8738198ac30dc5f7b569" "31992d4488dba5b28ddb0c16914bf5726dc41588c2b1c1a2fd16516ea92c1d8e" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(dabbrev-case-fold-search nil)
  '(delete-old-versions t)
  '(dired-auto-revert-buffer t)
