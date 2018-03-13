@@ -3,10 +3,6 @@
 !-------------------------------------------------------------------------------
 
 Xft.dpi:                    200
-Xft.antialias:              false
-Xft.rgba:                   rgb
-Xft.hinting:                true
-Xft.hintstyle:              hintslight
 
 !-------------------------------------------------------------------------------
 ! URxvt settings
@@ -15,8 +11,6 @@ Xft.hintstyle:              hintslight
 ! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod
 !-------------------------------------------------------------------------------
 
-URxvt.depth:                32
-URxvt.geometry:             90x30
 URxvt.transparent:          false
 URxvt.fading:               0
 ! URxvt.urgentOnBell:         true
@@ -29,8 +23,8 @@ URxvt.lineSpace:            0
 ! Fonts
 URxvt.allow_bold:           false
 /* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
-URxvt*font: xft:Iosevka:pixelsize=30
-URxvt*boldFont: xft:Iosevka:pixelsize=30
+URxvt*font: xft:Iosevka:pixelsize=32
+URxvt*boldFont: xft:Iosevka:pixelsize=32
 
 ! Fix font space
 URxvt*letterSpace: -1
@@ -45,7 +39,7 @@ URxvt.matcher.button:       1
 URxvt.urlLauncher:          google-chrome-stable
 
 ! Cursor
-URxvt.cursorBlink:          true
+URxvt.cursorBlink:          false
 URxvt.cursorColor:          #657b83
 URxvt.cursorUnderline:      false
 
