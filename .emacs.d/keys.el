@@ -34,7 +34,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-l")     #'recenter-top-bottom)
 (define-key my-keys-minor-mode-map (kbd "M-i")     #'avy-goto-char-in-line)
 (define-key my-keys-minor-mode-map (kbd "C-i")     #'my/goto-char-or-expand)
-(define-key my-keys-minor-mode-map (kbd "M-s y")   #'yas-new-snippet)
+(define-key my-keys-minor-mode-map (kbd "M-s y")   #'counsel-semantic-or-imenu)
 (define-key my-keys-minor-mode-map (kbd "M-s b")   #'browse-url-at-point)
 (define-key my-keys-minor-mode-map (kbd "M-g")     #'goto-line)
 
