@@ -16,6 +16,8 @@
   (package-refresh-contents))
 (package-install-selected-packages)
 
+(load-theme 'monochrome t)
+
 ;; Prevent the Magit upgrade warning from showing every time.
 (setq magit-last-seen-setup-instructions "1.4.0")
 
