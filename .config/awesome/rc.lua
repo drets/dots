@@ -622,6 +622,8 @@ function log_pomodoro()
     pomodoro_file:flush()
 end
 
+pomodoro.long_pause_duration = 5 * 60
+
 pomodoro.on_work_pomodoro_finish_callbacks = {
     function()
       -- turn off screen
