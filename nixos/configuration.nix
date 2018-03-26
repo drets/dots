@@ -289,7 +289,7 @@ in
       stack
       tightvnc
       # texlive.combined.scheme-full
-      tdesktop
+      # tdesktop
       unclutter
       unzip
       vlc
