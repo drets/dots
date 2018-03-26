@@ -217,18 +217,6 @@ in
     wheelNeedsPassword = false;
   };
 
-  systemd = {
-    services.healthySleep = {
-      script = "shutdown -P";
-    };
-
-    timers.healthySleep = {
-      partOf = [ "healthySleep.service" ];
-      wantedBy = [ "timers.target" ];
-      timerConfig.OnCalendar = "*-*-* 23:30:00";
-    };
-  };
-
   virtualisation.virtualbox.host.enable = true;
 
   environment = {
