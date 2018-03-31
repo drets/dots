@@ -234,6 +234,8 @@ in
       aspellDicts.ru
       aspellDicts.de
       bc
+      conky
+      dolphin
       deadbeef
       diffutils
       dropbox
@@ -256,7 +258,6 @@ in
       google-chrome
       hexchat
       htop
-      keepassx
       libreoffice
       man-pages
       mplayer
@@ -275,9 +276,10 @@ in
       shutter
       slack
       stack
+      skype
       tightvnc
       # texlive.combined.scheme-full
-      # tdesktop
+      tdesktop
       unclutter
       unzip
       vlc
@@ -291,6 +293,7 @@ in
       xkbset
       xscreensaver
       zip
+      pass
     ] ++ (with nixpkgs-16_09; [
       oxygen-gtk2
       oxygen-gtk3
