@@ -37,6 +37,9 @@
 ;; Load custom keybindings.
 (require #'keys)
 
+(require #'github-urls)
+(require #'audit)
+
 ;; Load Yasnippet.
 (require 'yasnippet)
 (yas-global-mode 1)

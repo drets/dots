@@ -100,6 +100,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Iosevka" :foundry "unknown" :slant normal :weight normal :height 100 :width normal))))
+ '(audit-comment-face ((t (:foreground "tomato"))))
+ '(audit-heading-face ((t (:foreground "firebrick" :weight bold))))
  '(coq-cheat-face ((t (:background "gray40"))))
  '(coq-solve-tactics-face ((t (:foreground "#93937070DBDB"))))
  '(font-lock-comment-face ((t (:foreground "dark gray" :slant italic))))

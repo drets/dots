@@ -13,3 +13,4 @@ elpa/
 *.dat
 .cache
 *.eld
+audit-db.el
