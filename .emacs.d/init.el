@@ -16,9 +16,6 @@
   (package-refresh-contents))
 (package-install-selected-packages)
 
-;; Prevent the Magit upgrade warning from showing every time.
-(setq magit-last-seen-setup-instructions "1.4.0")
-
 ;; The file name and the major mode as window name.
 (setq-default frame-title-format '("%b"))
 
