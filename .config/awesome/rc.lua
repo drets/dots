@@ -326,7 +326,7 @@ globalkeys = awful.util.table.join(
 
 --- Autostart {{{
 -- Set “my” custom keyboard layout. Toggle layouts by left Control.
-utils.run_once("setxkbmap -layout \"us(my),ua(my),ru(my)\" -option \"\" -option \"grp:lctrl_toggle\" -print | xkbcomp -I\"$HOME/.config/xkb\" - $DISPLAY")
+utils.run_once("setxkbmap -layout \"us(my),ru(my)\" -option \"\" -option \"grp:lctrl_toggle\" -print | xkbcomp -I\"$HOME/.config/xkb\" - $DISPLAY")
 utils.run_once("xscreensaver")
 utils.run_once("nm-applet")
 utils.run_once("unclutter")
