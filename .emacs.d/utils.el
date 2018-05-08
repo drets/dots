@@ -282,4 +282,12 @@ With numeric prefix arg DEC, decrement the integer by DEC amount."
    (format "google-chrome-stable %s" (dired-filename-at-point))
    nil 0))
 
+(defun my/occur-region ()
+  "Call occur on selected text; if no text is selected, use word at point."
+  (interactive)
+  (occur (regexp-quote
+           (if (use-region-p)
+             (buffer-substring (region-beginning) (region-end))
+             (word-at-point)))))
+
 (provide 'utils)
