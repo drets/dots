@@ -65,9 +65,13 @@
 (setq avy-keys
       (string-to-list "eklioswadfxcrvn,hm./"))
 
+;; Autosave
 (require 'auto-save-buffers-enhanced)
 (auto-save-buffers-enhanced t)
 (setq auto-save-buffers-enhanced-quiet-save-p t)
+
+;; Ripgrep
+(setq counsel-rg-base-command "rg -i -M 120 --no-heading --line-number --color never %s .")
 
 ;; Prompt for directory creation automatically when saving a file.
 (add-hook #'before-save-hook
