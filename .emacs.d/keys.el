@@ -99,7 +99,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-f")     (kbd "C-x C-s")) ; generic
 (define-key my-keys-minor-mode-map (kbd "C-o")     #'counsel-rg)
 (define-key my-keys-minor-mode-map (kbd "M-s M-o") #'my/occur-region)
-(define-key my-keys-minor-mode-map (kbd "C-p")     #'counsel-git)
+(define-key my-keys-minor-mode-map (kbd "C-p")     #'fiplr-find-file)
 (define-key my-keys-minor-mode-map (kbd "M-s r")   #'my/rgrep)
 (define-key my-keys-minor-mode-map (kbd "M-s l")   #'counsel-locate)
 (define-key my-keys-minor-mode-map (kbd "M-p")     #'counsel-yank-pop)
