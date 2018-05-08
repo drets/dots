@@ -65,6 +65,10 @@
 (setq avy-keys
       (string-to-list "eklioswadfxcrvn,hm./"))
 
+(require 'auto-save-buffers-enhanced)
+(auto-save-buffers-enhanced t)
+(setq auto-save-buffers-enhanced-quiet-save-p t)
+
 ;; Prompt for directory creation automatically when saving a file.
 (add-hook #'before-save-hook
   (lambda ()

@@ -78,7 +78,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (magit org-plus-contrib centered-window elfeed undo-tree ghc string-inflection company-coq monochrome-theme htmlize phi-search yasnippet flycheck-flow flow-minor-mode company counsel-projectile web-mode auctex fiplr whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel move-text markdown-mode flx smex noflet multiple-cursors haskell-mode flycheck expand-region)))
+    (auto-save-buffers-enhanced magit org-plus-contrib centered-window elfeed undo-tree ghc string-inflection company-coq monochrome-theme htmlize phi-search yasnippet flycheck-flow flow-minor-mode company counsel-projectile web-mode auctex fiplr whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel move-text markdown-mode flx smex noflet multiple-cursors haskell-mode flycheck expand-region)))
  '(preview-scale-function 2.5)
  '(psc-ide-add-import-on-completion t)
  '(python-shell-interpreter "python3")
@@ -92,6 +92,7 @@
  '(tramp-chunksize 2000)
  '(tramp-default-method "ssh")
  '(use-dialog-box nil)
+ '(whitespace-cleanup-mode-preserve-point t)
  '(winner-mode t)
  '(yas-indent-line (quote fixed)))
 (custom-set-faces
