@@ -27,16 +27,13 @@
  '(dired-recursive-deletes (quote top))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(electric-indent-mode t)
- '(elfeed-feeds
-   (quote
-    ("https://www.reddit.com/r/haskell/top.rss?t=week" "https://www.reddit.com/r/LessWrong/top.rss?t=week" "https://www.reddit.com/r/InteractiveThmProving/top.rss?t=week" "https://www.reddit.com/r/Coq/top.rss?t=week")))
  '(fill-column 77)
  '(fiplr-ignored-globs
-  (quote
-   ((directories
-     (".git" ".svn" ".hg" ".bzr" ".cabal-sandbox" ".stack-work" "dist" "bower_components" "node_modules" "output"))
-    (files
-     (".#*" "*~" "*.so" "*.jpg" "*.png" "*.gif" "*.pdf" "*.gz" "*.zip")))))
+   (quote
+    ((directories
+      (".git" ".svn" ".hg" ".bzr" ".cabal-sandbox" ".stack-work" "dist" "bower_components" "node_modules" "output"))
+     (files
+      (".#*" "*~" "*.so" "*.jpg" "*.png" "*.gif" "*.pdf" "*.gz" "*.zip")))))
  '(fiplr-root-markers (quote (".git" ".svn" ".hg" ".bzr" "stack.yaml")))
  '(flycheck-javascript-flow-args nil)
  '(global-whitespace-cleanup-mode t)
@@ -78,7 +75,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (auto-save-buffers-enhanced magit org-plus-contrib centered-window elfeed undo-tree ghc string-inflection company-coq monochrome-theme htmlize phi-search yasnippet flycheck-flow flow-minor-mode company counsel-projectile web-mode auctex fiplr whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel move-text markdown-mode flx smex noflet multiple-cursors haskell-mode flycheck expand-region)))
+    (auto-save-buffers-enhanced magit org-plus-contrib centered-window undo-tree ghc string-inflection company-coq monochrome-theme htmlize phi-search yasnippet flycheck-flow flow-minor-mode company counsel-projectile web-mode auctex fiplr whitespace-cleanup-mode wrap-region exec-path-from-shell nix-mode lua-mode restclient avy wgrep counsel move-text markdown-mode flx smex noflet multiple-cursors haskell-mode flycheck expand-region)))
  '(preview-scale-function 2.5)
  '(psc-ide-add-import-on-completion t)
  '(python-shell-interpreter "python3")

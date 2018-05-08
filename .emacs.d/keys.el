@@ -70,7 +70,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-t")             #'my/flip-bool-at-point)
 (define-key my-keys-minor-mode-map (kbd "C-y")             #'my/smart-new-line)
 (define-key my-keys-minor-mode-map (kbd "M-s x")           #'overwrite-mode)
-(define-key my-keys-minor-mode-map (kbd "°")               #'string-inflection-all-cycle)
+(define-key my-keys-minor-mode-map (kbd "ö")               #'string-inflection-all-cycle)
 
 ;; Macros
 
@@ -142,10 +142,8 @@
 ;; Coq
 
 (eval-after-load "proof-script" '(progn
-  (define-key proof-mode-map (kbd "ö")   #'proof-assert-next-command-interactive)
-  (define-key proof-mode-map (kbd "M-ö") #'proof-undo-last-successful-command)
-  (define-key proof-mode-map (kbd "ß")   #'proof-goto-point)
-  (define-key proof-mode-map (kbd "ü")   #'expand-abbrev)))
+  (define-key proof-mode-map (kbd "ß")         #'proof-goto-point)
+  (define-key proof-mode-map (kbd "ü")         #'expand-abbrev)))
 
 ;; Completion
 
@@ -175,9 +173,6 @@
 
 ;; Calc
 (define-key my-keys-minor-mode-map (kbd "M-s =") 'quick-calc)
-
-;; Fun
-(define-key my-keys-minor-mode-map (kbd "C-x w") 'elfeed)
 
 ;; GetSafe
 
