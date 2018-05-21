@@ -43,7 +43,7 @@ beautiful.init(awful.util.get_themes_dir() .. "default/theme.lua")
 beautiful.wallpaper = "/home/drets/.background/life.jpg"
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvt -e fish"
+terminal = "xfce4-terminal -e 'bash -i -c fish'"
 editor = os.getenv("EDITOR") or "emacsclient -c"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -628,7 +628,7 @@ pomodoro.long_pause_duration = 5 * 60
 pomodoro.on_work_pomodoro_finish_callbacks = {
     function()
       -- turn off screen
-      awful.spawn("xset dpms force off")
+      -- awful.spawn("xset dpms force off")
       -- use “xinput --list” to see the list of devices
       -- disable keyboard
       awful.spawn("xinput set-int-prop 10 \"Device Enabled\" 8 0")
@@ -643,7 +643,7 @@ pomodoro.on_work_pomodoro_finish_callbacks = {
 pomodoro.on_pause_pomodoro_finish_callbacks = {
    function()
       -- turn on screen
-      awful.spawn("xset dpms force on")
+      -- awful.spawn("xset dpms force on")
       -- enable keyboard
       awful.spawn("xinput set-int-prop 10 \"Device Enabled\" 8 1")
       -- enable mouse

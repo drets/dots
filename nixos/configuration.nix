@@ -268,7 +268,6 @@ in
       python
       python3
       qbittorrent
-      rxvt_unicode
       rsync
       plasma-workspace
       scrot
@@ -290,6 +289,7 @@ in
       xorg.xbacklight
       xorg.xkbcomp
       xorg.xwininfo
+      xfce.xfce4-terminal
       xkbset
       xscreensaver
       zip

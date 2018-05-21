@@ -129,8 +129,8 @@
 
 ;; Magit
 
-(define-key my-keys-minor-mode-map (kbd "M-8") #'magit-status)
-(define-key my-keys-minor-mode-map (kbd "M-4") #'magit-section-toggle)
+(define-key my-keys-minor-mode-map (kbd "≤") #'magit-status)
+(define-key my-keys-minor-mode-map (kbd "≥") #'magit-section-toggle)
 
 ;; Haskell
 
@@ -173,15 +173,6 @@
 
 ;; Calc
 (define-key my-keys-minor-mode-map (kbd "M-s =") 'quick-calc)
-
-;; GetSafe
-
-(defun my/sync-getsafe ()
-  (interactive)
-  (my/sync "/home/drets/src/getsafe/react-native-app/"
-           "drets@10.0.11.89:/Users/drets/getsafe/react-native-app"))
-
-(define-key my-keys-minor-mode-map (kbd "M-s n") #'my/sync-getsafe)
 
 ;; End of key definitions.
 

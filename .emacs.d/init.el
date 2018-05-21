@@ -66,9 +66,10 @@
       (string-to-list "eklioswadfxcrvn,hm./"))
 
 ;; Autosave
-(require 'auto-save-buffers-enhanced)
-(auto-save-buffers-enhanced t)
-(setq auto-save-buffers-enhanced-quiet-save-p t)
+(require 'real-auto-save)
+(add-hook 'prog-mode-hook 'real-auto-save-mode)
+(add-hook 'org-mode-hook 'real-auto-save-mode)
+
 
 ;; Ripgrep
 (setq counsel-rg-base-command "rg -i -M 120 --no-heading --line-number --color never %s .")

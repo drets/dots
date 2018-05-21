@@ -8,7 +8,7 @@
 ;;
 ;;   * [C-c C-t] shows type of function at point.
 ;;
-;;   * [M-x imenu] provides an index of functions defined in module.
+;;   * [M-s y] provides an index of functions defined in module.
 
 (require 'haskell-mode)
 
