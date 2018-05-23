@@ -129,8 +129,8 @@
 
 ;; Magit
 
-(define-key my-keys-minor-mode-map (kbd "≤") #'magit-status)
-(define-key my-keys-minor-mode-map (kbd "≥") #'magit-section-toggle)
+(define-key my-keys-minor-mode-map (kbd "C-≥") #'magit-status)
+(define-key my-keys-minor-mode-map (kbd "≥")   #'magit-section-toggle)
 
 ;; Haskell
 
