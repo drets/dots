@@ -11,7 +11,6 @@
 (require 'move-text)
 (require 'multiple-cursors)
 (require 'org)
-(require 'phi-search)
 (require 'swiper)
 (require 'utils)
 (require 'yasnippet)
@@ -86,7 +85,7 @@
 
 ;; Search and replacement
 
-(define-key my-keys-minor-mode-map (kbd "C-s")   #'phi-search)
+(define-key my-keys-minor-mode-map (kbd "C-s")   #'isearch-forward-regexp)
 (define-key my-keys-minor-mode-map (kbd "M-s w") #'swiper)
 (define-key my-keys-minor-mode-map (kbd "M-s p") #'counsel-projectile-switch-project)
 (define-key my-keys-minor-mode-map (kbd "M-o")   #'counsel-find-file)
@@ -129,7 +128,7 @@
 
 ;; Magit
 
-(define-key my-keys-minor-mode-map (kbd "C-≥") #'magit-status)
+(define-key my-keys-minor-mode-map (kbd "M-8") #'magit-status)
 (define-key my-keys-minor-mode-map (kbd "≥")   #'magit-section-toggle)
 
 ;; Haskell
