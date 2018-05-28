@@ -240,7 +240,6 @@ in
       diffutils
       dropbox
       emacs
-      emacsPackages.proofgeneral
       epdfview
       file
       jq

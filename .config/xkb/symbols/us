@@ -24,15 +24,9 @@ xkb_symbols "my" {
     key <AD04> {[ r, R, enfilledcircbullet ]};
     key <AD05> {[ t, T, braceleft ]};
     key <AD06> {[ y, Y, braceright ]};
-    key <AD07> {
-      symbols[Group1]=[ s   , S   , NoSymbol, NoSymbol ],
-      actions[Group1]=[ NoAction() , NoAction() , Redirect(key=<LEFT>,mods=Control), Redirect(key=<LEFT>,mods=Shift+Control) ]
-    };
+    key <AD07> {[ s, S, less ]};
     key <AD08> {[ i, I, Up, Up ]};
-    key <AD09> {
-      symbols[Group1]=[ o   , O   , NoSymbol, NoSymbol ],
-      actions[Group1]=[ NoAction() , NoAction() , Redirect(key=<RGHT>,mods=Control), Redirect(key=<RGHT>,mods=Shift+Control) ]
-    };
+    key <AD09> {[ o, O, greater ]};
     key <AD10> {[ p, P, j, J ]};
     key <AD11> {[ u, U, U00fc, U00dc ]};
     key <AD12> {[ asterisk, ae, leftsinglequotemark, rightsinglequotemark ]};
@@ -45,11 +39,20 @@ xkb_symbols "my" {
     key <AC01> {[ f, F ]};
     key <AC04> {[ e, E, Pointer_Button1 ]};
     key <AC05> {[ g, G, Pointer_Button3 ]};
+    key <AC06> {
+      symbols[Group1]=[ h   , H   , NoSymbol, NoSymbol ],
+      actions[Group1]=[ NoAction() , NoAction() , Redirect(key=<LEFT>,mods=Control), Redirect(key=<LEFT>,mods=Shift+Control) ]
+    };
+
     key <AC06> {[ h, H, semicolon ]};
     key <AC07> {[ BackSpace, BackSpace, Left, Left]};
     key <AC08> {[ k, K, Down, Down ]};
     key <AC09> {[ l, L, Right, Right ]};
-    key <AC10> {[ d, D, colon ]};
+    key <AC10> {
+      symbols[Group1]=[ d   , D   , NoSymbol, NoSymbol ],
+      actions[Group1]=[ NoAction() , NoAction() , Redirect(key=<RGHT>,mods=Control), Redirect(key=<RGHT>,mods=Shift+Control) ]
+    };
+
     key <AC11> {[ apostrophe, quotedbl, endash, emdash ]};
 
 # U21D2: right double arrow
@@ -60,8 +63,8 @@ xkb_symbols "my" {
     key <AB03> {[ c, C, bar ]};
     key <AB04> {[ v, V, backslash ]};
     key <AB05> {[ b, B, U00df ]};
-    key <AB06> {[ n, N, less ]};
-    key <AB07> {[ m, M, greater ]};
+    key <AB06> {[ n, N, semicolon ]};
+    key <AB07> {[ m, M, colon ]};
     key <AB08> {[ comma, leftdoublequotemark, exclam, guillemotleft ]};
     key <AB09> {[ period, rightdoublequotemark, question, guillemotright ]};
     key <AB10> {[ slash, ae, dollar ]};
